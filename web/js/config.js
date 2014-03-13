@@ -18,7 +18,6 @@ var formwidgettype={
     'pesionapply':'pesionapplyform'
 
 };
-
 var applyformviews={
     'pesionapply':[
         'pesionapplybasicfieldset'
