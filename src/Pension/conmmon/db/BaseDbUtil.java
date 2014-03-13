@@ -1,33 +1,43 @@
-package Pension.propertycheck.impl;
+package Pension.conmmon.db;
 
-import Pension.jdbc.JdbcFactory;
-import Pension.propertycheck.PropertyCommonDAO;
 import org.apache.log4j.Logger;
 
 import java.sql.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 /**
- * Created with IntelliJ IDEA.
- * User: Administrator
- * Date: 13-12-7
- * Time: 下午6:11
- * To change this template use File | Settings | File Templates.
+ * User: weipan
+ * Date: 14-3-13
+ * Time: 下午1:38
+ * Desc: 基本的数据库操作
  */
-public class ProperCommonDAOImpl implements PropertyCommonDAO{
+public class BaseDbUtil {
+    private static final Logger log = Logger.getLogger(BaseDbUtil.class);
     private Connection conn=null;
-    private static final Logger log = Logger.getLogger( ProperCommonDAOImpl.class);
-    public  ProperCommonDAOImpl(Connection conn){
+    public BaseDbUtil(Connection conn){
         this.conn=conn;
     }
-    @Override
+
+    /*
+    插入数据col_vals到tablename
+     */
     public int insertTableVales(Map<String, Object> col_vals, String tablename) {
         return insertOrReplaceInto(col_vals,tablename,"INSERT INTO ");
     }
-    @Override
+
+    /*
+    插入数据col_vals到tablename,暂不使用
+     */
     public int insertOrReplace(Map<String, Object> col_vals, String tablename) {
         return insertOrReplaceInto(col_vals,tablename,"INSERT OR REPLACE INTO ");
     }
+
+    /*
+    私有方法,插入数据的具体实现
+     */
     private int insertOrReplaceInto(Map<String, Object> col_vals, String tablename,String insertorreplace) {
         List<String> list=this.getColumnData(tablename);
         int result=0;
@@ -58,23 +68,13 @@ public class ProperCommonDAOImpl implements PropertyCommonDAO{
             pstmt = conn.prepareStatement(sql);
             int i=0;
             for( i=0;i<val_arr.size();i++){
-
                 pstmt.setString(i+1, val_arr.get(i)==null?"":val_arr.get(i));
-
             }
-            pstmt.executeUpdate();
-            ResultSet keys = pstmt.getGeneratedKeys(); // equivalent to "SELECT last_insert_id();"
-            if(keys.next()) {
-                result=keys.getInt(1);
-            }
-
+            result=pstmt.executeUpdate();
         } catch (SQLException ex) {
-
             log.debug(ex.getMessage());
             ex.printStackTrace();
             result= -1;
-
-
         }finally {
             try {
                 if(null!=pstmt){
@@ -88,7 +88,6 @@ public class ProperCommonDAOImpl implements PropertyCommonDAO{
     }
 
 
-    @Override
     public int updateTableValesSpecail(Map<String, Object> col_vals, String tablename, Map<String, String> colnames, String kandv) {
         List<String> list=this.getColumnData(tablename);
         Statement stmt=null;
@@ -106,7 +105,7 @@ public class ProperCommonDAOImpl implements PropertyCommonDAO{
             String val = col_vals.get(key).toString();
             val_arr.add(val);
             str+=key+"=?,";
-            if(null!=colnames&&colnames.containsKey("key")){
+            if(null!=colnames&&colnames.containsKey("key")){    //这里拼接sql,应该改为?占位符
                 whereStr+=" and "+key+"='"+colnames.get(key)+"'";
             }
         }
@@ -117,13 +116,9 @@ public class ProperCommonDAOImpl implements PropertyCommonDAO{
         PreparedStatement pstmt=null;
         try {
             pstmt = conn.prepareStatement(sql);
-            int i=0;
-            for( i=0;i<val_arr.size();i++){
-
+            for( int i=0;i<val_arr.size();i++){
                 pstmt.setString(i+1, val_arr.get(i)==null?"":val_arr.get(i));
-
             }
-
             result= pstmt.executeUpdate();
         } catch (SQLException ex) {
             log.debug(ex.getMessage());
@@ -138,12 +133,21 @@ public class ProperCommonDAOImpl implements PropertyCommonDAO{
         return result;
     }
 
-    @Override
+    /*
+    更新表数据
+    @param col_vals 数据
+    @param tablename 表名
+    @param colnames 条件数据
+
+     */
     public int updateTableVales(Map<String, Object> col_vals, String tablename, Map<String, String> colnames) {
         return this.updateTableValesSpecail(col_vals,tablename,colnames,"");
     }
 
-    @Override
+
+    /*
+    获取表的列属性信息
+     */
     public List<String> getColumnData(String tablename) {
         Statement stmt=null;
         List<String> list=new ArrayList<String>();
@@ -151,10 +155,7 @@ public class ProperCommonDAOImpl implements PropertyCommonDAO{
             stmt=conn.createStatement();
             ResultSetMetaData mtdt=stmt.executeQuery("select * from "+tablename+ " where 1=0").getMetaData();
             for(int i=1;i<=mtdt.getColumnCount();i++){
-                //log.debug(mtdt.getColumnTypeName(i));
-                //log.debug(mtdt.getColumnName(i)+"#"+mtdt.getColumnType(i)+"#"+mtdt.getColumnType(i));
-                //log.debug("********************************************");
-                list.add(mtdt.getColumnName(i));
+                list.add(mtdt.getColumnName(i).toLowerCase());
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -171,27 +172,11 @@ public class ProperCommonDAOImpl implements PropertyCommonDAO{
         return list;
     }
 
-    @Override
-    public int deleteTableValues(String stmt) {
-        int result=0;
-        PreparedStatement pstmt=null;
-        try {
-            pstmt=conn.prepareStatement(stmt);
-            result=pstmt.execute()?1:0;
-        } catch (SQLException e) {
-            e.printStackTrace();
-            result=-1;
-        } finally {
-            try {
-                pstmt.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-        return result;
-    }
 
-    @Override
+
+    /*
+    判断查询结果是否有结果
+     */
     public boolean isExist(String sql) {
         boolean flag=false;
         Statement pstmt=null;
@@ -215,7 +200,7 @@ public class ProperCommonDAOImpl implements PropertyCommonDAO{
         return flag;
     }
 
-    @Override
+    /*执行一个sql语句*/
     public void execute(String sql) {
         log.debug(sql);
         PreparedStatement pstmt=null;
@@ -231,13 +216,5 @@ public class ProperCommonDAOImpl implements PropertyCommonDAO{
                 e.printStackTrace();
             }
         }
-    }
-
-    public static void main(String[] args){
-        ProperCommonDAOImpl p=new ProperCommonDAOImpl(JdbcFactory.getConn("sqlite"));
-        Map<String,Object> map=new HashMap<String, Object>();
-        map.put("name","lisi");
-        List list=p.getColumnData("fm01change");
-        System.out.println(list.size());
     }
 }
