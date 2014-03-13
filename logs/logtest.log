@@ -1,0 +1,67 @@
+[2014-03-12 15:57:52] DEBUG main Pension.jdbc.SqliteSql --- jdbc:sqlite:/home/jack/workspace1/test/zsmzj.db3
+   [2014-03-12 15:57:52] DEBUG main Pension.jdbc.JdbcFactory --- select count(*) from users
+   [2014-03-12 15:57:52] DEBUG main Pension.jdbc.JdbcFactory --- false
+   [2014-03-12 15:59:46] DEBUG main Pension.jdbc.OracleSql --- 
+   [2014-03-12 15:59:46] DEBUG main Pension.jdbc.OracleSql --- CIVILAFFAIRS_ZS
+   [2014-03-12 15:59:46] DEBUG main Pension.jdbc.OracleSql --- hvit
+   [2014-03-12 15:59:46] DEBUG main Pension.jdbc.JdbcFactory --- select 1
+   [2014-03-12 16:01:26] DEBUG main Pension.jdbc.OracleSql --- jdbc:oracle:thin:@192.168.2.141:1521:orcl
+   [2014-03-12 16:01:26] DEBUG main Pension.jdbc.OracleSql --- CIVILAFFAIRS_ZS
+   [2014-03-12 16:01:26] DEBUG main Pension.jdbc.OracleSql --- hvit
+   [2014-03-12 16:01:28] DEBUG main Pension.jdbc.JdbcFactory --- select 1
+   [2014-03-12 16:01:28] DEBUG main Pension.jdbc.JdbcFactory --- false
+   [2014-03-12 16:01:28] DEBUG main Pension.jdbc.JdbcFactory --- ORA-00923: 未找到要求的 FROM 关键字
+
+   [2014-03-12 16:03:42] DEBUG main Pension.jdbc.OracleSql --- jdbc:oracle:thin:@192.168.2.141:1521:orcl
+   [2014-03-12 16:03:42] DEBUG main Pension.jdbc.OracleSql --- CIVILAFFAIRS_ZS
+   [2014-03-12 16:03:42] DEBUG main Pension.jdbc.OracleSql --- hvit
+   [2014-03-12 16:03:43] DEBUG main Pension.jdbc.JdbcFactory --- select 1 from dual
+   [2014-03-12 16:03:43] DEBUG main Pension.jdbc.JdbcFactory --- false
+   [2014-03-12 16:07:20] DEBUG main Pension.jdbc.OracleSql --- jdbc:oracle:thin:@192.168.2.141:1521:orcl
+   [2014-03-12 16:07:20] DEBUG main Pension.jdbc.OracleSql --- CIVILAFFAIRS_ZS
+   [2014-03-12 16:07:20] DEBUG main Pension.jdbc.OracleSql --- hvit
+   [2014-03-12 16:07:21] DEBUG main Pension.jdbc.JdbcFactory --- select table_name from user_tables
+   [2014-03-12 16:07:21] DEBUG main Pension.jdbc.JdbcFactory --- false
+   [2014-03-12 16:07:22] DEBUG main Pension.jdbc.JdbcFactory --- 无法转换为内部表示
+   [2014-03-12 16:08:48] DEBUG main Pension.jdbc.OracleSql --- jdbc:oracle:thin:@192.168.2.141:1521:orcl
+   [2014-03-12 16:08:48] DEBUG main Pension.jdbc.OracleSql --- CIVILAFFAIRS_ZS
+   [2014-03-12 16:08:48] DEBUG main Pension.jdbc.OracleSql --- hvit
+   [2014-03-12 16:08:51] DEBUG main Pension.jdbc.JdbcFactory --- select count(*) from user_tables
+   [2014-03-12 16:08:51] DEBUG main Pension.jdbc.JdbcFactory --- false
+   [2014-03-12 17:13:27] DEBUG main Pension.jdbc.OracleSql --- jdbc:oracle:thin:@192.168.2.141:1521:orcl
+   [2014-03-12 17:13:27] DEBUG main Pension.jdbc.OracleSql --- CIVILAFFAIRS_ZS
+   [2014-03-12 17:13:27] DEBUG main Pension.jdbc.OracleSql --- hvit
+   [2014-03-12 17:13:28] DEBUG main Pension.jdbc.JdbcFactory --- select a.id,a.roleid,a.displayname,b.divisionpath,b.id from users a, divisions b where password='Nb1zA0GzyRIE/XNADpAr9Q==' and username='administrator'  and a.divisionid=b.id
+   [2014-03-12 17:13:28] DEBUG main Pension.jdbc.JdbcFactory --- false
+   [2014-03-12 17:14:33] DEBUG main Pension.jdbc.OracleSql --- jdbc:oracle:thin:@192.168.2.141:1521:orcl
+   [2014-03-12 17:14:33] DEBUG main Pension.jdbc.OracleSql --- CIVILAFFAIRS_ZS
+   [2014-03-12 17:14:33] DEBUG main Pension.jdbc.OracleSql --- hvit
+   [2014-03-12 17:14:36] DEBUG main Pension.jdbc.JdbcFactory --- select a.id,a.roleid,a.displayname,b.divisionpath,b.id from users a, divisions b  where a.divisionid=b.id
+   [2014-03-12 17:14:36] DEBUG main Pension.jdbc.JdbcFactory --- false
+   [2014-03-12 17:15:24] DEBUG main Pension.jdbc.OracleSql --- jdbc:oracle:thin:@192.168.2.141:1521:orcl
+   [2014-03-12 17:15:24] DEBUG main Pension.jdbc.OracleSql --- CIVILAFFAIRS_ZS
+   [2014-03-12 17:15:24] DEBUG main Pension.jdbc.OracleSql --- hvit
+   [2014-03-12 17:15:27] DEBUG main Pension.jdbc.JdbcFactory --- select count(*) from users a, divisions b  where a.divisionid=b.id
+   [2014-03-12 17:15:27] DEBUG main Pension.jdbc.JdbcFactory --- false
+   [2014-03-12 17:18:00] DEBUG main Pension.jdbc.OracleSql --- jdbc:oracle:thin:@192.168.2.141:1521:orcl
+   [2014-03-12 17:18:00] DEBUG main Pension.jdbc.OracleSql --- CIVILAFFAIRS_ZS
+   [2014-03-12 17:18:00] DEBUG main Pension.jdbc.OracleSql --- hvit
+   [2014-03-12 17:18:01] DEBUG main Pension.jdbc.JdbcFactory --- select count(*) from users a, divisions b  where a.divisionid=1
+   [2014-03-12 17:18:01] DEBUG main Pension.jdbc.JdbcFactory --- false
+   [2014-03-12 17:19:24] DEBUG main Pension.jdbc.OracleSql --- jdbc:oracle:thin:@192.168.2.141:1521:orcl
+   [2014-03-12 17:19:24] DEBUG main Pension.jdbc.OracleSql --- CIVILAFFAIRS_ZS
+   [2014-03-12 17:19:24] DEBUG main Pension.jdbc.OracleSql --- hvit
+   [2014-03-12 17:19:25] DEBUG main Pension.jdbc.JdbcFactory --- select a.divisionid from users a
+   [2014-03-12 17:19:25] DEBUG main Pension.jdbc.JdbcFactory --- false
+   [2014-03-12 17:23:27] DEBUG main Pension.jdbc.OracleSql --- jdbc:oracle:thin:@192.168.2.141:1521:orcl
+   [2014-03-12 17:23:27] DEBUG main Pension.jdbc.OracleSql --- CIVILAFFAIRS_ZS
+   [2014-03-12 17:23:27] DEBUG main Pension.jdbc.OracleSql --- hvit
+   [2014-03-12 17:23:29] DEBUG main Pension.jdbc.JdbcFactory --- update users set divisionid=1
+   [2014-03-12 17:23:29] DEBUG main Pension.jdbc.JdbcFactory --- false
+   [2014-03-12 17:34:19] DEBUG main Pension.jdbc.OracleSql --- jdbc:oracle:thin:@192.168.2.141:1521:orcl
+   [2014-03-12 17:34:19] DEBUG main Pension.jdbc.OracleSql --- CIVILAFFAIRS_ZS
+   [2014-03-12 17:34:19] DEBUG main Pension.jdbc.OracleSql --- hvit
+   [2014-03-12 17:34:21] DEBUG main Pension.jdbc.JdbcFactory --- update users set divisionid=1
+   [2014-03-12 17:34:21] DEBUG main Pension.jdbc.JdbcFactory --- false
+   [2014-03-12 17:34:21] DEBUG main Pension.jdbc.JdbcFactory --- 无效的列索引
+   

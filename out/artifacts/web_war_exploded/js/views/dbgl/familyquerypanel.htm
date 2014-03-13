@@ -1,0 +1,54 @@
+
+    <table id="businessgrid"  style="width:100%;height:100%"
+            data-options="url: 'ajax/getfamilyinfo.jsp' "
+            >
+        <thead data-options="frozen:true">
+        <tr>
+            <th data-options="field:'owername',width:120,align:'center',formatter:function(value,rowData,rowIndex)
+            {
+
+                var str='<div></div>';
+
+                str=$(str).append('<a action=&quot;appformsubmit_alter&quot; class=&quot;viewbtn&quot; istext=&quot;true&quot; isshow=&quot;true&quot; style=&quot;display:none;&quot;>'+value+'</a>');
+
+                return str.html();
+
+            }">户主姓名</th>
+
+        </tr>
+        </thead>
+        <thead>
+        <tr>
+            <th data-options="field:'time',width:80,align:'center',sortable:true,hidden:true">时间</th>
+            <th data-options="field:'division',width:200,align:'center'">行政区划</th>
+            <th data-options="field:'owerid',width:150,align:'center'">户主身份证</th>
+            <th data-options="field:'applytype',align:'center',width:80">申请类别</th>
+            <th data-options="field:'businesstype',align:'center',width:80">业务类型</th>
+            <th data-options="field:'familytype',align:'center',width:80">家庭类别</th>
+            <th data-options="field:'totalhelpmoney',align:'center',width:80">救助金额</th>
+            <th data-options="field:'helpbgtime',align:'center',width:80">救助开始日期</th>
+            <th data-options="field:'helpedtime',align:'center',width:80">救助结束日期</th>
+            <th data-options="field:'familynum',align:'center',width:80">家庭人数</th>
+            <th data-options="field:'familyaccount',align:'center',width:80">家庭户口性质</th>
+            <th data-options="field:'enjoyednum',align:'center',width:80">享受人数</th>
+            <th data-options="field:'bankower',align:'center',width:80">开户人</th>
+            <th data-options="field:'bankid',align:'center',width:80">银行帐号</th>
+            <th data-options="field:'aidnum',align:'center',width:80">救助证编号</th>
+            <th data-options="field:'businessid',align:'center',hidden:true,width:80">业务id</th>
+        </tr>
+        </thead>
+    </table>
+    <div id="businesstb" style="padding:5px;height:auto;vertical-align: middle;">
+            <a>开始时间: <input class="easyui-datebox bgdate" style="width:90px"></a>
+            <a>结束时间: <input class="easyui-datebox eddate" style="width:90px"></a>
+            <a>快速搜索: <input class="easyui-validatebox keyword" type="keyword" data-options="required:false" style="width:120px"></a>
+            <a class="easyui-linkbutton search"  iconCls="icon-search" >搜索</a>
+            <a class="easyui-linkbutton moresearch"  iconCls="icon-search" searchtype="moresearchfamily" >高级搜索</a>
+            <a href="#" id="excelmenu_btn" >Excel导出</a>
+    </div>
+
+    <div id="excelmenu" style="width:100px;">
+        <div data-options="name:'false'">导出当前页</div>
+        <div data-options="name:'true'">导出所有</div>
+
+    </div>
