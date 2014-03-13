@@ -20,7 +20,7 @@
 
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" >
-    <title>舟山市社会救助管理系统</title>
+    <title>杭州市民政养老救助管理系统</title>
 
     <script type="text/javascript" src="js/config.js"></script>
     <script type="text/javascript">
@@ -104,7 +104,7 @@
     <div id="tabs" class="easyui-tabs"   fit="true" border="false" >
         <div title="主页" class="indexbackground">
             <div class="cs-home-remark">
-                <h1>欢迎使用舟山市民政局救灾救助系统</h1>
+                <h1>欢迎使用民政养老救助系统</h1>
             </div>
         </div>
     </div>
