@@ -21,5 +21,4 @@
         FuncControl role=new FuncControl();
         out.print(role.addNewFunc(funcname,functype));
     }
-    //out.print("ok");
 %>
