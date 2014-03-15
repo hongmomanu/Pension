@@ -69,7 +69,7 @@ define(function(){
                 updateitem.updateitemnum($('#domneedtodocount'),count,"(",")");
             };
 
-           ajaxform.ajaxsend("post","json","ajax/getneedtodos.jsp",params,successFunc,null);
+           //ajaxform.ajaxsend("post","json","ajax/getneedtodos.jsp",params,successFunc,null);
 
         });
         $('#domneedtodocount').click(needtodoclick);

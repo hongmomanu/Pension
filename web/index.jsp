@@ -8,20 +8,32 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    if(request.getSession().getAttribute("username")==null) {
+   /* if(request.getSession().getAttribute("username")==null) {
         response.sendRedirect("login.jsp");
-    }
+    }*/
+    session.setAttribute("userid",1);
+    session.setAttribute("username",1);
+    session.setAttribute("roleid",1);
+    session.setAttribute("userid",1);
+    session.setAttribute("displayname",1);
+    session.setAttribute("divisionpath",1);
+    session.setAttribute("divisionid",1);
 
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
 <head>
+    <meta charset="utf-8">
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+    <META HTTP-EQUIV="Expires"CONTENT="0">
 
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" >
     <title>杭州市民政养老救助管理系统</title>
 
+    <script type="text/javascript" src="js/extLocation.js"></script>
     <script type="text/javascript" src="js/config.js"></script>
     <script type="text/javascript">
 

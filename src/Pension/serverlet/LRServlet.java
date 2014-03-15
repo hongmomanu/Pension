@@ -28,16 +28,25 @@ public class LRServlet extends HttpServlet {
         String eventName=(String)request.getParameter("eventName");
         if(request.getParameter("model")==null){
             request.setAttribute("message","缺少请求信息");
-            request.getRequestDispatcher("output.jsp").forward(request,response);
+            request.getRequestDispatcher("page/output.jsp").forward(request,response);
         }
         if(eventName!=null&&!"".equals(eventName)){
             request.setAttribute("message",doEvent(request, ParameterUtil.toMap(request)));
-            request.getRequestDispatcher("output.jsp").forward(request,response);
+            request.getRequestDispatcher("page/output.jsp").forward(request,response);
         }else {
             /*Map<String,String> map=new HashMap<String,String>();
             map.put("model",request.getParameter("model"));
             map.put("pageSelectedAtRuntime",request.getParameter("pageModel").replace('.','/')+".jsp");
             map.put("jsSelectedAtRuntime","page/"+request.getParameter("pageModel").replace('.','/')+".js");*/
+            String page=(String)request.getParameter("page");
+            if(page!=null&&!"".equals(page)){
+                page=page.replace('.','/');
+                page="page/"+page+".jsp";
+                request.setAttribute("page",page);
+            }else{  //如果没有
+                request.setAttribute("page","page/"+request.getParameter("model").replace('.','/')+".jsp");
+            }
+            request.getRequestDispatcher("main.jsp").forward(request,response);
         }
     }
 

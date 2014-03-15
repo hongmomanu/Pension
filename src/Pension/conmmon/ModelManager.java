@@ -15,7 +15,7 @@ public class ModelManager {
     private static final Logger log = Logger.getLogger(ModelManager.class);
     private static Map<String,Object> modelMap=new HashMap<String, Object>();
 
-    public static void  addModel(String model,Object obj){
+    public static synchronized void   addModel(String model,Object obj){
          modelMap.put(model,obj);
         log.info("当前model数量:"+modelMap.size()+"\n");
         log.info("当前model:"+model);
