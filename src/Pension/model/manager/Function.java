@@ -1,7 +1,11 @@
 package Pension.model.manager;
 
 import Pension.conmmon.CommonDbUtil;
+import Pension.conmmon.MakeRandomString;
+import Pension.conmmon.ParameterUtil;
+import Pension.conmmon.RtnType;
 import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -57,7 +61,13 @@ public class Function {
         if(null==node){
             node=request.getParameter("id");
         }
-        return query(commonDbUtil,node);
+        String sql="select * from jet_function where functionid='"+node+"'";
+        List list=commonDbUtil.query(sql);
+        Map map=new HashMap();
+        if(list.size()>0){
+            map=(Map)list.get(0);
+        }
+        return JSONObject.fromObject(map).toString();
     }
 
     private String query(CommonDbUtil commonDbUtil,String node){
@@ -83,5 +93,28 @@ public class Function {
 
         String json= JSONArray.fromObject(list).toString();
         return json;
+    }
+
+    public String saveFunction(){
+        CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
+        Map map=ParameterUtil.toMap(request);
+        int result=0;
+        if("-1".equals(map.get("functionid"))){
+            map.put("functionid", MakeRandomString.genString());
+            result=commonDbUtil.insertTableVales(map,"jet_function");
+        }else{
+            Map m=new HashMap();
+            m.put("functionid",map.get("functionid"));
+            result=commonDbUtil.updateTableVales(map,"jet_function",m);
+        }
+        return result>0?RtnType.SUCCESS:RtnType.FAILURE;
+    }
+    public String deleteFunction(){
+        CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
+        String functionid=request.getParameter("functionid");
+        if(null!=functionid){
+            commonDbUtil.execute("delete from jet_function where functionid='"+functionid+"'");
+        }
+        return RtnType.SUCCESS;
     }
 }

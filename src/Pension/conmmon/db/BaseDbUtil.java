@@ -105,7 +105,7 @@ public class BaseDbUtil {
             String val = col_vals.get(key).toString();
             val_arr.add(val);
             str+=key+"=?,";
-            if(null!=colnames&&colnames.containsKey("key")){    //这里拼接sql,应该改为?占位符
+            if(null!=colnames&&colnames.containsKey(key)){    //,应该改为?占位符
                 whereStr+=" and "+key+"='"+colnames.get(key)+"'";
             }
         }
