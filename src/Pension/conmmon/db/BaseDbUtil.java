@@ -88,6 +88,7 @@ public class BaseDbUtil {
     }
 
 
+
     public int updateTableValesSpecail(Map<String, Object> col_vals, String tablename, Map<String, String> colnames, String kandv) {
         List<String> list=this.getColumnData(tablename);
         Statement stmt=null;

@@ -61,7 +61,7 @@ public class Function {
         if(null==node){
             node=request.getParameter("id");
         }
-        String sql="select * from jet_function where functionid='"+node+"'";
+        String sql="select * from xt_function where functionid='"+node+"'";
         List list=commonDbUtil.query(sql);
         Map map=new HashMap();
         if(list.size()>0){
@@ -71,7 +71,7 @@ public class Function {
     }
 
     private String query(CommonDbUtil commonDbUtil,String node){
-        String sql="select t.*,(select count(1) from jet_function where parent=t.functionid) leafcount from jet_function t where t.parent='"+node+"'";
+        String sql="select t.*,(select count(1) from xt_function where parent=t.functionid) leafcount from xt_function t where t.parent='"+node+"'";
         List<Map<String,Object>> list=new ArrayList<Map<String,Object>>();
         List querylist=commonDbUtil.query(sql);
         Iterator iterator=querylist.iterator();
@@ -101,11 +101,11 @@ public class Function {
         int result=0;
         if("-1".equals(map.get("functionid"))){
             map.put("functionid", MakeRandomString.genString());
-            result=commonDbUtil.insertTableVales(map,"jet_function");
+            result=commonDbUtil.insertTableVales(map,"xt_function");
         }else{
             Map m=new HashMap();
             m.put("functionid",map.get("functionid"));
-            result=commonDbUtil.updateTableVales(map,"jet_function",m);
+            result=commonDbUtil.updateTableVales(map,"xt_function",m);
         }
         return result>0?RtnType.SUCCESS:RtnType.FAILURE;
     }
@@ -113,7 +113,7 @@ public class Function {
         CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
         String functionid=request.getParameter("functionid");
         if(null!=functionid){
-            commonDbUtil.execute("delete from jet_function where functionid='"+functionid+"'");
+            commonDbUtil.execute("delete from xt_function where functionid='"+functionid+"'");
         }
         return RtnType.SUCCESS;
     }

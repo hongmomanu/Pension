@@ -15,7 +15,7 @@ public class MakeRandomString {
     public static String genString(){
         Random random = new Random();
         StringBuffer buf = new StringBuffer();
-        for (int i = 0; i < 32; i++) {
+        for (int i = 0; i < 20; i++) {
             int num = random.nextInt(62);
             buf.append(str.charAt(num));
         }

@@ -1,6 +1,9 @@
 package Pension.model.manager;
 
 import Pension.conmmon.CommonDbUtil;
+import Pension.conmmon.MakeRandomString;
+import Pension.conmmon.ParameterUtil;
+import Pension.conmmon.RtnType;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
@@ -22,7 +25,7 @@ public class Role {
 
     public String queryRole(){
         CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
-        List list=commonDbUtil.query("select * from jet_role");
+        List list=commonDbUtil.query("select * from xt_role");
         Map map=new HashMap();
         map.put("total",0);
         map.put("rows",list);
@@ -31,7 +34,11 @@ public class Role {
 
 
     public String saveRole(){
-        return null;
+        CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
+        Map map= ParameterUtil.toMap(request);
+        //map.put("createdate",) 指定时间
+        int result=commonDbUtil.insertTableVales(map,"xt_role");
+        return result>0? RtnType.SUCCESS:RtnType.FAILURE;
     }
 
     public String deleteRole(){

@@ -16,7 +16,9 @@ public class ModelManager {
     private static Map<String,Object> modelMap=new HashMap<String, Object>();
 
     public static synchronized void   addModel(String model,Object obj){
-         modelMap.put(model,obj);
+        if(null==getModel(model)){
+            modelMap.put(model,obj);
+        }
         log.info("当前model数量:"+modelMap.size()+"\n");
         log.info("当前model:"+model);
     }
