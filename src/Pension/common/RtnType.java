@@ -1,4 +1,4 @@
-package Pension.conmmon;
+package Pension.common;
 
 /**
  * User: weipan

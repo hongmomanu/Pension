@@ -1,7 +1,7 @@
-package Pension.conmmon;
+package Pension.common;
 
-import Pension.conmmon.db.BaseDbQuery;
-import Pension.conmmon.db.BaseDbUtil;
+import Pension.common.db.BaseDbQuery;
+import Pension.common.db.BaseDbUtil;
 
 import java.sql.Connection;
 import java.util.List;

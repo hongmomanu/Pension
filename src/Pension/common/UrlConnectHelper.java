@@ -1,4 +1,4 @@
-package Pension.conmmon;
+package Pension.common;
 
 /**
  * Created with IntelliJ IDEA.

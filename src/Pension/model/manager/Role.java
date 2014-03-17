@@ -1,10 +1,8 @@
 package Pension.model.manager;
 
-import Pension.conmmon.CommonDbUtil;
-import Pension.conmmon.MakeRandomString;
-import Pension.conmmon.ParameterUtil;
-import Pension.conmmon.RtnType;
-import net.sf.json.JSONArray;
+import Pension.common.CommonDbUtil;
+import Pension.common.ParameterUtil;
+import Pension.common.RtnType;
 import net.sf.json.JSONObject;
 
 import javax.servlet.http.HttpServletRequest;

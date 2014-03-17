@@ -1,4 +1,4 @@
-package Pension.conmmon;
+package Pension.common;
 
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;

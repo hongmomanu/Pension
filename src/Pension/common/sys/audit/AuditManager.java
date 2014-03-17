@@ -1,6 +1,6 @@
-package Pension.conmmon.sys.audit;
+package Pension.common.sys.audit;
 
-import Pension.conmmon.CommonDbUtil;
+import Pension.common.CommonDbUtil;
 import Pension.jdbc.JdbcFactory;
 
 import java.sql.Connection;

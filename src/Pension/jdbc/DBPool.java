@@ -1,6 +1,6 @@
 package Pension.jdbc;
 
-import Pension.conmmon.Config;
+import Pension.common.Config;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import java.beans.PropertyVetoException;
 import java.sql.Connection;

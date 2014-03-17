@@ -1,7 +1,6 @@
-package Pension.conmmon;
+package Pension.common;
 
 import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.itextpdf.tool.xml.XMLWorkerHelper;
 import org.apache.commons.fileupload.FileItem;

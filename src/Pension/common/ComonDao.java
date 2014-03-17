@@ -1,4 +1,4 @@
-package Pension.conmmon;
+package Pension.common;
 
 import Pension.jdbc.JdbcFactory;
 import org.apache.log4j.Logger;

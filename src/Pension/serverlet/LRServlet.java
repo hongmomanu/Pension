@@ -1,7 +1,7 @@
 package Pension.serverlet;
 
-import Pension.conmmon.ModelManager;
-import Pension.conmmon.ParameterUtil;
+import Pension.common.ModelManager;
+import Pension.common.ParameterUtil;
 import Pension.jdbc.JdbcFactory;
 
 import javax.servlet.ServletException;

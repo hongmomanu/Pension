@@ -1,6 +1,6 @@
 package Pension.model;
 
-import Pension.conmmon.CommonDbUtil;
+import Pension.common.CommonDbUtil;
 
 import java.sql.Connection;
 import java.util.Map;

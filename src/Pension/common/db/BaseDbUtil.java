@@ -1,4 +1,4 @@
-package Pension.conmmon.db;
+package Pension.common.db;
 
 import org.apache.log4j.Logger;
 

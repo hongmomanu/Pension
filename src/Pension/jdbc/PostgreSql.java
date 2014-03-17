@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import Pension.conmmon.Config;
+import Pension.common.Config;
 import org.apache.log4j.Logger;
 
 

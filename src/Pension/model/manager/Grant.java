@@ -1,7 +1,7 @@
 package Pension.model.manager;
 
-import Pension.conmmon.CommonDbUtil;
-import Pension.conmmon.RtnType;
+import Pension.common.CommonDbUtil;
+import Pension.common.RtnType;
 
 import javax.servlet.http.HttpServletRequest;
 import java.sql.Connection;

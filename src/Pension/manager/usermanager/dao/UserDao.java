@@ -1,6 +1,6 @@
 package Pension.manager.usermanager.dao;
 
-import Pension.conmmon.ComonDao;
+import Pension.common.ComonDao;
 import Pension.jdbc.JdbcFactory;
 import org.apache.log4j.Logger;
 

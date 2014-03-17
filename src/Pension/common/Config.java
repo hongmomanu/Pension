@@ -1,4 +1,4 @@
-package Pension.conmmon;
+package Pension.common;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
