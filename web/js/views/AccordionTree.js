@@ -1,13 +1,17 @@
 define(function () {
+
+    //text!LrBasicInfo
+    //views/weipan/View
     function f(node){
-        var htmlfile='text!/datatree.json';
-        var jsfile='views/weipan/View';
+        var jsfile='views/pension/LrBasicInfo';
         var value=node.value;
+        var htmlfile='text!views/pension/'+value+'.htm';
         var title=node.text;
+        var folder="pension";//以后配置
         require(['commonfuncs/TreeClickEvent'],function(TreeClickEvent){
             if(node.type=='1'){ //组件
-                TreeClickEvent.ShowContent(htmlfile,jsfile,title,value);
-            }if(node.type=='0'){//url
+                TreeClickEvent.ShowContent(htmlfile,jsfile,title,value,folder,null,'0000','无类型');
+            }else if(node.type=='0'){//url
                 TreeClickEvent.ShowIframe(value,jsfile,title);
             }
         });
