@@ -15,7 +15,7 @@ public class Grant {
     private HttpServletRequest request;
     private Connection conn;
 
-    public String save(){  //批处理理操作,以后实现
+    public String saveRoleFunction(){  //批处理理操作,以后实现
         CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
         int result=0;
         String functionidsOjb=request.getParameter("functionids");
@@ -29,6 +29,27 @@ public class Grant {
             commonDbUtil.execute("delete from xt_rolefunc where roleid='"+roleid+"'");
             for(String f:functionids){
                 String sql="insert into xt_rolefunc(ROLEID,FUNCTIONID)values('"+roleid+"','"+f+"')";
+                System.out.println(sql);
+                commonDbUtil.execute(sql);
+            }
+        }
+        return RtnType.SUCCESS;
+    }
+
+    public String saveRoleUser(){  //批处理理操作,以后实现
+        CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
+        int result=0;
+        String roleidsObj=request.getParameter("roleids");
+        String userid=request.getParameter("userid");
+        if(null==userid){
+            return RtnType.FAILURE;
+        }
+        String[] roleids=null;
+        if(null!=roleidsObj){
+            roleids=roleidsObj.split(",");
+            commonDbUtil.execute("delete from xt_roleuser where userid='"+userid+"'");
+            for(String r:roleids){
+                String sql="insert into xt_roleuser(userid,roleid)values('"+userid+"','"+r+"')";
                 System.out.println(sql);
                 commonDbUtil.execute(sql);
             }

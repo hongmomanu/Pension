@@ -2,6 +2,21 @@
 <html>
 <head>
     <title></title>
+    <link rel="stylesheet" type="text/css"  href="js/commonfuncs/ext/popwin.css">
+    <script type="text/javascript"  src="js/commonfuncs/ext/popwin.js"></script>
+
+    <script>
+        function formatRole(val,row){
+            return '<a href="javascript:void(0)" ' +
+                    'onclick="f(\''+row.userid+'\',\''+row.username+'\');"><span style="color:red;">角色</span><a>';
+        }
+        function f(a,b){
+            //openIframe('对<'+b+'>进行授权');
+            var u= '当前用户 <span style="color:green;">'+b+'</span>';
+            $('#win_rolegrid').window({title:u}).window('open');
+            loadRoleGrid(a)
+        }
+    </script>
 </head>
 <body>
 <div id="usermng" class="easyui-layout" style="width:1024px;height:100%;margin: 0px auto;">
@@ -21,7 +36,7 @@
             <th data-options="field:'dvname',width:60,align:'center'">区域代码</th>
             <th data-options="field:'username',width:60,align:'center'">用户名称</th>
             <th data-options="field:'createdate',width:60,align:'center'">创建时间</th>
-            <th data-options="field:'description',width:20">角色</th>
+            <th data-options="field:'grant',width:60,align:'center',formatter:formatRole">角色</th>
             <th data-options="field:'description',width:140">描述</th>
 
         </tr>
@@ -74,6 +89,28 @@
 </div>
 </div>
 </div>
+
+<div id="win_rolegrid" class="easyui-window"  style="width:600px;height:400px"
+     data-options="iconCls:'icon-save',modal:true,closed:true">
+    <div class="easyui-layout" data-options="fit:true">
+        <input type="hidden" name="userid">
+        <a href="#" class="easyui-linkbutton" onclick="saveUserRole();">保存</a>
+        <table id="rolegrid" class="easyui-datagrid" style="width:580px;">
+            <thead>
+            <tr>
+                <th data-options="field:'ck',checkbox:true"></th>
+                <th data-options="field:'roleid',width:80">ID</th>
+                <th data-options="field:'roledesc',width:100">描述</th>
+                <th data-options="field:'rolename',width:80,align:'right'">角色名称</th>
+                <th data-options="field:'status',width:80,align:'right'">状态</th>
+                <th data-options="field:'createdate',width:120,align:'right'">创建时间</th>
+            </tr>
+            </thead>
+        </table>
+
+    </div>
+</div>
+
 </body>
 </html>
 <script>
@@ -86,18 +123,18 @@ $(function(){
             $('#usergrid').datagrid('load',{
                 dvcode: node.dvcode
             })
-            $("input[name='regionid']").val(node.dvcode);
+            $("#w input[name='regionid']").val(node.dvcode);
         }
     });
 
     $('#saveUser').bind('click',function(){
-        $("input[name='userid']").val('-1');
+        $("#w input[name='userid']").val('-1');
         var regionid='';
         var me=$('#form');
         me.form('submit', {
             url:'lr.do?model=manager.User&eventName=saveUser',
             onSubmit: function(){
-                regionid=$("input[name='regionid']").val();
+                regionid=$("#w input[name='regionid']").val();
                 var isValid = $(this).form('validate');
                 if (!isValid){
                     $.messager.progress('close');	// hide progress bar while the form is invalid
@@ -113,5 +150,47 @@ $(function(){
         });
     });
 })
+
+
+function loadRoleGrid(userid){
+    $("#win_rolegrid input[name=userid]").val(userid);
+    $('#rolegrid').datagrid({
+        url:'lr.do?model=manager.Role&eventName=queryRole',
+        method:'POST',
+        singleSelect:false,collapsible:true,
+        onBeforeLoad: function (params) {
+            params.userid=userid;
+        },
+        onLoadSuccess : function(data) {
+            if (data) {
+                $.each(data.rows, function(index, item) {
+                    if (item.selected=='true') {
+                        $('#rolegrid').datagrid('checkRow',index);
+                    }
+                });
+            }
+        }
+    });
+}
+function saveUserRole(){
+    var array=[];
+    $('#rolegrid').datagrid('getChecked').forEach(function(item,index){
+        array.push(item.roleid)
+    })
+    if(array.length==0){
+       alert('0')
+       return;
+    }
+    var obj={
+        userid:$("#win_rolegrid input[name=userid]").val(),
+        roleids:array.toString()
+    }
+    $.ajax({
+        type: "POST",
+        url: 'lr.do?model=manager.Grant&eventName=saveRoleUser',
+        data:obj,
+        success: function(){$("#win_rolegrid").window('close');alert('成功')}
+    })
+}
 
 </script>
