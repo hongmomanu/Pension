@@ -7,9 +7,15 @@ package Pension.serverlet;
  * Time: 下午2:18
  * To change this template use File | Settings | File Templates.
  */
+import Pension.jdbc.JdbcFactory;
 import Pension.manager.usermanager.business.UserControl;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.StringTokenizer;
 import javax.servlet.ServletException;
@@ -54,18 +60,20 @@ public class Login extends HttpServlet {
         }
 
         UserControl user=new UserControl();
-        Map<String,Object> login_obj=user.login(username, password);
-        if(Boolean.parseBoolean(login_obj.get("issuccess").toString())){
-            request.getSession().setAttribute("username",login_obj.get("username"));
+
+        //Map<String,Object> login_obj=user.login(username, password);
+        if(login(username,password,request)){
+            /*request.getSession().setAttribute("username",login_obj.get("username"));
             request.getSession().setAttribute("userid",login_obj.get("userid"));
             request.getSession().setAttribute("roleid",login_obj.get("roleid"));
             request.getSession().setAttribute("displayname",login_obj.get("displayname"));
             request.getSession().setAttribute("divisionpath",login_obj.get("divisionpath"));
             request.getSession().setAttribute("password",password);
-            request.getSession().setAttribute("divisionid",login_obj.get("divisionid"));
+            request.getSession().setAttribute("divisionid",login_obj.get("divisionid"));*/
 
         }else{
-            request.getSession().setAttribute("loginerromsg",login_obj.get("msg"));
+            //request.getSession().setAttribute("loginerromsg",login_obj.get("msg"));
+            request.getSession().setAttribute("loginerromsg","登陆失败");
         }
 
         response.sendRedirect("");
@@ -112,6 +120,44 @@ public class Login extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
+    private boolean login(String loginname,String passwd,HttpServletRequest request){
+        //u.userid,d.dvcode,u.username,d.dvname,d.dvcode,u.loginname
+        String sql= "select 1 from xt_user u," +
+                "division d where u.regionid=d.dvcode and u.passwd=? and u.loginname=?";
+        sql="select sysdate from dual";
+        Connection conn=JdbcFactory.getConn();
+        PreparedStatement pstmt=null;
+        try {
+            pstmt=conn.prepareStatement(sql);
+            /*pstmt.setString(1,passwd);
+            pstmt.setString(2,loginname);*/
+            ResultSet rs=pstmt.executeQuery();
+            Map map=new HashMap();
+            if(rs.next()){
+                map.put("msg",rs.getString("用户验证成功"));
+                /*map.put("userid",rs.getString("userid"));
+                map.put("roleid",rs.getString(""));
+                map.put("displayname",rs.getString("username"));
+                map.put("divisionpath",rs.getString("dvname"));
+                map.put("divisionid",rs.getString("dvcode"));*/
+                request.getSession().setAttribute("userInfo",map);
+            }
+            rs.close();;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }finally {
+             try {
+                 if(pstmt!=null)
+                     pstmt.close();
+                 if(conn!=null)
+                     conn.close();
+             } catch (SQLException e) {
+                 e.printStackTrace();
+             }
+        }
+        return true;
+    }
 
 }
 

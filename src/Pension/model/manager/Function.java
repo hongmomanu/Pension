@@ -21,7 +21,7 @@ public class Function {
     private Connection conn;
 
     /*
-    业务操作中的树
+    业务操作中的树,左边业务菜单的,根据人员权限的来显示
      */
     public String queryFunctionTree(){
         CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
@@ -33,7 +33,7 @@ public class Function {
         if(null==node||"".equals(node)||"root".equals(node)){
             node="businessmenu";
         }
-        return query(commonDbUtil,node);
+        return query(commonDbUtil,node,"");
     }
     /*
     查询功能全部树
@@ -48,7 +48,7 @@ public class Function {
         if(null==node||"".equals(node)||"root".equals(node)){
             node="-1";
         }
-        return query(commonDbUtil,node);
+        return query(commonDbUtil,node,null);
     }
     /*
     查询功能
@@ -69,8 +69,11 @@ public class Function {
         return JSONObject.fromObject(map).toString();
     }
 
-    private String query(CommonDbUtil commonDbUtil,String node){
+    private String query(CommonDbUtil commonDbUtil,String node,String userid){
         String sql="select t.*,(select count(1) from xt_function where parent=t.functionid) leafcount from xt_function t where t.parent='"+node+"'";
+        if(userid!=null){
+            sql=" and t.functionid in (select rf.functionid from xt_roleuser ru,xt_rolefunc rf where ru.userid='"+userid+"' and ru.roleid=rf.roleid)";
+        }
         List<Map<String,Object>> list=new ArrayList<Map<String,Object>>();
         List querylist=commonDbUtil.query(sql);
         Iterator iterator=querylist.iterator();

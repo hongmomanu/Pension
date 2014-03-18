@@ -23,7 +23,15 @@ public class Role {
 
     public String queryRole(){
         CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
-        List list=commonDbUtil.query("select * from xt_role");
+        String userid=request.getParameter("userid");
+        String sql="select r.*,'true' selected from xt_role r";
+        if(null!=userid){
+            String useridsql="select r.roleid from xt_user u,xt_roleuser r where u.userid=r.userid and u.userid='"+userid+"'";
+            sql="select a.*,'true' selected from xt_role a where a.roleid in(" + useridsql+
+                    " ) union " +
+                    " select a.*,'false' selected from xt_role a where a.roleid not in("+useridsql+")";
+        }
+        List list=commonDbUtil.query(sql);
         Map map=new HashMap();
         map.put("total",0);
         map.put("rows",list);

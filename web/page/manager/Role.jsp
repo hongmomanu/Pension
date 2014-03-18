@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>角色管理</title>
+    <link rel="stylesheet" type="text/css"  href="js/commonfuncs/ext/popwin.css">
+    <script type="text/javascript"  src="js/commonfuncs/ext/popwin.js"></script>
     <style>
         .icon-add{
             background:url('img/edit_add.png') no-repeat;
@@ -63,7 +65,13 @@
                     'onclick="f(\''+row.roleid+'\',\''+row.rolename+'\');"><span style="color:red;">授权</span><a>';
         }
         function f(a,b){
-           alert('对<'+b+'>进行授权');
+            $.webox({
+                height:480,
+                width:400,
+                bgvisibel:true,
+                title:'对角色<<span style="color: green;">'+b+'</span>>进行授权',
+                iframe:'lr.do?model=manager.Grant&roleid='+a
+            });
         }
     </script>
 </head>
@@ -73,15 +81,6 @@
        data-options="rownumbers:true,singleSelect:true,url:'lr.do?model=manager.Role&eventName=queryRole',method:'get',toolbar:'#tb',fitColumns:true">
     <thead>
     <tr>
-        <%--<th data-options="field:'userid',width:80">用户ID</th>
-        <th data-options="field:'passwd',width:100">密码</th>
-        <th data-options="field:'loginname',width:80,align:'right'">登录名</th>
-        <th data-options="field:'dept',width:80,align:'right'">部门</th>
-        <th data-options="field:'description',width:240">描述</th>
-        <th data-options="field:'useful',width:60,align:'center'">有效</th>
-        <th data-options="field:'regionid',width:60,align:'center'">区域代码</th>
-        <th data-options="field:'username',width:60,align:'center'">用户名称</th>
-        <th data-options="field:'createdate',width:60,align:'center'">创建时间</th>--%>
             <th data-options="field:'rolename',width:60,align:'center'">角色名</th>
             <th data-options="field:'roleid',width:60,align:'center'">角色id</th>
             <th data-options="field:'roledesc',width:60,align:'center'">描述</th>

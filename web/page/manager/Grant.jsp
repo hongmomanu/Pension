@@ -11,7 +11,8 @@
 <body>
 
 <a href="#" class="easyui-linkbutton" onclick="getChecked()">GetChecked</a>
-<div class="easyui-tabs" style="height:450px" data-options="tools:'#tab-tools'" >
+<input type="hidden" value="<%=request.getParameter("roleid")%>" name="roleid">
+<div class="easyui-tabs" style="height:400px" data-options="tools:'#tab-tools'" >
 
     <div title="业务菜单" style="padding:10px">
         <ul id="functiontree" class="easyui-tree" data-options="animate:true"></ul>
@@ -60,8 +61,8 @@ function getChecked(){
     $.ajax(
             {
                 type: "POST",
-                data: { functionids : s ,roleid:'00001'},
-                url:'lr.do?model=manager.Grant&eventName=save',
+                data: { functionids : s ,roleid:$("input[name='roleid']").val()},
+                url:'lr.do?model=manager.Grant&eventName=saveRoleFunction',
                 success:function(res){alert(res)}
             }
     )
