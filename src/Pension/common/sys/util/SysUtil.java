@@ -1,4 +1,4 @@
-package Pension.common.sys.audit.util;
+package Pension.common.sys.util;
 
 /**
  * User: Administrator
