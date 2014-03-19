@@ -1,6 +1,6 @@
 define(function(){
     var a=function(){
-        alert(12)
+        //alert(12)
     }
 
     return {
