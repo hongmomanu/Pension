@@ -12,7 +12,7 @@
                 <td class="formtdtext" style="width: 100px">姓名<span style="color: red">*</span></td>
                 <td><input class="easyui-validatebox" data-options="required:true"></td>
                 <td class="formtdtext">身份证<span style="color: red">*</span></td>
-                <td><input class="easyui-validatebox" data-options="required:true"></td>
+                <td><input id="ownerid" class="easyui-validatebox" data-options="required:true,invalidMessage:'请输入正确的身份证号',validType:'personid'"></td>
                 <td class="formtdtext">出生年月</td>
                 <td><input class="easyui-datebox" data-options="formatter:myformatter,parser:myparser"></td>
             </tr>
@@ -453,4 +453,11 @@
             return new Date();
         }
     }
+
+    /*$.extend($.fn.validatebox.defaults.rules,{
+        personid:{
+            validator: PersonidValidator.IdentityCodeValid,
+            message:'身份证有误，请检查'
+        }
+    });*/
 </script>
