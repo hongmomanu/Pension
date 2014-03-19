@@ -5,6 +5,7 @@ define(function () {
         var htmlfile, jsfile;
         if(node.location){
             var widget=node.location.replace(/\./g,'/');
+            var randomstr=parseInt(Math.random()*100000);
             htmlfile='text!views/'+widget+'.htm';
             jsfile='views/'+widget;
         }

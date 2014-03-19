@@ -83,29 +83,29 @@
                     </tr>
                     <tr>
                         <td class="formtdtext">序号:</td>
-                        <td><input type="text" name="orderno"></td>
+                        <td><input class="easyui-validatebox"  type="text" name="nodetype" name="orderno"></td>
                         <td class="formtdtext">节点类型:</td>
-                        <td><input class="easyui-validatebox"  type="text" name="nodetype" data-options="required:true"></td>
+                        <td><input class="easyui-validatebox"  type="text" name="nodetype" data-options="required:true" value="0">(0叶子1节点)</td>
 
                     </tr>
                     <tr>
                         <td class="formtdtext">功能类型:</td>
-                        <td><input type="text" name="type" data-options="required:true"></td>
+                        <td><input class="easyui-validatebox" type="text" name="type" data-options="required:true" value="1">(0链接1组件)</td>
                         <td class="formtdtext">描述:</td>
-                        <td><input  type="text" name="description" data-options="required:true"></td>
+                        <td><input class="easyui-validatebox" type="text" name="description" data-options="required:true" value="描述"></td>
                     </tr>
                     <tr>
                         <td class="formtdtext">是否日志:</td>
-                        <td><input  type="text" name="log" ></td>
+                        <td><input  type="text" name="log" value="1"></td>
                         <td class="formtdtext">开发者:</td>
                         <td><input  type="text" name="developer" ></td>
 
                     </tr>
                     <tr>
                         <td class="formtdtext">审核标志:</td>
-                        <td><input  type="text" name="auflag" ></td>
+                        <td><input class="easyui-validatebox"  type="text" name="nodetype" name="auflag" data-options="required:true" value="1"></td>
                         <td class="formtdtext">回退:</td>
-                        <td><input type="text" name="rbflag" data-options="required:true"></td>
+                        <td><input class="easyui-validatebox"  type="text" name="nodetype" name="rbflag" data-options="required:true" value="1"></td>
 
 
                     </tr>

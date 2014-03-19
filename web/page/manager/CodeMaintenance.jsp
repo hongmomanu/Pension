@@ -9,7 +9,7 @@
     <div title="下拉选择项" style="padding:10px">
         <div class="easyui-layout" style="width:1010px;height:99%;margin: 0px auto;">
             <div data-options="region:'west',split:false,lines:true" style="width:500px;">
-                <table class="easyui-datagrid"
+                <%--<table class="easyui-datagrid"
                        data-options="url:'datagrid_data.json',fitColumns:true,singleSelect:true">
                     <thead>
                     <tr>
@@ -18,13 +18,13 @@
                         <th data-options="field:'price',width:100,align:'right'">Price</th>
                     </tr>
                     </thead>
-                </table>
+                </table>--%>
             </div>
             <div data-options="region:'center',split:false,lines:true">
                 <input class="easyui-combobox"
                        name="language"
                        data-options="
-                    url:'combobox_data1.json',
+                    url:'cb.do?searchtype=jobstyle',
                     method:'get',
                     valueField:'id',
                     textField:'text',
