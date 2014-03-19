@@ -1,10 +1,18 @@
 package Pension.serverlet;
 
+import Pension.common.CommonDbUtil;
+import Pension.jdbc.JdbcFactory;
+import net.sf.json.JSONArray;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Map;
 
 /**
  * User: Administrator
@@ -17,13 +25,14 @@ public class ComboboxServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String searchtype=req.getParameter("searchtype");
-        String msg="";
+        String message="";
         if(null==searchtype){
-            msg= "缺少searchtype参数";
+            message= "缺少searchtype参数";
         }else{
-            msg=getSearchType(searchtype);
+            message=getSearchType(searchtype);
         }
-        req.getRequestDispatcher("main.jsp").forward(req, resp);
+        req.setAttribute("message",message);
+        req.getRequestDispatcher("page/output.jsp").forward(req, resp);
     }
 
     @Override
@@ -32,6 +41,19 @@ public class ComboboxServlet extends HttpServlet {
     }
 
     private String getSearchType(String searchtype){
-          return null;
+        Connection conn= JdbcFactory.getConn();
+        CommonDbUtil dbUtil=new CommonDbUtil(conn);
+        List list=dbUtil.query("select aaa102 id,aaa103 text from aa10 where aaa100='"+searchtype+"'");
+        try {
+            if(null!=conn)conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        if(list.size()>0){
+            Map map=(Map)list.get(0);
+            map.put("selected",true);//第一个为默认值
+        }
+        return JSONArray.fromObject(list).toString();
     }
 }

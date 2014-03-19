@@ -3,8 +3,9 @@ define(function () {
     function f(node){
         var value=node.value;
         var htmlfile, jsfile;
-        if(node.param1){
+        if(node.location){
             var widget=node.location.replace(/\./g,'/');
+            var randomstr=parseInt(Math.random()*100000);
             htmlfile='text!views/'+widget+'.htm';
             jsfile='views/'+widget;
         }

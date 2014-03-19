@@ -49,6 +49,16 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>ComboboxServlet</servlet-name>
+        <servlet-class>Pension.serverlet.ComboboxServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ComboboxServlet</servlet-name>
+        <url-pattern>/cb.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>auditServlet</servlet-name>
         <servlet-class>Pension.serverlet.AuditServlet</servlet-class>
     </servlet>
