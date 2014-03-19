@@ -40,6 +40,7 @@ define(function(){
                     }
 
                     //jsfile.render(lookupname,folder,LoadingMask,res);
+                    jsfile.render();
 
                 };
                 require([htmlfile,jsfile],require_render);

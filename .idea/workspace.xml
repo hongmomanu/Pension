@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.jsp" afterPath="$PROJECT_DIR$/web/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pension/jdbc/JdbcFactory.java" afterPath="$PROJECT_DIR$/src/Pension/jdbc/JdbcFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/logtest.log" afterPath="$PROJECT_DIR$/logs/logtest.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Pension.iws" />
@@ -68,50 +68,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Login.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Pension/serverlet/Login.java">
+      <file leaf-file-name="AjaxForm.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/commonfuncs/AjaxForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="61" selection-start="2957" selection-end="2957" vertical-scroll-proportion="0.0" vertical-offset="890" max-vertical-offset="2070">
+            <state line="188" column="31" selection-start="8611" selection-end="8611" vertical-scroll-proportion="0.0" vertical-offset="3063" max-vertical-offset="3636">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jsp" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/index.jsp">
+      <file leaf-file-name="appformsubmit_cancelsend.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/commonfuncs/ButtonsEvents/appformsubmit_cancelsend.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="18" selection-start="635" selection-end="635" vertical-scroll-proportion="0.5841584" vertical-offset="219" max-vertical-offset="2250">
+            <state line="16" column="22" selection-start="596" selection-end="596" vertical-scroll-proportion="0.0" vertical-offset="39" max-vertical-offset="648">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserControl.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Pension/manager/usermanager/business/UserControl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="56" selection-start="1515" selection-end="1515" vertical-scroll-proportion="0.0" vertical-offset="594" max-vertical-offset="1332">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserImplement.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Pension/manager/usermanager/impl/UserImplement.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="22" selection-start="1383" selection-end="1383" vertical-scroll-proportion="0.0" vertical-offset="494" max-vertical-offset="864">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserDao.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Pension/manager/usermanager/dao/UserDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="8" selection-start="2176" selection-end="2176" vertical-scroll-proportion="0.0" vertical-offset="831" max-vertical-offset="3042">
-              <folding>
-                <element signature="e#1474#1490#0" expanded="true" />
-                <element signature="e#2487#2503#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -128,7 +98,7 @@
       <file leaf-file-name="addnewfunc.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/ajax/addnewfunc.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="24" selection-start="727" selection-end="727" vertical-scroll-proportion="-10.666667" vertical-offset="126" max-vertical-offset="522">
+            <state line="23" column="2" selection-start="727" selection-end="727" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="522">
               <folding />
             </state>
           </provider>
@@ -137,16 +107,7 @@
       <file leaf-file-name="db.sql" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/db.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="55" selection-start="533" selection-end="533" vertical-scroll-proportion="-3.96" vertical-offset="0" max-vertical-offset="900">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OracleSql.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Pension/jdbc/OracleSql.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="48" selection-start="460" selection-end="460" vertical-scroll-proportion="0.0" vertical-offset="26" max-vertical-offset="2484">
+            <state line="18" column="34" selection-start="499" selection-end="499" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="1008">
               <folding />
             </state>
           </provider>
@@ -155,7 +116,43 @@
       <file leaf-file-name="JdbcFactory.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Pension/jdbc/JdbcFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="25" selection-start="1761" selection-end="1761" vertical-scroll-proportion="0.0" vertical-offset="1106" max-vertical-offset="1692">
+            <state line="98" column="24" selection-start="2974" selection-end="2974" vertical-scroll-proportion="0.0" vertical-offset="1764" max-vertical-offset="3060">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sendapply.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/ajax/sendapply.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="41" column="38" selection-start="1589" selection-end="1589" vertical-scroll-proportion="0.0" vertical-offset="337" max-vertical-offset="882">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BusinessProcessControl.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Pension/business/control/BusinessProcessControl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2536" column="28" selection-start="130657" selection-end="130657" vertical-scroll-proportion="0.0" vertical-offset="45648" max-vertical-offset="46458">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BusinessProcess.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Pension/business/impl/BusinessProcess.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="90" selection-start="1437" selection-end="1437" vertical-scroll-proportion="-0.6847826" vertical-offset="648" max-vertical-offset="6066">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BusinessProcessDao.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Pension/business/dao/BusinessProcessDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="496" column="61" selection-start="17957" selection-end="17957" vertical-scroll-proportion="0.0" vertical-offset="8928" max-vertical-offset="9162">
               <folding />
             </state>
           </provider>
@@ -177,7 +174,6 @@
         <option value="$PROJECT_DIR$/src/Pension/enums/EnumApplyType.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/Pension/serverlet/Logout.java" />
-        <option value="$PROJECT_DIR$/web/js/layoutinit.js" />
         <option value="$PROJECT_DIR$/web/ajax/addnewdivision.jsp" />
         <option value="$PROJECT_DIR$/web/ajax/addnewenum.jsp" />
         <option value="$PROJECT_DIR$/web/ajax/addnewrole.jsp" />
@@ -192,13 +188,14 @@
         <option value="$PROJECT_DIR$/web/ajax/image.json" />
         <option value="$PROJECT_DIR$/src/Pension/jdbc/OracleSql.java" />
         <option value="$PROJECT_DIR$/src/Pension/business/dao/BusinessProcessDao.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/db.sql" />
         <option value="$PROJECT_DIR$/src/config.properties" />
-        <option value="$PROJECT_DIR$/src/Pension/jdbc/JdbcFactory.java" />
         <option value="$PROJECT_DIR$/src/Pension/manager/usermanager/dao/UserDao.java" />
         <option value="$PROJECT_DIR$/web/js/config.js" />
         <option value="$PROJECT_DIR$/web/ajax/addnewfunc.jsp" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
+        <option value="$PROJECT_DIR$/web/js/layoutinit.js" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/db.sql" />
+        <option value="$PROJECT_DIR$/src/Pension/jdbc/JdbcFactory.java" />
       </list>
     </option>
   </component>
@@ -218,10 +215,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-2" />
     <option name="y" value="30" />
-    <option name="width" value="1370" />
-    <option name="height" value="740" />
+    <option name="width" value="1366" />
+    <option name="height" value="738" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -251,7 +247,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -298,72 +293,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pension" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pension" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pension" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pension" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="navigation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pension" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pension" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="ajax" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -385,6 +314,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -404,6 +334,8 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="dynamic.classpath" value="false" />
+    <property name="LayoutCode.rearrangeEntries&lt;Generic&gt;" value="false" />
+    <property name="LayoutCode.rearrangeEntriesOracle" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -436,7 +368,13 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="Pension" />
       <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -855,7 +793,11 @@
       <created>1394605089243</created>
       <updated>1394605089243</updated>
       <workItem from="1394605094916" duration="1959000" />
-      <workItem from="1394607086034" duration="11441000" />
+      <workItem from="1394607086034" duration="13040000" />
+      <workItem from="1394676895598" duration="1259000" />
+      <workItem from="1394680641329" duration="6204000" />
+      <workItem from="1394687998094" duration="1519000" />
+      <workItem from="1395206715245" duration="103000" />
     </task>
     <task id="LOCAL-00001" summary="first commit&#10;">
       <created>1394673738568</created>
@@ -865,11 +807,23 @@
       <created>1394673762576</created>
       <updated>1394673762576</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="first commit&#10;">
+      <created>1394673954717</created>
+      <updated>1394673954717</updated>
+    </task>
+    <task id="LOCAL-00004" summary="first commit&#10;">
+      <created>1394674520651</created>
+      <updated>1394674520651</updated>
+    </task>
+    <task id="LOCAL-00005" summary="first commit&#10;">
+      <created>1394674597718</created>
+      <updated>1394674597718</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13400000" />
+    <option name="totallyTimeSpent" value="24084000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -892,36 +846,36 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2" y="30" width="1370" height="740" extended-state="6" />
+    <frame x="0" y="30" width="1366" height="738" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32744783" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3993559" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32744783" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32850242" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905295" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24924472" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32744783" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24924242" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3268921" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3268921" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32744783" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -948,301 +902,169 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="54" selection-start="1311" selection-end="1311" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="954">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="63" selection-start="4821" selection-end="4821" vertical-scroll-proportion="0.0" vertical-offset="1620" max-vertical-offset="2250">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/config.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/mainapp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="21" selection-start="178" selection-end="178" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="324">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/layoutinit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="156" column="50" selection-start="6018" selection-end="6018" vertical-scroll-proportion="0.0" vertical-offset="2272" max-vertical-offset="3132">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/js/controllers/MainViewController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="85" selection-start="199" selection-end="199" vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="396">
-          <folding />
-        </state>
+        <state line="6" column="85" selection-start="199" selection-end="199" vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="396" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Pension/serverlet/Logout.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="25" selection-start="92" selection-end="92" vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="684">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
+        <state line="3" column="25" selection-start="92" selection-end="92" vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="684" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/views/MainTree.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="77" selection-start="2208" selection-end="2208" vertical-scroll-proportion="0.0" vertical-offset="666" max-vertical-offset="1260">
-          <folding />
-        </state>
+        <state line="61" column="77" selection-start="2208" selection-end="2208" vertical-scroll-proportion="0.0" vertical-offset="666" max-vertical-offset="1260" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/controllers/ManagerController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="55" selection-start="1006" selection-end="1006" vertical-scroll-proportion="0.0" vertical-offset="112" max-vertical-offset="756">
-          <folding />
-        </state>
+        <state line="36" column="55" selection-start="1006" selection-end="1006" vertical-scroll-proportion="0.0" vertical-offset="112" max-vertical-offset="756" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Pension/enums/EnumApplyType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="12" selection-start="187" selection-end="187" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1494">
-          <folding />
-        </state>
+        <state line="9" column="12" selection-start="187" selection-end="187" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1494" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Pension/conmmon/ComonDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="13" selection-start="458" selection-end="458" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2628">
-          <folding />
-        </state>
+        <state line="20" column="13" selection-start="458" selection-end="458" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2628" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Pension/serverlet/Logout.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="30" selection-start="306" selection-end="306" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="684">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
+        <state line="10" column="30" selection-start="306" selection-end="306" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="684" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/enc-base64-min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="355">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="355" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/mainapp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="21" selection-start="178" selection-end="178" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="324">
-          <folding />
-        </state>
+        <state line="7" column="21" selection-start="178" selection-end="178" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="324" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/require.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="37008">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="37008" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/ajax/proxy.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="17" selection-start="17" selection-end="25" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="486">
-          <folding />
-        </state>
+        <state line="0" column="17" selection-start="17" selection-end="25" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="486" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/ajax/addnewdivision.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="17" selection-start="164" selection-end="164" vertical-scroll-proportion="-5.3333335" vertical-offset="0" max-vertical-offset="540">
-          <folding />
-        </state>
+        <state line="8" column="17" selection-start="164" selection-end="164" vertical-scroll-proportion="-5.3333335" vertical-offset="0" max-vertical-offset="540" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/ajax/addnewenum.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="17" selection-start="164" selection-end="164" vertical-scroll-proportion="-5.3333335" vertical-offset="0" max-vertical-offset="612">
-          <folding />
-        </state>
+        <state line="8" column="17" selection-start="164" selection-end="164" vertical-scroll-proportion="-5.3333335" vertical-offset="0" max-vertical-offset="612" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/ajax/addnewrole.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="17" selection-start="164" selection-end="164" vertical-scroll-proportion="-5.3333335" vertical-offset="0" max-vertical-offset="486">
-          <folding />
-        </state>
+        <state line="8" column="17" selection-start="164" selection-end="164" vertical-scroll-proportion="-5.3333335" vertical-offset="0" max-vertical-offset="486" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/ajax/addnewuser.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="17" selection-start="164" selection-end="164" vertical-scroll-proportion="-5.3333335" vertical-offset="0" max-vertical-offset="738">
-          <folding />
-        </state>
+        <state line="8" column="17" selection-start="164" selection-end="164" vertical-scroll-proportion="-5.3333335" vertical-offset="0" max-vertical-offset="738" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/ajax/cancelApproval.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="44" selection-start="389" selection-end="389" vertical-scroll-proportion="-7.3333335" vertical-offset="0" max-vertical-offset="738">
-          <folding />
-        </state>
+        <state line="11" column="44" selection-start="389" selection-end="389" vertical-scroll-proportion="-7.3333335" vertical-offset="0" max-vertical-offset="738" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/views/navigation/menu_qxgl.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="370">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="370" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/ajax/getfuncsbyrule.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="522">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="522" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/ajax/gettreefuncsbyrule.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="250" selection-start="254" selection-end="254" vertical-scroll-proportion="-2.6666667" vertical-offset="0" max-vertical-offset="180">
-          <folding />
-        </state>
+        <state line="4" column="250" selection-start="254" selection-end="254" vertical-scroll-proportion="-2.6666667" vertical-offset="0" max-vertical-offset="180" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/views/MainTree.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="47" selection-start="39" selection-end="39" vertical-scroll-proportion="0.10084034" vertical-offset="0" max-vertical-offset="1260">
-          <folding />
-        </state>
+        <state line="2" column="47" selection-start="39" selection-end="39" vertical-scroll-proportion="0.10084034" vertical-offset="0" max-vertical-offset="1260" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/ajax/getfuncsbyrule.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="65" selection-start="69" selection-end="81" vertical-scroll-proportion="-2.6666667" vertical-offset="0" max-vertical-offset="180">
-          <folding />
-        </state>
+        <state line="4" column="65" selection-start="69" selection-end="81" vertical-scroll-proportion="-2.6666667" vertical-offset="0" max-vertical-offset="180" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/views/navigation/menu_pension.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="41" selection-start="272" selection-end="272" vertical-scroll-proportion="-4.6666665" vertical-offset="0" max-vertical-offset="234">
-          <folding />
-        </state>
+        <state line="7" column="41" selection-start="272" selection-end="272" vertical-scroll-proportion="-4.6666665" vertical-offset="0" max-vertical-offset="234" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/ajax/image.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="29" selection-start="72" selection-end="72" vertical-scroll-proportion="-2.0" vertical-offset="0" max-vertical-offset="702">
-          <folding />
-        </state>
+        <state line="3" column="29" selection-start="72" selection-end="72" vertical-scroll-proportion="-2.0" vertical-offset="0" max-vertical-offset="702" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/ajax/getallfuncsbyrule.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="24" selection-start="28" selection-end="28" vertical-scroll-proportion="-2.6666667" vertical-offset="0" max-vertical-offset="180">
-          <folding />
-        </state>
+        <state line="4" column="24" selection-start="28" selection-end="28" vertical-scroll-proportion="-2.6666667" vertical-offset="0" max-vertical-offset="180" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/views/ManagerTree.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="65" selection-start="935" selection-end="935" vertical-scroll-proportion="0.0" vertical-offset="206" max-vertical-offset="954">
-          <folding />
-        </state>
+        <state line="23" column="65" selection-start="935" selection-end="935" vertical-scroll-proportion="0.0" vertical-offset="206" max-vertical-offset="954" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="45" selection-start="624" selection-end="624" vertical-scroll-proportion="0.048648648" vertical-offset="324" max-vertical-offset="756">
-          <folding />
-        </state>
+        <state line="19" column="45" selection-start="624" selection-end="624" vertical-scroll-proportion="0.048648648" vertical-offset="324" max-vertical-offset="756" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/controllers/ManagerController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="572">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="572" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/controllers/MainViewController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="49" selection-start="351" selection-end="351" vertical-scroll-proportion="0.5837838" vertical-offset="0" max-vertical-offset="396">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/layoutinit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="151" column="29" selection-start="5707" selection-end="5717" vertical-scroll-proportion="0.6594595" vertical-offset="2474" max-vertical-offset="3132">
-          <folding />
-        </state>
+        <state line="12" column="49" selection-start="351" selection-end="351" vertical-scroll-proportion="0.5837838" vertical-offset="0" max-vertical-offset="396" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Pension/jdbc/SqliteSql.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="30" selection-start="1041" selection-end="1041" vertical-scroll-proportion="0.0" vertical-offset="206" max-vertical-offset="2484">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
+        <state line="33" column="30" selection-start="1041" selection-end="1041" vertical-scroll-proportion="0.0" vertical-offset="206" max-vertical-offset="2484" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Pension/jdbc/PostgreSql.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="31" selection-start="1135" selection-end="1135" vertical-scroll-proportion="0.0" vertical-offset="116" max-vertical-offset="2484">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pension/business/dao/BusinessProcessDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="69" selection-start="841" selection-end="841" vertical-scroll-proportion="0.0" vertical-offset="183" max-vertical-offset="8982">
-          <folding>
-            <element signature="e#1047#1063#0" expanded="true" />
-            <element signature="e#3568#3589#0" expanded="true" />
-            <element signature="e#3850#3866#0" expanded="true" />
-            <element signature="e#4563#4584#0" expanded="true" />
-            <element signature="e#4689#4705#0" expanded="true" />
-            <element signature="e#5679#5700#0" expanded="true" />
-            <element signature="e#5991#6007#0" expanded="true" />
-            <element signature="e#6820#6836#0" expanded="true" />
-            <element signature="e#8804#8825#0" expanded="true" />
-            <element signature="e#9287#9303#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="33" column="31" selection-start="1135" selection-end="1135" vertical-scroll-proportion="0.0" vertical-offset="116" max-vertical-offset="2484" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Pension/jdbc/OracleSql.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="48" selection-start="460" selection-end="460" vertical-scroll-proportion="0.0" vertical-offset="26" max-vertical-offset="2484">
-          <folding />
-        </state>
+        <state line="17" column="48" selection-start="460" selection-end="460" vertical-scroll-proportion="0.0" vertical-offset="26" max-vertical-offset="2484" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Pension/manager/usermanager/impl/UserImplement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="22" selection-start="1383" selection-end="1383" vertical-scroll-proportion="0.0" vertical-offset="494" max-vertical-offset="864">
-          <folding />
-        </state>
+        <state line="43" column="22" selection-start="1383" selection-end="1383" vertical-scroll-proportion="0.0" vertical-offset="494" max-vertical-offset="864" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
@@ -1252,49 +1074,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pension/serverlet/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="61" selection-start="2957" selection-end="2957" vertical-scroll-proportion="0.0" vertical-offset="890" max-vertical-offset="2070">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/config.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="17" selection-start="191" selection-end="191" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pension/manager/usermanager/business/UserControl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="56" selection-start="1515" selection-end="1515" vertical-scroll-proportion="0.0" vertical-offset="594" max-vertical-offset="1332">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pension/jdbc/JdbcFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="25" selection-start="1761" selection-end="1761" vertical-scroll-proportion="0.0" vertical-offset="1106" max-vertical-offset="1692">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/db.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="55" selection-start="533" selection-end="533" vertical-scroll-proportion="-3.96" vertical-offset="0" max-vertical-offset="900">
-          <folding />
-        </state>
+        <state line="6" column="17" selection-start="191" selection-end="191" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Pension/manager/usermanager/dao/UserDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="8" selection-start="2176" selection-end="2176" vertical-scroll-proportion="0.0" vertical-offset="831" max-vertical-offset="3042">
-          <folding>
-            <element signature="e#1474#1490#0" expanded="true" />
-            <element signature="e#2487#2503#0" expanded="true" />
-          </folding>
+        <state line="58" column="0" selection-start="2176" selection-end="2176" vertical-scroll-proportion="0.0" vertical-offset="831" max-vertical-offset="3042" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="23" selection-start="4029" selection-end="4029" vertical-scroll-proportion="0.33333334" vertical-offset="1429" max-vertical-offset="2250">
+          <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/commonfuncs/ButtonsEvents/appformsubmit_cancelapproval.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="37" selection-start="1388" selection-end="1388" vertical-scroll-proportion="0.0" vertical-offset="296" max-vertical-offset="882" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pension/manager/usermanager/business/UserControl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="56" selection-start="1515" selection-end="1515" vertical-scroll-proportion="0.0" vertical-offset="594" max-vertical-offset="1332" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pension/serverlet/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="31" selection-start="2957" selection-end="2957" vertical-scroll-proportion="0.0" vertical-offset="890" max-vertical-offset="2070" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/config.js">
@@ -1304,16 +1113,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/ajax/addnewfunc.jsp">
+    <entry file="file://$PROJECT_DIR$/web/js/commonfuncs/AjaxForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="24" selection-start="727" selection-end="727" vertical-scroll-proportion="-10.666667" vertical-offset="126" max-vertical-offset="522">
+        <state line="188" column="31" selection-start="8611" selection-end="8611" vertical-scroll-proportion="0.0" vertical-offset="3063" max-vertical-offset="3636">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+    <entry file="file://$PROJECT_DIR$/web/js/commonfuncs/ButtonsEvents/appformsubmit_cancelsend.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="18" selection-start="635" selection-end="635" vertical-scroll-proportion="0.5841584" vertical-offset="219" max-vertical-offset="2250">
+        <state line="16" column="22" selection-start="596" selection-end="596" vertical-scroll-proportion="0.0" vertical-offset="39" max-vertical-offset="648">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ajax/addnewfunc.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="2" selection-start="727" selection-end="727" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="522">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/layoutinit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="92" column="0" selection-start="3821" selection-end="3821" vertical-scroll-proportion="0.0" vertical-offset="1430" max-vertical-offset="3042" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/db.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="34" selection-start="499" selection-end="499" vertical-scroll-proportion="0.0" vertical-offset="241" max-vertical-offset="1008">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pension/jdbc/JdbcFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="24" selection-start="2974" selection-end="2974" vertical-scroll-proportion="0.0" vertical-offset="1494" max-vertical-offset="2970">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ajax/sendapply.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="38" selection-start="1589" selection-end="1589" vertical-scroll-proportion="0.0" vertical-offset="337" max-vertical-offset="882">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pension/business/control/BusinessProcessControl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2536" column="28" selection-start="130657" selection-end="130657" vertical-scroll-proportion="0.0" vertical-offset="45012" max-vertical-offset="46134">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pension/business/dao/BusinessProcessDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="496" column="61" selection-start="17957" selection-end="17957" vertical-scroll-proportion="0.0" vertical-offset="8225" max-vertical-offset="8982">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pension/business/impl/BusinessProcess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="90" selection-start="1437" selection-end="1437" vertical-scroll-proportion="-0.6847826" vertical-offset="648" max-vertical-offset="6066">
           <folding />
         </state>
       </provider>

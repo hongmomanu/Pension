@@ -51,66 +51,21 @@
         }
 
 
-            /* button
-    ---------------------------------------------- */
-        .button {
-            display: inline-block;
-            zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */
-            *display: inline;
-            vertical-align: baseline;
-            margin: 0 2px;
-            outline: none;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            font: 14px/100% Arial, Helvetica, sans-serif;
-            padding: .5em 2em .55em;
-            text-shadow: 0 1px 1px rgba(0,0,0,.3);
-            -webkit-border-radius: .5em;
-            -moz-border-radius: .5em;
-            border-radius: .5em;
-            -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
-            -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
-            box-shadow: 0 1px 2px rgba(0,0,0,.2);
-        }
-        .button:hover {
-            text-decoration: none;
-        }
-        .button:active {
-            position: relative;
-            top: 1px;
-        }
-
-        .bigrounded {
-            -webkit-border-radius: 2em;
-            -moz-border-radius: 2em;
-            border-radius: 2em;
-        }
-        .medium {
-            font-size: 12px;
-            padding: .4em 1.5em .42em;
-        }
-        .small {
-            font-size: 11px;
-            padding: .2em 1em .275em;
-        }
     </style>
 </head>
 <body>
 <form id="form" method="post">
-<div id="functionmng" class="easyui-layout" style="width:1024px;height:100%;margin: 0px auto;">
-    <div data-options="region:'west',title:'功能树',split:false" style="width:300px;">
+<div id="functionmng" class="easyui-layout" style="width:1024px;height:99%;margin: 0px auto;">
+    <div data-options="region:'west',title:'功能树',split:false,lines:true" style="width:300px;">
         <ul id="functiontree"></ul>
     </div>
 
     <div data-options="region:'center',title:'功能详细信息'">
 
-        <div>
-            <a  class="button blue" id="newFun">新建</a>
-            <a  class="button blue" id="saveFun">保存</a>
-            <a  class="button blue" id="deleteFun">删除</a>
 
-        </div>
+        <a href="#" class="easyui-linkbutton" id="newFun">新建</a>
+        <a href="#" class="easyui-linkbutton" id="saveFun">保存</a>
+        <a href="#" class="easyui-linkbutton" id="deleteFun">删除</a>
         <input type="hidden" name="functionid">
         <fieldset ><legend>功能</legend>
             <div>
