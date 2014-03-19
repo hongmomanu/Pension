@@ -17,17 +17,23 @@
 <html>
 
 <head>
+    <meta charset="utf-8">
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+    <META HTTP-EQUIV="Expires"CONTENT="0">
+
 
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" >
     <title>杭州市民政养老救助管理系统</title>
 
+    <script type="text/javascript" src="js/extLocation.js"></script>
     <script type="text/javascript" src="js/config.js"></script>
     <script type="text/javascript">
 
         /*session全局变量*/
         var onlinenums=<%= SessionListener.size()%>;
-        var userid=<%=request.getSession().getAttribute("userid")%>;
+        var userid='<%=request.getSession().getAttribute("userid")%>';
         var username="<%=request.getSession().getAttribute("username")%>";
         var roleid=<%=request.getSession().getAttribute("roleid")%>;
         var displayname="<%=request.getSession().getAttribute("displayname")%>";

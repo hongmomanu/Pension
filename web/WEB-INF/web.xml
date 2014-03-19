@@ -38,6 +38,26 @@
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>LRServlet</servlet-name>
+        <servlet-class>Pension.serverlet.LRServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>LRServlet</servlet-name>
+        <url-pattern>/lr.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>auditServlet</servlet-name>
+        <servlet-class>Pension.serverlet.AuditServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>auditServlet</servlet-name>
+        <url-pattern>/audit.do</url-pattern>
+    </servlet-mapping>
+
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>

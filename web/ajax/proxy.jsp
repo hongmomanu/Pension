@@ -1,4 +1,4 @@
-<%@ page import="Pension.conmmon.UrlConnectHelper" %>
+<%@ page import="Pension.common.UrlConnectHelper" %>
 <%--
   Created by IntelliJ IDEA.
   User: jack

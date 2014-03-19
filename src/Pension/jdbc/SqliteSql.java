@@ -1,6 +1,6 @@
 package Pension.jdbc;
 
-import Pension.conmmon.Config;
+import Pension.common.Config;
 import org.apache.log4j.Logger;
 
 import java.sql.*;

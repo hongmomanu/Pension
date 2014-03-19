@@ -68,11 +68,16 @@ public class JdbcFactory {
 
     }
 
+    public static  Connection getConn(){
+        return DBPool.getInstance().getConnection();
+    }
+
     public static  void main(String[] args){
         /*Connection testConn=JdbcFactory.getConn("sqlite");
         PreparedStatement pstmt = JdbcFactory.getPstmt(testConn, "select count(*) from users");*/
-        Connection testConn=JdbcFactory.getConn("oracle");
-        PreparedStatement pstmt = JdbcFactory.getPstmt(testConn, "update users set divisionid=1");
+        Connection testConn=JdbcFactory.getConn();
+        //Connection testConn=JdbcFactory.getConn("oracle");
+        PreparedStatement pstmt = JdbcFactory.getPstmt(testConn, "select * from users where 1=0");
 
         try {
         ResultSet rs = pstmt.executeQuery();

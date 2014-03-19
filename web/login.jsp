@@ -186,8 +186,8 @@
         var password=document.getElementById("password");
         var username=document.getElementById("username");
         if(''!=username||''!=password){
-            password.value=CryptoJS.enc.Base64.stringify(CryptoJS.MD5(password.value));
-
+            //password.value=CryptoJS.enc.Base64.stringify(CryptoJS.MD5(password.value));
+             //加密
             document.getElementById("myform").submit();
         }
 

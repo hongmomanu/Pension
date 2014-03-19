@@ -1,6 +1,6 @@
 package Pension.manager.configmanager.business;
 
-import Pension.conmmon.ComonDao;
+import Pension.common.ComonDao;
 import Pension.manager.configmanager.impl.EnumImplement;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;

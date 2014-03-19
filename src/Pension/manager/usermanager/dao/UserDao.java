@@ -1,6 +1,6 @@
 package Pension.manager.usermanager.dao;
 
-import Pension.conmmon.ComonDao;
+import Pension.common.ComonDao;
 import Pension.jdbc.JdbcFactory;
 import org.apache.log4j.Logger;
 
@@ -55,10 +55,12 @@ public class UserDao {
     }
 
     public Map<String,Object> login(String username,String password){
-        Connection testConn= JdbcFactory.getConn("oracle");
+        Connection testConn= JdbcFactory.getConn();
 
         String sql=  "select a.id,a.roleid,a.displayname,b.divisionpath,b.id from "+UserTable+" a, " +DivisionTable+" b"+
                 " where password=? and username=?  and a.divisionid=b.id";
+        sql= "select u.userid,'',u.username,d.dvname,d.dvcode,u.loginname from xt_user u," +
+                "division d where u.regionid=d.dvcode and u.passwd=? and u.loginname=?";
         PreparedStatement pstmt = JdbcFactory.getPstmt(testConn, sql);
         Map<String,Object> res=new HashMap<String, Object>();
         try {
@@ -67,18 +69,15 @@ public class UserDao {
             pstmt.setString(2, username);
             ResultSet rs = pstmt.executeQuery();
             boolean issuccess=false;
-            while (rs.next()) {
+            if (rs.next()) {
                 issuccess=true;
                 res.put("issuccess", true);
-
                 res.put("msg", "用户验证成功");
-                res.put("userid", rs.getInt(1));
-                res.put("roleid", rs.getInt(2));
+                res.put("userid", rs.getString(1).toString());
+                res.put("roleid", rs.getString(2));
                 res.put("displayname", rs.getString(3));
                 res.put("divisionpath", rs.getString(4));
-                res.put("divisionid", rs.getInt(5));
-
-
+                res.put("divisionid", rs.getString(5).toString());
             }
             if(!issuccess){
                 res.put("issuccess", false);

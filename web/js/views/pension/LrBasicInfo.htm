@@ -1,0 +1,456 @@
+<!--老年人基本信息-->
+<fieldset style="width: 900px">
+    <legend>老年人基本信息</legend>
+    <div style="width: 900px">
+        <table class="formtable" style="width: 900px">
+            <tr>
+                <td class="formtdtext" style="width: 100px">行政区划<span style="color: red">*</span></td>
+                <td colspan="5"><input class="easyui-validatebox" data-options="required:true" style="width: 300px"></td>
+                <td rowspan="3" colspan="2" style="text-align: center"><img src="" alt="用户照片" width="120"></td>
+            </tr>
+            <tr>
+                <td class="formtdtext" style="width: 100px">姓名<span style="color: red">*</span></td>
+                <td><input class="easyui-validatebox" data-options="required:true"></td>
+                <td class="formtdtext">身份证<span style="color: red">*</span></td>
+                <td><input class="easyui-validatebox" data-options="required:true"></td>
+                <td class="formtdtext">出生年月</td>
+                <td><input class="easyui-datebox" data-options="formatter:myformatter,parser:myparser"></td>
+            </tr>
+            <tr>
+                <td class="formtdtext">性别</td>
+                <td>
+                    <select class="easyui-cocombox" name="sex" style="width: 100px">
+                        <option value="man">男</option>
+                        <option value="woman">女</option>
+                    </select>
+                </td>
+                <td class="formtdtext">年龄</td>
+                <td><input class="easyui-validatebox"></td>
+                <td class="formtdtext">民族</td>
+                <td>
+                    <select class="easyui-cocombox" name="nation" style="width: 100px">
+                        <option value="han">汉族</option>
+                        <option value="other">少数民族</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <table class="formtable" style="width: 900px">
+            <tr>
+                <td class="formtdtext">家庭住址<span style="color: red">*</span></td>
+                <td colspan="3"><input class="easyui-validatebox" data-options="required:true" style="width: 300px"></td>
+                <td class="formtdtext">人员类型<span style="color: red">*</span></td>
+                <td>
+                    <select class="easyui-cocombox">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="formtdtext">户籍地<span style="color: red">*</span></td>
+                <td colspan="5"><input class="easyui-validatebox" data-options="required:true" style="width: 300px"></td>
+            </tr>
+            <tr>
+                <td class="formtdtext">居住环境<span style="color: red">*</span></td>
+                <td>
+                    <select class="easyui-cocombox" data-options="required:true" style="width: 100px">
+                        <option value="good">良好</option>
+                        <option value="bad">差</option>
+                    </select>
+                </td>
+                <td class="formtdtext">婚姻状况<span style="color: red">*</span></td>
+                <td>
+                    <select class="easyui-cocombox" data-options="required:true" style="width: 100px">
+                        <option value="married">已婚</option>
+                        <option value="single">未婚</option>
+                    </select>
+                </td>
+                <td class="formtdtext">家庭经济条件<span style="color: red">*</span></td>
+                <td>
+                    <select class="easyui-cocombox" data-options="required:true" style="100px">
+                        <option value="good">良好</option>
+                        <option value="bad">差</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="formtdtext">曾从事职业</td>
+                <td><input class="easyui-validatebox"></td>
+                <td class="formtdtext">文化程度<span style="color: red">*</span></td>
+                <td>
+                    <select class="easyui-cocombox" data-options="required:true" style="width: 100px">
+                        <option value="wenmang">文盲</option>
+                        <option value="xiaoxue">小学</option>
+                        <option value="chuzhong">初中</option>
+                        <option value="other">高中以上</option>
+                    </select>
+                </td>
+                <td class="formtdtext">手机号码</td>
+                <td><input class="easyui-validatebox"></td>
+            </tr>
+            <tr>
+                <td class="formtdtext">退休工资</td>
+                <td><input class="easyui-validatebox"></td>
+                <td class="formtdtext">住宅电话</td>
+                <td><input class="easyui-validatebox"></td>
+                <td class="formtdtext">老人呼叫机</td>
+                <td><input class="easyui-validate"></td>
+            </tr>
+            <tr>
+                <td class="formtdtext">呼叫机种类</td>
+                <td>
+                    <select class="easyui-cocombox" style="width: 100px">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </td>
+                <td class="formtdtext">呼叫机类型</td>
+                <td>
+                    <select class="easyui-cocombox" style="width: 100px">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </td>
+                <td class="formtdtext">呼叫手机号</td>
+                <td><input class="easyui-validatebox"></td>
+            </tr>
+
+        </table>
+    </div>
+</fieldset>
+
+<!--享受服务类型-->
+<fieldset style="width: 900px">
+    <legend>享受服务类型</legend>
+    <div>
+        <label><input name="Fruit" type="checkbox" value="" />居家养老服务 </label>
+        <label><input name="Fruit" type="checkbox" value="" />服务卷 </label>
+        <label><input name="Fruit" type="checkbox" value="" />免费体检 </label>
+        <label><input name="Fruit" type="checkbox" value="" />订阅老年报 </label>
+        <label><input name="Fruit" type="checkbox" value="" />机构养老 </label>
+        <label><input name="Fruit" type="checkbox" value="" />体验服务 </label>
+        <label><input name="Fruit" type="checkbox" value="" />呼叫机 </label>
+        <label><input name="Fruit" type="checkbox" value="" />其他 </label>
+    </div>
+</fieldset>
+
+<!--居住信息-->
+<fieldset style="width: 900px">
+    <legend>居住信息</legend>
+    <div>
+        <table class="formtable" style="width: 900px">
+            <tr>
+                <td class="formtdtext">邻居一姓名</td>
+                <td><input class="easyui-validatebox"></td>
+                <td class="formtdtext">邻居一位置</td>
+                <td>
+                    <select class="easyui-cocombox" style="width: 100px">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </td>
+                <td class="formtdtext">邻居一电话</td>
+                <td><input class="easyui-validatebox"></td>
+            </tr>
+            <tr>
+                <td class="formtdtext">邻居二姓名</td>
+                <td><input class="easyui-validatebox"></td>
+                <td class="formtdtext">邻居二位置</td>
+                <td>
+                    <select class="easyui-cocombox" style="width: 100px">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </td>
+                <td class="formtdtext">邻居二电话</td>
+                <td><input class="easyui-validatebox"></td>
+            </tr>
+            <tr>
+                <td class="formtdtext">物业名称</td>
+                <td><input class="easyui-validatebox"></td>
+                <td class="formtdtext">门卫电话</td>
+                <td><input class="easyui-validatebox"></td>
+                <td class="formtdtext">值班电话</td>
+                <td><input class="easyui-validatebox"></td>
+            </tr>
+            <tr>
+                <td class="formtdtext">社区卫生院名称</td>
+                <td><input class="easyui-validatebox"></td>
+                <td class="formtdtext">责任医生</td>
+                <td><input class="easyui-validatebox"></td>
+                <td class="formtdtext">联系电话</td>
+                <td><input class="easyui-validatebox"></td>
+            </tr>
+        </table>
+    </div>
+</fieldset>
+
+<!--健康信息-->
+<fieldset style="width: 900px">
+    <legend>健康信息</legend>
+    <div>
+        <table class="formtable" style="width: 900px">
+            <tr>
+                <td class="formtdtext">血型</td>
+                <td>
+                    <select class="easyui-cocombox" style="width: 100px">
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="AB">AB</option>
+                        <option value="O">O</option>
+                    </select>
+                </td>
+                <td class="formtdtext">血压</td>
+                <td>
+                    <select class="easyui-cocombox" style="width: 100px">
+                        <option value="high">高</option>
+                        <option value="normal">正常</option>
+                        <option value="low">低</option>
+                    </select>
+                </td>
+                <td class="formtdtext">起搏器情况</td>
+                <td>
+                    <select class="easyui-cocombox" style="width: 100px">
+                        <option value="normal">正常</option>
+                        <option value="abnormal">异常</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="formtdtext">过敏史</td>
+                <td><input class="easyui-validatebox"></td>
+                <td class="formtdtext">视力情况</td>
+                <td>
+                    <select class="easyui-cocombox" style="width: 100px">
+                        <option value="normal">正常</option>
+                        <option value="myopia">近视</option>
+                        <option value="hyperopia">远视</option>
+                    </select>
+                </td>
+                <td class="formtdtext">听力情况</td>
+                <td>
+                    <select class="easyui-cocombox" style="width: 100px">
+                        <option value="normal">正常</option>
+                        <option value="abnormal">听不清</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="formtdtext">活动能力</td>
+                <td>
+                    <select class="cocombox" style="width: 100px">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </td>
+                <td class="formtdtext">出行方式</td>
+                <td>
+                    <select class="cocombox" style="width: 100px">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </td>
+                <td class="formtdtext">记忆力情况</td>
+                <td>
+                    <select class="cocombox" style="width: 100px">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="formtdtext">穿脱衣服</td>
+                <td>
+                    <select class="cocombox" style="width: 100px">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </td>
+                <td class="formtdtext">定向能力</td>
+                <td>
+                    <select class="cocombox" style="width: 100px">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </td>
+                <td class="formtdtext">洗澡情况</td>
+                <td>
+                    <select class="cocombox" style="width: 100px">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="formtdtext">日常卫生</td>
+                <td colspan="5">
+                    <label><input name="Fruit" type="checkbox" value="" />自己梳头 </label>
+                    <label><input name="Fruit" type="checkbox" value="" />自己洗脸 </label>
+                    <label><input name="Fruit" type="checkbox" value="" />自己洗头 </label>
+                    <label><input name="Fruit" type="checkbox" value="" />自己刷牙 </label>
+                    <label><input name="Fruit" type="checkbox" value="" />自己洗脚 </label>
+                    <label><input name="Fruit" type="checkbox" value="" />自己剃须 </label>
+                    <label><input name="Fruit" type="checkbox" value="" />自己修指甲 </label>
+                    <label><input name="Fruit" type="checkbox" value="" />自己洗衣 </label>
+                </td>
+            </tr>
+            <tr>
+                <td class="formtdtext">病史情况</td>
+                <td colspan="5">
+                    <label><input name="Fruit" type="checkbox" value="" />高血压 </label>
+                    <label><input name="Fruit" type="checkbox" value="" />糖尿病 </label>
+                    <label><input name="Fruit" type="checkbox" value="" />风湿病 </label>
+                    <label><input name="Fruit" type="checkbox" value="" />心脏病 </label>
+                    <label><input name="Fruit" type="checkbox" value="" />老年痴呆 </label>
+                    <label><input name="Fruit" type="checkbox" value="" />扭伤骨折 </label>
+                    <label><input name="Fruit" type="checkbox" value="" />其他 </label>
+                </td>
+            </tr>
+            <tr>
+                <td class="formtdtext">主要疾病</td>
+                <td colspan="5">
+                    <textarea name="message" style="height:60px;width: 90%"></textarea>
+                </td>
+            </tr>
+        </table>
+    </div>
+</fieldset>
+
+<!--爱好及活动需求-->
+<fieldset style="width: 900px">
+    <legend>爱好及活动需求</legend>
+    <div>
+        <table class="formtable" style="width: 900px">
+            <tr>
+                <td class="formtdtext">性格特征</td>
+                <td colspan="5">
+                    <textarea name="message" style="height:60px;width: 90%"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td class="formtdtext">兴趣爱好</td>
+                <td colspan="5">
+                    <textarea name="message" style="height:60px;width: 90%"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td class="formtdtext">特长</td>
+                <td><input class="easyui-validatebox"></td>
+                <td class="formtdtext">社会活动</td>
+                <td colspan="3"><input class="easyui-validatebox" style="width: 80%"></td>
+            </tr>
+            <tr>
+                <td class="formtdtext">参加社团</td>
+                <td><input class="easyui-validatebox"></td>
+                <td class="formtdtext">担当角色</td>
+                <td colspan="3"><input class="easyui-validatebox" style="width: 80%"></td>
+            </tr>
+        </table>
+    </div>
+</fieldset>
+
+<!--家庭成员-->
+<fieldset style="width: 900px">
+    <div>
+        <table class="easyui-datagrid" title="家庭成员列表" style="width: 900px"
+                data-options="rownumbers:true,toolbar:'#pensionmembertb',singleSelect:true,showFooter:true">
+             <thead data-options="frozen:true">
+             <tr>
+                 <th data-options="field:'relationship',width:100,editor:{
+                 type:'combobox',
+                 options:{
+                    valueField:'value',
+                    url:'jsondata/getmemberbytype.jsp?type=relation',
+                    width:60,
+                    textField:'label'
+                 }
+                 }">
+                    关系<span style="color: red">*</span>
+                 </th>
+             </tr>
+             </thead>
+            <thead>
+                <tr>
+                    <th data-options="field:'name',width:90,align:'center',editor:'text'">姓名<span style="color: red">*</span></th>
+                    <th data-options="field:'personid',width:150,align:'right',editor:{
+                            type:'validatebox',
+                            options:{
+                                required:true
+                            }
+                        }">身份证号<span style="color: red">*</span></th>
+                    <th data-options="field:'sex',width:60,editor:{
+							type:'combobox',
+							options:{
+								valueField: 'value',
+								url:'jsondata/getmemberbytype.jsp?type=sex',
+								width:60,
+                                textField: 'label'
+							}
+						}">性别<span style="color: red">*</span></th>
+                    <th data-options="field:'birthday',width:90,align:'center',editor:'text'">出生日期</th>
+                    <th data-options="field:'phone1',width:60,editor:'text'">宅电</th>
+                    <th data-options="field:'phone2',width:60,editor:'text'">手机</th>
+                    <th data-options="field:'phone3',width:60,editor:'text'">小灵通</th>
+
+                </tr>
+            </thead>
+        </table>
+        <div id="familymembertb" style="height:auto">
+            <a id="newfamilymemer_btn" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true">新增</a>
+            <a id="delfamilymemer_btn" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true,disabled:true">删除</a>
+        </div>
+    </div>
+</fieldset>
+
+<div style="width: 900px">
+    <table class="formtable" style="width: 900px">
+        <tr>
+            <td style="text-align: left">
+                <table>
+                <tr>
+                    <td class="formtdtext" style="text-align: right;width: 70px">制单日期:</td>
+                    <td style="width: 100;text-align: left" ><input class="easyui-datebox" data-options="formatter:myformatter,parser:myparser"></td>
+                </tr>
+            </table>
+            </td>
+            <td style="text-align: right">
+                <table style="text-align: right">
+                    <tr>
+                        <td class="formtdtext" style="text-align: right;width: 70px">制单人:</td>
+                        <td style="width: 100;text-align: left" ><input class="easyui-validatebox"></td>
+                    </tr>
+                </table>
+            </td>
+
+
+        </tr>
+    </table>
+</div>
+
+<div style="width: 900px;text-align: center">
+    <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">保存返回</a>
+    <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">保存添加</a>
+    <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-back'">返回</a>
+</div>
+
+<script type="text/javascript">
+    function myformatter(date){
+        var y = date.getFullYear();
+        var m = date.getMonth()+1;
+        var d = date.getDate();
+        return y+'-'+(m<10?('0'+m):m)+'-'+(d<10?('0'+d):d);
+    }
+    function myparser(s){
+        if (!s) return new Date();
+        var ss = (s.split('-'));
+        var y = parseInt(ss[0],10);
+        var m = parseInt(ss[1],10);
+        var d = parseInt(ss[2],10);
+        if (!isNaN(y) && !isNaN(m) && !isNaN(d)){
+            return new Date(y,m-1,d);
+        } else {
+            return new Date();
+        }
+    }
+</script>
