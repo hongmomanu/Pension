@@ -1,11 +1,13 @@
 define(function () {
 
-    //text!LrBasicInfo
-    //views/weipan/View
     function f(node){
-        var jsfile='views/pension/LrBasicInfo';
         var value=node.value;
-        var htmlfile='text!views/pension/'+value+'.htm';
+        var htmlfile, jsfile;
+        if(node.param1){
+            var widget=node.location.replace(/\./g,'/');
+            htmlfile='text!views/'+widget+'.htm';
+            jsfile='views/'+widget;
+        }
         var title=node.text;
         var folder="pension";//以后配置
         require(['commonfuncs/TreeClickEvent'],function(TreeClickEvent){
