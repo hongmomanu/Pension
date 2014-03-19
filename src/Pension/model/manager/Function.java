@@ -1,9 +1,6 @@
 package Pension.model.manager;
 
-import Pension.common.CommonDbUtil;
-import Pension.common.MakeRandomString;
-import Pension.common.ParameterUtil;
-import Pension.common.RtnType;
+import Pension.common.*;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
@@ -33,13 +30,17 @@ public class Function {
         if(null==node||"".equals(node)||"root".equals(node)){
             node="businessmenu";
         }
-        return query(commonDbUtil,node,"9UNrXXA6NBdCuT8qLyAQ");
+        String userid=(String)request.getSession().getAttribute("userid");
+        if(null==userid){
+            return RtnType.FAILURE;
+        }
+        return query(commonDbUtil,node,userid);
     }
     /*
     查询功能全部树
      */
     public String queryFunctionTreeMng(){
-        CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
+        /*CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
         StringBuffer sb=new StringBuffer();
         String node=request.getParameter("node");
         if(null==node){
@@ -48,7 +49,8 @@ public class Function {
         if(null==node||"".equals(node)||"root".equals(node)){
             node="-1";
         }
-        return query(commonDbUtil,node,null);
+        return query(commonDbUtil,node,null);*/
+        return generateTotalTree();
     }
     /*
     查询功能
@@ -72,7 +74,7 @@ public class Function {
     private String query(CommonDbUtil commonDbUtil,String node,String userid){
         String sql="select t.*,(select count(1) from xt_function where parent=t.functionid) leafcount from xt_function t where t.parent='"+node+"'";
         if(userid!=null){
-           // sql+=" and t.functionid in (select rf.functionid from xt_roleuser ru,xt_rolefunc rf where ru.userid='"+userid+"' and ru.roleid=rf.roleid)";
+            sql+=" and t.functionid in (select rf.functionid from xt_roleuser ru,xt_rolefunc rf where ru.userid='"+userid+"' and ru.roleid=rf.roleid)";
         }
         List<Map<String,Object>> list=new ArrayList<Map<String,Object>>();
         List querylist=commonDbUtil.query(sql);
@@ -118,5 +120,18 @@ public class Function {
             commonDbUtil.execute("delete from xt_function where functionid='"+functionid+"'");
         }
         return RtnType.SUCCESS;
+    }
+
+    private String generateTotalTree(){
+
+        String sql="select functionid,parent,title from xt_function";
+        sql="select t.functionid id,t.title text,t.functionid,t.parent from xt_function t " +
+                " start with parent='-1'" +
+                " connect by prior functionid=parent";
+        CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
+        List list=commonDbUtil.query(sql);
+        JSONArray jsonArray=JSONArray.fromObject(list);
+        System.out.println(jsonArray.toString());
+        return TreeGenerator.generate(JSONArray.fromObject(list),"functionid","parent","totalroot").toString();
     }
 }

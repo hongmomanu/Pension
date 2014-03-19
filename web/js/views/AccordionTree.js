@@ -19,7 +19,7 @@ define(function () {
     var a = {
         render: function (panel) {
             $(panel).children('.easyui-tree').tree({
-
+                lines:true,
                 onClick: function (node) {
                     if (!node['leaf'])return;  //如果是不是叶子而是目录文件则返回
                     var title = $((node.target)).text();

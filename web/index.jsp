@@ -8,16 +8,9 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-   /* if(request.getSession().getAttribute("username")==null) {
+    if(request.getSession().getAttribute("username")==null) {
         response.sendRedirect("login.jsp");
-    }*/
-    session.setAttribute("userid",1);
-    session.setAttribute("username",1);
-    session.setAttribute("roleid",1);
-    session.setAttribute("userid",1);
-    session.setAttribute("displayname",1);
-    session.setAttribute("divisionpath",1);
-    session.setAttribute("divisionid",1);
+    }
 
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -40,7 +33,7 @@
 
         /*session全局变量*/
         var onlinenums=<%= SessionListener.size()%>;
-        var userid=<%=request.getSession().getAttribute("userid")%>;
+        var userid='<%=request.getSession().getAttribute("userid")%>';
         var username="<%=request.getSession().getAttribute("username")%>";
         var roleid=<%=request.getSession().getAttribute("roleid")%>;
         var displayname="<%=request.getSession().getAttribute("displayname")%>";

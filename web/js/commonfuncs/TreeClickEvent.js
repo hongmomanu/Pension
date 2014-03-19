@@ -40,6 +40,7 @@ define(function(){
                     }
 
                     //jsfile.render(lookupname,folder,LoadingMask,res);
+                    jsfile.render();
 
                 };
                 require([htmlfile,jsfile],require_render);
@@ -70,8 +71,9 @@ define(function(){
                         }
                     ]
                 });
+                jsfile.render()
             };
-            require([htmlfile],require_render);
+            require([htmlfile,jsfile],require_render);
         },
         ShowIframe:function(value,jsfile,title,customparam){
             var require_render=function(jsfile){

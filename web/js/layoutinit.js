@@ -56,8 +56,8 @@ define(function(){
 
 
         require(['commonfuncs/UpdateItemNum','commonfuncs/AjaxForm'],function(updateitem,ajaxform){
-            $('#welcomename').text("欢迎您:"+displayname+'('+divisionpath+')');
-            updateitem.updateitemnum($('#onlinenums'),onlinenums,"(",")");
+            //$('#welcomename').text("欢迎您:"+displayname+'('+divisionpath+')');
+            /*updateitem.updateitemnum($('#onlinenums'),onlinenums,"(",")");
             var params = {
                 roleid:roleid,
                 userid:userid,
@@ -68,7 +68,7 @@ define(function(){
                 var count=res.count;
                 updateitem.updateitemnum($('#domneedtodocount'),count,"(",")");
             };
-
+*/
            //ajaxform.ajaxsend("post","json","ajax/getneedtodos.jsp",params,successFunc,null);
 
         });
@@ -124,7 +124,7 @@ define(function(){
         setInterval(t,1000);
     }
     function initroutnavigation(){
-        $('#routermenu').combobox({
+        /*$('#routermenu').combobox({
             onBeforeLoad: function(param){
                 param.roleid=roleid;
                 param.type="系统菜单";
@@ -152,7 +152,7 @@ define(function(){
                     $('#routermenu + .combo').css('position','absolute');
                 }
             }
-        });
+        });*/
     }
 
      return {

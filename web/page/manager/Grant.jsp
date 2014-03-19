@@ -55,8 +55,10 @@ function getChecked(){
     var nodes = $('#functiontree').tree('getChecked');
     var s = '';
     for(var i=0; i<nodes.length; i++){
-        if (s != '') s += ',';
-        s += nodes[i].functionid;
+        if(s.indexOf(nodes[i].functionid)<0){
+            if (s != '') s += ',';
+            s += nodes[i].functionid;
+        }
     }
     $.ajax(
             {

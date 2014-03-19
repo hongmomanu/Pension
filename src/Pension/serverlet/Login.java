@@ -61,19 +61,18 @@ public class Login extends HttpServlet {
 
         UserControl user=new UserControl();
 
-        //Map<String,Object> login_obj=user.login(username, password);
-        if(login(username,password,request)){
-            /*request.getSession().setAttribute("username",login_obj.get("username"));
-            request.getSession().setAttribute("userid",login_obj.get("userid"));
+        Map<String,Object> login_obj=user.login(username, password);
+        if(Boolean.parseBoolean(login_obj.get("issuccess").toString())){
+            request.getSession().setAttribute("username",login_obj.get("username"));
+            request.getSession().setAttribute("userid",login_obj.get("userid")+"");
             request.getSession().setAttribute("roleid",login_obj.get("roleid"));
             request.getSession().setAttribute("displayname",login_obj.get("displayname"));
             request.getSession().setAttribute("divisionpath",login_obj.get("divisionpath"));
             request.getSession().setAttribute("password",password);
-            request.getSession().setAttribute("divisionid",login_obj.get("divisionid"));*/
+            request.getSession().setAttribute("divisionid",login_obj.get("divisionid"));
 
         }else{
-            //request.getSession().setAttribute("loginerromsg",login_obj.get("msg"));
-            request.getSession().setAttribute("loginerromsg","登陆失败");
+            request.getSession().setAttribute("loginerromsg",login_obj.get("msg"));
         }
 
         response.sendRedirect("");
