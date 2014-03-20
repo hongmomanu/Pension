@@ -56,9 +56,10 @@ public class BaseDbUtil {
             col_str+=key+",";
 
         }
-        col_str.length();
-        col_str=col_str.substring(0,col_str.length()-1);
-        val_str=val_str.substring(0,val_str.length()-1);
+        if(col_str.contains(",")){
+            col_str=col_str.substring(0,col_str.length()-1);
+            val_str=val_str.substring(0,val_str.length()-1);
+        }
 
         String sql = insertorreplace+" " + tablename +
                 " ("+col_str+") values " +"("+val_str+")";

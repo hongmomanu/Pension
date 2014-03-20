@@ -21,10 +21,10 @@ public class EvaluateLrInfo {
         CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
         Map map= ParameterUtil.toMap(request);
         int result=0;
-        Long id=commonDbUtil.getSequence("opseno");
-        map.put("id",id);
+        Long id=commonDbUtil.getSequence("SEQ_T_NEEDASSESSMENT");
+        map.put("pg_id",id);
         AuditManager.addAudit(id);
-        result=commonDbUtil.insertTableVales(map,"tt");
+        result=commonDbUtil.insertTableVales(map,"T_NEEDASSESSMENT");
         return result>0? RtnType.SUCCESS:RtnType.FAILURE;
     }
 }
