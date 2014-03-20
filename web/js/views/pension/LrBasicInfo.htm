@@ -6,7 +6,8 @@
             <tr>
                 <td class="formtdtext" style="width: 100px">行政区划<span style="color: red">*</span></td>
                 <td colspan="5"><input class="easyui-validatebox" data-options="required:true" style="width: 300px"></td>
-                <td rowspan="3" colspan="2" style="text-align: center"><img src="" alt="用户照片" width="120"></td>
+                <td rowspan="3" colspan="2" style="text-align: center">
+                    <img src="img/noperson.gif" id="personimg" alt="用户照片" width="120" height="70"></td>
             </tr>
             <tr>
                 <td class="formtdtext" style="width: 100px">姓名<span style="color: red">*</span></td>
@@ -352,8 +353,8 @@
 
 <!--家庭成员-->
 <fieldset style="width: 900px">
-    <div>
-        <table class="easyui-datagrid" title="家庭成员列表" style="width: 900px"
+    <div id="familymembersdiv">
+        <table class="easyui-datagrid" title="家庭成员列表" id="familymembersgrid" style="width: 900px"
                 data-options="rownumbers:true,toolbar:'#pensionmembertb',singleSelect:true,showFooter:true">
              <thead data-options="frozen:true">
              <tr>
@@ -389,9 +390,9 @@
 							}
 						}">性别<span style="color: red">*</span></th>
                     <th data-options="field:'birthday',width:90,align:'center',editor:'text'">出生日期</th>
-                    <th data-options="field:'phone1',width:60,editor:'text'">宅电</th>
-                    <th data-options="field:'phone2',width:60,editor:'text'">手机</th>
-                    <th data-options="field:'phone3',width:60,editor:'text'">小灵通</th>
+                    <th data-options="field:'phone1',width:160,editor:'text'">宅电</th>
+                    <th data-options="field:'phone2',width:160,editor:'text'">手机</th>
+                    <th data-options="field:'phone3',width:160,editor:'text'">小灵通</th>
 
                 </tr>
             </thead>
@@ -404,10 +405,10 @@
 </fieldset>
 
 <div style="width: 900px">
-    <table class="formtable" style="width: 900px">
+    <table style="width: 900px">
         <tr>
             <td style="text-align: left">
-                <table>
+                <table style="width: 450px">
                 <tr>
                     <td class="formtdtext" style="text-align: right;width: 70px">制单日期:</td>
                     <td style="width: 100;text-align: left" ><input class="easyui-datebox" data-options="formatter:myformatter,parser:myparser"></td>
@@ -415,10 +416,10 @@
             </table>
             </td>
             <td style="text-align: right">
-                <table style="text-align: right">
-                    <tr>
-                        <td class="formtdtext" style="text-align: right;width: 70px">制单人:</td>
-                        <td style="width: 100;text-align: left" ><input class="easyui-validatebox"></td>
+                <table style="text-align: right;width: 450px">
+                    <tr style="text-align: right">
+                       <!-- <td class="formtdtext" style="width: 70px">制单人:</td>-->
+                        <td style="width: 100px" >制单人:<input class="easyui-validatebox"></td>
                     </tr>
                 </table>
             </td>
@@ -432,6 +433,9 @@
     <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">保存返回</a>
     <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">保存添加</a>
     <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-back'">返回</a>
+</div>
+<div>
+    <br>
 </div>
 
 <script type="text/javascript">

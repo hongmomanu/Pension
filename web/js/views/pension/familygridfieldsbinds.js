@@ -22,7 +22,8 @@ define(function(){
                 alert("身份证号重复");
             }*/
 
-            $(ed.target).bind('propertychange change input',function () {
+            $(ed.target).bind('propertychange change input',function ()
+            {
 
                 var length = $('#familymembersgrid').datagrid('getData').total;  //获得行数
 
