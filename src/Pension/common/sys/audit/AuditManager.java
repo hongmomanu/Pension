@@ -18,8 +18,8 @@ public class AuditManager {
         Connection conn=JdbcFactory.getConn();
 
         CommonDbUtil dbUtil=new CommonDbUtil(conn);
-        Long auditid=dbUtil.getSequence("AUDIT_SEQ");
-        String sql_auditbean="insert into auditbean(auditid,beanvalue) values("+auditid+","+paramLong+")";
+        Long auditid=dbUtil.getSequence("OPAUDIT_SEQ");
+        String sql_auditbean="insert into opauditbean(auditid,beanvalue) values("+auditid+","+paramLong+")";
         String sql_audit="insert into opaudit(auditid,auflag,auendflag)values("+auditid+",0,0)";
         dbUtil.execute(sql_auditbean);
         dbUtil.execute(sql_audit);

@@ -40,7 +40,7 @@ public class Function {
     查询功能全部树
      */
     public String queryFunctionTreeMng(){
-        /*CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
+        CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
         StringBuffer sb=new StringBuffer();
         String node=request.getParameter("node");
         if(null==node){
@@ -49,8 +49,8 @@ public class Function {
         if(null==node||"".equals(node)||"root".equals(node)){
             node="-1";
         }
-        return query(commonDbUtil,node,null);*/
-        return generateTotalTree();
+        return query(commonDbUtil,node,null);
+        //return generateTotalTree();
     }
     /*
     查询功能
@@ -127,7 +127,7 @@ public class Function {
 
         String sql="select functionid,parent,title from xt_function";
         sql="select t.functionid id,t.title text,t.functionid,t.parent from xt_function t " +
-                " start with parent='-1'" +
+                " start with parent='totalroot'" +
                 " connect by prior functionid=parent";
         CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
         List list=commonDbUtil.query(sql);

@@ -1,13 +1,21 @@
-
+<form id="pinggu" method="post">
+<div style="padding:5px;border:1px solid #ddd;">
+    <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-cancel'">Cancel</a>
+    <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-reload'">Refresh</a>
+    <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-search'">Search</a>
+    <a href="#" class="easyui-linkbutton" data-options="plain:true" id="submit">提交</a>
+    <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-print'">Print</a>
+    <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-help'"> </a>
+    <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-save'"></a>
+    <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-back'"></a>
+</div>
 <fieldset style="width: 1024px;margin: 0px auto;"><legend>用户基本信息</legend>
     <div>
         <table class="formtable">
             <tr>
                 <td class="formtdtext">行政区划:</td>
                 <td colspan="3">
-                    <input class="easyui-combotree" id="divisiontree"
-                           data-options="required:true,valueField:'divisionpath'"
-                           style="width: 300px;"  name="division"></td>
+                    <input class="easyui-combotree" ></td>
                 <td rowspan="4" colspan="2" style="text-align: center;" >
                     <img src="img/noperson.gif" id="personimg" alt="用户照片" height="101" width="91"></td>
             </tr>
@@ -187,3 +195,6 @@
         </tbody>
     </table>
 </fieldset>
+
+
+</form>
