@@ -17,6 +17,7 @@ public class EvaluateLrInfo {
     private Connection conn;
 
     public String save(){
+
         CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
         Map map= ParameterUtil.toMap(request);
         int result=0;
