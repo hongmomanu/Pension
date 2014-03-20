@@ -1,11 +1,7 @@
-/**
- * Created by jack on 14-1-6.
- */
-
 define(function(){
 
     var a={
-        ShowContent:function(htmlfile,jsfile,title,value,folder,res,id,businesstype){
+        ShowContent_0:function(htmlfile,jsfile,title,value,folder,res,id,businesstype){
             require(['commonfuncs/LookupItemName','commonfuncs/LoadingMask'],function(LookupItemName,LoadingMask){
                 LoadingMask.ajaxLoading();
                 var require_render=function(htmlfile,jsfile){
@@ -44,6 +40,7 @@ define(function(){
                     }
 
                     //jsfile.render(lookupname,folder,LoadingMask,res);
+                    jsfile.render();
 
                 };
                 require([htmlfile,jsfile],require_render);
@@ -52,6 +49,53 @@ define(function(){
             });
 
 
+        },
+        ShowContent:function(htmlfile,jsfile,title,value,customparam){
+            var require_render=function(htmlfile,jsfile){
+
+                if($('#tabs').tabs('exists',title)){
+                    $('#tabs').tabs('select', title);
+                    return;
+                }
+
+                $('#tabs').tabs('add', {
+                    title: title,
+                    content: htmlfile,
+                    closable: true,
+                    tools: [
+                        {
+                            iconCls: 'icon-mini-refresh',
+                            handler: function () {
+                                alert('refresh');
+                            }
+                        }
+                    ]
+                });
+                jsfile.render()
+            };
+            require([htmlfile,jsfile],require_render);
+        },
+        ShowIframe:function(value,jsfile,title,customparam){
+            var require_render=function(jsfile){
+                if($('#tabs').tabs('exists',title)){
+                    $('#tabs').tabs('select', title);
+                    return;
+                }
+                $('#tabs').tabs('add', {
+                    title: title,
+                    content: '<iframe src="' + value + '" width="100%" height="99%" frameborder="0"></iframe>',
+                    closable: true,
+                    tools: [
+                        {
+                            iconCls: 'icon-mini-refresh',
+                            handler: function () {
+                                alert('refresh');
+                            }
+                        }
+                    ]
+                });
+            };
+            require_render(jsfile);
         }
 
     }

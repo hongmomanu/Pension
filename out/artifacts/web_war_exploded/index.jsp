@@ -17,17 +17,23 @@
 <html>
 
 <head>
+    <meta charset="utf-8">
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+    <META HTTP-EQUIV="Expires"CONTENT="0">
+
 
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" >
-    <title>舟山市社会救助管理系统</title>
+    <title>杭州市民政养老救助管理系统</title>
 
+    <script type="text/javascript" src="js/extLocation.js"></script>
     <script type="text/javascript" src="js/config.js"></script>
     <script type="text/javascript">
 
         /*session全局变量*/
         var onlinenums=<%= SessionListener.size()%>;
-        var userid=<%=request.getSession().getAttribute("userid")%>;
+        var userid='<%=request.getSession().getAttribute("userid")%>';
         var username="<%=request.getSession().getAttribute("username")%>";
         var roleid=<%=request.getSession().getAttribute("roleid")%>;
         var displayname="<%=request.getSession().getAttribute("displayname")%>";
@@ -104,7 +110,7 @@
     <div id="tabs" class="easyui-tabs"   fit="true" border="false" >
         <div title="主页" class="indexbackground">
             <div class="cs-home-remark">
-                <h1>欢迎使用舟山市民政局救灾救助系统</h1>
+                <h1>欢迎使用民政养老救助系统</h1>
             </div>
         </div>
     </div>
