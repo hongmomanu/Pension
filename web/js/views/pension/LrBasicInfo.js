@@ -41,7 +41,7 @@ define(function()
         /*家庭成员添加与删除*/
         $('#newfamilymemer_btn').bind('click', function () {
             $('#familymembersgrid').datagrid('appendRow', {name: '', relationship: '其它'});
-            var editIndex = $('#familymembersgrid').datagrid('getRows').length;
+            var editIndex = $('#familymembersgrid').datagrid('getRows').length-1;
             $('#familymembersgrid').datagrid('selectRow', editIndex)
                 .datagrid('beginEdit', editIndex);
 
@@ -57,17 +57,57 @@ define(function()
 
         });
 
+        $('#newfamilymemer_btn1').bind('click', function () {
+            $('#familymembersgrid').datagrid('appendRow', {name: '', relationship: '其它'});
+            var editIndex = $('#familymembersgrid').datagrid('getRows').length-1;
+            $('#familymembersgrid').datagrid('selectRow', editIndex)
+                .datagrid('beginEdit', editIndex);
+        });
+
         $('#delfamilymemer_btn').bind('click', function () {
 
-            if(!$('#delfamilymemer_btn').linkbutton('options').disabled){
+            var selectrow= $('#familymembersgrid').datagrid('getSelected');
+            var index=$('#familymembersgrid').datagrid('getRowIndex',selectrow);
+            $('#familymembersgrid').datagrid('deleteRow', index);
+
+            /*if(!$('#delfamilymemer_btn').linkbutton('options').disabled){
                 var selectrow= $('#familymembersgrid').datagrid('getSelected');
                 var index=$('#familymembersgrid').datagrid('getRowIndex',selectrow);
                 $('#familymembersgrid').datagrid('deleteRow', index);
                 $('#delfamilymemer_btn').linkbutton('disable');
-              /*  $('#FamilyPersons').val($('#familymembersgrid').datagrid('getRows').length);*/
-            }
+                $('#FamilyPersons').val($('#familymembersgrid').datagrid('getRows').length);
+            }*/
 
         });
+
+
+        /*提交表单*/
+        /*$('#pensionsubmit').form('submit',{
+            url:'',
+            onSubmit:function(){
+                return $(this).form('validate');
+            },
+            success:function(data){
+                $.message.show({
+                    title:"成功",
+                    msg:data
+                });
+            }
+        });*/
+
+        $('#pensionsubmit').bind('click',function(){
+            /*alert("click");*/
+            $('#pensionform').form('submit',{
+                url:'lr.do?model=hzyl.PensionPeopleInfo&eventName=save',
+                onSubmit:function(){
+
+                },
+                success:function(data){
+                    alert(data);
+                }
+            })
+
+        })
     }
 
 
