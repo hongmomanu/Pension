@@ -78,6 +78,8 @@ public class UserDao {
                 res.put("displayname", rs.getString(3));
                 res.put("divisionpath", rs.getString(4));
                 res.put("divisionid", rs.getString(5).toString());
+                res.put("loginname", rs.getString("loginname").toString());
+                res.put("username", rs.getString(3));
             }
             if(!issuccess){
                 res.put("issuccess", false);

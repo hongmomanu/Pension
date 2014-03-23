@@ -6,6 +6,6 @@ package Pension.common.sys.audit;
  * Time: 下午8:01
  */
 public interface IMultilevelAudit {
-    public abstract Long audit(AuditBean paramAuditBean);
+    public abstract Long audit(AuditBean auditBean);
 
 }

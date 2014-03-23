@@ -83,7 +83,7 @@
                     </tr>
                     <tr>
                         <td class="formtdtext">序号:</td>
-                        <td><input class="easyui-validatebox"  type="text" name="nodetype" name="orderno"></td>
+                        <td><input class="easyui-validatebox"  type="text" name="orderno"></td>
                         <td class="formtdtext">节点类型:</td>
                         <td><input class="easyui-validatebox"  type="text" name="nodetype" data-options="required:true" value="0">(0叶子1节点)</td>
 

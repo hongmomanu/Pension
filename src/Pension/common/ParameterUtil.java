@@ -46,7 +46,7 @@ public class ParameterUtil {
     /*
      将JSONObject中的信息转成Map
      */
-    public Map<String,Object> toMap(JSONObject jsonObj){
+    public static Map<String,Object> toMap(JSONObject jsonObj){
         Iterator<String> it=jsonObj.keys();
         Map<String,Object> map=new HashMap<String,Object>();
         while(it.hasNext()){
