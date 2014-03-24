@@ -121,7 +121,7 @@ define(function(){
             time.html(hours+":"+minutes+":"+seconds+" "
                 +year+"年"+(month+1)+"月"+day+"日"+" "+week);
         }
-        setInterval(t,1000);
+        //setInterval(t,1000);
     }
     function initroutnavigation(){
         $('#routermenu').combobox({

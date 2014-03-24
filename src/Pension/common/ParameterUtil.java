@@ -28,11 +28,25 @@ public class ParameterUtil {
         }
         return params;
     }
+    public static Map toMap(HttpServletRequest request,boolean lowercase){
+        Map<String,Object> params=new HashMap<String,Object>();
+        Enumeration e  =(Enumeration) request.getParameterNames();
+        while(e.hasMoreElements()){
+            String  parName=(String)e.nextElement();
+            if(lowercase){
+
+                params.put(parName,request.getParameter(parName).toLowerCase());
+            }else{
+                params.put(parName,request.getParameter(parName));
+            }
+        }
+        return params;
+    }
 
     /*
      将JSONObject中的信息转成Map
      */
-    public Map<String,Object> toMap(JSONObject jsonObj){
+    public static Map<String,Object> toMap(JSONObject jsonObj){
         Iterator<String> it=jsonObj.keys();
         Map<String,Object> map=new HashMap<String,Object>();
         while(it.hasNext()){

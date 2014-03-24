@@ -83,7 +83,7 @@ define(function(){
                 }
                 $('#tabs').tabs('add', {
                     title: title,
-                    content: '<iframe src="' + value + '" width="100%" height="99%" frameborder="0"></iframe>',
+                    content: '<iframe src="' + value + '" width="100%" height="100%" frameborder="0"></iframe>',
                     closable: true,
                     tools: [
                         {

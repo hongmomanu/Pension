@@ -3,7 +3,10 @@
 <head>
     <title>功能管理</title>
     <style>
-
+        html,body {
+                margin: 0;
+                height:100%;
+            }
         .formtable {
             width:100%;
             padding: 0px;
@@ -55,7 +58,7 @@
 </head>
 <body>
 <form id="form" method="post">
-<div id="functionmng" class="easyui-layout" style="width:1024px;height:99%;margin: 0px auto;">
+<div id="functionmng" class="easyui-layout" style="width:1024px;height:100%;margin:0px auto;">
     <div data-options="region:'west',title:'功能树',split:false,lines:true" style="width:300px;">
         <ul id="functiontree"></ul>
     </div>
@@ -83,7 +86,7 @@
                     </tr>
                     <tr>
                         <td class="formtdtext">序号:</td>
-                        <td><input class="easyui-validatebox"  type="text" name="nodetype" name="orderno"></td>
+                        <td><input class="easyui-validatebox"  type="text" name="orderno"></td>
                         <td class="formtdtext">节点类型:</td>
                         <td><input class="easyui-validatebox"  type="text" name="nodetype" data-options="required:true" value="0">(0叶子1节点)</td>
 
