@@ -121,7 +121,8 @@ var saveApproval=function(){
     })
 
     if(!yz){
-        alert(' 业务没有通过,请填写备注信息');return;
+        $.messager.alert('提示','业务没有通过,请填写备注信息!','info');
+        return;
     }
 
     $('#auditGrid').datagrid('getChecked').forEach(function(item,i){
