@@ -70,7 +70,7 @@
         </div>
 
 
-        <ul class="ui-skin-nav" style="display: none;">
+        <ul class="ui-skin-nav" style="display: block;">
             <li class="li-skinitem" title="gray"><span class="gray" rel="gray"></span></li>
             <li class="li-skinitem" title="default"><span class="default" rel="default"></span></li>
             <li class="li-skinitem" title="bootstrap"><span class="bootstrap" rel="bootstrap"></span></li>
@@ -116,9 +116,9 @@
     </div>
 </div>
 
-<div region="south" border="false" class="cs-south">
+<%--<div region="south" border="false" class="cs-south">
     <a  id="indextime"></a>
-</div>
+</div>--%>
 
 
 </body>

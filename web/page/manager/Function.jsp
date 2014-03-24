@@ -3,7 +3,10 @@
 <head>
     <title>功能管理</title>
     <style>
-
+        html,body {
+                margin: 0;
+                height:100%;
+            }
         .formtable {
             width:100%;
             padding: 0px;
@@ -55,7 +58,7 @@
 </head>
 <body>
 <form id="form" method="post">
-<div id="functionmng" class="easyui-layout" style="width:1024px;height:99%;margin: 0px auto;">
+<div id="functionmng" class="easyui-layout" style="width:1024px;height:100%;margin:0px auto;">
     <div data-options="region:'west',title:'功能树',split:false,lines:true" style="width:300px;">
         <ul id="functiontree"></ul>
     </div>

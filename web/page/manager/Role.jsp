@@ -76,9 +76,10 @@
     </script>
 </head>
 <body>
-<div style="width:1024px;height:100%;margin: 0px auto;">
-<table id="rolegrid" class="easyui-datagrid"  style="width:1024px;height:500px"
-       data-options="rownumbers:true,singleSelect:true,url:'lr.do?model=manager.Role&eventName=queryRole',method:'get',toolbar:'#tb',fitColumns:true">
+<table id="rolegrid" class="easyui-datagrid"
+       data-options="rownumbers:true,singleSelect:true,url:'lr.do?model=manager.Role&eventName=queryRole',
+       fit:true, pagination:true, pageSize:10,border:false,
+       method:'get',toolbar:'#tb',fitColumns:true">
     <thead>
     <tr>
             <th data-options="field:'rolename',width:60,align:'center'">角色名</th>
@@ -99,7 +100,6 @@
         <input class="easyui-datebox" style="width:80px">
         <a href="#" class="easyui-linkbutton" iconCls="icon-search">Search</a>
     </div>
-</div>
 </div>
 
 <div id="w"   class="easyui-window"
