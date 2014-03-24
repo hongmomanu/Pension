@@ -1,35 +1,36 @@
 <!--老年人基本信息-->
+<form id="pensionform" method="post">
 <fieldset style="width: 900px">
     <legend>老年人基本信息</legend>
     <div style="width: 900px">
         <table class="formtable" style="width: 900px">
             <tr>
-                <td class="formtdtext" style="width: 100px">行政区划<span style="color: red">*</span></td>
-                <td colspan="5"><input class="easyui-validatebox" data-options="required:true" style="width: 300px"></td>
+                <td class="formtdtext"  style="width: 100px">行政区划<span style="color: red">*</span></td>
+                <td colspan="5"><input class="easyui-validatebox" name="districtid" data-options="required:true" style="width: 300px"></td>
                 <td rowspan="3" colspan="2" style="text-align: center">
                     <img src="img/noperson.gif" id="personimg" alt="用户照片" width="120" height="70"></td>
             </tr>
             <tr>
                 <td class="formtdtext" style="width: 100px">姓名<span style="color: red">*</span></td>
-                <td><input class="easyui-validatebox" data-options="required:true"></td>
+                <td><input class="easyui-validatebox" name="name" data-options="required:true"></td>
                 <td class="formtdtext">身份证<span style="color: red">*</span></td>
-                <td><input id="ownerid" class="easyui-validatebox" data-options="required:true,invalidMessage:'请输入正确的身份证号',validType:'personid'"></td>
+                <td><input id="ownerid" name="identityid" class="easyui-validatebox" data-options="required:true,invalidMessage:'请输入正确的身份证号',validType:'personid'"></td>
                 <td class="formtdtext">出生年月</td>
-                <td><input class="easyui-datebox" data-options="formatter:myformatter,parser:myparser"></td>
+                <td><input id="birthdate" class="easyui-datebox" name="birthd" data-options="formatter:myformatter,parser:myparser"></td>
             </tr>
             <tr>
                 <td class="formtdtext">性别</td>
                 <td>
-                    <select class="easyui-cocombox" name="sex" style="width: 100px">
+                    <select id="sex" class="easyui-combobox lazy-combobox" data-options="valueField: 'value',field:'sex'," name="gender" style="width: 100px">
                         <option value="man">男</option>
                         <option value="woman">女</option>
                     </select>
                 </td>
                 <td class="formtdtext">年龄</td>
-                <td><input class="easyui-validatebox"></td>
+                <td><input id="age" class="easyui-validatebox,field:'age'" name="age"></td>
                 <td class="formtdtext">民族</td>
                 <td>
-                    <select class="easyui-cocombox" name="nation" style="width: 100px">
+                    <select class="easyui-combobox lazy-combobox" name="nation" style="width: 100px">
                         <option value="han">汉族</option>
                         <option value="other">少数民族</option>
                     </select>
@@ -39,82 +40,98 @@
         <table class="formtable" style="width: 900px">
             <tr>
                 <td class="formtdtext">家庭住址<span style="color: red">*</span></td>
-                <td colspan="3"><input class="easyui-validatebox" data-options="required:true" style="width: 300px"></td>
+                <td colspan="3"><input class="easyui-validatebox" name="address" data-options="required:true" style="width: 300px"></td>
                 <td class="formtdtext">人员类型<span style="color: red">*</span></td>
                 <td>
-                    <select class="easyui-cocombox">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
+                    <select class="easyui-combobox lazy-combobox" name="type">
+                        <option value="rylx1">低保家庭</option>
+                        <option value="rylx2">农村五保</option>
+                        <option value="rylx3">城镇三无</option>
                     </select>
                 </td>
             </tr>
             <tr>
                 <td class="formtdtext">户籍地<span style="color: red">*</span></td>
-                <td colspan="5"><input class="easyui-validatebox" data-options="required:true" style="width: 300px"></td>
+                <td colspan="5"><input class="easyui-validatebox" name="registration" data-options="required:true" style="width: 300px"></td>
             </tr>
             <tr>
                 <td class="formtdtext">居住环境<span style="color: red">*</span></td>
                 <td>
-                    <select class="easyui-cocombox" data-options="required:true" style="width: 100px">
-                        <option value="good">良好</option>
-                        <option value="bad">差</option>
+                    <select class="easyui-combobox lazy-combobox" name="live" data-options="required:true" style="width: 100px">
+                        <option value="jzhj1">与子女同住</option>
+                        <option value="jzhj2">与配偶同住</option>
+                        <option value="jzhj3">与亲友同住</option>
+                        <option value="jzhj4">独居</option>
+                        <option value="jzhj5">寡居</option>
+                        <option value="jzhj6">空巢</option>
+                        <option value="jzhj7">其他</option>
                     </select>
                 </td>
                 <td class="formtdtext">婚姻状况<span style="color: red">*</span></td>
                 <td>
-                    <select class="easyui-cocombox" data-options="required:true" style="width: 100px">
-                        <option value="married">已婚</option>
-                        <option value="single">未婚</option>
+                    <select class="easyui-combobox lazy-combobox" name="marriage" data-options="required:true" style="width: 100px">
+                        <option value="hyzk1">未婚</option>
+                        <option value="hyzk21">已婚</option>
+                        <option value="hyzk3">丧偶</option>
+                        <option value="hyzk4">离异</option>
+                        <option value="hyzk5">未说明</option>
                     </select>
                 </td>
                 <td class="formtdtext">家庭经济条件<span style="color: red">*</span></td>
                 <td>
-                    <select class="easyui-cocombox" data-options="required:true" style="100px">
-                        <option value="good">良好</option>
-                        <option value="bad">差</option>
+                    <select class="easyui-combobox lazy-combobox" name="economy" data-options="required:true" style="100px">
+                        <option value="jtjjtj1">低保</option>
+                        <option value="jtjjtj2">低收入（低保2倍）</option>
+                        <option value="jtjjtj3">低退休工资（2000以下）</option>
+                        <option value="jtjjtj4">低退休工资（2000以上）</option>
+                        <option value="jtjjtj5">无社保（非低保低收入）</option>
+                        <option value="jtjjtj6">其他</option>
                     </select>
                 </td>
             </tr>
             <tr>
                 <td class="formtdtext">曾从事职业</td>
-                <td><input class="easyui-validatebox"></td>
+                <td><input class="easyui-validatebox" name="vocation"></td>
                 <td class="formtdtext">文化程度<span style="color: red">*</span></td>
                 <td>
-                    <select class="easyui-cocombox" data-options="required:true" style="width: 100px">
-                        <option value="wenmang">文盲</option>
-                        <option value="xiaoxue">小学</option>
-                        <option value="chuzhong">初中</option>
-                        <option value="other">高中以上</option>
+                    <select class="easyui-combobox lazy-combobox" name="culture" data-options="required:true" style="width: 100px">
+                        <option value="whcd1">小学</option>
+                        <option value="whcd2">初中</option>
+                        <option value="whcd3">高中</option>
+                        <option value="whcd4">专科</option>
+                        <option value="whcd5">本科</option>
+                        <option value="whcd6">研究生</option>
+                        <option value="whcd7">其他</option>
                     </select>
                 </td>
                 <td class="formtdtext">手机号码</td>
-                <td><input class="easyui-validatebox"></td>
+                <td><input class="easyui-validatebox" name="mobilephone"></td>
             </tr>
             <tr>
                 <td class="formtdtext">退休工资</td>
                 <td><input class="easyui-validatebox"></td>
                 <td class="formtdtext">住宅电话</td>
-                <td><input class="easyui-validatebox"></td>
+                <td><input class="easyui-validatebox" name="telephone"></td>
                 <td class="formtdtext">老人呼叫机</td>
-                <td><input class="easyui-validate"></td>
+                <td><input class="easyui-validate" name="hjj_hjj"></td>
             </tr>
             <tr>
                 <td class="formtdtext">呼叫机种类</td>
                 <td>
-                    <select class="easyui-cocombox" style="width: 100px">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
+                    <select class="easyui-combobox lazy-combobox" name="hjj_kind" style="width: 100px">
+                        <option value="1">a</option>
+                        <option value="2">b</option>
                     </select>
                 </td>
                 <td class="formtdtext">呼叫机类型</td>
                 <td>
-                    <select class="easyui-cocombox" style="width: 100px">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
+                    <select class="easyui-combobox lazy-combobox" name="hjj_type" style="width: 100px">
+                        <option value="hjjlx1">移动</option>
+                        <option value="hjjlx2">固定</option>
                     </select>
                 </td>
                 <td class="formtdtext">呼叫手机号</td>
-                <td><input class="easyui-validatebox"></td>
+                <td><input class="easyui-validatebox" name="hjj_phone"></td>
             </tr>
 
         </table>
@@ -143,43 +160,45 @@
         <table class="formtable" style="width: 900px">
             <tr>
                 <td class="formtdtext">邻居一姓名</td>
-                <td><input class="easyui-validatebox"></td>
+                <td><input class="easyui-validatebox" name="jz_yixingm"></td>
                 <td class="formtdtext">邻居一位置</td>
                 <td>
-                    <select class="easyui-cocombox" style="width: 100px">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
+                    <select class="easyui-combobox lazy-combobox" name="jz_yiweiz" style="width: 100px">
+                        <option value="ljywz1">楼上</option>
+                        <option value="ljywz2">楼下</option>
+                        <option value="ljywz3">隔壁</option>
                     </select>
                 </td>
                 <td class="formtdtext">邻居一电话</td>
-                <td><input class="easyui-validatebox"></td>
+                <td><input class="easyui-validatebox" name="jz_yidianh"></td>
             </tr>
             <tr>
                 <td class="formtdtext">邻居二姓名</td>
-                <td><input class="easyui-validatebox"></td>
+                <td><input class="easyui-validatebox" name="jz_erxingm"></td>
                 <td class="formtdtext">邻居二位置</td>
                 <td>
-                    <select class="easyui-cocombox" style="width: 100px">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
+                    <select class="easyui-combobox lazy-combobox" name="jz_erweiz" style="width: 100px">
+                        <option value="ljewz1">楼上</option>
+                        <option value="ljewz2">楼下</option>
+                        <option value="ljewz3">隔壁</option>
                     </select>
                 </td>
                 <td class="formtdtext">邻居二电话</td>
-                <td><input class="easyui-validatebox"></td>
+                <td><input class="easyui-validatebox" name="jz_erdianh"></td>
             </tr>
             <tr>
                 <td class="formtdtext">物业名称</td>
-                <td><input class="easyui-validatebox"></td>
+                <td><input class="easyui-validatebox" name="jz_wuy"></td>
                 <td class="formtdtext">门卫电话</td>
-                <td><input class="easyui-validatebox"></td>
+                <td><input class="easyui-validatebox" name="jz_menwdh"></td>
                 <td class="formtdtext">值班电话</td>
-                <td><input class="easyui-validatebox"></td>
+                <td><input class="easyui-validatebox" name="jz_zhibdh"></td>
             </tr>
             <tr>
                 <td class="formtdtext">社区卫生院名称</td>
-                <td><input class="easyui-validatebox"></td>
+                <td><input class="easyui-validatebox" name="jz_sheqyy"></td>
                 <td class="formtdtext">责任医生</td>
-                <td><input class="easyui-validatebox"></td>
+                <td><input class="easyui-validatebox" name="jz_yis"></td>
                 <td class="formtdtext">联系电话</td>
                 <td><input class="easyui-validatebox"></td>
             </tr>
@@ -195,7 +214,7 @@
             <tr>
                 <td class="formtdtext">血型</td>
                 <td>
-                    <select class="easyui-cocombox" style="width: 100px">
+                    <select class="easyui-combobox lazy-combobox" name="jk_xuex" style="width: 100px">
                         <option value="A">A</option>
                         <option value="B">B</option>
                         <option value="AB">AB</option>
@@ -204,7 +223,7 @@
                 </td>
                 <td class="formtdtext">血压</td>
                 <td>
-                    <select class="easyui-cocombox" style="width: 100px">
+                    <select class="easyui-combobox lazy-combobox" name="jk_xuey" style="width: 100px">
                         <option value="high">高</option>
                         <option value="normal">正常</option>
                         <option value="low">低</option>
@@ -212,18 +231,18 @@
                 </td>
                 <td class="formtdtext">起搏器情况</td>
                 <td>
-                    <select class="easyui-cocombox" style="width: 100px">
-                        <option value="normal">正常</option>
-                        <option value="abnormal">异常</option>
+                    <select class="easyui-combobox lazy-combobox" name="jk_qibq" style="width: 100px">
+                        <option value="qbqqk1">有</option>
+                        <option value="qbqqk2">没有</option>
                     </select>
                 </td>
             </tr>
             <tr>
                 <td class="formtdtext">过敏史</td>
-                <td><input class="easyui-validatebox"></td>
+                <td><input class="easyui-validatebox" name="jk_gms"></td>
                 <td class="formtdtext">视力情况</td>
                 <td>
-                    <select class="easyui-cocombox" style="width: 100px">
+                    <select class="easyui-combobox lazy-combobox" name="jk_shil" style="width: 100px">
                         <option value="normal">正常</option>
                         <option value="myopia">近视</option>
                         <option value="hyperopia">远视</option>
@@ -231,7 +250,7 @@
                 </td>
                 <td class="formtdtext">听力情况</td>
                 <td>
-                    <select class="easyui-cocombox" style="width: 100px">
+                    <select class="easyui-combobox lazy-combobox" name="jk_tingl" style="width: 100px">
                         <option value="normal">正常</option>
                         <option value="abnormal">听不清</option>
                     </select>
@@ -240,21 +259,21 @@
             <tr>
                 <td class="formtdtext">活动能力</td>
                 <td>
-                    <select class="cocombox" style="width: 100px">
+                    <select class="easyui-combobox lazy-combobox" name="jk_huod" style="width: 100px">
                         <option value="1">1</option>
                         <option value="2">2</option>
                     </select>
                 </td>
                 <td class="formtdtext">出行方式</td>
                 <td>
-                    <select class="cocombox" style="width: 100px">
+                    <select class="easyui-combobox lazy-combobox" name="jk_chux" style="width: 100px">
                         <option value="1">1</option>
                         <option value="2">2</option>
                     </select>
                 </td>
                 <td class="formtdtext">记忆力情况</td>
                 <td>
-                    <select class="cocombox" style="width: 100px">
+                    <select class="easyui-combobox lazy-combobox" name="jk_jiyl" style="width: 100px">
                         <option value="1">1</option>
                         <option value="2">2</option>
                     </select>
@@ -263,21 +282,21 @@
             <tr>
                 <td class="formtdtext">穿脱衣服</td>
                 <td>
-                    <select class="cocombox" style="width: 100px">
+                    <select class="easyui-combobox lazy-combobox" name="jk_chuany" style="width: 100px">
                         <option value="1">1</option>
                         <option value="2">2</option>
                     </select>
                 </td>
                 <td class="formtdtext">定向能力</td>
                 <td>
-                    <select class="cocombox" style="width: 100px">
+                    <select class="easyui-combobox lazy-combobox" name="jk_dingx" style="width: 100px">
                         <option value="1">1</option>
                         <option value="2">2</option>
                     </select>
                 </td>
                 <td class="formtdtext">洗澡情况</td>
                 <td>
-                    <select class="cocombox" style="width: 100px">
+                    <select class="easyui-combobox lazy-combobox" name="jk_xiz" style="width: 100px">
                         <option value="1">1</option>
                         <option value="2">2</option>
                     </select>
@@ -299,19 +318,19 @@
             <tr>
                 <td class="formtdtext">病史情况</td>
                 <td colspan="5">
-                    <label><input name="Fruit" type="checkbox" value="" />高血压 </label>
-                    <label><input name="Fruit" type="checkbox" value="" />糖尿病 </label>
-                    <label><input name="Fruit" type="checkbox" value="" />风湿病 </label>
-                    <label><input name="Fruit" type="checkbox" value="" />心脏病 </label>
-                    <label><input name="Fruit" type="checkbox" value="" />老年痴呆 </label>
-                    <label><input name="Fruit" type="checkbox" value="" />扭伤骨折 </label>
-                    <label><input name="Fruit" type="checkbox" value="" />其他 </label>
+                    <label><input name="jk_bsqk" type="checkbox" value="jk_bs_gaoxy" />高血压 </label>
+                    <label><input name="jk_bsqk" type="checkbox" value="jk_bs_tangnb" />糖尿病 </label>
+                    <label><input name="jk_bsqk" type="checkbox" value="jk_bs_fengs" />风湿病 </label>
+                    <label><input name="jk_bsqk" type="checkbox" value="jk_bs_xinzb" />心脏病 </label>
+                    <label><input name="jk_bsqk" type="checkbox" value="jk_bs_chid" />老年痴呆 </label>
+                    <label><input name="jk_bsqk" type="checkbox" value="jk_bs_guz" />扭伤骨折 </label>
+                    <label><input name="jk_bsqk" type="checkbox" value="jk_bs_qit" />其他 </label>
                 </td>
             </tr>
             <tr>
                 <td class="formtdtext">主要疾病</td>
                 <td colspan="5">
-                    <textarea name="message" style="height:60px;width: 90%"></textarea>
+                    <textarea name="jk_jib"  style="height:60px;width: 90%"></textarea>
                 </td>
             </tr>
         </table>
@@ -326,26 +345,26 @@
             <tr>
                 <td class="formtdtext">性格特征</td>
                 <td colspan="5">
-                    <textarea name="message" style="height:60px;width: 90%"></textarea>
+                    <textarea name="xq_tez" style="height:60px;width: 90%"></textarea>
                 </td>
             </tr>
             <tr>
                 <td class="formtdtext">兴趣爱好</td>
                 <td colspan="5">
-                    <textarea name="message" style="height:60px;width: 90%"></textarea>
+                    <textarea name="xq_aih" style="height:60px;width: 90%"></textarea>
                 </td>
             </tr>
             <tr>
                 <td class="formtdtext">特长</td>
-                <td><input class="easyui-validatebox"></td>
+                <td><input class="easyui-validatebox" name="xq_tec"></td>
                 <td class="formtdtext">社会活动</td>
-                <td colspan="3"><input class="easyui-validatebox" style="width: 80%"></td>
+                <td colspan="3"><input class="easyui-validatebox" name="xq_huod" style="width: 80%"></td>
             </tr>
             <tr>
                 <td class="formtdtext">参加社团</td>
-                <td><input class="easyui-validatebox"></td>
+                <td><input class="easyui-validatebox" name="xq_canjiast"></td>
                 <td class="formtdtext">担当角色</td>
-                <td colspan="3"><input class="easyui-validatebox" style="width: 80%"></td>
+                <td colspan="3"><input class="easyui-validatebox" name="xq_jiaos" style="width: 80%"></td>
             </tr>
         </table>
     </div>
@@ -356,15 +375,19 @@
     <div id="familymembersdiv">
         <table class="easyui-datagrid" title="家庭成员列表" id="familymembersgrid" style="width: 900px"
                 data-options="rownumbers:true,toolbar:'#pensionmembertb',singleSelect:true,showFooter:true">
+
              <thead data-options="frozen:true">
              <tr>
-                 <th data-options="field:'relationship',width:100,editor:{
+                 <th data-options="field:'bottom',width:60,align:'center',editor:'icon-remove'">
+                     <a id="newfamilymemer_btn1" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true">新增</a>
+                 </th>
+                 <th class="lazy-combobox" data-options="field:'relationship',align:'center',width:100,editor:{
                  type:'combobox',
                  options:{
-                    valueField:'value',
-                    url:'jsondata/getmemberbytype.jsp?type=relation',
+                    url:'cb.do?searchtype=relation',
                     width:60,
-                    textField:'label'
+                    valueField: 'id',
+                    textField: 'text'
                  }
                  }">
                     关系<span style="color: red">*</span>
@@ -374,13 +397,13 @@
             <thead>
                 <tr>
                     <th data-options="field:'name',width:90,align:'center',editor:'text'">姓名<span style="color: red">*</span></th>
-                    <th data-options="field:'personid',width:150,align:'right',editor:{
+                    <th data-options="field:'personid',width:150,align:'center',editor:{
                             type:'validatebox',
                             options:{
                                 required:true
                             }
                         }">身份证号<span style="color: red">*</span></th>
-                    <th data-options="field:'sex',width:60,editor:{
+                    <th class="lazy-combobox" data-options="field:'sex',align:'center',width:60,editor:{
 							type:'combobox',
 							options:{
 								valueField: 'value',
@@ -390,15 +413,15 @@
 							}
 						}">性别<span style="color: red">*</span></th>
                     <th data-options="field:'birthday',width:90,align:'center',editor:'text'">出生日期</th>
-                    <th data-options="field:'phone1',width:160,editor:'text'">宅电</th>
-                    <th data-options="field:'phone2',width:160,editor:'text'">手机</th>
-                    <th data-options="field:'phone3',width:160,editor:'text'">小灵通</th>
+                    <th data-options="field:'phone1',width:160,align:'center',editor:'text'">宅电</th>
+                    <th data-options="field:'phone2',width:160,align:'center',editor:'text'">手机</th>
+                    <th data-options="field:'phone3',width:160,align:'center',editor:'text'">小灵通</th>
 
                 </tr>
             </thead>
         </table>
         <div id="familymembertb" style="height:auto">
-            <a id="newfamilymemer_btn" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true">新增</a>
+            <!--<a id="newfamilymemer_btn" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true">新增</a>-->
             <a id="delfamilymemer_btn" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true,disabled:true">删除</a>
         </div>
     </div>
@@ -411,7 +434,7 @@
                 <table style="width: 450px">
                 <tr>
                     <td class="formtdtext" style="text-align: right;width: 70px">制单日期:</td>
-                    <td style="width: 100;text-align: left" ><input class="easyui-datebox" data-options="formatter:myformatter,parser:myparser"></td>
+                    <td style="width: 100;text-align: left" ><input class="easyui-datebox" name="operator_date" data-options="formatter:myformatter,parser:myparser"></td>
                 </tr>
             </table>
             </td>
@@ -419,7 +442,7 @@
                 <table style="text-align: right;width: 450px">
                     <tr style="text-align: right">
                        <!-- <td class="formtdtext" style="width: 70px">制单人:</td>-->
-                        <td style="width: 100px" >制单人:<input class="easyui-validatebox"></td>
+                        <td style="width: 100px" >制单人:<input class="easyui-validatebox" name="operators"></td>
                     </tr>
                 </table>
             </td>
@@ -429,11 +452,15 @@
     </table>
 </div>
 
-<div style="width: 900px;text-align: center">
-    <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">保存返回</a>
+
+<div id="pensionbutton" style="width: 900px;text-align: center">
+    <a id="pensionsubmit" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">保存返回</a>
     <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">保存添加</a>
     <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-back'">返回</a>
 </div>
+</form>
+
+
 <div>
     <br>
 </div>
