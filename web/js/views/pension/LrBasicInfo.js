@@ -36,6 +36,7 @@ define(function()
                      message: '身份证不合法,请确认身份证是否正确输入!'
                  }
              });
+
          })
 
         /*家庭成员添加与删除*/
@@ -100,14 +101,43 @@ define(function()
             $('#pensionform').form('submit',{
                 url:'lr.do?model=hzyl.PensionPeopleInfo&eventName=save',
                 onSubmit:function(){
-
+                    var isValid = $('#pensionform').form('validate');
+                    return isValid;
                 },
                 success:function(data){
-                    alert(data);
+                    var obj=eval('('+data+')')
+                    if(obj.success){
+                        var tab=$('#tabs');
+                        var pp = tab.tabs('getSelected');
+                        var index = tab.tabs('getTabIndex',pp);
+                        tab.tabs('close',index);
+                    }
+
                 }
             })
 
         })
+
+        //根据身份证号初始化出生年月，性别，年龄
+        $('#ownerid').change(function()
+        {
+            require(['views/pension/ShowBirthDay'], function (ShowBirthDay)
+            {
+                var sex_birth = ShowBirthDay.showBirthday($('#ownerid').val()) ;
+                if(sex_birth.birthday){
+                    $('#birthdate').datebox('setValue',sex_birth.birthday) ;
+                    $('#sex').combobox('setValue',sex_birth.sex) ;
+                    $('#age').val(sex_birth.age);
+                    /*$(birthday.target).val(sex_birth.birthday);
+                    $(sex.target).val(sex_birth.sex);
+                    $(sex.target).combobox('setValue',sex_birth.sex);
+                    $(age.target).val((new Date()).getFullYear()-parseInt(sex_birth.birthday.split("-")[0]));*/
+                }
+            })
+        })
+
+
+
     }
 
 
@@ -116,4 +146,4 @@ define(function()
         render: render
     };
 
-});
+})

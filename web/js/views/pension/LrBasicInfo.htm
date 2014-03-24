@@ -16,18 +16,18 @@
                 <td class="formtdtext">身份证<span style="color: red">*</span></td>
                 <td><input id="ownerid" name="identityid" class="easyui-validatebox" data-options="required:true,invalidMessage:'请输入正确的身份证号',validType:'personid'"></td>
                 <td class="formtdtext">出生年月</td>
-                <td><input class="easyui-datebox" name="birthd" data-options="formatter:myformatter,parser:myparser"></td>
+                <td><input id="birthdate" class="easyui-datebox" name="birthd" data-options="formatter:myformatter,parser:myparser"></td>
             </tr>
             <tr>
                 <td class="formtdtext">性别</td>
                 <td>
-                    <select class="easyui-combobox lazy-combobox" data-options="valueField: 'value'" name="gender" style="width: 100px">
+                    <select id="sex" class="easyui-combobox lazy-combobox" data-options="valueField: 'value',field:'sex'," name="gender" style="width: 100px">
                         <option value="man">男</option>
                         <option value="woman">女</option>
                     </select>
                 </td>
                 <td class="formtdtext">年龄</td>
-                <td><input class="easyui-validatebox" name="age"></td>
+                <td><input id="age" class="easyui-validatebox,field:'age'" name="age"></td>
                 <td class="formtdtext">民族</td>
                 <td>
                     <select class="easyui-combobox lazy-combobox" name="nation" style="width: 100px">
