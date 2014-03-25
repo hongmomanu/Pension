@@ -434,7 +434,7 @@
                 <table style="width: 450px">
                 <tr>
                     <td class="formtdtext" style="text-align: right;width: 70px">制单日期:</td>
-                    <td style="width: 100;text-align: left" ><input class="easyui-datebox" name="operator_date" data-options="formatter:myformatter,parser:myparser"></td>
+                    <td style="width: 100;text-align: left" ><input class="easyui-datebox" id="setdaytime" name="operator_date" data-options="formatter:myformatter,parser:myparser"></td>
                 </tr>
             </table>
             </td>
@@ -485,6 +485,8 @@
         }
     }
 
+    /*$('#setdaytime').datebox('setValue',myformatter(new Date()));*/
+
     /*$.extend($.fn.validatebox.defaults.rules,{
         personid:{
             validator: PersonidValidator.IdentityCodeValid,
@@ -492,3 +494,7 @@
         }
     });*/
 </script>
+<!--
+<script type="text/javascript">
+    $('#setdaytime').datebox('setValue',myformatter(new Date()));
+</script>-->

@@ -136,7 +136,7 @@ define(function()
             })
         })
 
-
+        $('#setdaytime').datebox('setValue',myformatter(new Date()));
 
     }
 
