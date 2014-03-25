@@ -56,9 +56,9 @@ public class AuditBusiness {
             Map where=new HashMap();
             where.put("auditid",map.get("auditid"));
 
-            if("1".equals(map.get("auflag"))){
-                int aulevel=Integer.parseInt(map.get("aulevel").toString())+1;
-                map.put("aulevel",aulevel+"");
+            int aulevel=Integer.parseInt(map.get("aulevel").toString())+1;
+            map.put("aulevel",aulevel+"");
+            if("1".equals(map.get("auflag"))){   //审核成功
                 if(aulevel==3){
                     map.put("auendflag","1");
                     commonDbUtil.updateTableVales(map, "opaudit", where);
@@ -69,6 +69,9 @@ public class AuditBusiness {
                 }else{
                     commonDbUtil.updateTableVales(map,"opaudit",where);
                 }
+            }else{    //不成功,结束
+                map.put("auendflag","1");
+                commonDbUtil.updateTableVales(map, "opaudit", where);
             }
 
         }

@@ -65,7 +65,15 @@ function getChecked(){
                 type: "POST",
                 data: { functionids : s ,roleid:$("input[name='roleid']").val()},
                 url:'lr.do?model=manager.Grant&eventName=saveRoleFunction',
-                success:function(res){alert(res)}
+                success:function(res){
+                    var obj=eval('('+res+')');
+                    if(obj.success=='true'){
+                        $.messager.alert('提示','操作成功!','info');
+                    }else{
+                        $.messager.alert('提示','操作失败!','info');
+                    }
+
+                }
             }
     )
 }

@@ -189,7 +189,14 @@ function saveUserRole(){
         type: "POST",
         url: 'lr.do?model=manager.Grant&eventName=saveRoleUser',
         data:obj,
-        success: function(){$("#win_rolegrid").window('close');alert('成功')}
+        success: function(res){
+            $("#win_rolegrid").window('close');
+            var obj=eval('('+res+')');
+            if(obj.success=='true'){
+                $.messager.alert('提示','操作成功!','info');
+            }else{
+                $.messager.alert('提示','操作失败!','info');
+            }}
     })
 }
 
