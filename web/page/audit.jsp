@@ -22,10 +22,13 @@
         }
         return v;
     }
+
 </script>
 <body>
     <table id="auditGrid" class="easyui-datagrid"
-           data-options="rownumbers:true,singleSelect:false,toolbar:toolbar,onClickCell: onClickCell,fit:true, pagination:true, pageSize:10,border:false">
+           data-options="rownumbers:true,singleSelect:false,toolbar:toolbar,singleSelect:false,
+           fit:true, pagination:true, pageSize:10,border:false,
+           onClickCell:onClickCellFun">
     <thead>
         <tr>
             <th data-options="field:'ck',checkbox:true"></th>
@@ -49,54 +52,15 @@
 
 </body>
 </html>
-<script type="text/javascript">
-    $.extend($.fn.datagrid.methods, {
-        editCell: function(jq,param){
-            return jq.each(function(){
-                var opts = $(this).datagrid('options');
-                var fields = $(this).datagrid('getColumnFields',true).concat($(this).datagrid('getColumnFields'));
-                for(var i=0; i<fields.length; i++){
-                    var col = $(this).datagrid('getColumnOption', fields[i]);
-                    col.editor1 = col.editor;
-                    if (fields[i] != param.field){
-                        col.editor = null;
-                    }
-                }
-                $(this).datagrid('beginEdit', param.index);
-                for(var i=0; i<fields.length; i++){
-                    var col = $(this).datagrid('getColumnOption', fields[i]);
-                    col.editor = col.editor1;
-                }
-            });
-        }
-    });
 
-    var editIndex = undefined;
-    function endEditing(){
-        if (editIndex == undefined){return true}
-        if ($('#auditGrid').datagrid('validateRow', editIndex)){
-            $('#auditGrid').datagrid('endEdit', editIndex);
-            editIndex = undefined;
-            return true;
-        } else {
-            return false;
-        }
-    }
-    function onClickCell(index, field){
-        if (endEditing()){
-            $('#auditGrid').datagrid('selectRow', index)
-                    .datagrid('editCell', {index:index,field:field});
-            editIndex = index;
-        }
-    }
-    /*$('#auditGrid').datagrid({
-        onSelect:function(index,row){
-            //$(this).datagrid('checkRow',index)
-        }
-    })*/
-</script>
 <script>
-    var toolbar = ['-',{
+    var editindex=undefined;
+    var toolbar = [
+        {
+            text:'保存',
+            iconCls:'approval',
+            handler:function(){$('#auditGrid').datagrid('acceptChanges');}
+        },'-',{
         text:'审核',
         iconCls:'approval',
         handler:function(){saveApproval();}
@@ -109,7 +73,6 @@ function loadAuditData(){
 }
     loadAuditData();
 var saveApproval=function(){
-    if(!endEditing)return;
     var auditmsgs=[];
     $('#auditGrid').datagrid('acceptChanges');
     var yz=true;
@@ -121,10 +84,11 @@ var saveApproval=function(){
     })
 
     if(!yz){
-        alert(' 业务没有通过,请填写备注信息');return;
+        $.messager.alert('提示','业务没有通过,请填写备注信息!','info');
+        return;
     }
 
-    $('#auditGrid').datagrid('getChecked').forEach(function(item,i){
+    $('#auditGrid').datagrid('getSelections').forEach(function(item,i){
         auditmsgs.push({
             auditid:$(item).attr('auditid'),
             auflag:$(item).attr('audefault'),
@@ -132,6 +96,10 @@ var saveApproval=function(){
             audesc:$(item).attr('audesc')
         })
     })
+    if(auditmsgs.length==0){
+        $.messager.alert('提示','请选中再操作!','info');
+        return;
+    }
     $.ajax({
         url:'audit.do?method='+method+'&eventName=saveAudit',
         type:'post',
@@ -141,4 +109,18 @@ var saveApproval=function(){
         success:loadAuditData
     })
 }
+    function onClickCellFun(index,field, value){
+        if("audefault"==field||"audesc"==field){
+            if(editindex){
+                $(this).datagrid('endEdit',editindex);//
+                //$(this).datagrid('selectRow',editindex);
+            }
+            $(this).datagrid('beginEdit', index);
+            var ed = $(this).datagrid('getEditor', {index:index,field:field});
+            $(ed.target).focus();
+            editindex=index;
+        }
+    }
+
+
 </script>

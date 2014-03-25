@@ -24,6 +24,8 @@ public class AuditBusiness {
     根据统筹区来限制查询结果
      */
     public String query(CommonDbUtil commonDbUtil,String method,Map map,String loginname,String dvcode){
+        int page=Integer.parseInt(map.get("page").toString());
+        int rows=Integer.parseInt(map.get("rows").toString());
         String sub="select f.location" +
                 "  from xt_rolefunc rf, xt_function f, xt_roleuser ru, xt_user u" +
                 "  where f.nodetype = '2'" +
@@ -33,10 +35,14 @@ public class AuditBusiness {
                 "   and u.loginname = '"+loginname+"'";
         String sql_divsion;//=" and exists(select 1 from dvhz dv where dv.dvhigh='"+dvcode+"' and dv.dvcode=b.dvcode)";
         sql_divsion=" and (b.dvcode like '"+dvcode+"%' or '"+dvcode+"'='330100')" ;
-        String sql="select a.*,b.*,u.username,'1' audefault from opaudit a,opauditbean b,xt_user u where u.loginname=b.loginname and a.auditid=b.auditid and b.functionid='"
+        String sql="select a.auflag,a.aulevel,a.audesc,b.*,'1' audefault from opaudit a,opauditbean b,xt_user u where u.loginname=b.loginname and a.auditid=b.auditid and b.functionid='"
                 +method+"' and a.auendflag='0' and to_char(to_number(a.aulevel)+1) in("+sub+") "+sql_divsion +" order by b.auditid desc";
-        List list=commonDbUtil.query(sql);
-        return JSONArray.fromObject(list).toString();
+        int total=commonDbUtil.query(sql).size();//查询总数,性能不高
+        List list=commonDbUtil.query("SELECT * FROM (SELECT tt.*, ROWNUM ro FROM ("+sql+") tt WHERE ROWNUM <="+(page)*rows+") WHERE ro > "+(page-1)*rows);
+        Map mapj=new HashMap();
+        mapj.put("total",total);
+        mapj.put("rows",list);
+        return JSONObject.fromObject(mapj).toString();
     }
     public String doBanchAudit(CommonDbUtil commonDbUtil,String method,JSONArray jarray,String loginname) throws Exception {
         for(int i=0;i<jarray.size();i++){
@@ -50,9 +56,9 @@ public class AuditBusiness {
             Map where=new HashMap();
             where.put("auditid",map.get("auditid"));
 
-            if("1".equals(map.get("auflag"))){
-                int aulevel=Integer.parseInt(map.get("aulevel").toString())+1;
-                map.put("aulevel",aulevel+"");
+            int aulevel=Integer.parseInt(map.get("aulevel").toString())+1;
+            map.put("aulevel",aulevel+"");
+            if("1".equals(map.get("auflag"))){   //审核成功
                 if(aulevel==3){
                     map.put("auendflag","1");
                     commonDbUtil.updateTableVales(map, "opaudit", where);
@@ -63,6 +69,9 @@ public class AuditBusiness {
                 }else{
                     commonDbUtil.updateTableVales(map,"opaudit",where);
                 }
+            }else{    //不成功,结束
+                map.put("auendflag","1");
+                commonDbUtil.updateTableVales(map, "opaudit", where);
             }
 
         }

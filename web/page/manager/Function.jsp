@@ -186,7 +186,7 @@ $(function(){
                     type: "POST",
                     data: { functionid : funObj.functionid },
                     url:'lr.do?model=manager.Function&eventName=deleteFunction',
-                    success:function(){alert('success')}
+                    success:function(){$.messager.alert('提示','操作成功!','info');}
                 }
         )
     })
