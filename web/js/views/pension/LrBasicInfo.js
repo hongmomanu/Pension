@@ -2,6 +2,10 @@ define(function()
 {
     function render(parameters,res)
     {
+        if(res){
+          $('#pensionform').form('load',res);
+          return;
+        }
         /*上传照片*/
         $('#personimg').click(function () {
             $('#imgwin').window('open');

@@ -50,7 +50,7 @@ define(function(){
 
 
         },
-        ShowContent:function(htmlfile,jsfile,title,value,customparam){
+        ShowContent:function(htmlfile,jsfile,title,parameters,res){
             var require_render=function(htmlfile,jsfile){
 
                 if($('#tabs').tabs('exists',title)){
@@ -71,7 +71,11 @@ define(function(){
                         }
                     ]
                 });
-                jsfile.render()
+                if(res){
+                    jsfile.render(parameters,res)
+                }else{
+                    jsfile.render()
+                }
             };
             require([htmlfile,jsfile],require_render);
         },

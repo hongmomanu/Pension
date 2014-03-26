@@ -36,12 +36,53 @@ public class LrbasicInfo {
                 obj.put("peopleid",rs.getString("identityid"));
                 list.add(obj);
             }
+            //rs.close();
             return JSONArray.fromObject(list);
         } catch (SQLException e) {
 
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
             return null;
-        }
+        }/*finally {
+            if(null!=pstmt){
+                try {
+                    pstmt.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                }
+            }
+        }*/
+        //return null;  //To change body of created methods use File | Settings | File Templates.
+    }
+
+    public JSONArray findLrbasicInfo(String lrname) {
+        Connection conn = JdbcFactory.getConn("oracle");
+        PreparedStatement pstmt = null;
+        String sql = "SELECT * FROM T_OLDPEOPLE where name like '"+lrname+"%'";
+        pstmt = JdbcFactory.getPstmt(conn,sql);
+        ArrayList<Map<String,Object>> list = new ArrayList<Map<String, Object>>();
+        try {
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()){
+                Map<String,Object> obj = new HashMap<String, Object>();
+                obj.put("name",rs.getString("name"));
+                obj.put("place",rs.getString("address")) ;
+                obj.put("peopleid",rs.getString("identityid"));
+                list.add(obj);
+            }
+            //rs.close();    //要记得close
+            return JSONArray.fromObject(list);
+        } catch (SQLException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            return null;
+        } /*finally {
+            if(null!=pstmt){
+                try {
+                    pstmt.close();   //建立的连接对象，记得close
+                } catch (SQLException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                }
+            }
+        }*/
         //return null;  //To change body of created methods use File | Settings | File Templates.
     }
 }

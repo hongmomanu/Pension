@@ -1,15 +1,21 @@
 <fieldset>
-    <div id="test">
-        <table class="easyui-datagrid" style="width:400px;height:250px"
-               data-options="url:'ajax/getLrBasicInfo.jsp',fitColumns:true,singleSelect:true">
+    <div id="lrmessageid">
+        <table id="lrxxid" class="easyui-datagrid" title="老年基本信息" style="width:500px;height:auto"
+               data-options="url:'ajax/getLrBasicInfo.jsp',method:'get',toolbar:'#tb',fitColumns:true,singleSelect:true">
             <thead>
             <tr>
                 <th data-options="field:'name',width:100">姓名</th>
-                <th data-options="field:'peopleid',width:100">身份证号</th>
-                <th data-options="field:'place',width:100,align:'right'">住址</th>
+                <th data-options="field:'peopleid',width:200">身份证号</th>
+                <th data-options="field:'place',width:200,align:'right'">住址</th>
             </tr>
             </thead>
         </table>
+    </div>
+
+    <div id="tb">
+        <input id="lrname" class="easyui-validatebox">
+        <a id="search" href="#" class="easyui-linkbutton" iconCls='icon-search'>查询</a>
+        <a id="edit" href="#" class="easyui-linkbutton" iconCls='icon-edit'>编辑</a>
     </div>
 
 </fieldset>
