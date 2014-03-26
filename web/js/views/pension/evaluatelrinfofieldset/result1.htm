@@ -1,56 +1,101 @@
-<fieldset ><legend>评估报告一:评估总分计算</legend>
+<fieldset style="width: 800px;margin: 0px auto;">
+    <legend>评估报告一:评估总分计算</legend>
 
     <table class="formtable" style="width:100%">
-        <tbody><tr>
-            <td colspan="2">主要参数</td>
-
-            <td>评估分值</td>
+        <tr>
+            <td style="width: 90px;">评估参数</td>
+            <td>判断等级</td>
+            <td style="width: 70px;">评估分值</td>
         </tr>
         <tr>
-            <td>评估分值1</td>
-            <td>生活处理能力</td>
-            <td>32.5分</td>
+            <td>1.生活处理能力<br/>(0-50分)</td>
+            <td>
+                <label><input name="zhufqk" type="radio" value="jk_bs_gaoxy" />正常</label>
+                <label><input name="zhufqk" type="radio" value="jk_bs_gaoxy" />轻度</label>
+                <label><input name="zhufqk" type="radio" value="jk_bs_gaoxy" />中度依赖</label>
+                <label><input name="zhufqk" type="radio" value="jk_bs_gaoxy" />重度依赖</label>
+            </td>
+            <td ><label><input size="1" class="pingfen">分</label></td>
         </tr>
         <tr>
-            <td>评估分值2</td>
-            <td>居住环境</td>
-            <td>15分</td>
+            <td>2.经济条件<br/>(0-25分)</td>
+            <td>
+                <label><input name="zhufqk" type="radio" value="jk_bs_gaoxy" />低保</label>
+                <label><input name="zhufqk" type="radio" value="jk_bs_gaoxy" />无社保</label>
+                <label><input name="zhufqk" type="radio" value="jk_bs_gaoxy" />低退休工资</label>
+                <label><input name="zhufqk" type="radio" value="jk_bs_gaoxy" />退休工资</label>
+            </td>
+            <td ><label><input size="1" class="pingfen">分</label></td>
         </tr>
         <tr>
-            <td>评估分值3</td>
-            <td>经济条件</td>
-            <td>20分</td>
+            <td>3.居住环境<br/>(0-25分)</td>
+            <td>
+                <label><input name="zhufqk" type="radio" value="jk_bs_gaoxy" />独居,孤寡</label>
+                <label><input name="zhufqk" type="radio" value="jk_bs_gaoxy" />空巢</label>
+                <label><input name="zhufqk" type="radio" value="jk_bs_gaoxy" />与子女,亲友共住</label>
+            </td>
+            <td ><label><input size="1" class="pingfen">分</label></td>
         </tr>
         <tr>
-            <td>附加分值1</td>
-            <td>认知能力</td>
-            <td>0分</td>
+            <td>4.年龄<br/>(0-10分)</td>
+            <td>
+                <label><input name="zhufqk" type="radio" value="jk_bs_gaoxy" />60-79</label>
+                <label><input name="zhufqk" type="radio" value="jk_bs_gaoxy" />80-90</label>
+                <label><input name="zhufqk" type="radio" value="jk_bs_gaoxy" />90以上</label>
+            </td>
+            <td ><label><input size="1" class="pingfen">分</label></td>
         </tr>
         <tr>
-            <td>附加分值2</td>
-            <td>年龄情况</td>
-            <td>10分</td>
+            <td>5.特殊贡献<br/>(0-10分)</td>
+            <td>
+                <label><input name="zhufqk" type="radio" value="jk_bs_gaoxy" />市级以上劳模</label>
+                <label><input name="zhufqk" type="radio" value="jk_bs_gaoxy" />重点优抚对象</label>
+                <label><input name="zhufqk" type="radio" value="jk_bs_gaoxy" />纯居干</label>
+                <label><input name="zhufqk" type="radio" value="jk_bs_gaoxy" />离休干部</label>
+            </td>
+            <td ><label><input size="1" class="pingfen">分</label></td>
         </tr>
         <tr>
-            <td>附加分值3</td>
-            <td>特殊贡献</td>
-            <td>0分</td>
+            <td>6.残障情况</td>
+            <td>
+                <textarea style="width: 99%;"></textarea>
+            </td>
+            <td ><label><input size="1" class="pingfen">分</label></td>
+        </tr>
+        <tr>
+            <td>7.住房情况</td>
+            <td>
+                <textarea style="width: 99%;"></textarea>
+            </td>
+            <td ><label><input size="1" class="pingfen">分</label></td>
+        </tr>
+        <tr>
+            <td>8.重大疾病</td>
+            <td>
+                <textarea style="width: 99%;"></textarea>
+            </td>
+            <td ><label><input size="1" class="pingfen">分</label></td>
         </tr>
         <tr>
             <td>评估总分</td>
-            <td>评估分值1+评估分值2+评估分值3<br>+附加分值1+附加分值2+附加分值3</td>
-            <td>77.5分</td>
+            <td style="text-align: center;">
+                <label><input size="2" class="pingfen">分</label>
+            </td>
+            <td></td>
         </tr>
         <tr>
             <td>建议服务标准</td>
-            <td colspan="2">6小时</td>
-        </tr>
-        <tr>
-            <td>备注</td>
-            <td colspan="2">
-                <textarea name="message" style="height:60px;width: 90%"></textarea>
+            <td colspan="2" style="text-align: center;">
+                <label><input size="2" class="pingfen">小时</label>
             </td>
         </tr>
-        </tbody>
+        <tr>
+            <td>建议服务形式</td>
+            <td colspan="2" style="text-align: center;">
+                <label><input name="fuwuxingshi" type="radio" value="jk_bs_gaoxy" />居家养老</label>
+                <label><input name="fuwuxingshi" type="radio" value="jk_bs_gaoxy" />机构养老</label>
+            </td>
+        </tr>
+
     </table>
 </fieldset>

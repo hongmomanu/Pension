@@ -328,3 +328,15 @@ div.yw-block > span{
 .mywidth2 td{
     width:170px;
 }
+
+.pingfen{
+    border-top:0px;
+    border-right:0px;
+    border-left:0px;
+    border-bottom: 1px solid red;
+}
+
+#zhongdajibing li{
+    color: green;
+    font-size: 15px;
+}

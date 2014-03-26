@@ -4,11 +4,11 @@ define(function(){
         {filehtml:'info1',title:'生活自理能力'},
         {filehtml:'info2',title:'经济条件'},
         {filehtml:'info3',title:'居住环境'},
-        {filehtml:'info3',title:'年龄情况'},
-        {filehtml:'info3',title:'特殊贡献'},
-        {filehtml:'info3',title:'残障情况'},
-        {filehtml:'info3',title:'重大疾病'},
-        {filehtml:'info3',title:'居住环境'},
+        {filehtml:'info4',title:'年龄情况'},
+        {filehtml:'info5',title:'特殊贡献'},
+        {filehtml:'info6',title:'残障情况'},
+        {filehtml:'info7',title:'住房环境'},
+        {filehtml:'info8',title:'重大疾病'},
         {filehtml:'result1',title:'评估部分计算'},
         {filehtml:'result2',title:'评估报告确认'}
 
