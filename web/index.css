@@ -340,3 +340,9 @@ div.yw-block > span{
     color: green;
     font-size: 15px;
 }
+.bigSaveBtn{
+    color:green;
+    width: 20px;
+    height: 20px;
+    display: block;
+}
