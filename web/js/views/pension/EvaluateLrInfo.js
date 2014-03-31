@@ -97,10 +97,11 @@ define(function(){
             $('#mainform').form('submit',{
                 url:'lr.do?model=hzyl.EvaluateLrInfo&eventName=save',
                 success: function(res){
-                    var data = eval('(' + res + ')');
-                    if (data.success){
-                        alert(data.message)
-                    }
+                   cj.ifSuccQest(res,"已操作成功是否关闭此",function(){
+                       require(['commonfuncs/TreeClickEvent'],function(js){
+                           js.closeCurrentTab();
+                       })
+                   })
                 }
             })
         })
