@@ -1,10 +1,10 @@
+
 define(function()
 {
     function render(parameters,res)
     {
         if(res){
           $('#pensionform').form('load',res);
-          return;
         }
         /*上传照片*/
         $('#personimg').click(function () {
@@ -35,7 +35,7 @@ define(function()
         /*身份证号验证*/
          require(['commonfuncs/PersonidValidator'],function(PersonidValidator){
              $.extend($.fn.validatebox.defaults.rules, {
-                 personid: {
+                 identityid: {
                      validator: PersonidValidator.IdentityCodeValid,
                      message: '身份证不合法,请确认身份证是否正确输入!'
                  }
@@ -102,32 +102,54 @@ define(function()
 
         $('#pensionsubmit').bind('click',function(){
             /*alert("click");*/
-            $('#pensionform').form('submit',{
-                url:'lr.do?model=hzyl.PensionPeopleInfo&eventName=save',
-                onSubmit:function(){
-                    var isValid = $('#pensionform').form('validate');
-                    return isValid;
-                },
-                success:function(data){
-                    var obj=eval('('+data+')')
-                    if(obj.success){
-                        var tab=$('#tabs');
-                        var pp = tab.tabs('getSelected');
-                        var index = tab.tabs('getTabIndex',pp);
-                        tab.tabs('close',index);
-                    }
+            var lrid = $("input[name='lr_id']").val();
+            if(lrid!=null){
+                $('#pensionform').form('submit',{
+                    url:'lr.do?model=hzyl.PensionPeopleInfo&eventName=update',
+                    onSubmit:function(){
+                        var isValid = $('#pensionform').form('validate');
+                        return isValid;
+                    },
+                    success:function(data){
+                        var obj=eval('('+data+')')
+                        if(obj.success){
+                            var tab=$('#tabs');
+                            var pp = tab.tabs('getSelected');
+                            var index = tab.tabs('getTabIndex',pp);
+                            tab.tabs('close',index);
+                        }
 
-                }
-            })
+                    }
+                })
+            }else{
+                $('#pensionform').form('submit',{
+                    url:'lr.do?model=hzyl.PensionPeopleInfo&eventName=save',
+                    onSubmit:function(){
+                        var isValid = $('#pensionform').form('validate');
+                        return isValid;
+                    },
+                    success:function(data){
+                        var obj=eval('('+data+')')
+                        if(obj.success){
+                            var tab=$('#tabs');
+                            var pp = tab.tabs('getSelected');
+                            var index = tab.tabs('getTabIndex',pp);
+                            tab.tabs('close',index);
+                        }
+
+                    }
+                })
+            }
+
 
         })
 
         //根据身份证号初始化出生年月，性别，年龄
-        $('#ownerid').change(function()
+        $('#identityid').change(function()
         {
             require(['views/pension/ShowBirthDay'], function (ShowBirthDay)
             {
-                var sex_birth = ShowBirthDay.showBirthday($('#ownerid').val()) ;
+                var sex_birth = ShowBirthDay.showBirthday($('#identityid').val()) ;
                 if(sex_birth.birthday){
                     $('#birthdate').datebox('setValue',sex_birth.birthday) ;
                     $('#sex').combobox('setValue',sex_birth.sex) ;

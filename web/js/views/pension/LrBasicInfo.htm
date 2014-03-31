@@ -1,8 +1,10 @@
 <!--老年人基本信息-->
 <form id="pensionform" method="post">
+
 <fieldset style="width: 900px">
     <legend>老年人基本信息</legend>
     <div style="width: 900px">
+        <input type="hidden" name="lr_id">
         <table class="formtable" style="width: 900px">
             <tr>
                 <td class="formtdtext"  style="width: 100px">行政区划<span style="color: red">*</span></td>
@@ -14,7 +16,7 @@
                 <td class="formtdtext" style="width: 100px">姓名<span style="color: red">*</span></td>
                 <td><input class="easyui-validatebox" name="name" data-options="required:true"></td>
                 <td class="formtdtext">身份证<span style="color: red">*</span></td>
-                <td><input id="ownerid" name="identityid" class="easyui-validatebox" data-options="required:true,invalidMessage:'请输入正确的身份证号',validType:'personid'"></td>
+                <td><input id="identityid" name="identityid" class="easyui-validatebox" data-options="required:true,invalidMessage:'请输入正确的身份证号',validType:'identityid'"></td>
                 <td class="formtdtext">出生年月</td>
                 <td><input id="birthdate" class="easyui-datebox" name="birthd" data-options="formatter:myformatter,parser:myparser"></td>
             </tr>
