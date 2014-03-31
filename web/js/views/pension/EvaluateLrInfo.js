@@ -1,8 +1,10 @@
 define(function(){
+
     var fieldset=[
-        {filehtml:'text!views/pension/LrBasicInfo.htm',
+        /*{filehtml:'text!views/pension/LrBasicInfo.htm',
             filejs:'views/pension/LrBasicInfo',
-            title:'养老人员基本信息',refOther:true},
+            title:'养老人员基本信息',refOther:true},*/
+        {filehtml:'info0',title:'养老人员基本信息'},
         {filehtml:'info1',title:'生活自理能力'},
         {filehtml:'info2',title:'经济条件'},
         {filehtml:'info3',title:'居住环境'},
@@ -13,13 +15,24 @@ define(function(){
         {filehtml:'info8',title:'重大疾病'},
         {filehtml:'result1',title:'评估部分计算'},
         {filehtml:'result2',title:'评估报告确认'}
-
-
     ]
-    var a=function(){
-
-
+    var fields=(function(){
+        var arr=[];
         for(var i=0;i<fieldset.length;i++){
+            var filehtml='text!views/pension/evaluatelrinfofieldset/'+fieldset[i].filehtml+".htm";
+            arr.push(filehtml)
+            var title=fieldset[i].title;
+        }
+        return arr;
+    })()
+    var a=function(){
+        require(fields,function(){
+            for(var i=0;i<arguments.length;i++){
+                $('#mainform').append(arguments[i]);
+            }
+        })
+
+        for(var i=100;i<fieldset.length;i++){
             var filehtml='text!views/pension/evaluatelrinfofieldset/'+fieldset[i].filehtml+".htm";
             var title=fieldset[i].title;
             if(fieldset[i].refOther){
@@ -28,17 +41,19 @@ define(function(){
 
             (function(h,t){
                 require([h],function(htmlfile){
-                    $('#EvaluateLrInfo').tabs('add', {
+                    /*$('#EvaluateLrInfo').tabs('add', {
                         title: t,
                         content: htmlfile
-                    });
+                    });*/
+                    $('#mainform').append(htmlfile);
                 })
             })(filehtml,title)
-
         }
+
         window.setTimeout(function(){
-            $('#ownerid').combogrid({
-                panelWidth:420,
+            $('#identityid').combogrid({
+                panelWidth:430,
+                panelHeight:400,
                 url: 'ajax/getLrBasicInfo.jsp',
                 idField:'owerid',
                 textField:'owerid',
@@ -47,40 +62,47 @@ define(function(){
                 fitColumns:true,
                 pagination:true,
                 onBeforeLoad: function(param){
-                    var options = $('#ownerid').combogrid('options');
+                    var options = $('#identityid').combogrid('options');
                     if(param.q!=null){
                         param.query=param.q;
                     }
-
                 },
                 onClickRow:function(index,row){
-                    $('#pensionform').form('load',row);
+                    $.ajax({
+                        url:'lr.do?model=Test&eventName=editLrbasicInfo',
+                        data:{
+                            peopleid:row.peopleid
+                        },
+                        type:'post',
+                        success:function(res){
+                            if(res){
+                                $('#mainform').form('load',eval('('+res+')'));
+                            }else{
+                                alert('无数据')
+                            }
+
+                        }
+                    })
                 },
                 columns:[[
-                    {field:'name',title:'姓名',width:60},
-                    {field:'peopleid',title:'id',width:80},
-                    {field:'place',title:'地址',width:30}
+                    {field:'name',title:'姓名',width:20},
+                    {field:'peopleid',title:'id',width:60},
+                    {field:'place',title:'地址',width:100}
                 ]]
             });
-        },5000);
-        $('#EvaluateLrInfo').tabs({
-            tools:[{
-                iconCls:'bigSaveBtn',
-                text:'保存',
-                handler:function(){
-                    $('#pensionform').form('submit',{
-                        url:'lr.do?model=hzyl.EvaluateLrInfo&eventName=save',
-                        onSubmit: function(param){
-                            param.name = 'xx';
-                            param.identityid = '341282198707084617';
-                            param.registration = '33333';
-                        },
-                        success:function(data){
-                            $.messager.alert('Info', data, 'info');
-                        }
-                    });
+        },1000);
+
+
+        $('#save').bind('click',function(){
+            $('#mainform').form('submit',{
+                url:'lr.do?model=hzyl.EvaluateLrInfo&eventName=save',
+                success: function(res){
+                    var data = eval('(' + res + ')');
+                    if (data.success){
+                        alert(data.message)
+                    }
                 }
-            }]
+            })
         })
 
     }

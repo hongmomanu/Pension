@@ -61,15 +61,7 @@ define(function(){
                 $('#tabs').tabs('add', {
                     title: title,
                     content: htmlfile,
-                    closable: true,
-                    tools: [
-                        {
-                            iconCls: 'icon-mini-refresh',
-                            handler: function () {
-                                alert('refresh');
-                            }
-                        }
-                    ]
+                    closable: true
                 });
                 if(res){
                     jsfile.render(parameters,res)

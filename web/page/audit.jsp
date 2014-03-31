@@ -26,8 +26,8 @@
 </script>
 <body>
     <table id="auditGrid" class="easyui-datagrid"
-           data-options="rownumbers:true,singleSelect:false,toolbar:toolbar,singleSelect:false,
-           fit:true, pagination:true, pageSize:10,border:false,
+           data-options="rownumbers:true,singleSelect:false,toolbar:toolbar,
+           fit:true, pagination:true,pageSize:15,border:false,
            onClickCell:onClickCellFun">
     <thead>
         <tr>
