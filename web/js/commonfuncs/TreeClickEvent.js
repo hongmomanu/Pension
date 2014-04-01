@@ -61,15 +61,7 @@ define(function(){
                 $('#tabs').tabs('add', {
                     title: title,
                     content: htmlfile,
-                    closable: true,
-                    tools: [
-                        {
-                            iconCls: 'icon-mini-refresh',
-                            handler: function () {
-                                alert('refresh');
-                            }
-                        }
-                    ]
+                    closable: true
                 });
                 if(res){
                     jsfile.render(parameters,res)
@@ -88,19 +80,21 @@ define(function(){
                 $('#tabs').tabs('add', {
                     title: title,
                     content: '<iframe src="' + value + '" width="100%" height="100%" frameborder="0"></iframe>',
-                    closable: true,
-                    tools: [
-                        {
-                            iconCls: 'icon-mini-refresh',
-                            handler: function () {
-                                alert('refresh');
-                            }
-                        }
-                    ]
+                    closable: true
                 });
             };
             require_render(jsfile);
+        },
+        closeCurrentTab:function(){
+            var tab=$('#tabs');
+            var pp = tab.tabs('getSelected');
+            var index = tab.tabs('getTabIndex',pp);
+            tab.tabs('close',index);
+        },
+        closeTabByTitle:function(t){
+            $('#tabs').tabs('close',t);
         }
+
 
     }
 

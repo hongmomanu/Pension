@@ -26,3 +26,6 @@ var ViewWaitMask=null;
 var processdiction={"stepzero":"申请","stepone":"提交","steptwo":"审核",
     "stepthree":"审批","stepback":"退回","noprocess":"无流程"};
 
+var hello=function(){
+    alert("hello")
+}

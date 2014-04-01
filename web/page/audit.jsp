@@ -22,12 +22,19 @@
         }
         return v;
     }
+    var digestformatter=function(v,r,i){
+        var s = '<a href="#" onclick="view(\''+ r.functionid+','+ r.tprkey+'\')">'+v+'</a> ';
+        return s;
+    }
+    var styleFn=function(i,data){
+        if(++i%2==0)return "background-color:#EEE";
+    }
 
 </script>
 <body>
     <table id="auditGrid" class="easyui-datagrid"
-           data-options="rownumbers:true,singleSelect:false,toolbar:toolbar,singleSelect:false,
-           fit:true, pagination:true, pageSize:10,border:false,
+           data-options="rownumbers:true,singleSelect:false,toolbar:toolbar,
+           fit:true, pagination:true,pageSize:15,border:false,rowStyler:styleFn,
            onClickCell:onClickCellFun">
     <thead>
         <tr>
@@ -44,7 +51,7 @@
             ">通过</th>
             <th data-options="field:'audesc',width:250,align:'right',
             editor:{type:'text'}">备注</th>
-            <th data-options="field:'digest',width:380,align:'left'"><a>摘要</a></th>
+            <th data-options="field:'digest',width:380,align:'left',formatter:digestformatter"><a>摘要</a></th>
             <th data-options="field:'username',width:80,align:'left'">办理人</th>
         </tr>
         </thead>
@@ -121,6 +128,30 @@ var saveApproval=function(){
             editindex=index;
         }
     }
+    function view(a){
+        var functionid= a.split(',')[0];
+        $.ajax({
+            url:'lr.do?model=manager.Function&eventName=queryFunctionById',
+            data:{id:functionid},
+            success:function(res){
+                var d=eval('('+res+')');
+                var htmlfile, jsfile;
+                if(d.location){
+                    var widget=d.location.replace(/\./g,'/');
+                    htmlfile='text!views/'+widget+'.htm';
+                    jsfile='views/'+widget;
+                }
+                var title='查看-'+d.title;
+                var folder="pension";
+                parent.require(['commonfuncs/TreeClickEvent'],function(js){
+                    js.closeTabByTitle(title);
+                    js.ShowContent(htmlfile,jsfile,title);
+                })
 
+
+            }
+        })
+
+    }
 
 </script>

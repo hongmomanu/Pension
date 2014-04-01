@@ -23,12 +23,15 @@ public class EvaluateLrInfo implements IMultilevelAudit {
 
         CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
         Map map= ParameterUtil.toMap(request);
+        String digest=request.getParameter("name")+
+                request.getParameter("identityid")+
+                request.getParameter("registration");
         int result=0;
         Long id=commonDbUtil.getSequence("SEQ_T_NEEDASSESSMENT");
         map.put("pg_id",id);
         String tablename="t_needassessment";
         AuditManager.addAudit(id, "wJhlMNIq8C20mH7Bm6tj", tablename,
-                this.getClass().getName(), "没有摘要信息" + new Date().toString(),
+                this.getClass().getName(), digest,
                 request.getSession().getAttribute("loginname").toString(),
                 request.getSession().getAttribute("username").toString(),
                 request.getSession().getAttribute("dvcode").toString()

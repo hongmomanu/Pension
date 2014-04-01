@@ -88,12 +88,24 @@
                         <td class="formtdtext">序号:</td>
                         <td><input class="easyui-validatebox"  type="text" name="orderno"></td>
                         <td class="formtdtext">节点类型:</td>
-                        <td><input class="easyui-validatebox"  type="text" name="nodetype" data-options="required:true" value="0">(0叶子1节点)</td>
+                        <%--<td><input class="easyui-validatebox"  type="text" name="nodetype" data-options="required:true" value="0">(0叶子1节点)</td>--%>
+                        <td><select name="nodetype">
+                            <option value="0">叶子</option>
+                            <option value="1">节点</option>
+                            <option value="2">按钮</option>
+                        </select>
+                        </td>
 
                     </tr>
                     <tr>
                         <td class="formtdtext">功能类型:</td>
-                        <td><input class="easyui-validatebox" type="text" name="type" data-options="required:true" value="1">(0链接1组件)</td>
+                        <%--<td><input class="easyui-validatebox" type="text" name="type" data-options="required:true" value="1">(0链接1组件)</td>--%>
+                        <td>
+                            <select name="type">
+                                <option value="1">组件</option>
+                                <option value="0">链接(iframe/url)</option>
+                            </select>
+                        </td>
                         <td class="formtdtext">描述:</td>
                         <td><input class="easyui-validatebox" type="text" name="description" data-options="required:true" value="描述"></td>
                     </tr>

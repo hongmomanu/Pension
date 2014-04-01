@@ -58,6 +58,7 @@
 
     </script>
     <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="js/cj.js"></script>
     <script data-main="js/mainapp" src="require.js"></script>
     <script type="text/javascript"  src="js/commonfuncs/jquery.json-2.4.js"></script>
 
