@@ -41,7 +41,7 @@ public class PensionPeopleInfo {
         return result>0? RtnType.SUCCESS:RtnType.FAILURE;
     }
 
-    public String update(){                 //老年基本信息保存方法
+    public String update(){                 //老年基本信息修改方法
 
         CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
         Map map= ParameterUtil.toMap(request);
