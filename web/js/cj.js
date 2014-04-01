@@ -11,7 +11,7 @@ var cj = {
 
     calert:function(res){
         var d=eval('('+res+')');
-        if(d.success==true||d.success=='true'){
+        if(!!d&&(d.success==true||d.success=='true')){
             $.messager.alert(cj.defaultTitle,'操作成功!','info');
         }else{
             $.messager.alert(cj.defaultTitle,'操作失败!','info');
