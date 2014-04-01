@@ -103,7 +103,7 @@ define(function()
         $('#pensionsubmit').bind('click',function(){
             /*alert("click");*/
             var lrid = $("input[name='lr_id']").val();
-            if(lrid!=null){
+            if(lrid!=null&&lrid!=""){
                 $('#pensionform').form('submit',{
                     url:'lr.do?model=hzyl.PensionPeopleInfo&eventName=update',
                     onSubmit:function(){

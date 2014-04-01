@@ -1,17 +1,26 @@
-<fieldset>
-    <div id="lrmessageid">
-        <table id="lrxxid" class="easyui-datagrid" title="老年基本信息" style="width:500px;height:auto"
-               data-options="url:'ajax/getLrBasicInfo.jsp',method:'get',toolbar:'#tb',fitColumns:true,singleSelect:true">
+<!--<fieldset>-->   <!--fitColumns:true,-->
+    <!--<div id="lrmessageid">-->
+        <table id="lrxxid" class="easyui-datagrid" title="老年基本信息"   style="width: auto"
+               data-options="
+               url:'ajax/getLrBasicInfo.jsp',
+               method:'get',
+               toolbar:'#tb',
+               fit:true,
+               singleSelect:true,
+               pagination:true,
+               pageSize:10">
             <thead>
             <tr>
-                <th data-options="type:'hidden',field:'lrid'"></th>
+                <!--<th data-options="type:'hidden',field:'lrid'"></th>-->
                 <th data-options="field:'name',width:100">姓名</th>
+                <th data-options="field:'gender',width:80">性别</th>
+                <th data-options="field:'birthday',width:150">出生年月</th>
                 <th data-options="field:'peopleid',width:200">身份证号</th>
                 <th data-options="field:'place',width:200,align:'right'">住址</th>
             </tr>
             </thead>
         </table>
-    </div>
+    <!--</div>-->
 
     <div id="tb">
         <input id="lrname" class="easyui-validatebox">
@@ -19,4 +28,5 @@
         <a id="edit" href="#" class="easyui-linkbutton" iconCls='icon-edit'>编辑</a>
     </div>
 
-</fieldset>
+<!--
+</fieldset>-->

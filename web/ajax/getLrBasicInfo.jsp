@@ -11,5 +11,7 @@
 
 <%
     LrbasicInfo lc = new LrbasicInfo();
-    out.print(lc.findLrbasicInfo());
+    String pages = request.getParameter("page");
+    String rows = request.getParameter("rows") ;
+    out.print(lc.findLrbasicInfo(pages,rows));
 %>
