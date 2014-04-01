@@ -41,18 +41,22 @@ var cj = {
 
 
 jQuery.fn.cssRadio = function () {
-    var selectRadio=":input[type=radio] + label";
-    //selectRadio="label[opt=newradio]";
-    $(selectRadio).each(function () {
-        if ($(this).prev()[0].checked)
-            $(this).addClass("checked");
-    }).click(function () {
-            var contents = $(this).parent().parent();
-            $(selectRadio, contents).each(function () {
-                $(this).prev()[0].checked = false;
-                $(this).removeClass("checked");
-            });
-            $(this).prev()[0].checked = true;
-            $(this).addClass("checked");
-        }).prev().hide();
+    var a=function(){
+        var selectRadio=":input[type=radio] + label";
+        $(selectRadio).each(function () {
+            if ($(this).prev()[0].checked)
+                $(this).addClass("checked");
+        }).click(function () {
+                var contents = $(this).parent().parent();
+                $(selectRadio, contents).each(function () {
+                    $(this).prev()[0].checked = false;
+                    $(this).removeClass("checked");
+                });
+                $(this).prev()[0].checked = true;
+                $(this).addClass("checked");
+            }).prev().hide();
+    }
+
+    return a();
+
 };
