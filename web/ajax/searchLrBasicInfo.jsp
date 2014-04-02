@@ -14,6 +14,10 @@
     String lrname = request.getParameter("lrname");
     String pages = request.getParameter("page");
     String rows = request.getParameter("rows") ;
+    /*String ischeck = request.getParameter("ifchick");
+    if(ischeck.equals("click"))  {
+        pages = "1";
+    }*/
     out.print(lc.findLrbasicInfo(lrname,pages,rows));
 
 

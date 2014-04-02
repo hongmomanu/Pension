@@ -13,10 +13,12 @@ define(function(){
 
         $('#search').bind('click',function(){
              var searchname = $('#lrname').val();
+            /*var click = "click";*/
             $('#lrxxid').datagrid({
                 url:'ajax/searchLrBasicInfo.jsp' ,
                 queryParams:{
                     lrname:searchname
+                    /* ,                      ifchick:click*/
                 }
             });
 
