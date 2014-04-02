@@ -54,15 +54,19 @@ define(function(){
         window.setTimeout(function(){
 
             $('#identityid').combogrid({
-                panelWidth:430,
+                panelWidth:350,
                 panelHeight:400,
                 url: 'ajax/getLrBasicInfo.jsp',
                 idField:'owerid',
                 textField:'owerid',
                 validType:'personid',
                 mode:'remote',
-                fitColumns:true,
+                fit:true,
                 pagination:true,
+                pageSize:15,
+                pageList: [15, 30,50],
+                border:false,
+                fitColumns:true,
                 onBeforeLoad: function(param){
                     var options = $('#identityid').combogrid('options');
                     if(param.q!=null){
@@ -88,8 +92,8 @@ define(function(){
                 },
                 columns:[[
                     {field:'name',title:'姓名',width:20},
-                    {field:'peopleid',title:'id',width:60},
-                    {field:'place',title:'地址',width:100}
+                    {field:'peopleid',title:'id',width:50},
+                    {field:'place',title:'地址',width:50}
                 ]]
             });
         },1000);
