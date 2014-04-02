@@ -15,6 +15,14 @@
         }
         return v;
     }
+    var loadCodeDetail=function(i,r){
+        $('#aa10').datagrid({
+            url:'lr.do?model=manager.CodeMaintenance&eventName=queryCode10',
+            queryParams: {
+                aaa100: r.aaa100
+            }
+        })
+    }
 </script>
 <body>
 
@@ -25,6 +33,7 @@
             <div  data-options="region:'west',split:false,lines:true" style="width:500px;">
                 <table id="aa09" class="easyui-datagrid"
                        data-options="url:'lr.do?model=manager.CodeMaintenance&eventName=queryCode9',
+                       pageSize:15, pageList: [15, 30,50], onClickRow:loadCodeDetail,
                        fitColumns:true,singleSelect:true,border:false,pagination:true,fit:true">
                     <thead>
                     <tr>
@@ -40,13 +49,14 @@
                 </table>
             </div>
             <div data-options="region:'center',split:false,lines:true">
-                <table class="easyui-datagrid"
+                <table id="aa10" class="easyui-datagrid"
                        data-options="fitColumns:true,singleSelect:true,border:false">
                     <thead>
                     <tr>
-                        <th data-options="field:'productid',width:100">productid</th>
-                        <th data-options="field:'productname',width:100">productname</th>
-                        <th data-options="field:'unitcost',width:100,align:'right'">unitcost</th>
+                        <%--<th data-options="field:'aaa100',width:100">代码类别</th>--%>
+                        <th data-options="field:'aaa102',width:100">代码值</th>
+                        <th data-options="field:'aaa103',width:100">代码名称</th>
+                        <%--<th data-options="field:'aae100',width:100,align:'right'">有效</th>--%>
                     </tr>
                     </thead>
                 </table>

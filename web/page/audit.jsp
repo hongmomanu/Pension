@@ -8,6 +8,16 @@
         margin: 0;
         height:100%;
     }
+    .icon-save{
+        background:url('img/busiapproval.png') no-repeat;
+    }
+    .icon-refresh{
+        background:url('img/ext/refresh.gif') no-repeat;
+    }.icon-search{
+        background:url('img/ext/LookAtFile.bmp') no-repeat;
+    }.icon-log{
+        background:url('img/ext/text.bmp') no-repeat;
+    }
 </style>
 <script>
     var approvalProcess=['提交','审核','审批'];
@@ -23,18 +33,22 @@
         return v;
     }
     var digestformatter=function(v,r,i){
-        var s = '<a href="#" onclick="view(\''+ r.functionid+','+ r.tprkey+'\')">'+v+'</a> ';
+        var s = '<a style="text-decoration: none" href="#" onclick="view(\''+ r.functionid+','+ r.tprkey+'\')">'+v+'</a> ';
         return s;
     }
     var styleFn=function(i,data){
         if(++i%2==0)return "background-color:#EEE";
     }
-
+    var bstimeformatter=function(v,r,i){
+        return v.split('.')[0]
+    }
 </script>
 <body>
     <table id="auditGrid" class="easyui-datagrid"
            data-options="rownumbers:true,singleSelect:false,toolbar:toolbar,
-           fit:true, pagination:true,pageSize:15,border:false,rowStyler:styleFn,
+           fit:true, pagination:true,
+           pageSize:15,
+		    pageList: [15, 30,50],border:false,rowStyler:styleFn,fitColumns: true,
            onClickCell:onClickCellFun">
     <thead>
         <tr>
@@ -51,8 +65,10 @@
             ">通过</th>
             <th data-options="field:'audesc',width:250,align:'right',
             editor:{type:'text'}">备注</th>
-            <th data-options="field:'digest',width:380,align:'left',formatter:digestformatter"><a>摘要</a></th>
-            <th data-options="field:'username',width:80,align:'left'">办理人</th>
+            <th data-options="field:'digest',width:300,align:'left',formatter:digestformatter"><a>摘要</a></th>
+            <th data-options="field:'username',width:60,align:'left'">办理人</th>
+            <th data-options="field:'bsnyue',width:60,align:'left'">业务期</th>
+            <th data-options="field:'bstime',width:120,align:'left',formatter:bstimeformatter">时间</th>
         </tr>
         </thead>
     </table>
@@ -64,13 +80,21 @@
     var editindex=undefined;
     var toolbar = [
         {
-            text:'保存',
-            iconCls:'approval',
-            handler:function(){$('#auditGrid').datagrid('acceptChanges');}
-        },'-',{
         text:'审核',
-        iconCls:'approval',
+        iconCls:'icon-save',
         handler:function(){saveApproval();}
+    },{
+        text:'刷新',
+        iconCls:'icon-refresh',
+        handler:function(){$('#auditGrid').datagrid('reload')}
+    },{
+        text:'高级搜索',
+        iconCls:'icon-search',
+        handler:function(){$('#auditGrid').datagrid('reload')}
+    },{
+        text:'操作日志',
+        iconCls:'icon-log',
+        handler:function(){$('#auditGrid').datagrid('reload')}
     }];
 var method='<%=request.getAttribute("method")%>';
 function loadAuditData(){

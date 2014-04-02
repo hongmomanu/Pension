@@ -1,0 +1,119 @@
+<table class="easyui-datagrid"
+       data-options="url:'lr.do?model=hzyl.EvaluateLrInfo&eventName=query',
+               method:'post',
+               fit:true,
+               singleSelect:true,
+               pagination:true,
+               pageSize:10">
+    <thead>
+    <tr>
+        <th data-options="field:'pg_id'">PG_ID</th>
+        <th data-options="field:'active'">有效</th>
+        <th data-options="field:'name'">NAME</th>
+        <th data-options="field:'identityid'">IDENTITYID</th>
+        <th data-options="field:'birthd'">BIRTHD</th>
+        <th data-options="field:'gender'">GENDER</th>
+        <th data-options="field:'age'">AGE</th>
+        <th data-options="field:'nation'">NATION</th>
+        <th data-options="field:'address'">ADDRESS</th>
+        <th data-options="field:'type'">TYPE</th>
+        <th data-options="field:'registration'">REGISTRATION</th>
+
+        <th data-options="field:'dl_name'">DL_NAME</th>
+        <th data-options="field:'dl_relation'">DL_RELATION</th>
+        <th data-options="field:'dl_telephone'">DL_TELEPHONE</th>
+        <th data-options="field:'dl_mobile phone'">DL_MOBILE PHONE</th>
+        <th data-options="field:'dl_beiz'">DL_BEIZ</th>
+        <th data-options="field:'sh_jings'">SH_JINGS</th>
+        <th data-options="field:'sh_yid'">SH_YID</th>
+        <th data-options="field:'sh_weis'">SH_WEIS</th>
+        <th data-options="field:'sh_ruc'">SH_RUC</th>
+        <th data-options="field:'sh_xiz'">SH_XIZ</th>
+        <th data-options="field:'sh_xingz'">SH_XINGZ</th>
+        <th data-options="field:'sh_lout'">SH_LOUT</th>
+        <th data-options="field:'sh_chuany'">SH_CHUANY</th>
+        <th data-options="field:'sh_dab'">SH_DAB</th>
+        <th data-options="field:'sh_xiaob'">SH_XIAOB</th>
+        <th data-options="field:'sh_zongf'">SH_ZONGF</th>
+        <th data-options="field:'sh_pingguf'">SH_PINGGUF</th>
+        <th data-options="field:'sh_jiel'">SH_JIEL</th>
+        <th data-options="field:'sh_pingguy'">SH_PINGGUY</th>
+        <th data-options="field:'jj_shour'">JJ_SHOUR</th>
+        <th data-options="field:'jj_fenl'">JJ_FENL</th>
+        <th data-options="field:'jj_leix'">JJ_LEIX</th>
+        <th data-options="field:'jj_pingguf'">JJ_PINGGUF</th>
+        <th data-options="field:'jj_pingguy'">JJ_PINGGUY</th>
+        <th data-options="field:'jz_fenl'">JZ_FENL</th>
+        <th data-options="field:'jz_zhaol'">JZ_ZHAOL</th>
+        <th data-options="field:'jz_pingguf'">JZ_PINGGUF</th>
+        <th data-options="field:'jz_pingguy'">JZ_PINGGUY</th>
+        <th data-options="field:'nl_fenl'">NL_FENL</th>
+        <th data-options="field:'nl_pingguf'">NL_PINGGUF</th>
+        <th data-options="field:'nl_pingguy'">NL_PINGGUY</th>
+        <th data-options="field:'gx_laom'">GX_LAOM</th>
+        <th data-options="field:'gx_youf'">GX_YOUF</th>
+        <th data-options="field:'gx_youf_kind'">GX_YOUF_KIND</th>
+        <th data-options="field:'gx_chunjg'">GX_CHUNJG</th>
+        <th data-options="field:'gx_ganb'">GX_GANB</th>
+        <th data-options="field:'gx_pingguf'">GX_PINGGUF</th>
+        <th data-options="field:'gx_pingguy'">GX_PINGGUY</th>
+        <th data-options="field:'cz_shil'">CZ_SHIL</th>
+        <th data-options="field:'cz_tingl'">CZ_TINGL</th>
+        <th data-options="field:'cz_zhit'">CZ_ZHIT</th>
+        <th data-options="field:'cz_qit'">CZ_QIT</th>
+        <th data-options="field:'cz_shuom'">CZ_SHUOM</th>
+        <th data-options="field:'cz_pingguy'">CZ_PINGGUY</th>
+        <th data-options="field:'zf_lianzf'">ZF_LIANZF</th>
+        <th data-options="field:'zf_zhulf'">ZF_ZHULF</th>
+        <th data-options="field:'zf_shiyf'">ZF_SHIYF</th>
+        <th data-options="field:'zf_shangpf'">ZF_SHANGPF</th>
+        <th data-options="field:'zf_zijf'">ZF_ZIJF</th>
+        <th data-options="field:'zf_qit'">ZF_QIT</th>
+        <th data-options="field:'zf_pingguy'">ZF_PINGGUY</th>
+        <th data-options="field:'jb_gaoxy'">JB_GAOXY</th>
+        <th data-options="field:'jb_xinlsj'">JB_XINLSJ</th>
+        <th data-options="field:'jb_guanxb'">JB_GUANXB</th>
+        <th data-options="field:'jb_xinlshic'">JB_XINLSHIC</th>
+        <th data-options="field:'jb_manxzhiqguany'">JB_MANXZHIQGUANY</th>
+        <th data-options="field:'jb_feiqz'">JB_FEIQZ</th>
+        <th data-options="field:'jb_feixb'">JB_FEIXB</th>
+        <th data-options="field:'jb_feiy'">JB_FEIY</th>
+        <th data-options="field:'jb_naoxguanyw'">JB_NAOXGUANYW</th>
+        <th data-options="field:'jb_pajshensz'">JB_PAJSHENSZ</th>
+        <th data-options="field:'jb_laonchidz'">JB_LAONCHIDZ</th>
+        <th data-options="field:'jb_youyz'">JB_YOUYZ</th>
+        <th data-options="field:'jb_tangnb'">JB_TANGNB</th>
+        <th data-options="field:'jb_tongf'">JB_TONGF</th>
+        <th data-options="field:'jb_zhitguz'">JB_ZHITGUZ</th>
+        <th data-options="field:'jb_jianzy'">JB_JIANZY</th>
+        <th data-options="field:'jb_jinzb'">JB_JINZB</th>
+        <th data-options="field:'jb_leifshigjiey'">JB_LEIFSHIGJIEY</th>
+        <th data-options="field:'jb_gandjib'">JB_GANDJIB</th>
+        <th data-options="field:'jb_bainz'">JB_BAINZ</th>
+        <th data-options="field:'jb_qinguany'">JB_QINGUANY</th>
+        <th data-options="field:'jb_shiwmoxguanjib'">JB_SHIWMOXGUANJIB</th>
+        <th data-options="field:'jb_tangnbingswangmbingb'">JB_TANGNBINGSWANGMBINGB</th>
+        <th data-options="field:'jb_shenzjib'">JB_SHENZJIB</th>
+        <th data-options="field:'jb_qit1'">JB_QIT1</th>
+        <th data-options="field:'jb_qit2'">JB_QIT2</th>
+        <th data-options="field:'jb_qit3'">JB_QIT3</th>
+        <th data-options="field:'jb_pingguy'">JB_PINGGUY</th>
+        <th data-options="field:'jb_beiz'">JB_BEIZ</th>
+        <th data-options="field:'pinggusum'">PINGGUSUM</th>
+        <th data-options="field:'standard'">STANDARD</th>
+        <th data-options="field:'startdate'">STARTDATE</th>
+        <th data-options="field:'enddate'">ENDDATE</th>
+        <th data-options="field:'facilitator'">FACILITATOR</th>
+        <th data-options="field:'content'">CONTENT</th>
+        <th data-options="field:'amount'">AMOUNT</th>
+        <th data-options="field:'operator_date'">OPERATOR_DATE</th>
+
+    </tr>
+    </thead>
+</table>
+
+<div id="tb">
+    <input id="lrname" class="easyui-validatebox">
+    <a id="search" href="#" class="easyui-linkbutton" iconCls='icon-search'>查询</a>
+    <a id="edit" href="#" class="easyui-linkbutton" iconCls='icon-edit'>编辑</a>
+</div>

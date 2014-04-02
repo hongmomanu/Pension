@@ -93,8 +93,25 @@ define(function(){
         },
         closeTabByTitle:function(t){
             $('#tabs').tabs('close',t);
+        },
+        viewContent:function(htmlfile,jsfile,title,lid){
+            require([htmlfile,jsfile],function(html,js){
+                if($('#tabs').tabs('exists',title)){
+                    $('#tabs').tabs('select', title);
+                    return;
+                }
+                $('#tabs').tabs('add', {
+                    title: title,
+                    content: htmlfile,
+                    closable: true
+                });
+                if(js&&js.viewOnly){
+                    js.viewOnly(lid)
+                }else{
+                    cj.calert(jsfile+'不存在或者viewOnly未实现')
+                }
+            })
         }
-
 
     }
 

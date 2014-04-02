@@ -42,10 +42,10 @@ public class CallBack {
                 }
             }
             if(!b){
-                throw new Exception("IMultilevelAudit 接口为实现");
+                throw new Exception("IMultilevelAudit 接口未实现");
             }
             IMultilevelAudit audit=(IMultilevelAudit)c.newInstance();
-            audit.audit(ab);
+            audit.audit(JdbcFactory.getConn(),ab);
         }
     }
 

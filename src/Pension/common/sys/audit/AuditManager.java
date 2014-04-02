@@ -41,14 +41,12 @@ public class AuditManager {
         CommonDbUtil dbUtil=new CommonDbUtil(conn);
         Long auditid=dbUtil.getSequence("SEQ_OPAUDIT");
         Map map=new HashMap();
-        Integer bsnyue=201403;
         map.put("auditid",auditid);
         map.put("tprkey",paramLong);
         map.put("tname",tablename);
         map.put("functionid",functionid);
         map.put("classname",classname);
         map.put("digest",digest);
-        map.put("bsnyue",bsnyue);
         map.put("loginname",loginname);
         map.put("username",username);
         map.put("dvcode",dvcode);
