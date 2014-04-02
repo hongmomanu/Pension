@@ -333,6 +333,7 @@ div.yw-block > span{
     border-top:0px;
     border-right:0px;
     border-left:0px;
+    text-align: center;
     border-bottom: 1px solid red;
 }
 
@@ -361,15 +362,15 @@ div.yw-block > span{
     height:30px
 }
 /*radio打钗样式*/
-.newRadio label {
+.newRadio input+label {
     padding-left: 26px;
     background: url(img/form/UnCheck.png) no-repeat;
 }
-.newRadio label.checked {
+.newRadio input+label.checked {
     padding-left: 26px;
     background: url(img/form/CheckIt.bmp) no-repeat;
     color: #008800;
 }
-.newRadio label.over {
+.newRadio input+label.over {
     color: #0000FF;
 }

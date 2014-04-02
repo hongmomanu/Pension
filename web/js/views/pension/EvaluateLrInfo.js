@@ -25,12 +25,42 @@ define(function(){
         }
         return arr;
     })()
+    var infoEvents={
+        info1:function(){
+            $('#info1').find('input[type=radio]+label').each(function(i){
+                $(this).bind('click',function(){
+                    $($(this).parent().parent().children()
+                        .last().children()[0]).val(($(this).prev()).val())
+                })
+            })
+        },
+        info4:function(){
+            $(':input[opt=csrq]')
+                .datebox({
+                required:true,
+                onSelect: function(date){
+                    var p=$(this).parent().parent().parent();
+                    var m= (date.getMonth()+1);
+                    m=m>9?m:'0'+m;
+                    var d= date.getDate();
+                    d=d>9?d:'0'+d;
+                    p.find("[opt=textymd]").text(
+                        date.getFullYear()+"年"+m+"月"+d+"日(以身份证为准)"
+                    );
+                    p.find("[opt=xynl]").val(new Date().getFullYear()-date.getFullYear());
+                    $(p.find(":input[type=radio] + label")[0]).addClass("checked").prev()[0].checked=true;
+                }
+            });
+        }
+    }
     var a=function(){
         require(fields,function(){
             for(var i=0;i<arguments.length;i++){
                 $('#mainform').append(arguments[i]);
             }
             $('#tabs').tabs('getSelected').cssRadio();//渲染单选样式
+            infoEvents.info1();
+            infoEvents.info4();
         })
 
         for(var i=100;i<fieldset.length;i++){
