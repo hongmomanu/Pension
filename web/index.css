@@ -361,16 +361,15 @@ div.yw-block > span{
     height:30px
 }
 /*radio打钗样式*/
-label {
+.newRadio label {
     padding-left: 26px;
     background: url(img/form/UnCheck.png) no-repeat;
 }
-label.checked {
+.newRadio label.checked {
     padding-left: 26px;
     background: url(img/form/CheckIt.bmp) no-repeat;
-    /*background: url(RCheck.png) no-repeat;*/
     color: #008800;
 }
-label.over {
+.newRadio label.over {
     color: #0000FF;
 }
