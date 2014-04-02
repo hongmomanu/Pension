@@ -41,7 +41,6 @@ var cj = {
 
 
 jQuery.fn.cssRadio = function () {
-    var a=function(){
         var selectRadio=":input[type=radio] + label";
         $(selectRadio).each(function () {
             if ($(this).prev()[0].checked)
@@ -55,8 +54,4 @@ jQuery.fn.cssRadio = function () {
                 $(this).prev()[0].checked = true;
                 $(this).addClass("checked");
             }).prev().hide();
-    }
-
-    return a();
-
 };

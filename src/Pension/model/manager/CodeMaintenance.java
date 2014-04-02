@@ -3,6 +3,7 @@ package Pension.model.manager;
 import Pension.common.CommonDbUtil;
 import Pension.common.ParameterUtil;
 import Pension.common.RtnType;
+import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
 import javax.servlet.http.HttpServletRequest;
@@ -24,7 +25,6 @@ public class CodeMaintenance {
         Integer page=Integer.parseInt(request.getParameter("page"));
         Integer rows=Integer.parseInt(request.getParameter("rows"));
         CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
-        String userid=request.getParameter("userid");
         String sql="select * from aa09";
         List list=commonDbUtil.query("SELECT * FROM (SELECT tt.*, ROWNUM ro FROM ("+sql+
                 ") tt WHERE ROWNUM <="+(page)*rows+") WHERE ro > "+(page-1)*rows);
@@ -33,6 +33,13 @@ public class CodeMaintenance {
         map.put("total",count);
         map.put("rows",list);
         return JSONObject.fromObject(map).toString();
+    }
+
+    public String queryCode10(){
+        CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
+        String aaa100=request.getParameter("aaa100");
+        String sql="select * from aa10 where lower(aaa100)=lower('"+aaa100+"') order by aaa102 asc";
+        return JSONArray.fromObject(commonDbUtil.query(sql)).toString();
     }
 
     public String saveCode9(){

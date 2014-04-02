@@ -7,6 +7,7 @@ import Pension.common.RtnType;
 import Pension.common.sys.audit.AuditBean;
 import Pension.common.sys.audit.AuditManager;
 import Pension.common.sys.audit.IMultilevelAudit;
+import net.sf.json.JSONArray;
 
 import javax.servlet.http.HttpServletRequest;
 import java.sql.Connection;
@@ -20,7 +21,6 @@ public class EvaluateLrInfo implements IMultilevelAudit {
     private Connection conn;
 
     public String save(){
-
         CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
         Map map= ParameterUtil.toMap(request);
         String digest=request.getParameter("name")+
@@ -39,12 +39,23 @@ public class EvaluateLrInfo implements IMultilevelAudit {
         result=commonDbUtil.insertTableVales(map,tablename);
         return result>0? RtnType.SUCCESS:RtnType.FAILURE;
     }
+    public String query(){
+        CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
+        Map map= ParameterUtil.toMap(request);
+        String sql="select o.name,o.identityid,o.birthd,o.gender,o.age,o.nation,o.address,o.type,o.registration" +
+                ",n.* from t_needassessment n,t_oldpeople o where o.lr_id=n.lr_id";
+        return JSONArray.fromObject(commonDbUtil.query(sql)).toString();
+    }
 
+    /*审核成功后的回调
+    * 设置评估信息的状态为有效
+    * */
     @Override
-    public Long audit(AuditBean auditBean) {
-        System.out.println(this.getClass().getName()+"*******************************************************************");
-        System.out.println(auditBean.getAuditid()+"***回调函数执行*******************************************************");
-        System.out.println(this.getClass().getName()+"*******************************************************************");
+    public Long audit(Connection conn,AuditBean auditBean) {
+        Long pg_id=Long.parseLong(auditBean.getTprkey());
+        CommonDbUtil dbUtil=new CommonDbUtil(conn);
+        String sql="update t_needassessment set active='1' where pg_id="+pg_id;
+        dbUtil.execute(sql);
         return null;
     }
 }

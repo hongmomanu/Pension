@@ -30,7 +30,7 @@ define(function(){
             for(var i=0;i<arguments.length;i++){
                 $('#mainform').append(arguments[i]);
             }
-            //$('#tabs').tabs('getSelected').cssRadio();//渲染单选样式
+            $('#tabs').tabs('getSelected').cssRadio();//渲染单选样式
         })
 
         for(var i=100;i<fieldset.length;i++){
