@@ -383,7 +383,7 @@
                  <th data-options="field:'bottom',width:60,align:'center',editor:'icon-remove'">
                      <a id="newfamilymemer_btn1" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true">新增</a>
                  </th>
-                 <th class="lazy-combobox" data-options="field:'relationship',align:'center',width:100,editor:{
+                 <th class="lazy-combobox" data-options="field:'guanx',align:'center',width:100,editor:{
                  type:'combobox',
                  options:{
                     url:'cb.do?searchtype=relation',
@@ -398,14 +398,14 @@
              </thead>
             <thead>
                 <tr>
-                    <th data-options="field:'name',width:90,align:'center',editor:'text'">姓名<span style="color: red">*</span></th>
-                    <th data-options="field:'personid',width:150,align:'center',editor:{
+                    <th data-options="field:'gx_name',width:90,align:'center',editor:'text'">姓名<span style="color: red">*</span></th>
+                    <th data-options="field:'gx_identityid',width:150,align:'center',editor:{
                             type:'validatebox',
                             options:{
                                 required:true
                             }
                         }">身份证号<span style="color: red">*</span></th>
-                    <th class="lazy-combobox" data-options="field:'sex',align:'center',width:60,editor:{
+                    <th class="lazy-combobox" data-options="field:'gx_gender',align:'center',width:60,editor:{
 							type:'combobox',
 							options:{
 								valueField: 'value',
@@ -414,17 +414,22 @@
                                 textField: 'label'
 							}
 						}">性别<span style="color: red">*</span></th>
-                    <th data-options="field:'birthday',width:90,align:'center',editor:'text'">出生日期</th>
-                    <th data-options="field:'phone1',width:160,align:'center',editor:'text'">宅电</th>
-                    <th data-options="field:'phone2',width:160,align:'center',editor:'text'">手机</th>
-                    <th data-options="field:'phone3',width:160,align:'center',editor:'text'">小灵通</th>
+                    <th data-options="field:'gx_birth',width:90,align:'center',editor:'text'">出生日期</th>
+                    <th  data-options="field:'gx_telephone',width:160,align:'center',editor:'text'">宅电</th>
+                    <th data-options="field:'gx_mobilephone',width:160,align:'center',editor:'text'">手机</th>
+                    <!--<th data-options="field:'phone3',width:160,align:'center',editor:'text'">小灵通</th>-->
+                    <th  data-options="field:'gx_economy',width:100,align:'center',editor:'text'">月收入</th>
+                    <th  data-options="field:'gx_culture',width:100,align:'center',editor:'text'">文化程度</th>
+                    <th  data-options="field:'gx_registration',width:100,align:'center',editor:'text'">籍贯</th>
+                    <th  data-options="field:'gx_nation',width:100,align:'center',editor:'text'">民族</th>
+                    <th  data-options="field:'gx_work',width:100,align:'center',editor:'text'">工作地点</th>
 
                 </tr>
             </thead>
         </table>
         <div id="familymembertb" style="height:auto">
             <!--<a id="newfamilymemer_btn" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true">新增</a>-->
-            <a id="delfamilymemer_btn" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true,disabled:true">删除</a>
+            <a id="delfamilymemer_btn" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true">删除</a>
         </div>
     </div>
 </fieldset>

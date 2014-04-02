@@ -27,7 +27,7 @@ define(function(){
         $('#edit').bind('click',function(){
             var getrow = $('#lrxxid').datagrid('getSelected');
             if(getrow!=null){
-                alert("edit"+getrow.name);
+               /* alert("edit"+getrow.name);*/
                 $.ajax({
                     url:'lr.do?model=Test&eventName=editLrbasicInfo',
                     data:{

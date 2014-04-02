@@ -106,6 +106,8 @@ h2 {
      background:url('img/del.gif') no-repeat;
  }.icon-cancelsteptwobtn,.icon-cancelstepthreebtn{
      background:url('img/icon16_error.png') no-repeat;
+ }.icon-edit{
+    background:url('img/edit.png') no-repeat;
  }
 .layout-split-proxy-h{
     position:absolute;

@@ -103,11 +103,13 @@ define(function()
         $('#pensionsubmit').bind('click',function(){
             /*alert("click");*/
             var lrid = $("input[name='lr_id']").val();
+            var gxmess = JSON.stringify($('#familymembersgrid').datagrid('acceptChanges').datagrid('getData').rows);
             if(lrid!=null&&lrid!=""){
                 $('#pensionform').form('submit',{
                     url:'lr.do?model=hzyl.PensionPeopleInfo&eventName=update',
-                    onSubmit:function(){
+                    onSubmit:function(param){
                         var isValid = $('#pensionform').form('validate');
+                        param.p1 = gxmess;
                         return isValid;
                     },
                     success:function(data){
@@ -124,8 +126,9 @@ define(function()
             }else{
                 $('#pensionform').form('submit',{
                     url:'lr.do?model=hzyl.PensionPeopleInfo&eventName=save',
-                    onSubmit:function(){
+                    onSubmit:function(param){
                         var isValid = $('#pensionform').form('validate');
+                        param.p1 = gxmess;
                         return isValid;
                     },
                     success:function(data){
