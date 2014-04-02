@@ -74,14 +74,6 @@
         <ul class="ui-skin-nav" style="display: block;">
             <li class="li-skinitem" title="gray"><span class="gray" rel="gray"></span></li>
             <li class="li-skinitem" title="default"><span class="default" rel="default"></span></li>
-            <li class="li-skinitem" title="bootstrap"><span class="bootstrap" rel="bootstrap"></span></li>
-            <li class="li-skinitem" title="black"><span class="black" rel="black"></span></li>
-            <li class="li-skinitem" title="metro"><span class="metro" rel="metro"></span></li>
-            <li class="li-skinitem" title="pepper-grinder"><span class="pepper-grinder" rel="pepper-grinder"></span></li>
-            <li class="li-skinitem" title="blue"><span class="blue" rel="blue"></span></li>
-            <li class="li-skinitem" title="cupertino"><span class="cupertino" rel="cupertino"></span></li>
-            <li class="li-skinitem" title="dark-hive"><span class="dark-hive" rel="dark-hive"></span></li>
-            <li class="li-skinitem" title="sunny"><span class="sunny" rel="sunny"></span></li>
         </ul>
 
         <ul id="headnavul">

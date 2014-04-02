@@ -59,7 +59,7 @@ h2 {
 }
 /*表头样式*/
 .formtable th {
-    font-size:12px;
+    font-size:13px;
     font-weight:600;
     color: #303030;
     border-right: 1px solid #ADD8E6;
@@ -349,7 +349,7 @@ div.yw-block > span{
 .wwwy1_blog_hexun_com {
     position:fixed !important;
     bottom: 0px;
-    left: 50px;
+    left: 0px;
     /*margin-left:-468px;*/
     position:absolute;
     top:expression(offsetParent.scrollTop+0);
@@ -359,4 +359,18 @@ div.yw-block > span{
     background: #E0ECFF;
     width:100%;
     height:30px
+}
+/*radio打钗样式*/
+label {
+    padding-left: 26px;
+    background: url(img/form/UnCheck.png) no-repeat;
+}
+label.checked {
+    padding-left: 26px;
+    background: url(img/form/CheckIt.bmp) no-repeat;
+    /*background: url(RCheck.png) no-repeat;*/
+    color: #008800;
+}
+label.over {
+    color: #0000FF;
 }

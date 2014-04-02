@@ -11,7 +11,7 @@ var cj = {
 
     calert:function(res){
         var d=eval('('+res+')');
-        if(d.success==true||d.success=='true'){
+        if(!!d&&(d.success==true||d.success=='true')){
             $.messager.alert(cj.defaultTitle,'操作成功!','info');
         }else{
             $.messager.alert(cj.defaultTitle,'操作失败!','info');
@@ -38,3 +38,25 @@ var cj = {
 
 
 }
+
+
+jQuery.fn.cssRadio = function () {
+    var a=function(){
+        var selectRadio=":input[type=radio] + label";
+        $(selectRadio).each(function () {
+            if ($(this).prev()[0].checked)
+                $(this).addClass("checked");
+        }).click(function () {
+                var contents = $(this).parent().parent();
+                $(selectRadio, contents).each(function () {
+                    $(this).prev()[0].checked = false;
+                    $(this).removeClass("checked");
+                });
+                $(this).prev()[0].checked = true;
+                $(this).addClass("checked");
+            }).prev().hide();
+    }
+
+    return a();
+
+};
