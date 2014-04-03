@@ -18,6 +18,15 @@
     }.icon-log{
         background:url('img/ext/text.bmp') no-repeat;
     }
+    a:link, a:visited, a:active {
+        color: #404040;
+        text-decoration: none;
+        display: block;
+    }
+    a:hover {
+        color:brown;
+        background-color: lightskyblue;
+    }
 </style>
 <script>
     var approvalProcess=['提交','审核','审批'];
@@ -80,7 +89,7 @@
     var editindex=undefined;
     var toolbar = [
         {
-        text:'审核',
+        text:'确认',
         iconCls:'icon-save',
         handler:function(){saveApproval();}
     },{

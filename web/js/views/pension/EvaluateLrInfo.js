@@ -136,7 +136,12 @@ define(function(){
             });
         },1000);
 
-
+        require(['commonfuncs/division'],function(js){
+                js.initDivisionWidget(":input[name=registration]",function(index,row){
+                   $(':input[name=address]').val(row.parentname+row.dvname);
+                    $(':input[name=registration]').combogrid('setValues', ['001','007']);
+                })
+        })
         $('#save').bind('click',function(){
             $('#mainform').form('submit',{
                 url:'lr.do?model=hzyl.EvaluateLrInfo&eventName=save',

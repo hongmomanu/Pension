@@ -2,6 +2,11 @@
 <html>
 <head>
     <title>代码维护</title>
+    <style>
+        .icon-save{
+            background:url('img/busiapproval.png') no-repeat;
+        }
+    </style>
 </head>
 <script>
     var kwh = [{ "id": "1", "text": "是" ,"selected":true},
@@ -22,6 +27,11 @@
                 aaa100: r.aaa100
             }
         })
+    }
+    var actionformatter=function(value,row,index){
+        var e = '<a href="#" onclick="editrow(this)">Edit</a> ';
+        var d = '<a href="#" onclick="deleterow(this)">Delete</a>';
+        return e+d;
     }
 </script>
 <body>
@@ -50,12 +60,13 @@
             </div>
             <div data-options="region:'center',split:false,lines:true">
                 <table id="aa10" class="easyui-datagrid"
-                       data-options="fitColumns:true,singleSelect:true,border:false">
+                       data-options="fitColumns:true,singleSelect:true,border:false,toolbar:toolbar">
                     <thead>
                     <tr>
                         <%--<th data-options="field:'aaa100',width:100">代码类别</th>--%>
                         <th data-options="field:'aaa102',width:100">代码值</th>
                         <th data-options="field:'aaa103',width:100">代码名称</th>
+                        <th data-options="field:'action',width:100,formatter:actionformatter">操作</th>
                         <%--<th data-options="field:'aae100',width:100,align:'right'">有效</th>--%>
                     </tr>
                     </thead>
@@ -84,6 +95,19 @@
 </html>
 
 <script>
+    var toolbar = [
+        {
+            text:'添加',
+            iconCls:'icon-save',
+            handler:function(){addCodeDetail();}
+        },{
+            text:'保存',
+            iconCls:'icon-save',
+            handler:function(){addCodeDetail();}
+        }]
+    function addCodeDetail(){
+        $('#aa10').datagrid('appendRow',{isnew:'-1',aaa102:'newcode',aaa103:'中文名称',aaa104:'1'});
+    }
     $(function(){
         var a=100;
         var dg=$('#aa09');
