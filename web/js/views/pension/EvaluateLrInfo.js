@@ -25,12 +25,42 @@ define(function(){
         }
         return arr;
     })()
+    var infoEvents={
+        info1:function(){
+            $('#info1').find('input[type=radio]+label').each(function(i){
+                $(this).bind('click',function(){
+                    $($(this).parent().parent().children()
+                        .last().children()[0]).val(($(this).prev()).val())
+                })
+            })
+        },
+        info4:function(){
+            $(':input[opt=csrq]')
+                .datebox({
+                required:true,
+                onSelect: function(date){
+                    var p=$(this).parent().parent().parent();
+                    var m= (date.getMonth()+1);
+                    m=m>9?m:'0'+m;
+                    var d= date.getDate();
+                    d=d>9?d:'0'+d;
+                    p.find("[opt=textymd]").text(
+                        date.getFullYear()+"年"+m+"月"+d+"日(以身份证为准)"
+                    );
+                    p.find("[opt=xynl]").val(new Date().getFullYear()-date.getFullYear());
+                    $(p.find(":input[type=radio] + label")[0]).addClass("checked").prev()[0].checked=true;
+                }
+            });
+        }
+    }
     var a=function(){
         require(fields,function(){
             for(var i=0;i<arguments.length;i++){
                 $('#mainform').append(arguments[i]);
             }
             $('#tabs').tabs('getSelected').cssRadio();//渲染单选样式
+            infoEvents.info1();
+            infoEvents.info4();
         })
 
         for(var i=100;i<fieldset.length;i++){
@@ -54,15 +84,19 @@ define(function(){
         window.setTimeout(function(){
 
             $('#identityid').combogrid({
-                panelWidth:430,
+                panelWidth:350,
                 panelHeight:400,
                 url: 'ajax/getLrBasicInfo.jsp',
                 idField:'owerid',
                 textField:'owerid',
                 validType:'personid',
                 mode:'remote',
-                fitColumns:true,
+                fit:true,
                 pagination:true,
+                pageSize:15,
+                pageList: [15, 30,50],
+                border:false,
+                fitColumns:true,
                 onBeforeLoad: function(param){
                     var options = $('#identityid').combogrid('options');
                     if(param.q!=null){
@@ -88,8 +122,8 @@ define(function(){
                 },
                 columns:[[
                     {field:'name',title:'姓名',width:20},
-                    {field:'peopleid',title:'id',width:60},
-                    {field:'place',title:'地址',width:100}
+                    {field:'peopleid',title:'id',width:50},
+                    {field:'place',title:'地址',width:50}
                 ]]
             });
         },1000);

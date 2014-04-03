@@ -36,22 +36,24 @@ var cj = {
         }
     }
 
-
 }
 
 
 jQuery.fn.cssRadio = function () {
+        var me=($(this))
         var selectRadio=":input[type=radio] + label";
         $(selectRadio).each(function () {
             if ($(this).prev()[0].checked)
-                $(this).addClass("checked");
-        }).click(function () {
-                var contents = $(this).parent().parent();
-                $(selectRadio, contents).each(function () {
+                $(this).addClass("checked"); //初始化,如果已经checked了则添加新打勾样式
+        }).click(function () {               //为第个元素注册点击事件
+                var s=$($(this).prev()[0]).attr('name')
+                s=":input[name="+s+"]+label"
+                me.find(s).each(function (i) {
                     $(this).prev()[0].checked = false;
                     $(this).removeClass("checked");
                 });
                 $(this).prev()[0].checked = true;
                 $(this).addClass("checked");
-            }).prev().hide();
+            })
+            .prev().hide();     //原来的圆点样式设置为不可见
 };
