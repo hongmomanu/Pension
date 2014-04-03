@@ -11,9 +11,7 @@ import net.sf.json.JSONObject;
 
 import javax.servlet.http.HttpServletRequest;
 import java.sql.Connection;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -26,10 +24,7 @@ public class PensionPeopleInfo implements IMultilevelAudit {
     private HttpServletRequest request;
     private Connection conn;
 
-    @Override
-    public Long audit(AuditBean auditBean) {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
-    }
+
 
     public String save(){                 //老年基本信息保存方法
         int result=0;
@@ -98,5 +93,19 @@ public class PensionPeopleInfo implements IMultilevelAudit {
         //AuditManager.addAudit(id);
         result=commonDbUtil.updateTableVales(map,"t_oldpeople",where);
         return result>0? RtnType.SUCCESS:RtnType.FAILURE;
+    }
+
+    public String setGxDate(){
+        CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
+        List<Map<String,Object>> gxlist = new ArrayList<Map<String,Object>>();
+        String lr_id = request.getParameter("lr_id");
+        String gxsql = "SELECT * FROM T_OLDSOCREL WHERE lr_id = "+lr_id;
+        gxlist = commonDbUtil.query(gxsql);
+        return JSONArray.fromObject(gxlist).toString();                                                   //return JSONArray.fromObject(commonDbUtil.query(sql)).toString()
+    }
+
+    @Override
+    public Long audit(Connection conn, AuditBean auditBean) {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
     }
 }

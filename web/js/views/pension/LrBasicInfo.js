@@ -5,6 +5,27 @@ define(function()
     {
         if(res){
           $('#pensionform').form('load',res);
+            var lr_id = res.lr_id;
+            //alert(lr_id);
+            $.ajax({
+                url:"lr.do?model=hzyl.PensionPeopleInfo&eventName=setGxDate",
+                data:{
+                    lr_id:lr_id
+                },
+                type:"post",
+                success:function(suc){
+                    if(suc){
+                        //console.log(suc);
+                        //console.log(eval('('+suc+')'))  ;
+                        //console.log( $('#familymembersgrid'));
+                         $('#familymembersgrid').datagrid('loadData',eval('('+suc+')'));               //eval
+
+                    }else{
+
+                    }
+            }
+
+            })
         }
         /*上传照片*/
         $('#personimg').click(function () {
