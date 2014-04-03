@@ -6,6 +6,10 @@ html,body {
     margin: 0;
     height:100%;
 }
+body {
+    background:url(img/kuma-house.gif) 0 0 repeat #fff;
+    color:#5F7A77;
+}
 
 
 h2 {
@@ -349,7 +353,7 @@ div.yw-block > span{
     height: 20px;
     display: block;
 }
-.wwwy1_blog_hexun_com {
+.noMoveToolBar {
     position:fixed !important;
     bottom: 0px;
     left: 0px;
@@ -375,4 +379,41 @@ div.yw-block > span{
 }
 .newRadio input+label.over {
     color: #0000FF;
+}
+
+.xuanfuhtml {
+    position:fixed !important;
+    top: 120px;
+    right: 20px;
+    position:absolute;
+    top:expression(offsetParent.scrollTop+0);
+    text-align: left;
+    border: 1px solid #95B8E7;
+}
+.xuanfuhtml>ul{
+    border-right: 4px solid #146eb4;
+    border-bottom: 4px solid #146eb4;
+    border-left: 1px solid #83abc6;
+}
+.xuanfuhtml li{
+    color: #00003a;
+    font-size: 12px;
+    height: 27px;
+    line-height: 27px;
+    border-bottom: 1px dotted #83abc6;
+    /*padding-left: 8px;*/
+    border-right-width: 0;
+    list-style: none;
+}
+.xuanfuhtml li a:link,
+.xuanfuhtml li a:visited,
+.xuanfuhtml li a:active {
+    padding-left: 8px;
+    color: #404040;
+    text-decoration: none;
+    display: block;
+}
+.xuanfuhtml li a:hover {
+    color:brown;
+    background-color: lightskyblue;
 }

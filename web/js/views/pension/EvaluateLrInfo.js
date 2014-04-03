@@ -26,6 +26,13 @@ define(function(){
         return arr;
     })()
     var infoEvents={
+        initHiddenOthers:function(){
+            $('.xuanfuhtml a').bind('click',function(){
+                $('#mainform>fieldset').hide();
+                $('#mainform>fieldset[id='+$(this).attr('href').substr(1)+']').show();
+                $('#info0').show();
+            })
+        },
         info1:function(){
             $('#info1').find('input[type=radio]+label').each(function(i){
                 $(this).bind('click',function(){
@@ -61,6 +68,7 @@ define(function(){
             $('#tabs').tabs('getSelected').cssRadio();//渲染单选样式
             infoEvents.info1();
             infoEvents.info4();
+            $('[opt=hiddenOthers]').bind('click',infoEvents.initHiddenOthers);
         })
 
         for(var i=100;i<fieldset.length;i++){
