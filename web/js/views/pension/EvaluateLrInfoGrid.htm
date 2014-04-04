@@ -8,7 +8,9 @@
     <thead>
     <tr>
         <th data-options="field:'pg_id'">PG_ID</th>
-        <th data-options="field:'active'">有效</th>
+        <th data-options="field:'active',
+            formatter:cj.enumFormatter('shjlnljl')
+            ">有效</th>
         <th data-options="field:'name'">NAME</th>
         <th data-options="field:'identityid'">IDENTITYID</th>
         <th data-options="field:'birthd'">BIRTHD</th>
@@ -19,11 +21,12 @@
         <th data-options="field:'type'">TYPE</th>
         <th data-options="field:'registration'">REGISTRATION</th>
 
-        <th data-options="field:'dl_name'">DL_NAME</th>
+        <!--<th data-options="field:'dl_name'">DL_NAME</th>
         <th data-options="field:'dl_relation'">DL_RELATION</th>
         <th data-options="field:'dl_telephone'">DL_TELEPHONE</th>
         <th data-options="field:'dl_mobile phone'">DL_MOBILE PHONE</th>
-        <th data-options="field:'dl_beiz'">DL_BEIZ</th>
+        <th data-options="field:'dl_beiz'">DL_BEIZ</th>-->
+
         <th data-options="field:'sh_jings'">SH_JINGS</th>
         <th data-options="field:'sh_yid'">SH_YID</th>
         <th data-options="field:'sh_weis'">SH_WEIS</th>
@@ -36,7 +39,6 @@
         <th data-options="field:'sh_xiaob'">SH_XIAOB</th>
         <th data-options="field:'sh_zongf'">SH_ZONGF</th>
         <th data-options="field:'sh_pingguf'">SH_PINGGUF</th>
-        <th data-options="field:'sh_jiel'">SH_JIEL</th>
         <th data-options="field:'sh_pingguy'">SH_PINGGUY</th>
         <th data-options="field:'jj_shour'">JJ_SHOUR</th>
         <th data-options="field:'jj_fenl'">JJ_FENL</th>
