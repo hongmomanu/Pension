@@ -9,17 +9,31 @@
         height:100%;
     }
     .icon-save{
-        background:url('img/busiapproval.png') no-repeat;
+        background:url('img/shenghe.gif') no-repeat;
     }
     .icon-refresh{
-        background:url('img/ext/refresh.gif') no-repeat;
+        background:url('img/refresh.gif') no-repeat;
     }.icon-search{
-        background:url('img/ext/LookAtFile.bmp') no-repeat;
+        background:url('img/search.gif') no-repeat;
     }.icon-log{
-        background:url('img/ext/text.bmp') no-repeat;
+        background:url('img/mylog.gif') no-repeat;
     }
+    a:link, a:visited, a:active {
+        color: #404040;
+        text-decoration: none;
+        display: block;
+    }
+
 </style>
 <script>
+    $.extend($.fn.validatebox.defaults.rules, {
+        mustDesc: {
+            validator: function(value,param){
+                return true;
+            },
+            message: 'Field do not match.'
+        }
+    });
     var approvalProcess=['提交','审核','审批'];
     var pass = [{ "id": "1", "text": "通过" ,"selected":true},
         { "id": "0", "text": "不通过" }
@@ -58,13 +72,17 @@
             formatter: function(value,row,index){
                 return approvalProcess[value]
 			}">操作</th>
-            <th data-options="field:'audefault',width:80,
+            <th  data-options="field:'audefault',width:80,
             editor: { type: 'combobox',
                 options: { data:pass, valueField: 'id', textField: 'text',panelHeight:'auto' } },
             formatter:passformatter
             ">通过</th>
-            <th data-options="field:'audesc',width:250,align:'right',
-            editor:{type:'text'}">备注</th>
+            <th  data-options="field:'audesc',width:250,align:'right',
+                        editor:{
+                            type:'validatebox',
+                            options:{
+                                invalidMessage:'请输入正确身份证号!',validType:'mustDesc'
+                            }}">备注</th>
             <th data-options="field:'digest',width:300,align:'left',formatter:digestformatter"><a>摘要</a></th>
             <th data-options="field:'username',width:60,align:'left'">办理人</th>
             <th data-options="field:'bsnyue',width:60,align:'left'">业务期</th>
@@ -106,19 +124,6 @@ function loadAuditData(){
 var saveApproval=function(){
     var auditmsgs=[];
     $('#auditGrid').datagrid('acceptChanges');
-    var yz=true;
-    $('#auditGrid').datagrid('getChecked').forEach(function(item,i){
-        console.log($(item).attr('audefault'))
-        if($(item).attr('audefault')=='0'&&$(item).attr('audesc')==null){
-            yz=false;
-        }
-    })
-
-    if(!yz){
-        $.messager.alert('提示','业务没有通过,请填写备注信息!','info');
-        return;
-    }
-
     $('#auditGrid').datagrid('getSelections').forEach(function(item,i){
         auditmsgs.push({
             auditid:$(item).attr('auditid'),
@@ -127,9 +132,19 @@ var saveApproval=function(){
             audesc:$(item).attr('audesc')
         })
     })
+
     if(auditmsgs.length==0){
         $.messager.alert('提示','请选中再操作!','info');
         return;
+    }
+    var a= eval('('+JSON.stringify(auditmsgs)+')')
+    for(var i=0;i<a.length;i++){
+        m=a[i];
+        console.log(m)
+        if(m.auflag=='0'&&(!m.audesc&& m.audesc.trim().length<1)){
+            $.messager.alert('提示','业务没有通过,请填写备注信息!','info');
+            return;
+        }
     }
     $.ajax({
         url:'audit.do?method='+method+'&eventName=saveAudit',

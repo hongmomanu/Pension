@@ -8,11 +8,13 @@ import Pension.common.sys.audit.AuditBean;
 import Pension.common.sys.audit.AuditManager;
 import Pension.common.sys.audit.IMultilevelAudit;
 import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 
 import javax.servlet.http.HttpServletRequest;
 import java.sql.Connection;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class EvaluateLrInfo implements IMultilevelAudit {
@@ -41,10 +43,17 @@ public class EvaluateLrInfo implements IMultilevelAudit {
     }
     public String query(){
         CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
-        Map map= ParameterUtil.toMap(request);
+        Integer page=Integer.parseInt(request.getParameter("page"));
+        Integer rows=Integer.parseInt(request.getParameter("rows"));
+
+        Map map= new HashMap();
         String sql="select o.name,o.identityid,o.birthd,o.gender,o.age,o.nation,o.address,o.type,o.registration" +
                 ",n.* from t_needassessment n,t_oldpeople o where o.lr_id=n.lr_id";
-        return JSONArray.fromObject(commonDbUtil.query(sql)).toString();
+        List list=commonDbUtil.query("SELECT * FROM (SELECT tt.*, ROWNUM ro FROM ("+sql+") tt WHERE ROWNUM <="+(page)*rows+") WHERE ro > "+(page-1)*rows);
+        int count=commonDbUtil.query(sql).size();
+        map.put("total",count);
+        map.put("rows",list);
+        return JSONObject.fromObject(map).toString();
     }
 
     /*审核成功后的回调
