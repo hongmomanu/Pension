@@ -140,8 +140,7 @@ var saveApproval=function(){
     var a= eval('('+JSON.stringify(auditmsgs)+')')
     for(var i=0;i<a.length;i++){
         m=a[i];
-        console.log(m)
-        if(m.auflag=='0'&&(!m.audesc&& m.audesc.trim().length<1)){
+        if(m.auflag=='0'&&(!m.audesc || !(m.audesc.trim()))){
             $.messager.alert('提示','业务没有通过,请填写备注信息!','info');
             return;
         }

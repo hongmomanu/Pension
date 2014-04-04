@@ -58,8 +58,13 @@ define(function(){
             var me=this;
             $('#info1').find(':input[type=radio]+label').each(function(i){
                 $(this).bind('click',function(){
-
-                    $($(this).parent().parent().children().last().children()[0]).val(($(this).prev()).val());
+                    var radioValue=0;
+                    if($(this).prev()[0].checked){
+                        radioValue= ($(this).prev()).val();
+                        $($(this).parent().parent().children().last().children()[0]).val(radioValue);
+                    }else{
+                        $($(this).parent().parent().children().last().children()[0]).removeAttr("value");
+                    }
                     var sh_zongf=0;
                     $('#info1').find(':input[opt=info1pingfeng]').each(function(){
                         $(this).attr( 'disabled','disabled');
@@ -163,11 +168,18 @@ define(function(){
         }
     }
     var a=function(){
+        $('#formcontentpanel').panel({
+            onResize:function(width, height){
+
+                $('#formcontentpanel').height($('#formcontentpanel').height()-30);
+                $('#form_btns').height(30);
+            }
+        });
         require(fields,function(){
             for(var i=0;i<arguments.length;i++){
                 $('#mainform').append(arguments[i]);
             }
-            $('#tabs').tabs('getSelected').cssRadio();//渲染单选样式
+            $('#tabs').tabs('getSelected').cssRadio(true);//渲染单选样式
             $('#tabs').tabs('getSelected').cssCheckBox();//渲染多选样式
             infoEvents.initPGY();
             infoEvents.info1();

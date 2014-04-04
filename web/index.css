@@ -299,20 +299,7 @@ div.yw-block > span{
     height: 20px;
     display: block;
 }
-.noMoveToolBar {
-    position:fixed !important;
-    bottom: 0px;
-    left: 0px;
-    /*margin-left:-468px;*/
-    position:absolute;
-    top:expression(offsetParent.scrollTop+0);
-    text-align: center;
-    border: 1px solid #95B8E7;
-    /*border-top: none;*/
-    background: #E0ECFF;
-    width:100%;
-    height:30px
-}
+
 /*radio checkbox打钗样式*/
 .newRadio input+label {
     padding-left: 26px;
@@ -327,39 +314,29 @@ div.yw-block > span{
     color: #0000FF;
 }
 
-.xuanfuhtml {
-    position:fixed !important;
-    top: 120px;
-    right: 20px;
-    position:absolute;
-    top:expression(offsetParent.scrollTop+0);
-    text-align: left;
-    border: 1px solid #95B8E7;
-}
-.xuanfuhtml>ul{
-    border-right: 4px solid #146eb4;
-    border-bottom: 4px solid #146eb4;
-    border-left: 1px solid #83abc6;
-}
-.xuanfuhtml li{
+
+
+.newToolBar li{
+    display:inline;
     color: #00003a;
     font-size: 12px;
-    height: 27px;
-    line-height: 27px;
+    height: 20px;
+    line-height: 20px;
     border-bottom: 1px dotted #83abc6;
     /*padding-left: 8px;*/
     border-right-width: 0;
     list-style: none;
+
 }
-.xuanfuhtml li a:link,
-.xuanfuhtml li a:visited,
-.xuanfuhtml li a:active {
+.newToolBar li a:link,
+.newToolBar li a:visited,
+.newToolBar li a:active {
     padding-left: 8px;
     color: #404040;
     text-decoration: none;
-    display: block;
+    display: inline-block;
 }
-.xuanfuhtml li a:hover {
+.newToolBar li a:hover {
     color:brown;
     background-color: lightskyblue;
 }

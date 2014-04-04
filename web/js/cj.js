@@ -3,25 +3,46 @@
  */
 
 var cj=(function(){
-    var Enums={};
-    var getEnum=function(searchtype){
-        var enumObj=Enums[searchtype];
-        if(enumObj){
-            return enumObj;
+    var Enums0=(function(){
+        var res=$.ajax({
+            url:'cb.do?rows=-1',
+            type:'post',
+            async: false, //同步加载
+            data:{searchtype:'no1'}
+        }).responseText;
+        var d = eval('(' + res + ')');
+        if (!!d && (d.success == true || d.success == 'true')) {
+            return d.rows;  //一次性全部加载过来
         }else{
-            var res=$.ajax({
-                url:'cb.do?rows=-1',
-                type:'post',
-                async: false,
-                data:{searchtype:searchtype}
-            }).responseText;
-            var d = eval('(' + res + ')');
-            if (!!d && (d.success == true || d.success == 'true')) {
-                Enums= d.rows;  //一次性全部加载过来
-                return Enums[searchtype];
-            }
+            return {};
         }
+    });
+    var Enums={};
+    var loading=true;
+    var singleFun=function(){
+        var result={};
+        $.ajax({
+            url:'cb.do?rows=-1',
+            type:'post',
+            data:{searchtype:'no1'},
+            success:function(res){
+                var d = eval('(' + res + ')');
+                if (!!d && (d.success == true || d.success == 'true')) {
+                    Enums= d.rows
+                    return Enums;  //一次性全部加载过来
+                }
+            }
+        })
+        return result;
+    }
+    var getEnum=function(searchtype){
+        if(loading){
+            loading=false;
+            singleFun();
+        }else{
 
+            return Enums[searchtype];
+        }
     }
     var enfmt=function(ef){
         return function(value,recode,index){
@@ -82,7 +103,7 @@ var cj=(function(){
 
 
 
-jQuery.fn.cssRadio = function () {
+jQuery.fn.cssRadio = function (toggle) {
     var me = ($(this))
     var selectRadio = ":input[type=radio] + label";
     $(selectRadio).each(function () {
@@ -91,12 +112,18 @@ jQuery.fn.cssRadio = function () {
     }).click(function () {               //为第个元素注册点击事件
             var s = $($(this).prev()[0]).attr('name')
             s = ":input[name=" + s + "]+label"
+            var isChecked=$(this).prev()[0].checked;
             me.find(s).each(function (i) {
                 $(this).prev()[0].checked = false;
                 $(this).removeClass("checked");
             });
-            $(this).prev()[0].checked = true;
-            $(this).addClass("checked");
+            if(isChecked&&toggle){
+                //如果单选已经为选中状态并且参数为true,则什么都不做
+            }else{
+                $(this).prev()[0].checked = true;
+                $(this).addClass("checked");
+            }
+
         })
         .prev().hide();     //原来的圆点样式设置为不可见
 };
