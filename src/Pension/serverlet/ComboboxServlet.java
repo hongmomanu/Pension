@@ -45,7 +45,7 @@ public class ComboboxServlet extends HttpServlet {
     private String getSearchType(String searchtype,String aaa102,String rows){
         Connection conn= JdbcFactory.getConn();
         CommonDbUtil dbUtil=new CommonDbUtil(conn);
-        String sql="select aaa102 id,aaa103 text from aa10 where aaa100='"+searchtype+"'";
+        String sql="select aaa102 id,aaa103 text from aa10 where aaa100='"+searchtype+"' order by aaa102 asc";
         if("-1".equals(rows)){
              sql="select aaa100 ename,aaa102 id,aaa103 text from aa10 ";
             Map map=new HashMap();
