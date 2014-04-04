@@ -23,19 +23,43 @@
             <tr>
                 <td class="formtdtext">性别</td>
                 <td>
-                    <select id="sex" class="easyui-combobox lazy-combobox" data-options="valueField: 'value',field:'sex'," name="gender" style="width: 100px">
+                    <input id="sex" class="easyui-combobox lazy-combobox"
+                           name="gender"
+                           style="width: 100px"
+                           data-options="
+                                url:'cb.do?searchtype=gender',
+                                method:'get',
+                                valueField:'id',
+                                textField:'text'
+            ">
+                    <!--<select id="sex" class="easyui-combobox lazy-combobox" data-options="valueField: 'value',field:'sex'," name="gender" style="width: 100px">
                         <option value="man">男</option>
                         <option value="woman">女</option>
-                    </select>
+                    </select>-->
                 </td>
                 <td class="formtdtext">年龄</td>
                 <td><input id="age" class="easyui-validatebox,field:'age'" name="age"></td>
                 <td class="formtdtext">民族</td>
                 <td>
-                    <select class="easyui-combobox lazy-combobox" name="nation" style="width: 100px">
+                    <input class="easyui-combobox lazy-combobox"
+                           name="nation"
+                           style="width: 100px"
+                           data-options="
+                                url:'cb.do?searchtype=NATION',
+                                method:'get',
+                                valueField:'id',
+                                textField:'text'
+            ">
+                    <!--<select class="easyui-combobox lazy-combobox" name="nation" style="width: 100px" data-options="
+                    url:'combobox_data1.json',
+                    method:'get',
+                    valueField:'id',
+                    textField:'text',
+                    panelHeight:'auto'
+            ">
                         <option value="han">汉族</option>
                         <option value="other">少数民族</option>
-                    </select>
+                    </select>-->
                 </td>
             </tr>
         </table>
@@ -45,11 +69,20 @@
                 <td colspan="3"><input class="easyui-validatebox" name="address" data-options="required:true" style="width: 300px"></td>
                 <td class="formtdtext">人员类型<span style="color: red">*</span></td>
                 <td>
-                    <select class="easyui-combobox lazy-combobox" name="type">
+                    <input class="easyui-combobox lazy-combobox"
+                           name="type"
+                           style="width: 100px"
+                           data-options="
+                                url:'cb.do?searchtype=oldtype',
+                                method:'get',
+                                valueField:'id',
+                                textField:'text'
+            ">
+                    <!--<select class="easyui-combobox lazy-combobox" name="type">
                         <option value="rylx1">低保家庭</option>
                         <option value="rylx2">农村五保</option>
                         <option value="rylx3">城镇三无</option>
-                    </select>
+                    </select>-->
                 </td>
             </tr>
             <tr>
@@ -59,7 +92,16 @@
             <tr>
                 <td class="formtdtext">居住环境<span style="color: red">*</span></td>
                 <td>
-                    <select class="easyui-combobox lazy-combobox" name="live" data-options="required:true" style="width: 100px">
+                    <input class="easyui-combobox lazy-combobox"
+                           name="live"
+                           style="width: 100px"
+                           data-options="
+                                url:'cb.do?searchtype=liveplace',
+                                method:'get',
+                                valueField:'id',
+                                textField:'text'
+                     ">
+                    <!--<select class="easyui-combobox lazy-combobox" name="live" data-options="required:true" style="width: 100px">
                         <option value="jzhj1">与子女同住</option>
                         <option value="jzhj2">与配偶同住</option>
                         <option value="jzhj3">与亲友同住</option>
@@ -67,28 +109,46 @@
                         <option value="jzhj5">寡居</option>
                         <option value="jzhj6">空巢</option>
                         <option value="jzhj7">其他</option>
-                    </select>
+                    </select>-->
                 </td>
                 <td class="formtdtext">婚姻状况<span style="color: red">*</span></td>
                 <td>
-                    <select class="easyui-combobox lazy-combobox" name="marriage" data-options="required:true" style="width: 100px">
+                    <input class="easyui-combobox lazy-combobox"
+                           name="marriage"
+                           style="width: 100px"
+                           data-options="
+                                url:'cb.do?searchtype=marriage',
+                                method:'get',
+                                valueField:'id',
+                                textField:'text'
+                     ">
+                    <!--<select class="easyui-combobox lazy-combobox" name="marriage" data-options="required:true" style="width: 100px">
                         <option value="hyzk1">未婚</option>
                         <option value="hyzk21">已婚</option>
                         <option value="hyzk3">丧偶</option>
                         <option value="hyzk4">离异</option>
                         <option value="hyzk5">未说明</option>
-                    </select>
+                    </select>-->
                 </td>
                 <td class="formtdtext">家庭经济条件<span style="color: red">*</span></td>
                 <td>
-                    <select class="easyui-combobox lazy-combobox" name="economy" data-options="required:true" style="100px">
+                    <input class="easyui-combobox lazy-combobox"
+                           name="economy"
+                           style="width: 100px"
+                           data-options="
+                                url:'cb.do?searchtype=economy',
+                                method:'get',
+                                valueField:'id',
+                                textField:'text'
+                     ">
+                    <!--<select class="easyui-combobox lazy-combobox" name="economy" data-options="required:true" style="100px">
                         <option value="jtjjtj1">低保</option>
                         <option value="jtjjtj2">低收入（低保2倍）</option>
                         <option value="jtjjtj3">低退休工资（2000以下）</option>
                         <option value="jtjjtj4">低退休工资（2000以上）</option>
                         <option value="jtjjtj5">无社保（非低保低收入）</option>
                         <option value="jtjjtj6">其他</option>
-                    </select>
+                    </select>-->
                 </td>
             </tr>
             <tr>
@@ -96,7 +156,16 @@
                 <td><input class="easyui-validatebox" name="vocation"></td>
                 <td class="formtdtext">文化程度<span style="color: red">*</span></td>
                 <td>
-                    <select class="easyui-combobox lazy-combobox" name="culture" data-options="required:true" style="width: 100px">
+                    <input class="easyui-combobox lazy-combobox"
+                           name="culture"
+                           style="width: 100px"
+                           data-options="
+                                url:'cb.do?searchtype=culture',
+                                method:'get',
+                                valueField:'id',
+                                textField:'text'
+                     ">
+                    <!--<select class="easyui-combobox lazy-combobox" name="culture" data-options="required:true" style="width: 100px">
                         <option value="whcd1">小学</option>
                         <option value="whcd2">初中</option>
                         <option value="whcd3">高中</option>
@@ -104,7 +173,7 @@
                         <option value="whcd5">本科</option>
                         <option value="whcd6">研究生</option>
                         <option value="whcd7">其他</option>
-                    </select>
+                    </select>-->
                 </td>
                 <td class="formtdtext">手机号码</td>
                 <td><input class="easyui-validatebox" name="mobilephone"></td>
@@ -120,10 +189,19 @@
             <tr>
                 <td class="formtdtext">呼叫机种类</td>
                 <td>
-                    <select class="easyui-combobox lazy-combobox" name="hjj_kind" style="width: 100px">
+                    <input class="easyui-combobox lazy-combobox"
+                           name="hjj_kind"
+                           style="width: 100px"
+                           data-options="
+                                url:'cb.do?searchtype=hjjkind',
+                                method:'get',
+                                valueField:'id',
+                                textField:'text'
+                     ">
+                   <!-- <select class="easyui-combobox lazy-combobox" name="hjj_kind" style="width: 100px">
                         <option value="1">a</option>
                         <option value="2">b</option>
-                    </select>
+                    </select>-->
                 </td>
                 <td class="formtdtext">呼叫机类型</td>
                 <td>
@@ -380,8 +458,11 @@
 
              <thead data-options="frozen:true">
              <tr>
-                 <th data-options="field:'bottom',width:60,align:'center',editor:'icon-remove'">
-                     <a id="newfamilymemer_btn1" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true">新增</a>
+                 <!--<th data-options="field:'bottom',width:60,align:'center',editor:'icon-remove'">
+                     <a id="newfamilymemeradd_btn" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true">新增</a>
+                 </th>-->
+                 <th data-options="field:'bottom',width:40,align:'center',editor:'icon-remove'">
+                         <a data-options="plain:true">选择</a>
                  </th>
                  <th class="lazy-combobox" data-options="field:'guanx',align:'center',width:100,editor:{
                  type:'combobox',
@@ -428,7 +509,7 @@
             </thead>
         </table>
         <div id="familymembertb" style="height:auto">
-            <!--<a id="newfamilymemer_btn" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true">新增</a>-->
+            <a id="newfamilymemeradd_btn" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true">新增</a>
             <a id="delfamilymemer_btn" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true">删除</a>
         </div>
     </div>

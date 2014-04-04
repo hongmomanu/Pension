@@ -33,6 +33,7 @@ public class PensionPeopleInfo implements IMultilevelAudit {
         Map map= ParameterUtil.toMap(request);             //获取提交过来的结果
 
         String gxmess = map.get("p1").toString();                  //获得老年关系人员数据
+        String briefmessage = map.get("name").toString()+","+map.get("gender").toString()+",出生于"+map.get("birthd").toString()+",原籍"+map.get("registration").toString()+",现居住"+map.get("address").toString();
         JSONArray ga = JSONArray.fromObject(gxmess);         //转换成JSON数据
 
         Long id=commonDbUtil.getSequence("seq_t_oldpeople");                //创建唯一标识
@@ -47,7 +48,7 @@ public class PensionPeopleInfo implements IMultilevelAudit {
 
 
         AuditManager.addAudit(id, "mHLcDiwTflgEshNKIiOV", "T_OLDPEOPLE",          //审核功能添加
-                this.getClass().getName(), "没有摘要信息" + new Date().toString(),
+                this.getClass().getName(), briefmessage,                                       // + new Date().toString()
                 request.getSession().getAttribute("loginname").toString(),
                 request.getSession().getAttribute("username").toString(),
                 request.getSession().getAttribute("dvcode").toString()
@@ -106,6 +107,10 @@ public class PensionPeopleInfo implements IMultilevelAudit {
 
     @Override
     public Long audit(Connection conn, AuditBean auditBean) {
+        Long lr_id=Long.parseLong(auditBean.getTprkey());
+        CommonDbUtil dbUtil=new CommonDbUtil(conn);
+        String sql="update T_OLDPEOPLE set active='1' where lr_id="+lr_id;
+        dbUtil.execute(sql);
         return null;  //To change body of implemented methods use File | Settings | File Templates.
     }
 }

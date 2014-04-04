@@ -3,30 +3,7 @@ define(function()
 {
     function render(parameters,res)
     {
-        if(res){
-          $('#pensionform').form('load',res);
-            var lr_id = res.lr_id;
-            //alert(lr_id);
-            $.ajax({
-                url:"lr.do?model=hzyl.PensionPeopleInfo&eventName=setGxDate",
-                data:{
-                    lr_id:lr_id
-                },
-                type:"post",
-                success:function(suc){
-                    if(suc){
-                        //console.log(suc);
-                        //console.log(eval('('+suc+')'))  ;
-                        //console.log( $('#familymembersgrid'));
-                         $('#familymembersgrid').datagrid('loadData',eval('('+suc+')'));               //eval
 
-                    }else{
-
-                    }
-            }
-
-            })
-        }
         /*上传照片*/
         $('#personimg').click(function () {
             $('#imgwin').window('open');
@@ -35,6 +12,7 @@ define(function()
         $('#imgwin_cancel').bind('click', function () {
             $('#imgwin').window('close');
         });
+
         $('#imgwin_submit').bind('click', function () {
             require(['jqueryplugin/jquery-form'],function(AjaxFormjs){
                 var success=function(data, jqForm, options)
@@ -65,26 +43,24 @@ define(function()
          })
 
         /*家庭成员添加与删除*/
-        $('#newfamilymemer_btn').bind('click', function () {
+       /* $('#newfamilymemer_btn').bind('click', function () {
             $('#familymembersgrid').datagrid('appendRow', {name: '', relationship: '其它'});
             var editIndex = $('#familymembersgrid').datagrid('getRows').length-1;
             $('#familymembersgrid').datagrid('selectRow', editIndex)
                 .datagrid('beginEdit', editIndex);
 
-
-
-            /*require(['familygridfieldsbinds'], function (familygridfieldsbinds) {
+            *//*require(['familygridfieldsbinds'], function (familygridfieldsbinds) {
                 familygridfieldsbinds.personidbind(editIndex);
                 familygridfieldsbinds.namebind(editIndex);
                 familygridfieldsbinds.isenjoyedbind(editIndex);
-            });*/
+        });*//*
 
-           /* $('#FamilyPersons').val($('#familymembersgrid').datagrid('getRows').length);*/
+           *//* $('#FamilyPersons').val($('#familymembersgrid').datagrid('getRows').length);*//*
 
-        });
+        });*/
 
-        $('#newfamilymemer_btn1').bind('click', function () {
-            $('#familymembersgrid').datagrid('appendRow', {name: '', relationship: '其它'});
+        $('#newfamilymemeradd_btn').bind('click', function () {
+            $('#familymembersgrid').datagrid('appendRow', {name: "", relationship: ""});
             var editIndex = $('#familymembersgrid').datagrid('getRows').length-1;
             $('#familymembersgrid').datagrid('selectRow', editIndex)
                 .datagrid('beginEdit', editIndex);
@@ -186,7 +162,43 @@ define(function()
             })
         })
 
-        $('#setdaytime').datebox('setValue',myformatter(new Date()));
+        $('#setdaytime').datebox('setValue',myformatter(new Date()));     //设置填表时间
+
+        $('#familymembersgrid').datagrid({                     //点击行进行编辑
+            onDblClickRow:function(rowIndex,rowData){
+                   $(this).datagrid('beginEdit',rowIndex);
+            }
+        })
+
+
+        if(res&&res!="pension")               //填充表单
+        {
+            $('#pensionform').form('load',res);
+            var lr_id = res.lr_id;
+            //alert(lr_id);
+            $.ajax({
+                url:"lr.do?model=hzyl.PensionPeopleInfo&eventName=setGxDate",
+                data:{
+                    lr_id:lr_id
+                },
+                type:"post",
+                success:function(suc){
+                    if(suc){
+                        //console.log(suc);
+                        //console.log(eval('('+suc+')'))  ;
+                        //console.log( $('#familymembersgrid'));
+                        $('#familymembersgrid').datagrid('loadData',eval('('+suc+')'));               //eval
+
+                    }else{
+
+                    }
+                }
+
+            })
+        }else{
+
+        }
+
 
     }
 
