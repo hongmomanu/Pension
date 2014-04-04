@@ -146,7 +146,7 @@ define(function(){
             $('#mainform').form('submit',{
                 url:'lr.do?model=hzyl.EvaluateLrInfo&eventName=save',
                 success: function(res){
-                   cj.ifSuccQest(res,"已操作成功是否关闭此",function(){
+                   cj.ifSuccQest(res,"已操作成功是否关闭此页",function(){
                        require(['commonfuncs/TreeClickEvent'],function(js){
                            js.closeCurrentTab();
                        })

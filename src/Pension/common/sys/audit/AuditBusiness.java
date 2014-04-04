@@ -62,14 +62,11 @@ public class AuditBusiness {
                 if(aulevel==3){
                     map.put("auendflag","1");
                     commonDbUtil.updateTableVales(map, "opaudit", where);
-                    System.out.println("****************************************************************************");
-                    System.out.println("审核全部通过,执行回调方法");
                     CallBack.doAudit(Long.parseLong(auditid));
-                    System.out.println("****************************************************************************");
                 }else{
                     commonDbUtil.updateTableVales(map,"opaudit",where);
                 }
-            }else{    //不成功,结束
+            }else{    //不成功,也应该调用doAudit;;;;;;;;;;
                 map.put("auendflag","1");
                 commonDbUtil.updateTableVales(map, "opaudit", where);
             }
