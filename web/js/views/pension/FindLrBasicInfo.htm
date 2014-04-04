@@ -15,7 +15,15 @@
             <tr>
                 <!--<th data-options="type:'hidden',field:'lrid'"></th>-->
                 <th data-options="field:'name',width:100">姓名</th>
-                <th data-options="field:'gender',width:80">性别</th>
+                <th data-options="field:'gender',width:80,editor:{
+							type:'combobox',
+							options:{
+								url:'cb.do?searchtype=gender',
+                                width:60,
+                                valueField: 'id',
+                                textField: 'text'
+							}
+						}">性别</th>
                 <th data-options="field:'birthday',width:150">出生年月</th>
                 <th data-options="field:'peopleid',width:200">身份证号</th>
                 <th data-options="field:'place',width:200,align:'right'">住址</th>

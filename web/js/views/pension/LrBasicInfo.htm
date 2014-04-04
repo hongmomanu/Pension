@@ -205,10 +205,19 @@
                 </td>
                 <td class="formtdtext">呼叫机类型</td>
                 <td>
-                    <select class="easyui-combobox lazy-combobox" name="hjj_type" style="width: 100px">
+                    <input class="easyui-combobox lazy-combobox"
+                           name="hjj_type"
+                           style="width: 100px"
+                           data-options="
+                                url:'cb.do?searchtype=hjjtype',
+                                method:'get',
+                                valueField:'id',
+                                textField:'text'
+                     ">
+                    <!--<select class="easyui-combobox lazy-combobox" name="hjj_type" style="width: 100px">
                         <option value="hjjlx1">移动</option>
                         <option value="hjjlx2">固定</option>
-                    </select>
+                    </select>-->
                 </td>
                 <td class="formtdtext">呼叫手机号</td>
                 <td><input class="easyui-validatebox" name="hjj_phone"></td>
@@ -221,7 +230,7 @@
 <!--享受服务类型-->
 <fieldset style="width: 900px;margin: 0px auto">
     <legend>享受服务类型</legend>
-    <div>
+    <div id="lrxsfwlx">
         <label><input name="Fruit" type="checkbox" value="" />居家养老服务 </label>
         <label><input name="Fruit" type="checkbox" value="" />服务卷 </label>
         <label><input name="Fruit" type="checkbox" value="" />免费体检 </label>
@@ -243,11 +252,20 @@
                 <td><input class="easyui-validatebox" name="jz_yixingm"></td>
                 <td class="formtdtext">邻居一位置</td>
                 <td>
-                    <select class="easyui-combobox lazy-combobox" name="jz_yiweiz" style="width: 100px">
+                    <input class="easyui-combobox lazy-combobox"
+                           name="jz_yiweiz"
+                           style="width: 100px"
+                           data-options="
+                                url:'cb.do?searchtype=neighborposition',
+                                method:'get',
+                                valueField:'id',
+                                textField:'text'
+                     ">
+                    <!--<select class="easyui-combobox lazy-combobox" name="jz_yiweiz" style="width: 100px">
                         <option value="ljywz1">楼上</option>
                         <option value="ljywz2">楼下</option>
                         <option value="ljywz3">隔壁</option>
-                    </select>
+                    </select>-->
                 </td>
                 <td class="formtdtext">邻居一电话</td>
                 <td><input class="easyui-validatebox" name="jz_yidianh"></td>
@@ -257,11 +275,20 @@
                 <td><input class="easyui-validatebox" name="jz_erxingm"></td>
                 <td class="formtdtext">邻居二位置</td>
                 <td>
-                    <select class="easyui-combobox lazy-combobox" name="jz_erweiz" style="width: 100px">
+                    <input class="easyui-combobox lazy-combobox"
+                           name="jz_erweiz"
+                           style="width: 100px"
+                           data-options="
+                                url:'cb.do?searchtype=neighborposition',
+                                method:'get',
+                                valueField:'id',
+                                textField:'text'
+                     ">
+                    <!--<select class="easyui-combobox lazy-combobox" name="jz_erweiz" style="width: 100px">
                         <option value="ljewz1">楼上</option>
                         <option value="ljewz2">楼下</option>
                         <option value="ljewz3">隔壁</option>
-                    </select>
+                    </select>-->
                 </td>
                 <td class="formtdtext">邻居二电话</td>
                 <td><input class="easyui-validatebox" name="jz_erdianh"></td>
@@ -294,27 +321,54 @@
             <tr>
                 <td class="formtdtext">血型</td>
                 <td>
-                    <select class="easyui-combobox lazy-combobox" name="jk_xuex" style="width: 100px">
+                    <input class="easyui-combobox lazy-combobox"
+                           name="jk_xuex"
+                           style="width: 100px"
+                           data-options="
+                                url:'cb.do?searchtype=bloodtype',
+                                method:'get',
+                                valueField:'id',
+                                textField:'text'
+                     ">
+                    <!--<select class="easyui-combobox lazy-combobox" name="jk_xuex" style="width: 100px">
                         <option value="A">A</option>
                         <option value="B">B</option>
                         <option value="AB">AB</option>
                         <option value="O">O</option>
-                    </select>
+                    </select>-->
                 </td>
                 <td class="formtdtext">血压</td>
                 <td>
-                    <select class="easyui-combobox lazy-combobox" name="jk_xuey" style="width: 100px">
+                    <input class="easyui-combobox lazy-combobox"
+                           name="jk_xuey"
+                           style="width: 100px"
+                           data-options="
+                                url:'cb.do?searchtype=bloodpressure',
+                                method:'get',
+                                valueField:'id',
+                                textField:'text'
+                     ">
+                    <!--<select class="easyui-combobox lazy-combobox" name="jk_xuey" style="width: 100px">
                         <option value="high">高</option>
                         <option value="normal">正常</option>
                         <option value="low">低</option>
-                    </select>
+                    </select>-->
                 </td>
                 <td class="formtdtext">起搏器情况</td>
                 <td>
-                    <select class="easyui-combobox lazy-combobox" name="jk_qibq" style="width: 100px">
+                    <input class="easyui-combobox lazy-combobox"
+                           name="jk_qibq"
+                           style="width: 100px"
+                           data-options="
+                                url:'cb.do?searchtype=pacemaker',
+                                method:'get',
+                                valueField:'id',
+                                textField:'text'
+                     ">
+                    <!--<select class="easyui-combobox lazy-combobox" name="jk_qibq" style="width: 100px">
                         <option value="qbqqk1">有</option>
                         <option value="qbqqk2">没有</option>
-                    </select>
+                    </select>-->
                 </td>
             </tr>
             <tr>
@@ -322,82 +376,154 @@
                 <td><input class="easyui-validatebox" name="jk_gms"></td>
                 <td class="formtdtext">视力情况</td>
                 <td>
-                    <select class="easyui-combobox lazy-combobox" name="jk_shil" style="width: 100px">
+                    <input class="easyui-combobox lazy-combobox"
+                           name="jk_shil"
+                           style="width: 100px"
+                           data-options="
+                                url:'cb.do?searchtype=eyesight',
+                                method:'get',
+                                valueField:'id',
+                                textField:'text'
+                     ">
+                    <!--<select class="easyui-combobox lazy-combobox" name="jk_shil" style="width: 100px">
                         <option value="normal">正常</option>
                         <option value="myopia">近视</option>
                         <option value="hyperopia">远视</option>
-                    </select>
+                    </select>-->
                 </td>
                 <td class="formtdtext">听力情况</td>
                 <td>
-                    <select class="easyui-combobox lazy-combobox" name="jk_tingl" style="width: 100px">
+                    <input class="easyui-combobox lazy-combobox"
+                           name="jk_tingl"
+                           style="width: 100px"
+                           data-options="
+                                url:'cb.do?searchtype=hearing',
+                                method:'get',
+                                valueField:'id',
+                                textField:'text'
+                     ">
+                    <!--<select class="easyui-combobox lazy-combobox" name="jk_tingl" style="width: 100px">
                         <option value="normal">正常</option>
                         <option value="abnormal">听不清</option>
-                    </select>
+                    </select>-->
                 </td>
             </tr>
             <tr>
                 <td class="formtdtext">活动能力</td>
                 <td>
-                    <select class="easyui-combobox lazy-combobox" name="jk_huod" style="width: 100px">
+                    <input class="easyui-combobox lazy-combobox"
+                           name="jk_huod"
+                           style="width: 100px"
+                           data-options="
+                                url:'cb.do?searchtype=activity',
+                                method:'get',
+                                valueField:'id',
+                                textField:'text'
+                     ">
+                    <!--<select class="easyui-combobox lazy-combobox" name="jk_huod" style="width: 100px">
                         <option value="1">1</option>
                         <option value="2">2</option>
-                    </select>
+                    </select>-->
                 </td>
                 <td class="formtdtext">出行方式</td>
                 <td>
-                    <select class="easyui-combobox lazy-combobox" name="jk_chux" style="width: 100px">
+                    <input class="easyui-combobox lazy-combobox"
+                           name="jk_chux"
+                           style="width: 100px"
+                           data-options="
+                                url:'cb.do?searchtype=goout',
+                                method:'get',
+                                valueField:'id',
+                                textField:'text'
+                     ">
+                    <!--<select class="easyui-combobox lazy-combobox" name="jk_chux" style="width: 100px">
                         <option value="1">1</option>
                         <option value="2">2</option>
-                    </select>
+                    </select>-->
                 </td>
                 <td class="formtdtext">记忆力情况</td>
                 <td>
-                    <select class="easyui-combobox lazy-combobox" name="jk_jiyl" style="width: 100px">
+                    <input class="easyui-combobox lazy-combobox"
+                           name="jk_jiyl"
+                           style="width: 100px"
+                           data-options="
+                                url:'cb.do?searchtype=memory',
+                                method:'get',
+                                valueField:'id',
+                                textField:'text'
+                     ">
+                    <!--<select class="easyui-combobox lazy-combobox" name="jk_jiyl" style="width: 100px">
                         <option value="1">1</option>
                         <option value="2">2</option>
-                    </select>
+                    </select>-->
                 </td>
             </tr>
             <tr>
                 <td class="formtdtext">穿脱衣服</td>
                 <td>
-                    <select class="easyui-combobox lazy-combobox" name="jk_chuany" style="width: 100px">
+                    <input class="easyui-combobox lazy-combobox"
+                           name="jk_chuany"
+                           style="width: 100px"
+                           data-options="
+                                url:'cb.do?searchtype=dress',
+                                method:'get',
+                                valueField:'id',
+                                textField:'text'
+                     ">
+                    <!--<select class="easyui-combobox lazy-combobox" name="jk_chuany" style="width: 100px">
                         <option value="1">1</option>
                         <option value="2">2</option>
-                    </select>
+                    </select>-->
                 </td>
                 <td class="formtdtext">定向能力</td>
                 <td>
-                    <select class="easyui-combobox lazy-combobox" name="jk_dingx" style="width: 100px">
+                    <input class="easyui-combobox lazy-combobox"
+                           name="jk_dingx"
+                           style="width: 100px"
+                           data-options="
+                                url:'cb.do?searchtype=direction',
+                                method:'get',
+                                valueField:'id',
+                                textField:'text'
+                     ">
+                    <!--<select class="easyui-combobox lazy-combobox" name="jk_dingx" style="width: 100px">
                         <option value="1">1</option>
                         <option value="2">2</option>
-                    </select>
+                    </select>-->
                 </td>
                 <td class="formtdtext">洗澡情况</td>
                 <td>
-                    <select class="easyui-combobox lazy-combobox" name="jk_xiz" style="width: 100px">
+                    <input class="easyui-combobox lazy-combobox"
+                           name="jk_xiz"
+                           style="width: 100px"
+                           data-options="
+                                url:'cb.do?searchtype=bathe',
+                                method:'get',
+                                valueField:'id',
+                                textField:'text'
+                     ">
+                    <!--<select class="easyui-combobox lazy-combobox" name="jk_xiz" style="width: 100px">
                         <option value="1">1</option>
                         <option value="2">2</option>
-                    </select>
+                    </select>-->
                 </td>
             </tr>
             <tr>
-                <td class="formtdtext">日常卫生</td>
-                <td colspan="5">
-                    <label><input name="Fruit" type="checkbox" value="" />自己梳头 </label>
-                    <label><input name="Fruit" type="checkbox" value="" />自己洗脸 </label>
-                    <label><input name="Fruit" type="checkbox" value="" />自己洗头 </label>
-                    <label><input name="Fruit" type="checkbox" value="" />自己刷牙 </label>
-                    <label><input name="Fruit" type="checkbox" value="" />自己洗脚 </label>
-                    <label><input name="Fruit" type="checkbox" value="" />自己剃须 </label>
-                    <label><input name="Fruit" type="checkbox" value="" />自己修指甲 </label>
-                    <label><input name="Fruit" type="checkbox" value="" />自己洗衣 </label>
+                <td class="formtdtext">日常卫生</td>                   <!--document.getElementById('shutou').checked=true-->
+                <td id="lrrcws" colspan="5">
+                    <label><input id="shutou" name="jk_rcws" type="checkbox" value="" />自己梳头 </label>
+                    <label><input id="xinian" name="jk_rcws" type="checkbox" value="" />自己洗脸 </label>
+                    <label><input id="xitou" name="jk_rcws" type="checkbox" value="" />自己洗头 </label>
+                    <label><input id="shuaya" name="jk_rcws" type="checkbox" value="" />自己刷牙 </label>
+                    <label><input id="xijiao"  name="jk_rcws" type="checkbox" value="" />自己洗脚 </label>
+                    <label><input id="tixu" name="jk_rcws" type="checkbox" value="" />自己剃须 </label>
+                    <label><input id="xiuzhijia" name="jk_rcws" type="checkbox" value="" />自己修指甲 </label>
+                    <label><input id="xiyi" name="jk_rcws" type="checkbox" value="" />自己洗衣 </label>
                 </td>
             </tr>
             <tr>
                 <td class="formtdtext">病史情况</td>
-                <td colspan="5">
+                <td id="lrbsqk" colspan="5">
                     <label><input name="jk_bsqk" type="checkbox" value="jk_bs_gaoxy" />高血压 </label>
                     <label><input name="jk_bsqk" type="checkbox" value="jk_bs_tangnb" />糖尿病 </label>
                     <label><input name="jk_bsqk" type="checkbox" value="jk_bs_fengs" />风湿病 </label>
@@ -467,6 +593,7 @@
                  <th class="lazy-combobox" data-options="field:'guanx',align:'center',width:100,editor:{
                  type:'combobox',
                  options:{
+                    required:true,
                     url:'cb.do?searchtype=relation',
                     width:60,
                     valueField: 'id',
@@ -479,8 +606,11 @@
              </thead>
             <thead>
                 <tr>
-                    <th data-options="field:'gx_name',width:90,align:'center',editor:'text'">姓名<span style="color: red">*</span></th>
-                    <th data-options="field:'gx_identityid',width:150,align:'center',editor:{
+                    <th data-options="required:true,field:'gx_name',width:90,align:'center',editor:{
+                    type:'validatebox',
+                    options:{required:true}
+                   } ">姓名<span style="color: red">*</span></th>
+                    <th id="gxidentityid" data-options="field:'gx_identityid',width:150,align:'center',editor:{
                             type:'validatebox',
                             options:{
                                 required:true
@@ -489,10 +619,11 @@
                     <th class="lazy-combobox" data-options="field:'gx_gender',align:'center',width:60,editor:{
 							type:'combobox',
 							options:{
-								valueField: 'value',
-								url:'jsondata/getmemberbytype.jsp?type=sex',
-								width:60,
-                                textField: 'label'
+							     required:true,
+								url:'cb.do?searchtype=gender',
+                                width:60,
+                                valueField: 'id',
+                                textField: 'text'
 							}
 						}">性别<span style="color: red">*</span></th>
                     <th data-options="field:'gx_birth',width:90,align:'center',editor:'text'">出生日期</th>
@@ -500,9 +631,27 @@
                     <th data-options="field:'gx_mobilephone',width:160,align:'center',editor:'text'">手机</th>
                     <!--<th data-options="field:'phone3',width:160,align:'center',editor:'text'">小灵通</th>-->
                     <th  data-options="field:'gx_economy',width:100,align:'center',editor:'text'">月收入</th>
-                    <th  data-options="field:'gx_culture',width:100,align:'center',editor:'text'">文化程度</th>
+                    <!--<th  data-options="field:'gx_culture',width:100,align:'center',editor:'text'">-->
+                    <th class="lazy-combobox" data-options="field:'gx_culture',align:'center',width:60,editor:{
+							type:'combobox',
+							options:{
+								url:'cb.do?searchtype=culture',
+                                width:60,
+                                valueField: 'id',
+                                textField: 'text'
+							}
+						}">文化程度</th>
                     <th  data-options="field:'gx_registration',width:100,align:'center',editor:'text'">籍贯</th>
-                    <th  data-options="field:'gx_nation',width:100,align:'center',editor:'text'">民族</th>
+                    <!--<th  data-options="field:'gx_nation',width:100,align:'center',editor:'text'">-->
+                    <th class="lazy-combobox" data-options="field:'gx_nation',align:'center',width:60,editor:{
+							type:'combobox',
+							options:{
+								url:'cb.do?searchtype=NATION',
+                                width:60,
+                                valueField: 'id',
+                                textField: 'text'
+							}
+						}">民族</th>
                     <th  data-options="field:'gx_work',width:100,align:'center',editor:'text'">工作地点</th>
 
                 </tr>
