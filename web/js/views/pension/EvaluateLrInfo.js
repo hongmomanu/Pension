@@ -26,6 +26,13 @@ define(function(){
         return arr;
     })()
     var infoEvents={
+        initPGY:function(){
+            $('input[name$=_pingguy]').each(function(i){
+                if($(this).val().length==0){
+                    $(this).val(username);
+                }
+            })
+        },
         initHiddenOthers:function(){
             $('.xuanfuhtml a').bind('click',function(){
                 $('#mainform>fieldset').hide();
@@ -33,15 +40,74 @@ define(function(){
                 $('#info0').show();
             })
         },
+        syncRadioToResult:function(selection,value){
+            $('#result1 '+selection).each(function(i){
+                if($(this).prev().val()==value){
+                    var p=$(this).parent().parent();
+                    p.find(selection).each(function(){
+                        $(this).prev()[0].checked = false;
+                        $(this).removeClass("checked");
+                    })
+                    $(this).prev()[0].checked = true;
+                    $(this).addClass("checked");
+                    return;
+                }
+            })
+        },
         info1:function(){
-            $('#info1').find('input[type=radio]+label').each(function(i){
+            var me=this;
+            $('#info1').find(':input[type=radio]+label').each(function(i){
                 $(this).bind('click',function(){
-                    $($(this).parent().parent().children()
-                        .last().children()[0]).val(($(this).prev()).val())
+
+                    $($(this).parent().parent().children().last().children()[0]).val(($(this).prev()).val());
+                    var sh_zongf=0;
+                    $('#info1').find(':input[opt=info1pingfeng]').each(function(){
+                        $(this).attr( 'disabled','disabled');
+                        sh_zongf+=Number($(this).val())
+                    })
+                    $(':input[name=sh_zongf]').attr('disabled','disabled').val(sh_zongf)
+                    $(':input[name=sh_pingguf]').val(sh_zongf)
+                    $('#result1 :input[name=sum_sh_pingguf]').val(sh_zongf)
+                    if($(this).prev().attr('name')=='sh_jiel'){
+                        var v=$(this).prev().val()
+                        me.syncRadioToResult(':input[name=sum_sh_jiel]+label',v);
+                        //'
+                    }
+                })
+            })
+        },
+        info2:function(){
+            var me=this;
+            $('#info2').find(':input[name=jj_shour]+label').each(function(i){
+                $(this).bind('click',function(){
+                    var v=$(this).prev().val();
+                    $(':input[name=jj_pingguf]').val(v)
+                    $('#result1 :input[name=sum_jj_pingguf]').val(v)
+                    me.syncRadioToResult(':input[name=sum_jj_shour]+label',v);
+                })
+            })
+        },
+        info3:function(){
+            var me=this;
+            $('#info3').find(':input[name=jz_fenl]+label').each(function(i){
+                $(this).bind('click',function(){
+                    var v=$(this).prev().val();
+                    $(':input[name=jz_pingguf]').val(v)
+                    $('#result1 :input[name=sum_jz_pingguf]').val(v)
+                    me.syncRadioToResult(':input[name=sum_jz_fenl]+label',v);
                 })
             })
         },
         info4:function(){
+            var me=this;
+            $('#info4').find(':input[name=nl_fenl]+label').each(function(i){
+                $(this).bind('click',function(){
+                    var v=$(this).prev().val();
+                    $(':input[name=nl_pingguf]').val(v)
+                    $('#result1 :input[name=sum_nl_pingguf]').val(v) //同步
+                    me.syncRadioToResult(':input[name=sum_nl_fenl]+label',v);
+                })
+            })
             $(':input[opt=csrq]')
                 .datebox({
                 required:true,
@@ -54,10 +120,46 @@ define(function(){
                     p.find("[opt=textymd]").text(
                         date.getFullYear()+"年"+m+"月"+d+"日(以身份证为准)"
                     );
-                    p.find("[opt=xynl]").val(new Date().getFullYear()-date.getFullYear());
-                    $(p.find(":input[type=radio] + label")[0]).addClass("checked").prev()[0].checked=true;
+                    var nl=new Date().getFullYear()-date.getFullYear();
+                    p.find("[opt=xynl]").val(nl);
+
+                    var nldf=0;
+                    if(nl<80){
+                        nldf=0;
+                    }else if(nl>=90){
+                        nldf=2;
+                    }else{
+                        nldf=1;
+                    }
+                    p.find(":input[type=radio] + label").each(function(){
+                        $(this).prev()[0].checked = false;
+                        $(this).removeClass("checked");
+                    })
+                    var label=$(p.find(":input[type=radio] + label")[nldf])
+                    label.addClass("checked").prev()[0].checked=true;
+                    var v=$(label.prev()[0]).val();
+                    p.find(":input[name=nl_pingguf]").val(v);
+                    $('#result1 :input[name=sum_nl_pingguf]').val(v) //同步
+                    me.syncRadioToResult(':input[name=sum_nl_fenl]+label',v);
                 }
             });
+        },
+        info5:function(){
+            var me=this;
+            var checks=[];
+            $('#info5').find(':input[type=checkbox]+label').each(function(i){
+                checks.push($(this));
+                $(this).bind('click',function(){
+                    var sum=0;
+                    for(var i=0;i<checks.length;i++){
+                        if(checks[i].prev()[0].checked){
+                            sum+=Number(checks[i].prev().val())
+                        }
+                    }
+                    $(':input[name=gx_pingguf]').val(sum)
+                    $('#result1 :input[name=gx_pingguf]').val(sum)
+                })
+            })
         }
     }
     var a=function(){
@@ -66,8 +168,13 @@ define(function(){
                 $('#mainform').append(arguments[i]);
             }
             $('#tabs').tabs('getSelected').cssRadio();//渲染单选样式
+            $('#tabs').tabs('getSelected').cssCheckBox();//渲染多选样式
+            infoEvents.initPGY();
             infoEvents.info1();
+            infoEvents.info2();
+            infoEvents.info3();
             infoEvents.info4();
+            infoEvents.info5();
             $('[opt=hiddenOthers]').bind('click',infoEvents.initHiddenOthers);
         })
 

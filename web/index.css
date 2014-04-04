@@ -1,4 +1,3 @@
-
 html,body {
     font: 12px/20px "微软雅黑", "宋体", Arial, sans-serif, Verdana, Tahoma;
     padding:20px;
@@ -84,35 +83,13 @@ h2 {
     position: relative;
     overflow-x: hidden;
 }
-.icon-viewbtn{
-    background:url('img/form_show.png') no-repeat;
-}
+
 .icon-excel{
     background:url('img/xls.png') no-repeat;
 }
 .icon-processbtn{
     background:url('img/process.png') no-repeat;
-}.icon-alterbtn{
-    background:url('img/change.png') no-repeat;
-}.icon-submitbtn{
-    background:url('img/busiapproval.png') no-repeat;
-}.icon-delbtn{
-    background:url('img/del.gif') no-repeat;
-}.icon-search{
-     background:url('img/busiquery.gif') no-repeat;
- }.icon-new{
-     background:url('img/edit_add.png') no-repeat;
- }.icon-add{
-     background:url('img/edit_add.png') no-repeat;
- }.icon-save{
-     background:url('img/save.png') no-repeat;
- }.icon-remove{
-     background:url('img/del.gif') no-repeat;
- }.icon-cancelsteptwobtn,.icon-cancelstepthreebtn{
-     background:url('img/icon16_error.png') no-repeat;
- }.icon-edit{
-    background:url('img/edit.png') no-repeat;
- }
+}
 .layout-split-proxy-h{
     position:absolute;
     width:2px;
@@ -123,37 +100,6 @@ h2 {
     z-index:5;
 }
 
-/*业务图标*/
-.accord-dbgl{
-    background: url('img/icon/1.png')  no-repeat center center;
-}
-.accord-dbedge{
-    background: url('img/icon/2.png')  no-repeat center center;
-}
-.accord-temporary{
-    background: url('img/icon/7.png')  no-repeat center center;
-}
-.accord-medicalhelp{
-    background: url('img/icon/4.png')  no-repeat center center;
-}
-.accord-studyhelp{
-    background: url('img/icon/1.png')  no-repeat center center;
-}
-.accord-charitablehelp{
-    background: url('img/icon/3.png')  no-repeat center center;
-}
-.accord-disaster{
-    background: url('img/icon/10.png')  no-repeat center center;
-}
-.accord-rangers{
-    background: url('img/icon/9.png')  no-repeat center center;
-}
-.accord-propertycheck{
-    background: url('img/icon/11.png')  no-repeat center center;
-}
-.accord-query{
-    background: url('img/icon/12.png')  no-repeat center center;
-}
 .yw-busiapply{
     background: url('img/busiicon/busiapply.png')  no-repeat center center;
 }
@@ -367,7 +313,7 @@ div.yw-block > span{
     width:100%;
     height:30px
 }
-/*radio打钗样式*/
+/*radio checkbox打钗样式*/
 .newRadio input+label {
     padding-left: 26px;
     background: url(img/form/UnCheck.png) no-repeat;

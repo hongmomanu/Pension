@@ -72,7 +72,7 @@
         </div>
 
 
-        <ul class="ui-skin-nav" style="display: block;">
+        <ul class="ui-skin-nav" style="display: none;">
             <li class="li-skinitem" title="gray"><span class="gray" rel="gray"></span></li>
             <li class="li-skinitem" title="default"><span class="default" rel="default"></span></li>
         </ul>
