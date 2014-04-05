@@ -1,6 +1,6 @@
 define(function(){
     var a={
-       render:function(){
+       render:function(local){
            var editor = KindEditor.create('textarea[name="noteclob"]', {
                resizeType : 1,
                allowPreviewEmoticons : false,
@@ -10,17 +10,16 @@ define(function(){
                    'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
                    'insertunorderedlist', '|', 'emoticons', 'image', 'link']
            });
-           $('#formcontentpanel').panel({
+           local.find('div[opt=formcontentpanel]').panel({
                onResize:function(width, height){
-
-                   $('#formcontentpanel').height($('#formcontentpanel').height()-30);
-                   $('#form_btns').height(30);
+                   $(this).height($(this).height()-30);
+                   local.find('div[opt=form_btns]').height(30);
                }
            });
 
-           $('#save').bind('click',function(){
+           local.find('[action=save]').bind('click',function(){
                editor.sync();
-               $('#mainform').form('submit',{
+               local.find('form').form('submit',{
                    url:'lr.do?model=notepad.NoteEnter&eventName=save',
                    success: function(res){
                        cj.ifSuccQest(res,"已操作成功是否关闭此页",function(){

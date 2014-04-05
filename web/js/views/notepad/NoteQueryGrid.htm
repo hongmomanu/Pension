@@ -5,20 +5,32 @@
                pageSize:15, pageList: [15, 30,50],
                singleSelect:true,
                pagination:true">
+    <thead data-options="frozen:true">
+    <tr>
+        <th data-options="field:'itemid',width:80,align:'center',formatter:function(value,rowData,rowIndex)
+            {
+                var str='<div></div>';
+                str=$(str).append('<a action=&quot;view&quot;>查看</a>');
+                str=$(str).append('<a action=&quot;edit&quot;>编辑</a>');
+                return str.html();
+            }">操作</th>
+
+    </tr>
+    </thead>
     <thead>
     <tr>
-        <th data-options="field:'settlement',
+        <th data-options="field:'settlement',width:60,
             formatter:cj.enumFormatter('settlement')
             ">解决情况</th>
-        <th data-options="field:'text'">标题</th>
-        <th data-options="field:'xiangmulb'">项目类别</th>
-        <th data-options="field:'wengtilb'">问题类别</th>
-        <th data-options="field:'sender'">发起人</th>
-        <th data-options="field:'sendee'">接收人</th>
-        <th data-options="field:'digest'">NATION</th>
-        <th data-options="field:'createdate'">创建时间</th>
-        <th data-options="field:'begindate'">开始时间</th>
-        <th data-options="field:'enddate'">完成时间</th>
+        <th data-options="field:'text',width:160">标题</th>
+        <th data-options="field:'xiangmulb',width:60">项目类别</th>
+        <th data-options="field:'wengtilb',width:60">问题类别</th>
+        <th data-options="field:'sender',width:70">发起人</th>
+        <th data-options="field:'sendee',width:70">接收人</th>
+        <th data-options="field:'digest',width:180">摘要</th>
+        <th data-options="field:'createdate',width:140">创建时间</th>
+        <!--<th data-options="field:'begindate',width:120">开始时间</th>-->
+        <th data-options="field:'enddate',width:140">完成时间</th>
     </tr>
     </thead>
 </table>

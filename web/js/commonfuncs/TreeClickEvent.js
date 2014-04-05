@@ -58,15 +58,15 @@ define(function(){
                     return;
                 }
 
-                $('#tabs').tabs('add', {
+                var localtab=$('#tabs').tabs('add', {
                     title: title,
                     content: htmlfile,
                     closable: true
-                });
+                }).tabs('getTab',title);
                 if(res){
-                    jsfile.render(parameters,res)
+                    jsfile.render(localtab,res)
                 }else{
-                    jsfile.render()
+                    jsfile.render(localtab)
                 }
             };
             require([htmlfile,jsfile],require_render);
