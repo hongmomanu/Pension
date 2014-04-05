@@ -58,11 +58,16 @@
 
     </script>
     <link rel="stylesheet" type="text/css" href="index.css">
-    <link rel="stylesheet" type="text/css" href="buttons.css">
     <script src="js/cj.js"></script>
     <script data-main="js/mainapp" src="require.js"></script>
     <script type="text/javascript"  src="js/commonfuncs/jquery.json-2.4.js"></script>
 
+    <link rel="stylesheet" type="text/css"  href="js/commonfuncs/ext/popwin.css">
+    <script type="text/javascript"  src="js/commonfuncs/ext/popwin.js"></script>
+
+    <link rel="stylesheet" href="http://localhost/kindeditor/themes/default/default.css">
+    <script charset="utf-8" src="http://localhost/kindeditor/kindeditor-min.js"></script>
+    <script charset="utf-8" src="http://localhost/kindeditor/lang/zh_CN.js"></script>
 </head>
 <body class="easyui-layout" id="mainlayoutpanel">
 <div region="north" border="true" class="cs-north" >

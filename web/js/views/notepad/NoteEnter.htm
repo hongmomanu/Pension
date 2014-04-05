@@ -1,0 +1,88 @@
+<div  class="easyui-panel newRadio" id="formcontentpanel"
+      style="overflow-y: scroll;border-bottom: 1px solid greenyellow;" data-options="fit:true,border:false">
+    <form id="mainform" method="post">
+        <div style="width: 900px;margin: 0px auto;border-top:1px solid blue;">
+            <table class="formtable">
+                <tr>
+                    <td class="formtdtext">标题<span style="color: red">*</span></td>
+                    <td colspan="3"><input class="easyui-validatebox" name="text" data-options="required:true" style="width: 300px"></td>
+                    <td class="formtdtext">项目类别<span style="color: red">*</span></td>
+                    <td>
+                        <input class="easyui-combobox lazy-combobox"
+                               name="xiangmulb"
+                               style="width: 100px"
+                               data-options="
+                                url:'cb.do?searchtype=oldtype',
+                                method:'get',
+                                valueField:'id',
+                                textField:'text'
+            ">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="formtdtext">摘要<span style="color: red">*</span></td>
+                    <td colspan="5"><input class="easyui-validatebox" name="digest" data-options="required:true" size="100"></td>
+                </tr>
+
+                <tr>
+                    <td class="formtdtext">种类</td>
+                    <td>
+                        <input class="easyui-combobox lazy-combobox"
+                               name="wengtilb"
+                               style="width: 100px"
+                               data-options="
+                                url:'cb.do?searchtype=hjjkind',
+                                method:'get',
+                                valueField:'id',
+                                textField:'text'
+                     ">
+                        <!-- <select class="easyui-combobox lazy-combobox" name="hjj_kind" style="width: 100px">
+                             <option value="1">a</option>
+                             <option value="2">b</option>
+                         </select>-->
+                    </td>
+                    <td class="formtdtext">呼叫机类型</td>
+                    <td>
+                        <input class="easyui-combobox lazy-combobox"
+                               name="hjj_type"
+                               style="width: 100px"
+                               data-options="
+                                url:'cb.do?searchtype=hjjtype',
+                                method:'get',
+                                valueField:'id',
+                                textField:'text'
+                     ">
+                        <!--<select class="easyui-combobox lazy-combobox" name="hjj_type" style="width: 100px">
+                            <option value="hjjlx1">移动</option>
+                            <option value="hjjlx2">固定</option>
+                        </select>-->
+                    </td>
+                    <td class="formtdtext">呼叫手机号</td>
+                    <td><input class="easyui-validatebox" name="hjj_phone"></td>
+                </tr>
+                <tr>
+                    <td colspan="6" style="padding: 0px;border-bottom: 0px">
+                        <textarea name="noteclob" style="width:900px;height:400px;display: block;"></textarea>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+
+
+<div id="form_btns">
+    <div style="text-align:center;padding:5px">
+        <a  id="appformmore" class="aprovlfuncs_btns" type="低保">更多</a>
+        <a action="appformsubmit_print"  class="aprovlfuncs_btns" >打印预览</a>
+        <a action="appformsubmit_process"  class="aprovlfuncs_btns" >流程跟踪</a>
+        <a action="appformsubmit_logout"  class="aprovlfuncs_btns" >注销</a>
+        <a action="appformsubmit_change"  class="aprovlfuncs_btns" >变更</a>
+        <a action="appformsubmit_send"  class="aprovlfuncs_btns" >提交审批</a>
+        <a action="appformsubmit_cancelsend"  class="aprovlfuncs_btns" >取消提交</a>
+        <a action="appformsubmit_signature"  class="aprovlfuncs_btns" >电子签章</a>
+        <a action="appformsubmit_unsignature"  class="aprovlfuncs_btns" >删除签章</a>
+        <a action="appformsubmit_save" class="aprovlfuncs_btns" id="save">保存</a>
+    </div>
+
+</div>

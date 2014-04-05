@@ -1,0 +1,25 @@
+<table class="easyui-datagrid-noauto"
+       data-options="url:'lr.do?model=notepad.NoteEnter&eventName=query',
+               method:'post',
+               fit:true,
+               pageSize:15, pageList: [15, 30,50],
+               singleSelect:true,
+               pagination:true">
+    <thead>
+    <tr>
+        <th data-options="field:'settlement',
+            formatter:cj.enumFormatter('settlement')
+            ">解决情况</th>
+        <th data-options="field:'text'">标题</th>
+        <th data-options="field:'xiangmulb'">项目类别</th>
+        <th data-options="field:'wengtilb'">问题类别</th>
+        <th data-options="field:'sender'">发起人</th>
+        <th data-options="field:'sendee'">接收人</th>
+        <th data-options="field:'digest'">NATION</th>
+        <th data-options="field:'createdate'">创建时间</th>
+        <th data-options="field:'begindate'">开始时间</th>
+        <th data-options="field:'enddate'">完成时间</th>
+    </tr>
+    </thead>
+</table>
+

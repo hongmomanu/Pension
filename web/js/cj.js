@@ -46,9 +46,11 @@ var cj=(function(){
     }
     var enfmt=function(ef){
         return function(value,recode,index){
-            for (var i = 0; i < ef.length; i++) {
-                if (ef[i].id == value) {
-                    return ef[i].text;
+            if(ef){
+                for (var i = 0; i < ef.length; i++) {
+                    if (ef[i].id == value) {
+                        return ef[i].text;
+                    }
                 }
             }
         }

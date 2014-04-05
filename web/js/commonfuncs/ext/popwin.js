@@ -33,6 +33,9 @@ $.extend({
             var winHeight=parseInt($(window).height()/2.2);
             var left=winWidth-marginLeft;
             var top=winHeight-marginTop;
+            if(option['top']){
+                var top=option['top'];  //修改的
+            }
             $('.webox').css({left:left,top:top});
             $('#'+option['locked']).mousedown(function(e){
                 if(e.which){
