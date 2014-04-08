@@ -1,5 +1,5 @@
 <!--老年人基本信息-->
-<form id="pensionform" method="post">
+<form opt="pensionform" method="post">
 
 <fieldset style="width: 900px;margin: 0px auto">
     <legend>老年人基本信息</legend>
@@ -10,20 +10,20 @@
                 <td class="formtdtext"  style="width: 100px">行政区划<span style="color: red">*</span></td>
                 <td colspan="5"><input class="easyui-validatebox" name="districtid" data-options="required:true" style="width: 300px"></td>
                 <td rowspan="3" colspan="2" style="text-align: center">
-                    <img src="img/noperson.gif" id="personimg" alt="用户照片" width="120" height="70"></td>
+                    <img src="img/noperson.gif" opt="personimg" alt="用户照片" width="120" height="70"></td>
             </tr>
             <tr>
                 <td class="formtdtext" style="width: 100px">姓名<span style="color: red">*</span></td>
                 <td><input class="easyui-validatebox" name="name" data-options="required:true"></td>
                 <td class="formtdtext">身份证<span style="color: red">*</span></td>
-                <td><input id="identityid" name="identityid" class="easyui-validatebox" data-options="required:true,invalidMessage:'请输入正确的身份证号',validType:'identityid'"></td>
+                <td><input opt="identityid" name="identityid" class="easyui-validatebox" data-options="required:true,invalidMessage:'请输入正确的身份证号',validType:'identityid'"></td>
                 <td class="formtdtext">出生年月</td>
-                <td><input id="birthdate" class="easyui-datebox" name="birthd" data-options="formatter:myformatter,parser:myparser"></td>
+                <td><input opt="birthdate" class="easyui-datebox" name="birthd" data-options="formatter:myformatter,parser:myparser"></td>
             </tr>
             <tr>
                 <td class="formtdtext">性别</td>
                 <td>
-                    <input id="sex" class="easyui-combobox lazy-combobox"
+                    <input opt="sex" class="easyui-combobox lazy-combobox"
                            name="gender"
                            style="width: 100px"
                            data-options="
@@ -38,7 +38,7 @@
                     </select>-->
                 </td>
                 <td class="formtdtext">年龄</td>
-                <td><input id="age" class="easyui-validatebox,field:'age'" name="age"></td>
+                <td><input opt="age" class="easyui-validatebox,field:'age'" name="age"></td>
                 <td class="formtdtext">民族</td>
                 <td>
                     <input class="easyui-combobox lazy-combobox"
@@ -230,7 +230,7 @@
 <!--享受服务类型-->
 <fieldset style="width: 900px;margin: 0px auto">
     <legend>享受服务类型</legend>
-    <div id="lrxsfwlx">
+    <div opt="lrxsfwlx">
         <label><input name="Fruit" type="checkbox" value="" />居家养老服务 </label>
         <label><input name="Fruit" type="checkbox" value="" />服务卷 </label>
         <label><input name="Fruit" type="checkbox" value="" />免费体检 </label>
@@ -510,20 +510,20 @@
             </tr>
             <tr>
                 <td class="formtdtext">日常卫生</td>                   <!--document.getElementById('shutou').checked=true-->
-                <td id="lrrcws" colspan="5">
-                    <label><input id="shutou" name="jk_rcws" type="checkbox" value="" />自己梳头 </label>
-                    <label><input id="xinian" name="jk_rcws" type="checkbox" value="" />自己洗脸 </label>
-                    <label><input id="xitou" name="jk_rcws" type="checkbox" value="" />自己洗头 </label>
-                    <label><input id="shuaya" name="jk_rcws" type="checkbox" value="" />自己刷牙 </label>
-                    <label><input id="xijiao"  name="jk_rcws" type="checkbox" value="" />自己洗脚 </label>
-                    <label><input id="tixu" name="jk_rcws" type="checkbox" value="" />自己剃须 </label>
-                    <label><input id="xiuzhijia" name="jk_rcws" type="checkbox" value="" />自己修指甲 </label>
-                    <label><input id="xiyi" name="jk_rcws" type="checkbox" value="" />自己洗衣 </label>
+                <td opt="lrrcws" colspan="5">
+                    <label><input opt="shutou" name="jk_rcws" type="checkbox" value="" />自己梳头 </label>
+                    <label><input opt="xinian" name="jk_rcws" type="checkbox" value="" />自己洗脸 </label>
+                    <label><input opt="xitou" name="jk_rcws" type="checkbox" value="" />自己洗头 </label>
+                    <label><input opt="shuaya" name="jk_rcws" type="checkbox" value="" />自己刷牙 </label>
+                    <label><input opt="xijiao"  name="jk_rcws" type="checkbox" value="" />自己洗脚 </label>
+                    <label><input opt="tixu" name="jk_rcws" type="checkbox" value="" />自己剃须 </label>
+                    <label><input opt="xiuzhijia" name="jk_rcws" type="checkbox" value="" />自己修指甲 </label>
+                    <label><input opt="xiyi" name="jk_rcws" type="checkbox" value="" />自己洗衣 </label>
                 </td>
             </tr>
             <tr>
                 <td class="formtdtext">病史情况</td>
-                <td id="lrbsqk" colspan="5">
+                <td opt="lrbsqk" colspan="5">
                     <label><input name="jk_bsqk" type="checkbox" value="jk_bs_gaoxy" />高血压 </label>
                     <label><input name="jk_bsqk" type="checkbox" value="jk_bs_tangnb" />糖尿病 </label>
                     <label><input name="jk_bsqk" type="checkbox" value="jk_bs_fengs" />风湿病 </label>
@@ -578,8 +578,8 @@
 
 <!--家庭成员-->
 <fieldset style="width: 900px;margin: 0px auto">
-    <div id="familymembersdiv">
-        <table class="easyui-datagrid" title="家庭成员列表" id="familymembersgrid" style="width: 900px"
+    <div opt="familymembersdiv">
+        <table class="easyui-datagrid" title="家庭成员列表" opt="familymembersgrid" style="width: 900px"
                 data-options="rownumbers:true,toolbar:'#pensionmembertb',singleSelect:true,showFooter:true">
 
              <thead data-options="frozen:true">
@@ -610,7 +610,7 @@
                     type:'validatebox',
                     options:{required:true}
                    } ">姓名<span style="color: red">*</span></th>
-                    <th id="gxidentityid" data-options="field:'gx_identityid',width:150,align:'center',editor:{
+                    <th opt="gxidentityid" data-options="field:'gx_identityid',width:150,align:'center',editor:{
                             type:'validatebox',
                             options:{
                                 required:true
@@ -657,9 +657,9 @@
                 </tr>
             </thead>
         </table>
-        <div id="familymembertb" style="height:auto">
-            <a id="newfamilymemeradd_btn" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true">新增</a>
-            <a id="delfamilymemer_btn" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true">删除</a>
+        <div opt="familymembertb" style="height:auto">
+            <a opt="newfamilymemeradd_btn" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true">新增</a>
+            <a opt="delfamilymemer_btn" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true">删除</a>
         </div>
     </div>
 </fieldset>
@@ -671,7 +671,7 @@
                 <table style="width: 450px">
                 <tr>
                     <td class="formtdtext" style="text-align: right;width: 70px">制单日期:</td>
-                    <td style="width: 100;text-align: left" ><input class="easyui-datebox" id="setdaytime" name="operator_date" data-options="formatter:myformatter,parser:myparser"></td>
+                    <td style="width: 100;text-align: left" ><input class="easyui-datebox" opt="setdaytime" name="operator_date" data-options="formatter:myformatter,parser:myparser"></td>
                 </tr>
             </table>
             </td>
@@ -690,8 +690,8 @@
 </div>
 
 
-<div id="pensionbutton" style="width: 900px;text-align: center;margin: 0px auto">
-    <a id="pensionsubmit" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">保存返回</a>
+<div opt="pensionbutton" style="width: 900px;text-align: center;margin: 0px auto">
+    <a opt="pensionsubmit" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">保存返回</a>
     <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">保存添加</a>
     <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-back'">返回</a>
 </div>
