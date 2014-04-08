@@ -3,20 +3,8 @@
  */
 
 var cj=(function(){
-    var Enums0=(function(){
-        var res=$.ajax({
-            url:'cb.do?rows=-1',
-            type:'post',
-            async: false, //同步加载
-            data:{searchtype:'no1'}
-        }).responseText;
-        var d = eval('(' + res + ')');
-        if (!!d && (d.success == true || d.success == 'true')) {
-            return d.rows;  //一次性全部加载过来
-        }else{
-            return {};
-        }
-    });
+
+    var dataGridAttr={ pageSize:18, pageList: [18, 30,50]}
     var Enums={};
     var loading=true;
     var singleFun=function(){
@@ -95,6 +83,9 @@ var cj=(function(){
             }
             ;
             return len;
+        },
+        getDataGridAttr:function(name){
+            return dataGridAttr[name]
         },
         enumFormatter:function(ename,f){
             return enfmt(getEnum(ename))

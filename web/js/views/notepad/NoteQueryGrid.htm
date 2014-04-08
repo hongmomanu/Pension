@@ -2,7 +2,8 @@
        data-options="url:'lr.do?model=notepad.NoteEnter&eventName=query',
                method:'post',
                fit:true,
-               pageSize:15, pageList: [15, 30,50],
+               pageSize:cj.getDataGridAttr('pageSize'),
+               pageList:cj.getDataGridAttr('pageList'),
                singleSelect:true,
                pagination:true">
     <thead data-options="frozen:true">

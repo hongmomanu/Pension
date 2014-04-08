@@ -9,10 +9,14 @@ define(function () {
             jsfile='views/'+widget;
         }
         var title=node.text;
-        var folder="pension";//以后配置
         require(['commonfuncs/TreeClickEvent'],function(TreeClickEvent){
             if(node.type=='1'){ //组件
-                TreeClickEvent.ShowContent(htmlfile,jsfile,title,value,folder,null,'0000','无类型');
+                TreeClickEvent.ShowContent({
+                    htmfile:htmlfile,
+                    jsfile:jsfile,
+                    title:title,
+                    type:null
+                });
             }else if(node.type=='0'){//url
                 TreeClickEvent.ShowIframe(value,jsfile,title);
             }
