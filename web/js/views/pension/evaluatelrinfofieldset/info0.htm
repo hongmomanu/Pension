@@ -1,4 +1,4 @@
-<fieldset style="width: 900px;margin: 0px auto;" id="info0"><legend>用户基本信息</legend>
+<fieldset style="width: 900px;margin: 0px auto;" opt="info0"><legend>用户基本信息</legend>
     <div>
         <input type="hidden" name="lr_id">
         <table class="formtable">
@@ -7,17 +7,15 @@
                 <td colspan="3">
                     <input name="registration" data-options="idField:'dvcode', textField:'dvname'"></td>
                 <td rowspan="4" colspan="2" style="text-align: center;" >
-                    <img src="img/noperson.gif" id="personimg" alt="用户照片" height="101" width="91"></td>
+                    <img src="img/noperson.gif" opt="personimg" alt="用户照片" height="101" width="91"></td>
             </tr>
 
             <tr>
                 <td class="formtdtext">姓名:</td>
                 <td><input class="easyui-validatebox" type="text" name="name" data-options="required:true"></td>
                 <td class="formtdtext">身份证<span style="color: red">*</span></td>
-                <td><input id="identityid" name="identityid" class="easyui-validatebox"
+                <td><input opt="identityid" name="identityid" class="easyui-validatebox"
                            data-options="required:true,invalidMessage:'请输入正确的身份证号',validType:'identityid'"></td>
-
-
             </tr>
 
             <tr>
