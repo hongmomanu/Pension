@@ -43,56 +43,63 @@ public class ComboboxServlet extends HttpServlet {
     }
 
     private String getSearchType(String searchtype,String aaa102,String rows){
+        String resultjson="";
         Connection conn= JdbcFactory.getConn();
         CommonDbUtil dbUtil=new CommonDbUtil(conn);
-        String sql="select aaa102 id,aaa103 text from aa10 where aaa100='"+searchtype+"' order by aaa102 asc";
-        if("-1".equals(rows)){
-             sql="select aaa100 ename,aaa102 id,aaa103 text from aa10 ";
-            Map map=new HashMap();
-            List lsa=dbUtil.query(sql);
-            Iterator ita=lsa.iterator();
-            while(ita.hasNext()){
-                 Map m=(Map)ita.next();
-                 String name=(String)m.get("ename");
-                List map_list=(List)map.get(name);
-                if(map_list!=null){
-                    map_list.add(m);
-                }else{
-                    List l=new ArrayList();
-                    l.add(m);
-                    map.put(name,l);
+        try{
+            String sql="select aaa102 id,aaa103 text from aa10 where aaa100='"+searchtype+"' order by aaa102 asc";
+            if("-1".equals(rows)){
+                sql="select aaa100 ename,aaa102 id,aaa103 text from aa10 ";
+                Map map=new HashMap();
+                List lsa=dbUtil.query(sql);
+                Iterator ita=lsa.iterator();
+                while(ita.hasNext()){
+                    Map m=(Map)ita.next();
+                    String name=(String)m.get("ename");
+                    List map_list=(List)map.get(name);
+                    if(map_list!=null){
+                        map_list.add(m);
+                    }else{
+                        List l=new ArrayList();
+                        l.add(m);
+                        map.put(name,l);
+                    }
                 }
+                Map result=new HashMap();
+                result.put("success",true);
+                result.put("rows",map);
+                resultjson= JSONObject.fromObject(result).toString();
+            }else{
+                List list=dbUtil.query(sql);
+
+                if(aaa102!=null){
+                    Iterator it=list.iterator();
+                    Map map=null;
+                    while(it.hasNext()){
+                        map=(Map)it.next();
+                        if(aaa102.equals(map.get("id"))){
+                            map.put("selected",true);
+                            break;
+                        }
+                    }
+                }else{
+                    if(list.size()>0){
+                        Map map=(Map)list.get(0);
+                        map.put("selected",true);//第一个为默认值
+                    }
+                }
+
+
+                resultjson= JSONArray.fromObject(list).toString();
             }
-            Map result=new HashMap();
-            result.put("success",true);
-            result.put("rows",map);
-            return JSONObject.fromObject(result).toString();
-        }else{
-            List list=dbUtil.query(sql);
+        }finally {
             try {
                 if(null!=conn)conn.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            if(aaa102!=null){
-                Iterator it=list.iterator();
-                Map map=null;
-                while(it.hasNext()){
-                    map=(Map)it.next();
-                    if(aaa102.equals(map.get("id"))){
-                        map.put("selected",true);
-                        break;
-                    }
-                }
-            }else{
-                if(list.size()>0){
-                    Map map=(Map)list.get(0);
-                    map.put("selected",true);//第一个为默认值
-                }
-            }
-
-            return JSONArray.fromObject(list).toString();
         }
 
+        return resultjson;
     }
 }

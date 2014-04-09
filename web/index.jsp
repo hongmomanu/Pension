@@ -47,15 +47,21 @@
     <script>
         /**加载easyui**/
 
-        document.write('<script type="text/javascript"  src="'+extLocation+
+        document.write('<script type="text/javascript"  src="'+extEasyui+
                 'jquery-1.8.0.min.js"><\/script>');
-        document.write('<script type="text/javascript"  src="'+extLocation+
+        document.write('<script type="text/javascript"  src="'+extEasyui+
                 'jquery.easyui.min.js"><\/script>');
-        document.write('<script type="text/javascript"  src="'+extLocation+
+        document.write('<script type="text/javascript"  src="'+extEasyui+
                 'locale/easyui-lang-zh_CN.js"><\/script>');
-        document.write('<link rel="stylesheet" type="text/css" id="swicth-style" href="'+extLocation+
-                'themes/gray/easyui.css"><\/>');//resources/css/ext-all.css
+        document.write('<link rel="stylesheet" type="text/css" id="swicth-style" href="'+extEasyui+
+                'themes/gray/easyui.css"><\/>');
 
+        document.write('<link rel="stylesheet" type="text/css" id="swicth-style" href="'+extKindeditor+
+                'themes/default/default.css"><\/>');
+        document.write('<script type="text/javascript"  src="'+extKindeditor+
+                'kindeditor-min.js"><\/script>');
+        document.write('<script type="text/javascript"  src="'+extKindeditor+
+                'lang/zh_CN.js"><\/script>');
     </script>
     <link rel="stylesheet" type="text/css" href="index.css">
     <script src="js/cj.js"></script>
@@ -65,9 +71,6 @@
     <link rel="stylesheet" type="text/css"  href="js/commonfuncs/ext/popwin.css">
     <script type="text/javascript"  src="js/commonfuncs/ext/popwin.js"></script>
 
-    <link rel="stylesheet" href="http://localhost/kindeditor/themes/default/default.css">
-    <script charset="utf-8" src="http://localhost/kindeditor/kindeditor-min.js"></script>
-    <script charset="utf-8" src="http://localhost/kindeditor/lang/zh_CN.js"></script>
 </head>
 <body class="easyui-layout" id="mainlayoutpanel">
 <div region="north" border="true" class="cs-north" >
