@@ -3,8 +3,8 @@
  */
 
 var cj=(function(){
-
-    var dataGridAttr={ pageSize:18, pageList: [18, 30,50]}
+    var pz=17;
+    var dataGridAttr={ pageSize:pz, pageList: [pz, 30,50]}
     var Enums={};
     var singleFun=function(){
         var result={};
@@ -83,14 +83,50 @@ var cj=(function(){
             return dataGridAttr[name]
         },
         enumFormatter:function(ename,f){
-            return enfmt(getEnum(ename))
+            return enfmt(getEnum(ename.toLowerCase()))
+        },
+        showContent:function(option){
+            if(option.res){  //已经有数据
+                require(['commonfuncs/TreeClickEvent'],function(js){
+                    js.showContent(option)
+                })
+            }else{
+                if(option.useproxy==false){ //不使用代理,根据id来传递数据,开发人员根据id来自行加载数据
+                    require(['commonfuncs/TreeClickEvent'],function(js){
+                        js.showContent(option)
+                    })
+                }else{                      //使用代理
+                    require(['commonfuncs/TreeClickEvent','commonfuncs/LoadFromData'],function(show,load){
+                        load.load(option,function(res){
+                            option.res=eval('('+res+')');
+                            delete option.data;
+                            show.closeTabByTitle(option.title);
+                            show.ShowContent(option)
+                        })
+                    })
+                }
+            }
         }
     }
     return commonj;
 })()
 
 
-
+jQuery.fn.cssRadioOnly = function (){
+    var selectRadio = ":input[type=radio] + label";
+    $(selectRadio).each(function () {
+        if ($(this).prev()[0].checked)
+            $(this).addClass("checked");
+    }).prev().hide();
+}
+jQuery.fn.cssCheckBoxOnly = function () {
+    var selectCheck = ":input[type=checkbox] + label";
+    $(selectCheck).each(function () {
+        if ($(this).prev()[0].checked) {
+            $(this).addClass("checked");
+        }
+    }).prev().hide();
+}
 jQuery.fn.cssRadio = function (toggle) {
     var me = ($(this))
     var selectRadio = ":input[type=radio] + label";

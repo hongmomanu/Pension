@@ -25,7 +25,7 @@ public class CodeMaintenance {
         Integer page=Integer.parseInt(request.getParameter("page"));
         Integer rows=Integer.parseInt(request.getParameter("rows"));
         CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
-        String sql="select * from aa09";
+        String sql="select * from aa09 order by aaa100 asc";
         List list=commonDbUtil.query("SELECT * FROM (SELECT tt.*, ROWNUM ro FROM ("+sql+
                 ") tt WHERE ROWNUM <="+(page)*rows+") WHERE ro > "+(page-1)*rows);
         int count=commonDbUtil.query(sql).size();

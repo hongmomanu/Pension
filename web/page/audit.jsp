@@ -51,7 +51,7 @@
         return s;
     }
     var styleFn=function(i,data){
-        if(++i%2==0)return "background-color:#EEE";
+        //if(++i%2==0)return "background-color:#EEE";
     }
     var bstimeformatter=function(v,r,i){
         return v.split('.')[0]

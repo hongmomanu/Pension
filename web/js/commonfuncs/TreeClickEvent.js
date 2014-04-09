@@ -15,7 +15,7 @@ define(function(){
                     closable: true
                 }).tabs('getTab',title);
 
-                if(option.type=='readonly'){
+                if(option.readonly==true){
                     js.readonly(localtab,option)
                 }else{
                     js.render(localtab,option)
@@ -40,7 +40,7 @@ define(function(){
         closeCurrentTab:function(){
             var pp = mainTab.tabs('getSelected');
             var index = mainTab.tabs('getTabIndex',pp);
-            tab.tabs('close',index);
+            mainTab.tabs('close',index);
         },
         closeTabByTitle:function(t){
             mainTab.tabs('close',t);
