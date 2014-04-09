@@ -11,7 +11,10 @@ import net.sf.json.JSONObject;
 
 import javax.servlet.http.HttpServletRequest;
 import java.sql.Connection;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
@@ -20,13 +23,13 @@ import java.util.*;
  * Time: 下午5:04
  * To change this template use File | Settings | File Templates.
  */
-public class PensionPeopleInfo implements IMultilevelAudit {
+public class PensionPeopleInfoEdit implements IMultilevelAudit {
     private HttpServletRequest request;
     private Connection conn;
 
 
 
-    public String save(){                 //老年基本信息保存方法
+  /*  public String save(){                 //老年基本信息保存方法
         int result=0;
         CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
 
@@ -58,9 +61,9 @@ public class PensionPeopleInfo implements IMultilevelAudit {
         //AuditManager.addAudit(id);
         result=commonDbUtil.insertTableVales(map,"t_oldpeople");                     //将老年基础数据存入数据库中
         return result>0? RtnType.SUCCESS:RtnType.FAILURE;
-    }
+    }*/
 
-    /*public String update(){                 //老年基本信息修改方法
+    public String update(){                 //老年基本信息修改方法
         int result=0;
         CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
         String lr_id = request.getParameter("lr_id");             //获取唯一标识id
@@ -79,7 +82,7 @@ public class PensionPeopleInfo implements IMultilevelAudit {
             Map mc = ParameterUtil.toMap(JSONObject.fromObject(ga.get(i)))  ;
             mc.put("lr_id",lr_id);
             commonDbUtil.insertTableVales(mc,"T_OLDSOCREL");                //将新数据插入进去
-        }*/
+        }
 
         //String lr_id = request.getParameter("lr_id");
         /*Long id=commonDbUtil.getSequence("seq_t_oldpeople");
@@ -94,18 +97,18 @@ public class PensionPeopleInfo implements IMultilevelAudit {
                 request.getSession().getAttribute("dvcode").toString()
         );*/
         //AuditManager.addAudit(id);
-       /* result=commonDbUtil.updateTableVales(map,"t_oldpeople",where);
+        result=commonDbUtil.updateTableVales(map,"t_oldpeople",where);
         return result>0? RtnType.SUCCESS:RtnType.FAILURE;
-    }*/
+    }
 
-   /* public String setGxDate(){
+    public String setGxDate(){
         CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
         List<Map<String,Object>> gxlist = new ArrayList<Map<String,Object>>();
         String lr_id = request.getParameter("lr_id");
         String gxsql = "SELECT * FROM T_OLDSOCREL WHERE lr_id = "+lr_id;
         gxlist = commonDbUtil.query(gxsql);
         return JSONArray.fromObject(gxlist).toString();                                                   //return JSONArray.fromObject(commonDbUtil.query(sql)).toString()
-    }*/
+    }
 
     @Override
     public Long audit(Connection conn, AuditBean auditBean) {

@@ -1,10 +1,10 @@
 <!--<fieldset>-->   <!--fitColumns:true,-->
     <!--<div id="lrmessageid">-->
-        <table id="lrxxid" class="easyui-datagrid" title="老年基本信息"   style="width: auto"
+        <table opt="lrxxid" class="easyui-datagrid" title="老年基本信息"   style="width: auto"
                data-options="
                url:'ajax/getLrBasicInfo.jsp',
                method:'get',
-               toolbar:'#tb',
+               toolbar:'.tb',
                rownumbers:true,
                fit:true,
                singleSelect:true,
@@ -15,15 +15,7 @@
             <tr>
                 <!--<th data-options="type:'hidden',field:'lrid'"></th>-->
                 <th data-options="field:'name',width:100">姓名</th>
-                <th data-options="field:'gender',width:80,editor:{
-							type:'combobox',
-							options:{
-								url:'cb.do?searchtype=gender',
-                                width:60,
-                                valueField: 'id',
-                                textField: 'text'
-							}
-						}">性别</th>
+                <th data-options="field:'gender',width:80,formatter:cj.enumFormatter('gender')">性别</th>
                 <th data-options="field:'birthday',width:150">出生年月</th>
                 <th data-options="field:'peopleid',width:200">身份证号</th>
                 <th data-options="field:'place',width:200,align:'right'">住址</th>
@@ -32,10 +24,10 @@
         </table>
     <!--</div>-->
 
-    <div id="tb">
-        <input id="lrname" class="easyui-validatebox">
-        <a id="search" href="#" class="easyui-linkbutton" iconCls='icon-search'>查询</a>
-        <a id="edit" href="#" class="easyui-linkbutton" iconCls='icon-edit'>编辑</a>
+    <div opt="tb" class="tb">
+        <input opt="lrname" class="easyui-validatebox">
+        <a opt="search" href="#" class="easyui-linkbutton" iconCls='icon-search'>查询</a>
+        <a opt="edit" href="#" class="easyui-linkbutton" iconCls='icon-edit'>编辑</a>
     </div>
 
 <!--
