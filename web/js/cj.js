@@ -6,7 +6,6 @@ var cj=(function(){
 
     var dataGridAttr={ pageSize:18, pageList: [18, 30,50]}
     var Enums={};
-    var loading=true;
     var singleFun=function(){
         var result={};
         $.ajax({
@@ -23,14 +22,9 @@ var cj=(function(){
         })
         return result;
     }
+    window.setTimeout(singleFun,2000);
     var getEnum=function(searchtype){
-        if(loading){
-            loading=false;
-            singleFun();
-        }else{
-
-            return Enums[searchtype];
-        }
+        return Enums[searchtype];
     }
     var enfmt=function(ef){
         return function(value,recode,index){
