@@ -40,6 +40,7 @@ var cj=(function(){
                         return ef[i].text;
                     }
                 }
+                return value;
             }
         }
     }

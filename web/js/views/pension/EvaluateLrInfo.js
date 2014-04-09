@@ -253,9 +253,18 @@ define(function(){
             }
         },
         result1:function(){
-            var result=local.find('fieldset[opt=result]') ;
-            AA=result.find(':input[class=pingfen]')
-            console.log(a)
+            var result=local.find('fieldset[opt=result1]') ;
+            var calculate=function(){
+                var value=0;
+                result.find('td>:input[class=pingfen]').each(function(){
+                    value+=Number($(this).val())
+                })
+                result.find(':input[name=pinggusum]').val(value)
+            }
+            result.find('td>:input[class=pingfen]').each(function(){
+                $(this).bind('change',calculate)
+            })
+            result.find('a[opt=recalculate]').bind('click',calculate)
         }
     }
     var a=function(mylocal){
