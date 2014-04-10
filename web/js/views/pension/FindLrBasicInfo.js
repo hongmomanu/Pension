@@ -46,7 +46,7 @@ define(function(){
                                 var obj={
                                     htmfile:'text!views/pension/EditLrBasicInfo.htm',
                                     jsfile:'views/pension/EditLrBasicInfo',
-                                    title:'修改老年基本信息222',
+                                    title:'修改老年基本信息',
                                     type:'',
                                     res: eval('('+res+')')
                                 };
