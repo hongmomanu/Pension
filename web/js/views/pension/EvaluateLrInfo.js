@@ -159,12 +159,10 @@ define(function(){
                 'views/pension/evaluatelrinfofieldset/readonly'],function(js1,js2){
                 var js=js2;
                 js.info1(local);
-                /*
+
                 js.info4(local);
-                js.info5(local);
-                js.info7(local);
-                js.info8(local);
-                js.result1(local);*/
+
+                js.result1(local,option.res);
             })
         });
     }

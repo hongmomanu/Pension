@@ -38,6 +38,7 @@ public class EvaluateLrInfo implements IMultilevelAudit {
                 request.getSession().getAttribute("username").toString(),
                 request.getSession().getAttribute("dvcode").toString()
                 );
+        commonDbUtil.insertTableVales(map,"t_needassessmentsum");
         result=commonDbUtil.insertTableVales(map,tablename);
         return result>0? RtnType.SUCCESS:RtnType.FAILURE;
     }
@@ -60,7 +61,7 @@ public class EvaluateLrInfo implements IMultilevelAudit {
         Integer id=Integer.parseInt(request.getParameter("id"));
 
         Map map= new HashMap();
-        String sql="SELECT * from t_needassessment where pg_id="+id;
+        String sql="SELECT t1.*,t2.* from t_needassessment t1,t_needassessmentsum t2 where t1.pg_id=t2.pg_id and t1.pg_id="+id;
         List list=commonDbUtil.query(sql);
         if(list.size()>0){
             map=(Map)list.get(0);
