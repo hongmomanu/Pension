@@ -1,4 +1,8 @@
 <!--老年人基本信息-->
+<div  class="easyui-panel newRadio" opt="pensionformpanel"
+      style="overflow-y: scroll;border-bottom: 1px solid greenyellow;"
+      data-options="fit:true,border:false">
+
 <form opt="pensionform" method="post">
 
 <fieldset style="width: 900px;margin: 0px auto">
@@ -134,7 +138,7 @@
                 <td>
                     <input class="easyui-combobox lazy-combobox"
                            name="economy"
-                           style="width: 100px"
+                           style="width: auto"
                            data-options="
                                 url:'cb.do?searchtype=economy',
                                 method:'get',
@@ -690,11 +694,11 @@
 </div>
 
 
-<div opt="pensionbutton" style="width: 900px;text-align: center;margin: 0px auto">
+<!--<div opt="pensionbutton" style="width: 900px;text-align: center;margin: 0px auto">
     <a opt="pensionsubmit" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">保存返回</a>
     <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">保存添加</a>
     <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-back'">返回</a>
-</div>
+</div>-->
 
 <div id="imgwin" class="easyui-window"  title="选择头像" style="width:500px;height:160px"
      data-options="iconCls:'icon-save',modal:true,closed:true">                             <!-- class="easyui-window"-->
@@ -714,6 +718,31 @@
 
 </form>
 
+</div>
+
+<div opt="form_btns">
+    <div opt="pensionbutton" style="width: 900px;text-align: center;margin: 0px auto">
+        <a opt="pensionsubmit" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">保存返回</a>
+        <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">保存添加</a>
+        <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-back'">返回</a>
+    </div>
+   <!-- <div style="text-align:center;padding:5px">
+        <a href="#">人员基本信息</a>
+        <a href="#">生活自理能力</a>
+        <a href="#">经济条件</a>
+        <a href="#">居住环境</a>
+        <a href="#">年龄情况</a>
+        <a href="#">特殊贡献</a>
+        <a href="#">残障情况</a>
+        <a href="#">住房环境</a>
+        <a href="#">重大疾病</a>
+        <a href="#">评估总分计算</a>
+        <a href="#">评估报告确认</a>
+        <a href="#" opt="hiddenOthers">隐藏其他</a>
+        <a action="save">保存</a>
+    </div>-->
+
+</div>
 
 <div>
     <br>

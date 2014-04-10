@@ -1,4 +1,8 @@
 <!--老年人基本信息-->
+
+<div  class="easyui-panel newRadio" opt="pensioneditformpanel"
+      style="overflow-y: scroll;border-bottom: 1px solid greenyellow;"
+      data-options="fit:true,border:false">
 <form opt="pensionform" method="post">
 
 <fieldset style="width: 900px;margin: 0px auto">
@@ -99,7 +103,7 @@
         <td>
             <input class="easyui-combobox lazy-combobox"
                    name="economy"
-                   style="width: 100px"
+                   style="width: auto"
                    data-options="
                                 url:'cb.do?searchtype=economy',
                                 method:'get',
@@ -567,13 +571,15 @@
 </div>
 
 
+
+</form>
+</div>
+
 <div opt="pensionbutton" style="width: 900px;text-align: center;margin: 0px auto">
     <a opt="pensionsubmit" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">修改保存</a>
     <!--<a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">保存添加</a>-->
     <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-back'">返回</a>
 </div>
-</form>
-
 
 <div>
     <br>
