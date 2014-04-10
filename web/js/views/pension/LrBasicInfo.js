@@ -266,6 +266,14 @@ define(function()
             });
         });
 
+        //固定按钮
+        local.find('div[opt=pensionformpanel]').panel({
+            onResize:function(width, height){
+                $(this).height($(this).height()-30);
+                local.find('div[opt=form_btns]').height(30);
+            }
+        });
+
 
     }
 

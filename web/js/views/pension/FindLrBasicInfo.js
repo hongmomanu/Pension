@@ -35,7 +35,7 @@ define(function(){
             if(getrow!=null){
                /* alert("edit"+getrow.name);*/
                 $.ajax({
-                    url:'lr.do?model=Test&eventName=editLrbasicInfo',
+                    url:'lr.do?model=hzyl.PensionPeopleInfoEdit&eventName=editLrbasicInfo',
                     data:{
                         peopleid:getrow.peopleid
                     },

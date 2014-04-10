@@ -101,6 +101,21 @@ public class PensionPeopleInfoEdit implements IMultilevelAudit {
         return result>0? RtnType.SUCCESS:RtnType.FAILURE;
     }
 
+    public String editLrbasicInfo() {
+        String peopleid=request.getParameter("peopleid");
+        CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
+        //StringBuffer sb=new StringBuffer();
+        //String node=request.getParameter(peopleid);
+        String sql="SELECT * FROM T_OLDPEOPLE WHERE identityid='"+peopleid+"'";
+        List list=commonDbUtil.query(sql);
+        Map map=new HashMap();
+        if(list.size()>0){
+            map=(Map)list.get(0);
+        }
+        return JSONObject.fromObject(map).toString();
+
+    }
+
     public String setGxDate(){
         CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
         List<Map<String,Object>> gxlist = new ArrayList<Map<String,Object>>();

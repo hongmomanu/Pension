@@ -133,6 +133,13 @@ define(function()
 
         }
 
+        local.find('div[opt=pensioneditformpanel]').panel({
+            onResize:function(width, height){
+                $(this).height($(this).height()-30);
+                local.find('div[opt=pensionbutton]').height(30);
+            }
+        });
+
 
     }
 
