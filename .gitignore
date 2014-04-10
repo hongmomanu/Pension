@@ -3,8 +3,8 @@
 
 
 
-#过滤文件夹.idea,web/test,logs,obj
+#过滤文件夹.idea,web/test,logs,out
 .idea/
 web/test/
 logs/
-obj/
+out/
