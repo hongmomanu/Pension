@@ -3,6 +3,7 @@ define(function()
 {
     function render(local,parameters,res)
     {
+        dd = local;
         var familymembersgrid =   local.find('[opt=familymembersgrid]');      //家庭成员列表的对象
          // local.find(':input[opt=identityid]')
         /*上传照片*/
@@ -230,6 +231,40 @@ define(function()
         }else{
 
         }*/
+
+        //上传头像
+        /*$('#personimg').click(function() {
+            $('#imgwin').window('open');
+        });
+        $('#imgwin_cancel').bind('click', function(){
+            $('#imgwin').window('close');
+        });*/
+
+        local.find('[opt=personimg]').click(function(){
+            alert(22222)
+            $('#imgwin').window('open');
+        }) ;
+        $('#imgwin_cancel').bind('click',function(){
+            $('#imgwin').window('close');
+        });
+        $('#imgwin_submit').bind('click', function () {
+            require(['jqueryplugin/jquery-form'],function(AjaxFormjs){
+                var success=function(data, jqForm, options)
+                {
+                    alert('getin');
+                    local.find('[opt=personimg]').attr('src', data.filepath);
+                    $('#imgwin').window('close');
+                };
+                var options = {
+                    //beforeSubmit:  showRequest,  // pre-submit callback
+                    dataType:"json",
+                    success: success,  // post-submit callback
+                    timeout:   3000
+                };
+                $('#personimg_form').ajaxForm(options).submit() ;
+
+            });
+        });
 
 
     }

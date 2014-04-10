@@ -695,6 +695,23 @@
     <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">保存添加</a>
     <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-back'">返回</a>
 </div>
+
+<div id="imgwin" class="easyui-window"  title="选择头像" style="width:500px;height:160px"
+     data-options="iconCls:'icon-save',modal:true,closed:true">                             <!-- class="easyui-window"-->
+
+    <form id="personimg_form" method="POST">
+       <!-- 图片名称:<input class="easyui-validatebox" type="text" name="name" data-options="required:true"><br>-->
+        照片:<input type="file" name="my_file" opt="my_file" />
+    </form>
+    <div style="text-align:center;padding:5px">
+        <a href="#" id="imgwin_submit" class="easyui-linkbutton" >提交</a>
+        <a href="#" id="imgwin_cancel"  class="easyui-linkbutton" >取消</a>
+    </div>
+
+</div>
+
+<div id="testdiv"></div>
+
 </form>
 
 
