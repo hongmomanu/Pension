@@ -58,7 +58,7 @@
     }
 </script>
 <body>
-    <table id="auditGrid" class="easyui-datagrid"
+    <table id="auditGrid" class="easyui-datagrid-noauto"
            data-options="rownumbers:true,singleSelect:false,toolbar:toolbar,
            fit:true, pagination:true,
            pageSize:15,
@@ -168,6 +168,7 @@ var saveApproval=function(){
     }
     function view(a){
         var functionid= a.split(',')[0];
+        var tprkey= a.split(',')[1];
         $.ajax({
             url:'lr.do?model=manager.Function&eventName=queryFunctionById',
             data:{id:functionid},
@@ -180,10 +181,13 @@ var saveApproval=function(){
                     jsfile='views/'+widget;
                 }
                 var title='查看-'+d.title;
-                var folder="pension";
-                parent.require(['commonfuncs/TreeClickEvent'],function(js){
-                    js.closeTabByTitle(title);
-                    js.ShowContent(htmlfile,jsfile,title);
+                cj.showContent({
+                    title:title,
+                    htmfile:htmlfile,
+                    jsfile:jsfile,
+                    readonly:true,
+                    tprkey:tprkey,
+                    useproxy:!true
                 })
 
 

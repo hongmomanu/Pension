@@ -15,6 +15,8 @@
             'locale/easyui-lang-zh_CN.js"><\/script>');
     document.write('<link rel="stylesheet" type="text/css" id="swicth-style" href="'+extLocation+
             'themes/default/easyui.css"><\/>');
+
+    var cj=parent.cj;
 </script>
-<script type="text/javascript" src="js/cj.js"></script>
+<%--<script type="text/javascript" src="js/cj.js"></script>--%>
 <jsp:include page="${requestScope.page}" flush="true" />

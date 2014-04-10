@@ -43,9 +43,29 @@ define(function(){
             result1.find(':input[name=sum_nl_pingguf]').val(res.nl_pingguf)
             result1.find(':input[name=sum_gx_pingguf]').val(res.gx_pingguf)
 
-            result1.find(':input[name=sum_cz_pingguf]').val(res.gx_pingguf)
-            result1.find(':input[name=sum_zf_pingguf]').val(res.gx_pingguf)
-            result1.find(':input[name=sum__pingguf]').val(res.gx_pingguf)
+            result1.find(':input[name=cz_pingguf]').val(res.cz_pingguf)
+            result1.find(':input[name=zf_pingguf]').val(res.zf_pingguf)
+            result1.find(':input[name=jb_pingguf]').val(res.jb_pingguf)
+        },
+
+        result2:function(local,res){
+            var result2=local.find('fieldset[opt=result2]');
+            result2.find(':input[name=jb_pingguf]').val(res.jb_pingguf)
+            var pingguenddate=res.pingguenddate;
+            if(pingguenddate){
+                result2.find('[opt=pingguenddate]').text(pingguenddate.substr(0,pingguenddate.lastIndexOf('.')))
+            }
+            result2.find('[opt=pg_id]').text(res.pg_id)
+        },
+        info0:function(local){
+            $.ajax({
+                url:'lr.do?model=Test&eventName=editLrbasicInfo',
+                data:{peopleid:'210303198412082729'},
+                success:function(restext){
+                    var res=eval('('+restext+')')
+                    local.find('form').form('load',res)
+                }
+            })
         }
     }
 

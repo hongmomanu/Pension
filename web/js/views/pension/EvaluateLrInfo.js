@@ -152,18 +152,35 @@ define(function(){
         local=mylocal;
         initPage(local,function(){
             initIdentityidandOtherComboxGrid();
-            local.find('form[opt=mainform]').form('load',option.res)
-            local.cssRadioOnly();
-            local.cssCheckBoxOnly();
-            require(['views/pension/evaluatelrinfofieldset/edit',
-                'views/pension/evaluatelrinfofieldset/readonly'],function(js1,js2){
-                var js=js2;
-                js.info1(local);
+            var loadform=function(l,o){
+                l.find('form[opt=mainform]').form('load',o.res)
+                l.cssRadioOnly();
+                l.cssCheckBoxOnly();
+                require(['views/pension/evaluatelrinfofieldset/edit',
+                    'views/pension/evaluatelrinfofieldset/readonly'],function(js1,js2){
+                    var js=js2;
+                    js.info1(l);
 
-                js.info4(local);
+                    js.info4(l);
 
-                js.result1(local,option.res);
-            })
+                    js.result1(l,o.res);
+                    js.result2(l,o.res);
+                    js.info0(l);
+                })
+            }
+            if(!option.res){
+                $.ajax({
+                    url:'lr.do?model=hzyl.EvaluateLrInfo&eventName=queryById',
+                    data:{id:option.tprkey},
+                    success:function(restext){
+                        var res=eval('('+restext+')')
+                        option.res=res;
+                        loadform(local,option);
+                    }
+                })
+            }else{
+                loadform(local,option);
+            }
         });
     }
 
