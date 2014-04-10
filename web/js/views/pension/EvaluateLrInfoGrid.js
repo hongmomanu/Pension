@@ -6,8 +6,8 @@ define(function(){
             htmfile:'text!views/pension/EvaluateLrInfo.htm',
             jsfile:'views/pension/EvaluateLrInfo',
             readonly:true,
-            data:{id:row.pg_id},
-            useproxy:true
+            tprkey:row.pg_id,
+            useproxy:!true
         })
     }
     var edit=function(row){
@@ -18,7 +18,6 @@ define(function(){
     }
     var a={
         render:function(local,option){
-            console.log(option)
             local.find('.easyui-datagrid-noauto').datagrid({
                 onLoadSuccess:function(data){
                     var viewbtns=local.find('[action=view]');

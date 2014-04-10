@@ -9,16 +9,22 @@ define(function(){
                     mainTab.tabs('select', title);
                     return;
                 }
-                var localtab=mainTab.tabs('add', {
-                    title: title,
-                    content: htm,
-                    closable: true
-                }).tabs('getTab',title);
+                var getLocaltab = function () {
+                    return mainTab.tabs('add', {
+                        title: title,
+                        content: htm,
+                        closable: true
+                    }).tabs('getTab', title);
+                }
 
                 if(option.readonly==true){
-                    js.readonly(localtab,option)
+                    if(js.readonly){
+                        js.readonly(getLocaltab(),option)
+                    }else{
+                        alert('未实现readonly接口')
+                    }
                 }else{
-                    js.render(localtab,option)
+                    js.render(getLocaltab(),option)
                 }
 
             })
@@ -44,6 +50,9 @@ define(function(){
         },
         closeTabByTitle:function(t){
             mainTab.tabs('close',t);
+        },
+        test:function(t){
+            alert(t)
         }
 
 

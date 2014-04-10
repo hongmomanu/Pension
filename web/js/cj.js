@@ -86,26 +86,26 @@ var cj=(function(){
             return enfmt(getEnum(ename.toLowerCase()))
         },
         showContent:function(option){
-            if(option.res){  //已经有数据
-                require(['commonfuncs/TreeClickEvent'],function(js){
-                    js.showContent(option)
-                })
-            }else{
-                if(option.useproxy==false){ //不使用代理,根据id来传递数据,开发人员根据id来自行加载数据
-                    require(['commonfuncs/TreeClickEvent'],function(js){
-                        js.showContent(option)
-                    })
-                }else{                      //使用代理
-                    require(['commonfuncs/TreeClickEvent','commonfuncs/LoadFromData'],function(show,load){
+
+            var f=function(show,load){
+                var js=show;
+                if(option.res){  //已经有数据
+                    show.closeTabByTitle(option.title);
+                    show.ShowContent(option)
+                }else{
+                    if(option.useproxy==false){ //不使用代理,根据id来传递数据,开发人员根据id来自行加载数据
+                        show.closeTabByTitle(option.title);
+                        show.ShowContent(option)
+                    }else{                      //使用代理
                         load.load(option,function(res){
                             option.res=eval('('+res+')');
-                            delete option.data;
                             show.closeTabByTitle(option.title);
                             show.ShowContent(option)
                         })
-                    })
+                    }
                 }
             }
+            require(['commonfuncs/TreeClickEvent','commonfuncs/LoadFromData'],f)
         }
     }
     return commonj;
