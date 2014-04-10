@@ -77,8 +77,25 @@ public class EvaluateLrInfo implements IMultilevelAudit {
         Long pg_id=Long.parseLong(auditBean.getTprkey());
         CommonDbUtil dbUtil=new CommonDbUtil(conn);
         String sql="update t_needassessment set active='1' where pg_id="+pg_id;
-        String sql2="update t_needassessmentsum set pingguenddate=sysdate where pg_id="+pg_id;
-        dbUtil.execute(sql);
+        Map currentAudit=auditBean.getCurrentAudit();
+        String comment=",";
+        String level=(String)currentAudit.get("aulevel");
+        if("1".equals(level)){
+            comment+=" shequcomment";
+        }else if("2".equals(level)){
+            comment+=" xiangzhencomment";
+        }else if("3".equals(level)){
+            comment+=" minzhengcomment";
+            dbUtil.execute(sql);
+        }
+
+        String sql2="";
+        if(null==currentAudit.get("audesc")||"null".equals(currentAudit.get("audesc"))){
+            sql2="update t_needassessmentsum set pingguenddate=sysdate where pg_id="+pg_id;
+        }else{
+            comment+="='"+currentAudit.get("audesc")+"' ";
+            sql2="update t_needassessmentsum set pingguenddate=sysdate "+comment+" where pg_id="+pg_id;
+        }
         dbUtil.execute(sql2);
         return null;
     }

@@ -49,6 +49,7 @@ public class AuditServlet extends HttpServlet {
                 }finally {
                     if(null!=conn) try {
                         conn.close();
+                        System.out.println("关闭连接");
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }
@@ -72,7 +73,7 @@ public class AuditServlet extends HttpServlet {
             return this.queryAudit(commonDbUtil,method,map,loginname,dvcode);
         }if("saveAudit".equals(en)){
             JSONArray jarray=JSONArray.fromObject(map.get("auditmsgs"));
-            return auditbs.doBanchAudit(commonDbUtil, method, jarray, loginname);
+            return auditbs.doBanchAudit(conn,commonDbUtil, method, jarray, loginname);
         }else{
             return null;
         }

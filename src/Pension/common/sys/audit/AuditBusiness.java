@@ -6,6 +6,7 @@ import Pension.common.RtnType;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
+import java.sql.Connection;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -44,7 +45,13 @@ public class AuditBusiness {
         mapj.put("rows",list);
         return JSONObject.fromObject(mapj).toString();
     }
-    public String doBanchAudit(CommonDbUtil commonDbUtil,String method,JSONArray jarray,String loginname) throws Exception {
+
+    /*
+    审核,调用各业务模块的审核接口,
+    通过,三级审核,每审核一次回调一次,第三次再附加更新结束标示
+    不通过,当前级别不通过,也回调接口,附加更新结束标示和不通过原因(备注)
+     */
+    public String doBanchAudit(Connection conn,CommonDbUtil commonDbUtil,String method,JSONArray jarray,String loginname) throws Exception {
         for(int i=0;i<jarray.size();i++){
             Map map= ParameterUtil.toMap((JSONObject) jarray.get(i));
             String auditid=map.get("auditid").toString();
@@ -52,24 +59,21 @@ public class AuditBusiness {
                 return "缺少参数auditid";
             }
             map.put("auuser",loginname+"");
-            //map.put("audate", new java.sql.Date(new Date().getTime()));
             Map where=new HashMap();
             where.put("auditid",map.get("auditid"));
 
             int aulevel=Integer.parseInt(map.get("aulevel").toString())+1;
             map.put("aulevel",aulevel+"");
-            if("1".equals(map.get("auflag"))){   //审核成功
-                if(aulevel==3){
-                    map.put("auendflag","1");
-                    commonDbUtil.updateTableVales(map, "opaudit", where);
-                    CallBack.doAudit(Long.parseLong(auditid));
-                }else{
-                    commonDbUtil.updateTableVales(map,"opaudit",where);
+            if("1".equals(map.get("auflag"))){   //审核成功 :0不通过1通过
+                if(aulevel==3){                   //3级审核结束
+                    map.put("auendflag", "1");
                 }
+                commonDbUtil.updateTableVales(map, "opaudit", where);
             }else{    //不成功,也应该调用doAudit;;;;;;;;;;
-                map.put("auendflag","1");
+                map.put("auendflag", "1");        //不通过,审核结束
                 commonDbUtil.updateTableVales(map, "opaudit", where);
             }
+            CallBack.doAudit(conn,Long.parseLong(auditid));   //回调
 
         }
         return RtnType.SUCCESS;

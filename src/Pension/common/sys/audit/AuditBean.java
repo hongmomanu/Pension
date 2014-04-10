@@ -1,5 +1,7 @@
 package Pension.common.sys.audit;
 
+import java.util.Map;
+
 /**
  * User: Administrator
  * Date: 14-3-15
@@ -10,7 +12,15 @@ public class AuditBean {
     private String tname;
     private String tprkey;
     private String classname;
+    private Map currentAudit;
 
+    public Map getCurrentAudit() {
+        return currentAudit;
+    }
+
+    public void setCurrentAudit(Map currentAudit) {
+        this.currentAudit = currentAudit;
+    }
 
     public Long getAuditid() {
         return auditid;

@@ -6,6 +6,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * User: Administrator
@@ -13,10 +15,10 @@ import java.sql.SQLException;
  * Time: 下午4:02
  */
 public class CallBack {
-    public static void doAudit(Long id) throws Exception {
-          Connection conn= JdbcFactory.getConn();
+    public static void doAudit(Connection conn,Long id) throws Exception {
         AuditBean ab=new AuditBean();
-        String sql="select * from opauditbean where auditid=?";
+        String sql="select b.*,a.auflag,a.auuser,a.audate,a.aulevel,a.audesc,a.auendflag from opauditbean b,opaudit a " +
+                " where b.auditid=a.auditid and b.auditid=?";
         PreparedStatement pstmt=conn.prepareStatement(sql);
         pstmt.setLong(1, id);
         ResultSet rs=pstmt.executeQuery();
@@ -25,10 +27,18 @@ public class CallBack {
            ab.setClassname(rs.getString("classname"));
            ab.setTname(rs.getString("tname"));
            ab.setTprkey(rs.getString("tprkey"));
+
+           Map currentAudit=new HashMap();
+            currentAudit.put("auditid",rs.getLong("auditid"));
+            currentAudit.put("auflag",rs.getString("auflag"));
+            currentAudit.put("audate",rs.getDate("audate"));
+            currentAudit.put("aulevel",rs.getString("aulevel"));
+            currentAudit.put("audesc",rs.getString("audesc"));
+            currentAudit.put("auendflag",rs.getString("auendflag"));
+           ab.setCurrentAudit(currentAudit);
         }
         rs.close();
         pstmt.close();
-        conn.close();
 
         if(null!=ab.getClassname()){
             Class c=Class.forName(ab.getClassname());

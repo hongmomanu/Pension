@@ -149,6 +149,7 @@ define(function(){
         })
     }
     var b=function(mylocal,option){
+        ll=mylocal
         local=mylocal;
         initPage(local,function(){
             initIdentityidandOtherComboxGrid();
