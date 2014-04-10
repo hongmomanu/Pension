@@ -3,8 +3,9 @@ define(function () {
     function f(node){
         var value=node.value;
         var htmlfile, jsfile;
-        if(node.location){
-            var widget=node.location.replace(/\./g,'/');
+        var nodelocaltion=node.location;
+        if(nodelocaltion){
+            var widget=nodelocaltion.replace(/\./g,'/');
             htmlfile='text!views/'+widget+'.htm';
             jsfile='views/'+widget;
         }
@@ -15,7 +16,9 @@ define(function () {
                     htmfile:htmlfile,
                     jsfile:jsfile,
                     title:title,
-                    type:null
+                    readonly:false,
+                    viewfolder:'views',
+                    currentfolder:'views/'+nodelocaltion.substr(0,nodelocaltion.lastIndexOf('.')).replace('.','/')
                 });
             }else if(node.type=='0'){//url
                 TreeClickEvent.ShowIframe(value,jsfile,title);

@@ -48,11 +48,23 @@ public class EvaluateLrInfo implements IMultilevelAudit {
 
         Map map= new HashMap();
         String sql="select o.name,o.identityid,o.birthd,o.gender,o.age,o.nation,o.address,o.type,o.registration" +
-                ",n.* from t_needassessment n,t_oldpeople o where o.lr_id=n.lr_id";
+                ",n.* from t_needassessment n,t_oldpeople o where o.lr_id=n.lr_id order by n.pg_id desc";
         List list=commonDbUtil.query("SELECT * FROM (SELECT tt.*, ROWNUM ro FROM ("+sql+") tt WHERE ROWNUM <="+(page)*rows+") WHERE ro > "+(page-1)*rows);
         int count=commonDbUtil.query(sql).size();
         map.put("total",count);
         map.put("rows",list);
+        return JSONObject.fromObject(map).toString();
+    }
+    public String queryById(){
+        CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
+        Integer id=Integer.parseInt(request.getParameter("id"));
+
+        Map map= new HashMap();
+        String sql="SELECT * from t_needassessment where pg_id="+id;
+        List list=commonDbUtil.query(sql);
+        if(list.size()>0){
+            map=(Map)list.get(0);
+        }
         return JSONObject.fromObject(map).toString();
     }
 
