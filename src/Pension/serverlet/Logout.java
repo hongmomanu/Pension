@@ -18,6 +18,8 @@ import java.io.IOException;
 public class Logout extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        System.out.print("##########################");
+        System.out.println(request.getSession().getAttribute("loginname"));
         request.getSession().invalidate();
         response.sendRedirect("");
     }

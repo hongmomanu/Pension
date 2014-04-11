@@ -7,6 +7,7 @@ import Pension.common.sys.audit.AuditManager;
 
 import javax.servlet.http.HttpServletRequest;
 import java.sql.Connection;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -25,17 +26,17 @@ public class EvaluateLrInfoChange {
                 request.getParameter("identityid")+
                 request.getParameter("registration");
         int result=0;
-        Long id=commonDbUtil.getSequence("SEQ_T_NEEDASSESSMENT");
+        Long id=Long.parseLong((String)map.get("pg_id"));
         map.put("pg_id",id);
-        String tablename="t_needassessment";
-        AuditManager.addAudit(id, "wJhlMNIq8C20mH7Bm6tj", tablename,
+        /*AuditManager.addAudit(id, "wJhlMNIq8C20mH7Bm6tj", tablename,
                 this.getClass().getName(), digest,
                 request.getSession().getAttribute("loginname").toString(),
                 request.getSession().getAttribute("username").toString(),
                 request.getSession().getAttribute("dvcode").toString()
-        );
-        commonDbUtil.insertTableVales(map,"t_needassessmentsum");
-        result=commonDbUtil.insertTableVales(map,tablename);
+        );*/
+        Map where=new HashMap();
+        where.put("pg_id",id);
+        result=commonDbUtil.updateTableVales(map,"t_needassessmentsum",where);
         return result>0? RtnType.SUCCESS:RtnType.FAILURE;
     }
 }

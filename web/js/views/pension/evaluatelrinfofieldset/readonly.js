@@ -57,10 +57,10 @@ define(function(){
             }
             result2.find('[opt=pg_id]').text(res.pg_id)
         },
-        info0:function(local){
+        info0:function(local,res){
             $.ajax({
-                url:'lr.do?model=Test&eventName=editLrbasicInfo',
-                data:{peopleid:'210303198412082729'},
+                url:'lr.do?model=hzyl.EvaluateLrInfo&eventName=queryPeople',
+                data:{id:res.lr_id},
                 success:function(restext){
                     var res=eval('('+restext+')')
                     local.find('form').form('load',res)

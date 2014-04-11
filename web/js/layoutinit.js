@@ -22,16 +22,16 @@ define(function(){
     }
     function inithead() {
         var themes = {
-            'gray' : extLocation+'themes/gray/easyui.css',
-            'black' :extLocation+ 'themes/black/easyui.css',
-            'bootstrap' :extLocation+ 'themes/bootstrap/easyui.css',
-            'default' : extLocation+'themes/default/easyui.css',
-            'metro' : extLocation+'themes/metro/easyui.css',
-            'pepper-grinder' : extLocation+'themes/pepper-grinder/easyui.css',
-            'blue' : extLocation+'themes/default/easyui.css',
-            'cupertino' : extLocation+'themes/cupertino/easyui.css',
-            'dark-hive' : extLocation+'themes/dark-hive/easyui.css',
-            'sunny' : extLocation+'themes/sunny/easyui.css'
+            'default' : extEasyui+'themes/default/easyui.css',
+            'gray' : extEasyui+'themes/gray/easyui.css',
+            'black' :extEasyui+ 'themes/black/easyui.css',
+            'bootstrap' :extEasyui+ 'themes/bootstrap/easyui.css',
+            'metro' : extEasyui+'themes/metro/easyui.css',
+            'pepper-grinder' : extEasyui+'themes/pepper-grinder/easyui.css',
+            'blue' : extEasyui+'themes/default/easyui.css',
+            'cupertino' : extEasyui+'themes/cupertino/easyui.css',
+            'dark-hive' : extEasyui+'themes/dark-hive/easyui.css',
+            'sunny' : extEasyui+'themes/sunny/easyui.css'
         };
 
         var skins = $('.li-skinitem span').click(function() {

@@ -73,7 +73,8 @@ public class Login extends HttpServlet {
             request.getSession().setAttribute("dvcode",login_obj.get("divisionid"));
             request.getSession().setAttribute("loginname",login_obj.get("loginname"));
             request.getSession().setAttribute("username",login_obj.get("displayname"));
-
+            System.out.print("************************************");
+            System.out.println(login_obj.get("loginname"));
         }else{
             request.getSession().setAttribute("loginerromsg",login_obj.get("msg"));
         }

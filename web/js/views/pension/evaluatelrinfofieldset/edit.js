@@ -187,7 +187,9 @@ define(function(){
             })
         },
         info8:function(local){
+
             var info=local.find('fieldset[opt=info8]')
+            info.find('ol:first>li').css({'line-height':'21px'});
             zhongdajibing=info.find('tr[opt=zhongdajibing]');
             var titles=[];
             var qks=['','医生诊断','在接受治疗','结束治疗'];
