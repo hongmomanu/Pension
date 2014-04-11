@@ -101,7 +101,7 @@ public class LrbasicInfo {
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()){
                 Map<String,Object> obj = new HashMap<String, Object>();
-                obj.put("lrid",rs.getString("LR_ID"));
+                obj.put("lr_id",rs.getString("LR_ID"));
                 obj.put("name",rs.getString("name"));
                 obj.put("gender",rs.getString("gender"));
                 obj.put("birthday",rs.getString("birthd"));

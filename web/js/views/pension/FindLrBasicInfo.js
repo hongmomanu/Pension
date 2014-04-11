@@ -29,15 +29,15 @@ define(function(){
 
         });
 
-        local.find('a[opt=edit]').bind('click',function(){
+        local.find('a[opt=edit]').bind('click',function(){                                          //编辑按钮
         /*$('#edit').bind('click',function(){*/
             var getrow = local.find('[opt=lrxxid]').datagrid('getSelected');
             if(getrow!=null){
-               /* alert("edit"+getrow.name);*/
-                $.ajax({
-                    url:'lr.do?model=hzyl.PensionPeopleInfoEdit&eventName=editLrbasicInfo',
-                    data:{
-                        peopleid:getrow.peopleid
+                    /* alert("edit"+getrow.name);*/
+                    $.ajax({
+                        url:'lr.do?model=hzyl.PensionPeopleInfoEdit&eventName=editLrbasicInfo',
+                        data:{
+                            lr_id:getrow.lr_id
                     },
                     type:'post',
                     success:function(res){

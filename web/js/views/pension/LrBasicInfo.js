@@ -281,6 +281,10 @@ define(function()
 
     return {
         render: render
+       /* readonly:function(local,option){
+            render(local,option)
+            local.find('[opt=form_btns]').fadeOut();
+        }*/
     };
 
 })
