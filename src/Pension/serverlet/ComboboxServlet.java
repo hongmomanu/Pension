@@ -82,11 +82,6 @@ public class ComboboxServlet extends HttpServlet {
                             break;
                         }
                     }
-                }else{
-                    if(list.size()>0){
-                        Map map=(Map)list.get(0);
-                        map.put("selected",true);//第一个为默认值
-                    }
                 }
 
 

@@ -19,35 +19,47 @@
 </head>
 <body>
 <form>
-<table class="formtable" style="width: 900px">
+<table class="formtable" style="width: 900px" method="post">
 
     <tr>
 
         <td class="formtdtext">民族</td>
-        <td>
-            <input class="easyui-combobox"
-                   name="culture"
-                   style="width: 100px"
-                   data-options=" valueField:'id', textField:'text', data:cj.getEnum('culture') ">
 
-        </td>
         <td>
-            <input class="easyui-combobox easyui-validatebox"
+            <input class="easyui-combobox" opt="nation"
                    name="nation"
                    style="width: 100px"
-                   data-options=" valueField:'id', textField:'text', data:cj.getEnum('nation'), editable:false">
+                   data-options="required:true, valueField:'id', textField:'text', data:cj.getEnum('nation'), editable:false">
         </td>
     </tr>
 </table>
 </form>
-<button>load</button>
+<button id="b1">load</button>
+<button id="b2">set</button>
+<button id="b3">submit</button>
 <script>
 
 var obj={
     gender:'1',nation:'02',culture:'2'
 }
-$('button').bind('click',function(){
+$('#b1').bind('click',function(){
         $('form').form('load',obj)
 })
-
+$('#b2').bind('click',function(){
+    console.log($(':input[name=nation]'))
+    $(':input[opt=nation]').combobox('setValue', '01') ;
+})
+$('#b3').bind('click',function(){
+    $('form').form('submit',{
+        url:'main',
+        onSubmit: function(){
+            var isValid = $(this).form('validate');
+            if (!isValid){
+               alert(1)
+            }
+            //$(this).form('disableValidation')
+            return isValid;	// return false will stop the form submission
+        }
+    })
+})
 </script>
