@@ -22,8 +22,8 @@ var cj=(function(){
         })
         return result;
     }
-    window.setTimeout(singleFun,2000);
-    var getEnum=function(searchtype){
+    window.setTimeout(singleFun,1000);
+    var getEnumlower=function(searchtype){
         return Enums[searchtype];
     }
     var enfmt=function(ef){
@@ -83,7 +83,10 @@ var cj=(function(){
             return dataGridAttr[name]
         },
         enumFormatter:function(ename,f){
-            return enfmt(getEnum(ename.toLowerCase()))
+            return enfmt(getEnumlower(ename.toLowerCase()))
+        },
+        getEnum:function(ename){
+            return getEnumlower(ename.toLowerCase())
         },
         showContent:function(option){
 
@@ -166,3 +169,5 @@ jQuery.fn.cssCheckBox = function () {
             $(this).removeClass("checked");
         }).prev().hide();
 }
+
+
