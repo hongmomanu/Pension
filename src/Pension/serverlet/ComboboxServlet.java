@@ -49,7 +49,7 @@ public class ComboboxServlet extends HttpServlet {
         try{
             String sql="select aaa102 id,aaa103 text from aa10 where aaa100='"+searchtype+"' order by aaa102 asc";
             if("-1".equals(rows)){
-                sql="select  LOWER(AAA100) ename,aaa102 id,aaa103 text from aa10 ";
+                sql="select  LOWER(AAA100) ename,aaa102 id,aaa103 text from aa10 order by id,text";
                 Map map=new HashMap();
                 List lsa=dbUtil.query(sql);
                 Iterator ita=lsa.iterator();
