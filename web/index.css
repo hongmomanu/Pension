@@ -304,6 +304,7 @@ div.yw-block > span{
 .newRadio input+label {
     padding-left: 26px;
     background: url(img/form/UnCheck.png) no-repeat;
+    font-size: 13px;
 }
 .newRadio input+label.checked {
     padding-left: 26px;

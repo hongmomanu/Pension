@@ -7,13 +7,13 @@
 </body>
 </html>
 <script>
-    document.write('<script type="text/javascript"  src="'+extLocation+
+    document.write('<script type="text/javascript"  src="'+extEasyui+
             'jquery-1.8.0.min.js"><\/script>');
-    document.write('<script type="text/javascript"  src="'+extLocation+
+    document.write('<script type="text/javascript"  src="'+extEasyui+
             'jquery.easyui.min.js"><\/script>');
-    document.write('<script type="text/javascript"  src="'+extLocation+
+    document.write('<script type="text/javascript"  src="'+extEasyui+
             'locale/easyui-lang-zh_CN.js"><\/script>');
-    document.write('<link rel="stylesheet" type="text/css" id="swicth-style" href="'+extLocation+
+    document.write('<link rel="stylesheet" type="text/css" id="swicth-style" href="'+extEasyui+
             'themes/default/easyui.css"><\/>');
 
     var cj=parent.cj;

@@ -69,6 +69,19 @@ public class EvaluateLrInfo implements IMultilevelAudit {
         return JSONObject.fromObject(map).toString();
     }
 
+    public String queryPeople(){
+        CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
+        Integer id=Integer.parseInt(request.getParameter("id"));
+
+        Map map= new HashMap();
+        String sql="select * from t_oldpeople where lr_id="+id;
+        List list=commonDbUtil.query(sql);
+        if(list.size()>0){
+            map=(Map)list.get(0);
+        }
+        return JSONObject.fromObject(map).toString();
+    }
+
     /*审核成功后的回调
     * 设置评估信息的状态为有效
     * */

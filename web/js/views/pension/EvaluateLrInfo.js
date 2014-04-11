@@ -166,7 +166,7 @@ define(function(){
 
                     js.result1(l,o.res);
                     js.result2(l,o.res);
-                    js.info0(l);
+                    js.info0(l, o.res);
                 })
             }
             if(!option.res){
