@@ -31,11 +31,11 @@ define(function(){
 
         local.find('a[opt=edit]').bind('click',function(){                                          //编辑按钮
         /*$('#edit').bind('click',function(){*/
-            var getrow = local.find('[opt=lrxxid]').datagrid('getSelected');
+            var getrow = local.find('[opt=lrxxid]').datagrid('getSelected');                //选中要编辑的行
             if(getrow!=null){
                     /* alert("edit"+getrow.name);*/
                     $.ajax({
-                        url:'lr.do?model=hzyl.PensionPeopleInfoEdit&eventName=editLrbasicInfo',
+                        url:'lr.do?model=hzyl.PensionPeopleInfoEdit&eventName=editLrbasicInfo',             //提取选中行的数据
                         data:{
                             lr_id:getrow.lr_id
                     },
@@ -44,8 +44,8 @@ define(function(){
                         if(res){
                             require(['commonfuncs/TreeClickEvent'],function(ShowContent){
                                 var obj={
-                                    htmfile:'text!views/pension/EditLrBasicInfo.htm',
-                                    jsfile:'views/pension/EditLrBasicInfo',
+                                    htmfile:'text!views/pension/EditLrBasicInfo.htm',                       //数据填充的页面
+                                    jsfile:'views/pension/EditLrBasicInfo',                                       //数据填充页面对应的js
                                     title:'修改老年基本信息',
                                     type:'',
                                     res: eval('('+res+')')

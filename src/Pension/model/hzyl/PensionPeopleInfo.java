@@ -108,7 +108,7 @@ public class PensionPeopleInfo implements IMultilevelAudit {
     }*/
 
     @Override
-    public Long audit(Connection conn, AuditBean auditBean) {
+    public Long audit(Connection conn, AuditBean auditBean) {                            //审核
         Long lr_id=Long.parseLong(auditBean.getTprkey());
         CommonDbUtil dbUtil=new CommonDbUtil(conn);
         String sql="update T_OLDPEOPLE set active='1' where lr_id="+lr_id;

@@ -21,6 +21,8 @@ define(function()
 
         })
 
+        local.cssCheckBox();
+
         /*家庭成员列表添加新成员*/
         local.find('a[opt=newfamilymemeradd_btn]').bind('click', function () {
             familymembersgrid.datagrid('appendRow', {name: "", relationship: ""});
@@ -113,6 +115,8 @@ define(function()
         {
             local.find('form[opt=pensionform]').form('load',res);
             var lr_id = res.lr_id;
+            local.cssCheckBox();
+            local.cssCheckBoxOnly();
             $.ajax({
                 url:"lr.do?model=hzyl.PensionPeopleInfoEdit&eventName=setGxDate",
                 data:{

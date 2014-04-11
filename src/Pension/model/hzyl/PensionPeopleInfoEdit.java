@@ -102,12 +102,12 @@ public class PensionPeopleInfoEdit implements IMultilevelAudit {
     }
 
     public String editLrbasicInfo() {
-        String lr_id=request.getParameter("lr_id");
+        String lr_id=request.getParameter("lr_id");                                                 //获取选中行的主键
         CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
         //StringBuffer sb=new StringBuffer();
         //String node=request.getParameter(peopleid);
         String sql="SELECT * FROM T_OLDPEOPLE WHERE lr_id='"+lr_id+"'";
-        List list=commonDbUtil.query(sql);
+        List list=commonDbUtil.query(sql);                                                          //根据主键进行数据查询
         Map map=new HashMap();
         if(list.size()>0){
             map=(Map)list.get(0);
@@ -116,7 +116,7 @@ public class PensionPeopleInfoEdit implements IMultilevelAudit {
 
     }
 
-    public String setGxDate(){
+    public String setGxDate(){                                                                            //获取对应的成员关系数据
         CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
         List<Map<String,Object>> gxlist = new ArrayList<Map<String,Object>>();
         String lr_id = request.getParameter("lr_id");
