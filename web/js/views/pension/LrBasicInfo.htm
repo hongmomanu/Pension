@@ -27,15 +27,19 @@
             <tr>
                 <td class="formtdtext">性别</td>
                 <td>
-                    <input opt="sex" class="easyui-combobox lazy-combobox"
+                    <input opt="sex" class="easyui-combobox"
                            name="gender"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=gender',
-                                method:'get',
+                                data:cj.getEnum('gender'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
             ">
+                    <!--
+                    url:'cb.do?searchtype=eyesight',
+                    method:'get' ,
+                    -->
                     <!--<select id="sex" class="easyui-combobox lazy-combobox" data-options="valueField: 'value',field:'sex'," name="gender" style="width: 100px">
                         <option value="man">男</option>
                         <option value="woman">女</option>
@@ -49,8 +53,8 @@
                            name="nation"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=NATION',
-                                method:'get',
+                                data:cj.getEnum('NATION'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
             ">
@@ -73,12 +77,13 @@
                 <td colspan="3"><input class="easyui-validatebox" name="address" data-options="required:true" style="width: 300px"></td>
                 <td class="formtdtext">人员类型<span style="color: red">*</span></td>
                 <td>
-                    <input class="easyui-combobox lazy-combobox"
+                    <input class="easyui-combobox" opt = "oldtype"
                            name="type"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=oldtype',
-                                method:'get',
+                                required:true,
+                                data:cj.getEnum('oldtype'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
             ">
@@ -100,8 +105,9 @@
                            name="live"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=liveplace',
-                                method:'get',
+                                required:true,
+                                data:cj.getEnum('liveplace'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -121,8 +127,9 @@
                            name="marriage"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=marriage',
-                                method:'get',
+                                required:true,
+                                data:cj.getEnum('marriage'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -140,8 +147,9 @@
                            name="economy"
                            style="width: auto"
                            data-options="
-                                url:'cb.do?searchtype=economy',
-                                method:'get',
+                                required:true,
+                                data:cj.getEnum('economy'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -164,8 +172,9 @@
                            name="culture"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=culture',
-                                method:'get',
+                                required:true,
+                                data:cj.getEnum('culture'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -197,8 +206,8 @@
                            name="hjj_kind"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=hjjkind',
-                                method:'get',
+                                data:cj.getEnum('hjjkind'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -213,8 +222,8 @@
                            name="hjj_type"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=hjjtype',
-                                method:'get',
+                                data:cj.getEnum('hjjtype'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -261,8 +270,8 @@
                            name="jz_yiweiz"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=neighborposition',
-                                method:'get',
+                                data:cj.getEnum('neighborposition'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -284,8 +293,8 @@
                            name="jz_erweiz"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=neighborposition',
-                                method:'get',
+                                data:cj.getEnum('neighborposition'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -330,8 +339,8 @@
                            name="jk_xuex"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=bloodtype',
-                                method:'get',
+                                data:cj.getEnum('bloodtype'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -348,8 +357,8 @@
                            name="jk_xuey"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=bloodpressure',
-                                method:'get',
+                                data:cj.getEnum('bloodpressure'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -365,8 +374,8 @@
                            name="jk_qibq"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=pacemaker',
-                                method:'get',
+                                data:cj.getEnum('pacemaker'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -385,8 +394,8 @@
                            name="jk_shil"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=eyesight',
-                                method:'get',
+                                data:cj.getEnum('eyesight'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -402,8 +411,8 @@
                            name="jk_tingl"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=hearing',
-                                method:'get',
+                                data:cj.getEnum('hearing'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -420,8 +429,8 @@
                            name="jk_huod"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=activity',
-                                method:'get',
+                                data:cj.getEnum('activity'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -436,8 +445,8 @@
                            name="jk_chux"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=goout',
-                                method:'get',
+                                data:cj.getEnum('goout'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -452,8 +461,8 @@
                            name="jk_jiyl"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=memory',
-                                method:'get',
+                                data:cj.getEnum('memory'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -470,8 +479,8 @@
                            name="jk_chuany"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=dress',
-                                method:'get',
+                                data:cj.getEnum('dress'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -486,8 +495,8 @@
                            name="jk_dingx"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=direction',
-                                method:'get',
+                                data:cj.getEnum('direction'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -502,8 +511,8 @@
                            name="jk_xiz"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=bathe',
-                                method:'get',
+                                data:cj.getEnum('bathe'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -598,11 +607,13 @@
                  <th class="lazy-combobox" data-options="field:'guanx',align:'center',width:100,editor:{
                  type:'combobox',
                  options:{
-                    required:true,
-                    url:'cb.do?searchtype=relation',
-                    width:60,
-                    valueField: 'id',
-                    textField: 'text'
+                     required:true,
+					 url:'cb.do?searchtype=relation',
+                     method:'get' ,
+                     editable:false,
+                     width:60,
+                     valueField: 'id',
+                     textField: 'text'
                  }
                  }">
                     关系<span style="color: red">*</span>
@@ -626,6 +637,8 @@
 							options:{
 							     required:true,
 								url:'cb.do?searchtype=gender',
+                                method:'get' ,
+                                editable:false,
                                 width:60,
                                 valueField: 'id',
                                 textField: 'text'
@@ -641,6 +654,8 @@
 							type:'combobox',
 							options:{
 								url:'cb.do?searchtype=culture',
+                                method:'get' ,
+                                editable:false,
                                 width:60,
                                 valueField: 'id',
                                 textField: 'text'
@@ -652,6 +667,8 @@
 							type:'combobox',
 							options:{
 								url:'cb.do?searchtype=NATION',
+                                method:'get' ,
+                                editable:false,
                                 width:60,
                                 valueField: 'id',
                                 textField: 'text'

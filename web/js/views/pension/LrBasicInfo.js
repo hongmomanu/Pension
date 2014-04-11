@@ -184,7 +184,7 @@ define(function()
                 var sex_birth = ShowBirthDay.showBirthday(local.find(':input[opt=identityid]').val()) ;
                 if(sex_birth.birthday){
                     local.find(':input[opt=birthdate]').datebox('setValue',sex_birth.birthday) ;
-                    local.find(':input[opt=sex]').combobox('setValue',sex_birth.sex) ;
+                    local.find(':input[opt=sex]').combobox('setValue',sex_birth.sexcode) ;
                     local.find(':input[opt=age]').val(sex_birth.age);
 
                     /*$(birthday.target).val(sex_birth.birthday);
@@ -276,6 +276,8 @@ define(function()
                 local.find('div[opt=form_btns]').height(30);
             }
         });
+
+
 
 
     }
