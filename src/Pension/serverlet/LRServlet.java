@@ -1,5 +1,6 @@
 package Pension.serverlet;
 
+import Pension.common.AppException;
 import Pension.common.ModelManager;
 import Pension.common.ParameterUtil;
 import Pension.common.db.DbUtil;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -74,7 +76,11 @@ public class LRServlet extends HttpServlet {
             result=(String)pm.getMethod(request.getParameter("eventName")).invoke(o);
             System.out.println(JSONObject.fromObject(map).toString());
         }catch (Exception e){
-            e.printStackTrace();
+            try {
+                throw new AppException("",e);
+            } catch (AppException e1) {
+                e1.printStackTrace();
+            }
         }
         return result;
     }

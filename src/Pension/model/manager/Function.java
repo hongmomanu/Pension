@@ -19,7 +19,7 @@ public class Function extends Model {
     /*
     业务操作中的树,左边业务菜单的,根据人员权限的来显示
      */
-    public String queryFunctionTree(){
+    public String queryFunctionTree() throws AppException {
         CommonDbUtil commonDbUtil=new CommonDbUtil();
         StringBuffer sb=new StringBuffer();
         String node=this.getRequest().getParameter("node");
@@ -31,7 +31,8 @@ public class Function extends Model {
         }
         String userid=(String)this.getRequest().getSession().getAttribute("userid");
         if(null==userid){
-            return RtnType.FAILURE;
+            //return RtnType.FAILURE;
+            throw new AppException("业务问题");
         }
         return query(commonDbUtil,node,userid);
     }

@@ -1,5 +1,6 @@
 package Pension.common.sys.audit;
 
+import Pension.common.db.DbUtil;
 import Pension.jdbc.JdbcFactory;
 
 import java.sql.Connection;
@@ -15,11 +16,11 @@ import java.util.Map;
  * Time: 下午4:02
  */
 public class CallBack {
-    public static void doAudit(Connection conn,Long id) throws Exception {
+    public static void doAudit(Long id) throws Exception {
         AuditBean ab=new AuditBean();
         String sql="select b.*,a.auflag,a.auuser,a.audate,a.aulevel,a.audesc,a.auendflag from opauditbean b,opaudit a " +
                 " where b.auditid=a.auditid and b.auditid=?";
-        PreparedStatement pstmt=conn.prepareStatement(sql);
+        PreparedStatement pstmt= DbUtil.get().prepareStatement(sql);
         pstmt.setLong(1, id);
         ResultSet rs=pstmt.executeQuery();
         if(rs.next()){

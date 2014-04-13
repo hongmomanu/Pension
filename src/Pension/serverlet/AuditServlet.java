@@ -64,15 +64,14 @@ public class AuditServlet extends HttpServlet {
     }
 
     private String doIf(String en,HttpServletRequest request,Map map,Connection conn) throws Exception {
-        CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
         String method=request.getParameter("method");
         String loginname= request.getSession().getAttribute("loginname").toString();
         String dvcode= request.getSession().getAttribute("dvcode").toString();
         if("queryAudit".equals(en)){
-            return this.queryAudit(commonDbUtil,method,map,loginname,dvcode);
+            return this.queryAudit(method,map,loginname,dvcode);
         }if("saveAudit".equals(en)){
             JSONArray jarray=JSONArray.fromObject(map.get("auditmsgs"));
-            return auditbs.doBanchAudit(conn,commonDbUtil, method, jarray, loginname);
+            return auditbs.doBanchAudit( method, jarray, loginname);
         }else{
             return null;
         }
@@ -82,8 +81,8 @@ public class AuditServlet extends HttpServlet {
         doGet(req,resp);
     }
 
-    private String queryAudit(CommonDbUtil commonDbUtil,String method,Map map,String userid,String dvcode) throws AppException {
-        return auditbs.query(commonDbUtil,method,map,userid,dvcode);
+    private String queryAudit(String method,Map map,String userid,String dvcode) throws AppException {
+        return auditbs.query(method,map,userid,dvcode);
     }
 
 }

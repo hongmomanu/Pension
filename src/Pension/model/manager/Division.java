@@ -1,6 +1,7 @@
 package Pension.model.manager;
 
 import Pension.common.CommonDbUtil;
+import Pension.model.Model;
 import net.sf.json.JSONObject;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +15,7 @@ import java.util.Map;
  * Date: 14-4-3
  * Time: 下午2:40
  */
-public class Division {
+public class Division extends Model {
     private HttpServletRequest request;
     private Connection conn;
 

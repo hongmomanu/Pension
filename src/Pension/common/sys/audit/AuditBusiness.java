@@ -22,7 +22,7 @@ public class AuditBusiness {
     根据按钮的权限来限制查询结果
     根据统筹区来限制查询结果
      */
-    public String query(CommonDbUtil commonDbUtil,String method,Map map,String loginname,String dvcode) throws AppException {
+    public String query(String method,Map map,String loginname,String dvcode) throws AppException {
         int page=Integer.parseInt(map.get("page").toString());
         int rows=Integer.parseInt(map.get("rows").toString());
         String sub="select f.location" +
@@ -45,7 +45,8 @@ public class AuditBusiness {
     通过,三级审核,每审核一次回调一次,第三次再附加更新结束标示
     不通过,当前级别不通过,也回调接口,附加更新结束标示和不通过原因(备注)
      */
-    public String doBanchAudit(Connection conn,CommonDbUtil commonDbUtil,String method,JSONArray jarray,String loginname) throws Exception {
+    public String doBanchAudit(String method,JSONArray jarray,String loginname) throws Exception {
+        CommonDbUtil commonDbUtil=new CommonDbUtil();
         for(int i=0;i<jarray.size();i++){
             Map map= ParameterUtil.toMap((JSONObject) jarray.get(i));
             String auditid=map.get("auditid").toString();
@@ -67,7 +68,7 @@ public class AuditBusiness {
                 map.put("auendflag", "1");        //不通过,审核结束
                 commonDbUtil.updateTableVales(map, "opaudit", where);
             }
-            CallBack.doAudit(conn,Long.parseLong(auditid));   //回调
+            CallBack.doAudit(Long.parseLong(auditid));   //回调
 
         }
         return RtnType.SUCCESS;

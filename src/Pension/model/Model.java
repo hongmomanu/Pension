@@ -14,20 +14,25 @@ import java.util.Map;
  * Time: 上午8:14
  */
 public class Model {
-    private HttpServletRequest request;
+    private static final ThreadLocal<HttpServletRequest> localRequest=
+            new ThreadLocal<HttpServletRequest>();
     private static final ThreadLocal<Map> localMap = new ThreadLocal<Map>();
 
     public HttpServletRequest getRequest() {
-        return request;
+        return localRequest.get();
     }
 
     public void setRequest(HttpServletRequest request) {
-        this.request = request;
+         localRequest.set(request);
     }
 
     public void query(String sql,  int page, int rows) throws AppException {
         Map map=CommQuery.query(sql,page,rows);
         localMap.get().put(IParam.TOTAL,map.get(IParam.TOTAL));
+        localMap.get().put(IParam.ROWS,map.get(IParam.ROWS));
+    }
+    public void query(String sql) throws AppException {
+        Map map=CommQuery.query(sql);
         localMap.get().put(IParam.ROWS,map.get(IParam.ROWS));
     }
 

@@ -3,6 +3,7 @@ package Pension.model.manager;
 import Pension.common.CommonDbUtil;
 import Pension.common.ParameterUtil;
 import Pension.common.RtnType;
+import Pension.model.Model;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
@@ -17,7 +18,7 @@ import java.util.Map;
  * Date: 14-3-19
  * Time: 下午1:02
  */
-public class CodeMaintenance {
+public class CodeMaintenance extends Model {
     private HttpServletRequest request;
     private Connection conn;
 

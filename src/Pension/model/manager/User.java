@@ -5,13 +5,14 @@ import Pension.common.CommonDbUtil;
 import Pension.common.MakeRandomString;
 import Pension.common.ParameterUtil;
 import Pension.common.RtnType;
+import Pension.model.Model;
 import net.sf.json.JSONArray;
 
 import javax.servlet.http.HttpServletRequest;
 import java.sql.Connection;
 import java.util.*;
 
-public class User {
+public class User extends Model {
     private HttpServletRequest request;
     private Connection conn;
 

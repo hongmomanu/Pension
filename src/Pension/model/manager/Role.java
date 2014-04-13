@@ -3,6 +3,7 @@ package Pension.model.manager;
 import Pension.common.CommonDbUtil;
 import Pension.common.ParameterUtil;
 import Pension.common.RtnType;
+import Pension.model.Model;
 import net.sf.json.JSONObject;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,7 +17,7 @@ import java.util.Map;
  * Date: 14-3-16
  * Time: 上午10:41
  */
-public class Role {
+public class Role extends Model {
 
     private HttpServletRequest request;
     private Connection conn;

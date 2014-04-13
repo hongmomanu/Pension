@@ -2,6 +2,7 @@ package Pension.model.manager;
 
 import Pension.common.CommonDbUtil;
 import Pension.common.RtnType;
+import Pension.model.Model;
 
 import javax.servlet.http.HttpServletRequest;
 import java.sql.Connection;
@@ -11,7 +12,7 @@ import java.sql.Connection;
  * Date: 14-3-16
  * Time: 下午3:25
  */
-public class Grant {
+public class Grant extends Model {
     private HttpServletRequest request;
     private Connection conn;
 

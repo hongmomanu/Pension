@@ -64,5 +64,44 @@ public class CommQuery {
     }
 
 
+    public static Map query(String sql) throws AppException
+    {
+        Map result=new HashMap();
+        Connection conn= DbUtil.get();
+        Statement stmt=null;
+        ResultSet rs=null;
+        ArrayList<Map<String,Object>> list=new ArrayList<Map<String, Object>>();
+        try {
+            stmt=conn.createStatement();
+            rs=stmt.executeQuery(sql);
+            ResultSetMetaData metaData= rs.getMetaData();
+            int columns=metaData.getColumnCount();
+            while(rs.next()){
+                Map<String,Object> map=new HashMap<String, Object>();
+                for(int i=1;i<=columns;i++){
+                    String columnName=metaData.getColumnName(i);
+                    String columnValue=rs.getString(columnName);
+                    map.put(columnName.toLowerCase(),columnValue);
+                }
+                list.add(map);
+            }
+
+            result.put(IParam.ROWS,list);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new AppException("分页查询失败", e);
+        }finally {
+            try{
+                if(null!=rs)rs.close();
+                if(null!=stmt)stmt.close();
+            }catch (SQLException e){
+                e.printStackTrace();
+            }
+        }
+
+        return result;
+    }
+
+
 
 }
