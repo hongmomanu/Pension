@@ -9,4 +9,6 @@ package Pension.common;
 public interface RtnType {
     String SUCCESS="{\"success\":true}";
     String FAILURE="{\"success\":false}";
+    int NORMALSUCCESS=1;
+    int NORMALFAILURE=0;
 }

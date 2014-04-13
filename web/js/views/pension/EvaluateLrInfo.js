@@ -110,9 +110,9 @@ define(function(){
                 })
         })
     }
-    var a=function(mylocal){
+    var a=function(mylocal,option){
         local=mylocal;
-
+        Loption=option;
         initPage(local,function(){
             local.cssRadio(true);//渲染单选样式
             local.cssCheckBox();//渲染多选样式
@@ -137,7 +137,7 @@ define(function(){
 
         local.find('a[action=save]').bind('click',function(){
             local.find('form[opt=mainform]').form('submit',{
-                url:'lr.do?model=hzyl.EvaluateLrInfo&eventName=save',
+                url:lr.url(option,'save'),
                 success: function(res){
                    cj.ifSuccQest(res,"已操作成功是否关闭此页",function(){
                        require(['commonfuncs/TreeClickEvent'],function(js){
@@ -149,10 +149,8 @@ define(function(){
         })
     }
     var b=function(mylocal,option){
-        ll=mylocal
         local=mylocal;
         initPage(local,function(){
-            initIdentityidandOtherComboxGrid();
             var loadform=function(l,o){
                 l.find('form[opt=mainform]').form('load',o.res)
                 l.cssRadioOnly();
@@ -170,8 +168,9 @@ define(function(){
                 })
             }
             if(!option.res){
+                console.log(option)
                 $.ajax({
-                    url:'lr.do?model=hzyl.EvaluateLrInfo&eventName=queryById',
+                    url:lr.url(option,'queryById'),
                     data:{id:option.tprkey},
                     success:function(restext){
                         var res=eval('('+restext+')')

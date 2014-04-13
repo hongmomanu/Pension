@@ -13,14 +13,12 @@ import java.sql.Connection;
  * Time: 下午3:25
  */
 public class Grant extends Model {
-    private HttpServletRequest request;
-    private Connection conn;
 
     public String saveRoleFunction(){  //批处理理操作,以后实现
-        CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
+        CommonDbUtil commonDbUtil=new CommonDbUtil();
         int result=0;
-        String functionidsOjb=request.getParameter("functionids");
-        String roleid=request.getParameter("roleid");
+        String functionidsOjb=this.getRequest().getParameter("functionids");
+        String roleid=this.getRequest().getParameter("roleid");
         if(null==roleid){
             return RtnType.FAILURE;
         }
@@ -38,10 +36,10 @@ public class Grant extends Model {
     }
 
     public String saveRoleUser(){  //批处理理操作,以后实现
-        CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
+        CommonDbUtil commonDbUtil=new CommonDbUtil();
         int result=0;
-        String roleidsObj=request.getParameter("roleids");
-        String userid=request.getParameter("userid");
+        String roleidsObj=this.getRequest().getParameter("roleids");
+        String userid=this.getRequest().getParameter("userid");
         if(null==userid){
             return RtnType.FAILURE;
         }

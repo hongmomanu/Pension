@@ -16,7 +16,6 @@ import javax.servlet.http.HttpSessionBindingEvent;
 import java.sql.Timestamp;
 import java.util.HashMap;
 
-@WebListener()
 public class SessionListener implements ServletContextListener,
         HttpSessionListener, HttpSessionAttributeListener {
 

@@ -56,12 +56,12 @@ define(function(){
 
 
         require(['commonfuncs/UpdateItemNum','commonfuncs/AjaxForm'],function(updateitem,ajaxform){
-            $('#welcomename').text("欢迎您:"+displayname+'('+divisionpath+')');
+            $('#welcomename').text("欢迎您:"+displayname+'('+dvname+')');
             updateitem.updateitemnum($('#onlinenums'),onlinenums,"(",")");
             var params = {
-                roleid:roleid,
+                //roleid:roleid,
                 userid:userid,
-                divisionpath:divisionpath,
+                //divisionpath:divisionpath,
                 type:'count'
             };
             var successFunc = function(res){
@@ -125,10 +125,6 @@ define(function(){
     }
     function initroutnavigation(){
         $('#routermenu').combobox({
-            onBeforeLoad: function(param){
-                param.roleid=roleid;
-                param.type="系统菜单";
-            },
             onSelect: function(rec){
 
 

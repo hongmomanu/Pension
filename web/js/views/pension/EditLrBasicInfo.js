@@ -46,7 +46,7 @@ define(function()
             var gxmess = JSON.stringify(familymembersgrid.datagrid('acceptChanges').datagrid('getData').rows);
             if(lrid!=null&&lrid!=""){
                 local.find('form[opt=pensionform]').form('submit',{
-                    url:'lr.do?model=hzyl.PensionPeopleInfoEdit&eventName=update',
+                    url:lr.url(option,'update'),
                     onSubmit:function(param){
                         var isValid = local.find('form[opt=pensionform]').form('validate');
                         param.p1 = gxmess;
@@ -118,7 +118,7 @@ define(function()
             local.cssCheckBox();
             local.cssCheckBoxOnly();
             $.ajax({
-                url:"lr.do?model=hzyl.PensionPeopleInfoEdit&eventName=setGxDate",
+                url:lr.url(option,'setGxDate'),
                 data:{
                     lr_id:lr_id
                 },

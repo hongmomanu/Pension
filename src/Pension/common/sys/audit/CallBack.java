@@ -46,7 +46,6 @@ public class CallBack {
             Class[] iters=c.getInterfaces();
             boolean b=false;
             for(Class i:iters){
-                System.out.println(i.getName());
                 if(IMultilevelAudit.class.getName().equals(i.getName())){
                     b=true;
                     break;
@@ -56,21 +55,7 @@ public class CallBack {
                 throw new Exception("IMultilevelAudit 接口未实现");
             }
             IMultilevelAudit audit=(IMultilevelAudit)c.newInstance();
-            audit.audit(JdbcFactory.getConn(),ab);
+            audit.audit(ab);
         }
-    }
-
-    public static void main(String[] args) throws ClassNotFoundException {
-        Class c=Class.forName("Pension.model.hzyl.EvaluateLrInfo");
-        Class[] iters=c.getInterfaces();
-        boolean b=false;
-        for(Class i:iters){
-            System.out.println(i.getName());
-           if(IMultilevelAudit.class.getName().equals(i.getName())){
-               b=true;
-               break;
-           }
-        }
-        System.out.println(b);
     }
 }

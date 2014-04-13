@@ -186,6 +186,8 @@ var saveApproval=function(){
                     htmfile:htmlfile,
                     jsfile:jsfile,
                     readonly:true,
+                    location:d.location,
+                    functionid: d.functionid,
                     tprkey:tprkey,
                     useproxy:!true
                 })

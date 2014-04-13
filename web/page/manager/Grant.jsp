@@ -67,7 +67,7 @@ function getChecked(){
                 url:'lr.do?model=manager.Grant&eventName=saveRoleFunction',
                 success:function(res){
                     var obj=eval('('+res+')');
-                    if(obj.success=='true'){
+                    if(obj.success=='true'||obj.success){
                         $.messager.alert('提示','操作成功!','info');
                     }else{
                         $.messager.alert('提示','操作失败!','info');

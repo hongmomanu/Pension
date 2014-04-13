@@ -86,9 +86,9 @@ public class EvaluateLrInfo implements IMultilevelAudit {
     * 设置评估信息的状态为有效
     * */
     @Override
-    public Long audit(Connection conn,AuditBean auditBean) {
+    public Long audit(AuditBean auditBean) {
         Long pg_id=Long.parseLong(auditBean.getTprkey());
-        CommonDbUtil dbUtil=new CommonDbUtil(conn);
+        CommonDbUtil dbUtil=new CommonDbUtil();
         String sql="update t_needassessment set active='1' where pg_id="+pg_id;
         Map currentAudit=auditBean.getCurrentAudit();
         String comment=",";

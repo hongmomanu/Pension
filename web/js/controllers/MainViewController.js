@@ -29,7 +29,7 @@ define(['views/MainTree','commonfuncs/LoadingMask'], function(MainTree,LoadingMa
 
         var getAccordion=function(res){
             var isselected=true;
-            $(eval(res)).each(function(i){
+            $(eval('('+res+')')).each(function(i){
                 var me=$(this);
                 if(me.attr('leaf'))return;//如果是叶子,则没有这个抽屉
 

@@ -96,16 +96,8 @@ var cj=(function(){
                     show.closeTabByTitle(option.title);
                     show.ShowContent(option)
                 }else{
-                    if(option.useproxy==false){ //不使用代理,根据id来传递数据,开发人员根据id来自行加载数据
-                        show.closeTabByTitle(option.title);
-                        show.ShowContent(option)
-                    }else{                      //使用代理
-                        load.load(option,function(res){
-                            option.res=eval('('+res+')');
-                            show.closeTabByTitle(option.title);
-                            show.ShowContent(option)
-                        })
-                    }
+                    show.closeTabByTitle(option.title);
+                    show.ShowContent(option)
                 }
             }
 
@@ -170,4 +162,15 @@ jQuery.fn.cssCheckBox = function () {
         }).prev().hide();
 }
 
+var lr=(function(){
+    return {
+        url:function(option,eventName){
+           var en='';
+            if(eventName){
+                en='&eventName='+eventName
+            }
+           return 'lr.do?model='+option.location+en+'&functionid='+option.functionid;
+        }
+    }
+})()
 

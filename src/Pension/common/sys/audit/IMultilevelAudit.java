@@ -8,6 +8,6 @@ import java.sql.Connection;
  * Time: 下午8:01
  */
 public interface IMultilevelAudit {
-    public abstract Long audit(Connection conn,AuditBean auditBean);
+    public abstract Long audit(AuditBean auditBean);
 
 }

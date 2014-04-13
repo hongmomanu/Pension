@@ -1,12 +1,10 @@
 package Pension.model.manager;
 
+import Pension.business.entity.User;
 import Pension.common.*;
 import Pension.model.Model;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
-
-import javax.servlet.http.HttpServletRequest;
-import java.sql.Connection;
 import java.util.*;
 
 /**
@@ -29,12 +27,13 @@ public class Function extends Model {
         if(null==node||"".equals(node)||"root".equals(node)){
             node="businessmenu";
         }
-        String userid=(String)this.getRequest().getSession().getAttribute("userid");
-        if(null==userid){
-            //return RtnType.FAILURE;
-            throw new AppException("业务问题");
+        Object obj=this.getRequest().getSession().getAttribute("user");
+        if(null==obj){
+            return RtnType.FAILURE;
+            //throw new AppException("业务问题");
         }
-        return query(commonDbUtil,node,userid);
+        User user=(User)obj;
+        return query(commonDbUtil,node,user.getUserid());
     }
     /*
     查询功能全部树
@@ -73,10 +72,10 @@ public class Function extends Model {
 
     private String query(CommonDbUtil commonDbUtil,String node,String userid){
         String sql="select t.*,(select count(1) from xt_function where parent=t.functionid) leafcount from xt_function t where t.parent='"+node+"'";
-        /*if(userid!=null){
+        if(userid!=null){
             sql+=" and t.nodetype <> '2' and t.functionid in (select rf.functionid from xt_roleuser ru,xt_rolefunc rf where ru.userid='"+userid+
                     "' and ru.roleid=rf.roleid)";
-        }*/
+        }
         sql+=" order by t.orderno asc";
         List<Map<String,Object>> list=new ArrayList<Map<String,Object>>();
         List querylist=commonDbUtil.query(sql);
@@ -141,6 +140,22 @@ public class Function extends Model {
         String s=getRequest().getParameter("name");
         System.out.println(s);
         this.setTest(s+" by weipan");
+    }
+    private String getSql(String node){
+        String sql="select t.functionid,\n" +
+                "       t.functionid id,\n" +
+                "       t.location,\n" +
+                "       t.location value,\n" +
+                "       t.title,\n" +
+                "       t.title text,\n" +
+                "       t.parent,\n" +
+                "       t.orderno,\n" +
+                "       t.nodetype,\n" +
+                "       t.type,\n" +
+                "       decode(t.nodetype, '1', 'false', 'true') leaf,\n" +
+                "       decode(t.nodetype, '1', 'open', 'closed') leaf\n" +
+                "  from xt_function t where t.parent='"+node+"'  order by t.orderno asc";
+        return sql;
     }
 
 }

@@ -1,13 +1,14 @@
 define(function(){
-    var view=function(row){
+    var view=function(option,row){
         cj.showContent({
-            url:'lr.do?model=hzyl.EvaluateLrInfo&eventName=queryById',
+            url:'lr.do?model=pension.EvaluateLrInfo&eventName=queryById',
             title:'查看',
             htmfile:'text!views/pension/EvaluateLrInfo.htm',
             jsfile:'views/pension/EvaluateLrInfo',
+            location:option.location,
+            functionid:option.functionid,
             readonly:true,
-            tprkey:row.pg_id,
-            useproxy:!true
+            tprkey:row.pg_id
         })
     }
     var edit=function(row){
@@ -18,7 +19,9 @@ define(function(){
     }
     var a={
         render:function(local,option){
+            console.log(option)
             local.find('.easyui-datagrid-noauto').datagrid({
+                url:lr.url(option,'query'),
                 onLoadSuccess:function(data){
                     var viewbtns=local.find('[action=view]');
                     var editbtns=local.find('[action=edit]');
@@ -31,11 +34,11 @@ define(function(){
                                 $(btns_arr[j][i]).click(function(){
                                     var record=rows[index];
                                     if($(this).attr("action")=='view'){
-                                        view(record)
+                                        view(option,record)
                                     }else if($(this).attr("action")=='edit'){
-                                        edit(record)
+                                        edit(option,record)
                                     }else{
-                                        logout(record)
+                                        logout(option,record)
                                     }
                                 });
                             })(i);

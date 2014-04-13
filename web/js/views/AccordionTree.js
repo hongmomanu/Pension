@@ -16,6 +16,8 @@ define(function () {
                     htmfile:htmlfile,
                     jsfile:jsfile,
                     title:title,
+                    location:nodelocaltion,
+                    functionid:node.functionid,
                     readonly:false,
                     viewfolder:'views',
                     currentfolder:'views/'+nodelocaltion.substr(0,nodelocaltion.lastIndexOf('.')).replace('.','/')

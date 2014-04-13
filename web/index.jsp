@@ -1,17 +1,14 @@
 <%@ page import="Pension.listener.SessionListener" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: jack
-  Date: 13-12-31
-  Time: 下午2:34
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%
-    if(request.getSession().getAttribute("username")==null) {
-        response.sendRedirect("login.jsp");
-    }
+<%@ page import="Pension.business.entity.User" %>
 
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<% Object o=request.getSession().getAttribute("user");
+    User user=new User();
+    if(o==null) {
+        response.sendRedirect("login.jsp");
+    }else{
+        user=(User)o;
+    }
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -28,18 +25,15 @@
     <title>杭州市民政养老救助管理系统</title>
 
     <script type="text/javascript" src="js/extLocation.js"></script>
-    <script type="text/javascript" src="js/config.js"></script>
     <script type="text/javascript">
 
         /*session全局变量*/
         var onlinenums=<%= SessionListener.size()%>;
-        var userid='<%=request.getSession().getAttribute("userid")%>';
-        var username="<%=request.getSession().getAttribute("username")%>";
-        var roleid=<%=request.getSession().getAttribute("roleid")%>;
-        var displayname="<%=request.getSession().getAttribute("displayname")%>";
-        var divisionpath="<%=request.getSession().getAttribute("divisionpath")%>";
-        var password="<%=request.getSession().getAttribute("password")%>";
-        var divisionid=<%=request.getSession().getAttribute("divisionid")%>;
+        var userid='<%=user.getUserid()%>';
+        var username="<%=user.getUsername()%>";
+        var displayname=username;
+        var regionid=<%=user.getRegionid()%>;
+        var dvname<%=user.getDvname()%>;
 
 
     </script>
@@ -111,15 +105,12 @@
     <div id="tabs" class="easyui-tabs"   fit="true" border="false" >
         <div title="主页" class="indexbackground">
             <div class="cs-home-remark">
-                <h1>欢迎使用民政养老救助系统</h1>
+                <h3 style="font-family: 'courier new'">欢迎使用民政养老救助系统</h3>
             </div>
         </div>
     </div>
 </div>
 
-<%--<div region="south" border="false" class="cs-south">
-    <a  id="indextime"></a>
-</div>--%>
 
 
 </body>

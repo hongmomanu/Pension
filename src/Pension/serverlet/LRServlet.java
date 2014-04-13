@@ -3,6 +3,7 @@ package Pension.serverlet;
 import Pension.common.AppException;
 import Pension.common.ModelManager;
 import Pension.common.ParameterUtil;
+import Pension.common.RtnType;
 import Pension.common.db.DbUtil;
 import Pension.jdbc.JdbcFactory;
 import Pension.model.Model;
@@ -32,7 +33,7 @@ public class LRServlet extends HttpServlet {
 
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String eventName=(String)request.getParameter("eventName");
         if(request.getParameter("model")==null){
             request.setAttribute("message","缺少请求信息");
@@ -56,10 +57,7 @@ public class LRServlet extends HttpServlet {
         }
     }
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doGet(req, resp);
-    }
+
 
     //反射生成对象,并根据eventName参数调用对象的方法
     private String doEvent(HttpServletRequest request,Map param){
@@ -73,13 +71,16 @@ public class LRServlet extends HttpServlet {
             Map map=new HashMap();
             superModel.setLocalMap(map);
             //执行对象的方法
-            result=(String)pm.getMethod(request.getParameter("eventName")).invoke(o);
-            System.out.println(JSONObject.fromObject(map).toString());
+            result=(String)(pm.getMethod(request.getParameter("eventName")).invoke(o)+"");
+            if((RtnType.NORMALFAILURE+"").equals(result)||(RtnType.NORMALSUCCESS+"").equals(result)){
+                result=JSONObject.fromObject(map).toString();
+            }
         }catch (Exception e){
             try {
-                throw new AppException("",e);
+                throw new AppException(e.getMessage(),e);
             } catch (AppException e1) {
                 e1.printStackTrace();
+                System.out.println(e1.getMessage());
             }
         }
         return result;

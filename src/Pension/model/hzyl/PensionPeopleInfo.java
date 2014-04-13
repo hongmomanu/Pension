@@ -108,9 +108,9 @@ public class PensionPeopleInfo implements IMultilevelAudit {
     }*/
 
     @Override
-    public Long audit(Connection conn, AuditBean auditBean) {                            //审核
+    public Long audit(AuditBean auditBean) {                            //审核
         Long lr_id=Long.parseLong(auditBean.getTprkey());
-        CommonDbUtil dbUtil=new CommonDbUtil(conn);
+        CommonDbUtil dbUtil=new CommonDbUtil();
         String sql="update T_OLDPEOPLE set active='1' where lr_id="+lr_id;
         dbUtil.execute(sql);
         return null;  //To change body of implemented methods use File | Settings | File Templates.

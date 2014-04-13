@@ -1,9 +1,8 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html >
+<%@ page contentType="text/html; charset=utf-8"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>测试</title>
+    <title>文件上传页面</title>
     <style>
         form {
             margin: 0;
@@ -13,21 +12,29 @@
         }
     </style>
 
-
 </head>
+
 <body>
-<table class="easyui-datagrid" title="Basic DataGrid" style="width:700px;height:250px"
-       data-options="singleSelect:true,collapsible:true,url:'datagrid_data1.json',method:'get'">
-    <thead>
-    <tr>
-        <th data-options="field:'itemid',width:80">Item ID</th>
-        <th data-options="field:'productid',width:100">Product</th>
-        <th data-options="field:'listprice',width:80,align:'right'">List Price</th>
-        <th data-options="field:'unitcost',width:80,align:'right'">Unit Cost</th>
-        <th data-options="field:'attr1',width:250">Attribute</th>
-        <th data-options="field:'status',width:60,align:'center'">Status</th>
-    </tr>
-    </thead>
-</table>
-</body>
-</html>
+<h2>
+    使用commons-fileupload上传文件
+</h2>
+<hr />
+<!-- 文件上传的表单的属性必设值：method="post" enctype="multipart/form-data" -->
+<form action="upload.do" method="post" enctype="multipart/form-data">
+    <table>
+        <tr>
+            <td>
+                请选择要上传的文件
+            </td>
+            <td>
+                <input type="file" name="filePath" size="50" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value=" 上传 " />
+            </td>
+        </tr>
+    </table>
+</form>
+<br />

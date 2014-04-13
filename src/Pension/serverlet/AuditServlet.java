@@ -1,5 +1,6 @@
 package Pension.serverlet;
 
+import Pension.business.entity.User;
 import Pension.common.AppException;
 import Pension.common.RtnType;
 import Pension.common.db.DbUtil;
@@ -23,9 +24,8 @@ import java.util.Map;
  * Time: 下午8:46
  */
 public class AuditServlet extends HttpServlet {
-    private AuditBusiness auditbs=new AuditBusiness();
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private AuditBusiness auditBusiness=new AuditBusiness();
+    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String eventName=(String)request.getParameter("eventName");
         String method=(String)request.getParameter("method");
         if(method==null){
@@ -34,24 +34,17 @@ public class AuditServlet extends HttpServlet {
         }else{
 
             if(eventName!=null&&!"".equals(eventName)){
-                Connection conn= DbUtil.get();
+                DbUtil.get();
                 try {
-                    conn.setAutoCommit(false);
-                    request.setAttribute("message",doIf(eventName, request, ParameterUtil.toMap(request),conn));
-                    conn.commit();
+                    DbUtil.begin();
+                    request.setAttribute("message",doIf(eventName, request, ParameterUtil.toMap(request)));
+                    DbUtil.commit();
                 }  catch (Exception e) {
-                    request.setAttribute("message", RtnType.FAILURE);
-                    try {
-                        conn.rollback();
-                    } catch (SQLException e1) {
-                        e1.printStackTrace();
-                    }
                     e.printStackTrace();
+                    request.setAttribute("message", RtnType.FAILURE);
+                    DbUtil.rollback();
                 }finally {
-                    if(null!=conn) {
-                        DbUtil.close();
-                        System.out.println("关闭连接");
-                    }
+                    DbUtil.close();
                 }
                 request.getRequestDispatcher("page/output.jsp").forward(request,response);
             }else{
@@ -63,26 +56,21 @@ public class AuditServlet extends HttpServlet {
 
     }
 
-    private String doIf(String en,HttpServletRequest request,Map map,Connection conn) throws Exception {
+    private String doIf(String en,HttpServletRequest request,Map map) throws Exception {
         String method=request.getParameter("method");
-        String loginname= request.getSession().getAttribute("loginname").toString();
-        String dvcode= request.getSession().getAttribute("dvcode").toString();
+        User user=(User)request.getSession().getAttribute("user");
+        String loginname= user.getLoginname();
+        String dvcode=user.getRegionid();
         if("queryAudit".equals(en)){
-            return this.queryAudit(method,map,loginname,dvcode);
+            return auditBusiness.query(method, map, loginname, dvcode);
         }if("saveAudit".equals(en)){
             JSONArray jarray=JSONArray.fromObject(map.get("auditmsgs"));
-            return auditbs.doBanchAudit( method, jarray, loginname);
+            return auditBusiness.doBanchAudit(method, jarray, loginname);
         }else{
             return null;
         }
     }
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doGet(req,resp);
-    }
 
-    private String queryAudit(String method,Map map,String userid,String dvcode) throws AppException {
-        return auditbs.query(method,map,userid,dvcode);
-    }
+
 
 }
