@@ -12,54 +12,22 @@
             display: block;
         }
     </style>
-   <%-- <link rel="stylesheet" href="http://localhost/kindeditor/themes/default/default.css">
-    <script charset="utf-8" src="http://localhost/kindeditor/kindeditor-min.js"></script>
-    <script charset="utf-8" src="http://localhost/kindeditor/lang/zh_CN.js"></script>--%>
+
 
 </head>
 <body>
-<form>
-<table class="formtable" style="width: 900px" method="post">
-
+<table class="easyui-datagrid" title="Basic DataGrid" style="width:700px;height:250px"
+       data-options="singleSelect:true,collapsible:true,url:'datagrid_data1.json',method:'get'">
+    <thead>
     <tr>
-
-        <td class="formtdtext">民族</td>
-
-        <td>
-            <input class="easyui-combobox" opt="nation"
-                   name="nation"
-                   style="width: 100px"
-                   data-options="required:true, valueField:'id', textField:'text', data:cj.getEnum('nation'), editable:false">
-        </td>
+        <th data-options="field:'itemid',width:80">Item ID</th>
+        <th data-options="field:'productid',width:100">Product</th>
+        <th data-options="field:'listprice',width:80,align:'right'">List Price</th>
+        <th data-options="field:'unitcost',width:80,align:'right'">Unit Cost</th>
+        <th data-options="field:'attr1',width:250">Attribute</th>
+        <th data-options="field:'status',width:60,align:'center'">Status</th>
     </tr>
+    </thead>
 </table>
-</form>
-<button id="b1">load</button>
-<button id="b2">set</button>
-<button id="b3">submit</button>
-<script>
-
-var obj={
-    gender:'1',nation:'02',culture:'2'
-}
-$('#b1').bind('click',function(){
-        $('form').form('load',obj)
-})
-$('#b2').bind('click',function(){
-    console.log($(':input[name=nation]'))
-    $(':input[opt=nation]').combobox('setValue', '01') ;
-})
-$('#b3').bind('click',function(){
-    $('form').form('submit',{
-        url:'main',
-        onSubmit: function(){
-            var isValid = $(this).form('validate');
-            if (!isValid){
-               alert(1)
-            }
-            //$(this).form('disableValidation')
-            return isValid;	// return false will stop the form submission
-        }
-    })
-})
-</script>
+</body>
+</html>

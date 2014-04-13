@@ -1,8 +1,6 @@
 package Pension.common.sys.audit;
 
-import Pension.common.CommonDbUtil;
-import Pension.common.ParameterUtil;
-import Pension.common.RtnType;
+import Pension.common.*;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
@@ -24,7 +22,7 @@ public class AuditBusiness {
     根据按钮的权限来限制查询结果
     根据统筹区来限制查询结果
      */
-    public String query(CommonDbUtil commonDbUtil,String method,Map map,String loginname,String dvcode){
+    public String query(CommonDbUtil commonDbUtil,String method,Map map,String loginname,String dvcode) throws AppException {
         int page=Integer.parseInt(map.get("page").toString());
         int rows=Integer.parseInt(map.get("rows").toString());
         String sub="select f.location" +
@@ -38,12 +36,8 @@ public class AuditBusiness {
         sql_divsion=" and (b.dvcode like '"+dvcode+"%' or '"+dvcode+"'='330100')" ;
         String sql="select a.auflag,a.aulevel,a.audesc,b.*,'1' audefault from opaudit a,opauditbean b,xt_user u where u.loginname=b.loginname and a.auditid=b.auditid and b.functionid='"
                 +method+"' and a.auendflag='0' and to_char(to_number(a.aulevel)+1) in("+sub+") "+sql_divsion +" order by b.auditid desc";
-        int total=commonDbUtil.query(sql).size();//查询总数,性能不高
-        List list=commonDbUtil.query("SELECT * FROM (SELECT tt.*, ROWNUM ro FROM ("+sql+") tt WHERE ROWNUM <="+(page)*rows+") WHERE ro > "+(page-1)*rows);
-        Map mapj=new HashMap();
-        mapj.put("total",total);
-        mapj.put("rows",list);
-        return JSONObject.fromObject(mapj).toString();
+
+        return JSONObject.fromObject(CommQuery.query(sql,page,rows)).toString();
     }
 
     /*

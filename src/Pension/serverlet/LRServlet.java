@@ -2,7 +2,10 @@ package Pension.serverlet;
 
 import Pension.common.ModelManager;
 import Pension.common.ParameterUtil;
+import Pension.common.db.DbUtil;
 import Pension.jdbc.JdbcFactory;
+import Pension.model.Model;
+import net.sf.json.JSONObject;
 
 import javax.activation.DataSource;
 import javax.servlet.ServletException;
@@ -13,6 +16,7 @@ import java.io.IOException;
 import java.lang.reflect.Field;
 import java.sql.Connection;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -24,6 +28,7 @@ import java.util.Map;
  */
 public class LRServlet extends HttpServlet {
 
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String eventName=(String)request.getParameter("eventName");
@@ -32,13 +37,11 @@ public class LRServlet extends HttpServlet {
             request.getRequestDispatcher("page/output.jsp").forward(request,response);
         }
         if(eventName!=null&&!"".equals(eventName)){
-            request.setAttribute("message",doEvent(request, ParameterUtil.toMap(request)));
+            DbUtil.get();
+            request.setAttribute("message", doEvent(request, ParameterUtil.toMap(request)));
+            DbUtil.close();
             request.getRequestDispatcher("page/output.jsp").forward(request,response);
         }else {
-            /*Map<String,String> map=new HashMap<String,String>();
-            map.put("model",request.getParameter("model"));
-            map.put("pageSelectedAtRuntime",request.getParameter("pageModel").replace('.','/')+".jsp");
-            map.put("jsSelectedAtRuntime","page/"+request.getParameter("pageModel").replace('.','/')+".js");*/
             String page=(String)request.getParameter("page");
             if(page!=null&&!"".equals(page)){
                 page=page.replace('.','/');
@@ -62,38 +65,14 @@ public class LRServlet extends HttpServlet {
         try {
             String model="Pension.model."+request.getParameter("model");
             Object o=ModelManager.getModel(model);
-            Connection conn=JdbcFactory.getConn();
             Class pm=  Class.forName(model);
-            if(null==o){
-                o=pm.newInstance();
-                ModelManager.addModel(model,o);
-            }
-
-            //注入属性数据
-            List fieldList=new ArrayList();
-            for(Field f:pm.getDeclaredFields()){
-                fieldList.add(f.getName());
-            }
-            if(fieldList.contains("request")){
-                Field req=pm.getDeclaredField("request");
-                req.setAccessible(true);
-                req.set(o,request);
-            }
-            if(fieldList.contains("param")){
-                Field req=pm.getDeclaredField("param");
-                req.setAccessible(true);
-                req.set(o,param);
-            }
-            if(fieldList.contains("conn")){
-                Field req=pm.getDeclaredField("conn");
-                req.setAccessible(true);
-                req.set(o, conn);
-            }
-
+            Model superModel=(Model)o;
+            superModel.setRequest(request);
+            Map map=new HashMap();
+            superModel.setLocalMap(map);
             //执行对象的方法
             result=(String)pm.getMethod(request.getParameter("eventName")).invoke(o);
-            //回收connection
-            conn.close();
+            System.out.println(JSONObject.fromObject(map).toString());
         }catch (Exception e){
             e.printStackTrace();
         }

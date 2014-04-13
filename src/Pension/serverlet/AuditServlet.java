@@ -1,10 +1,11 @@
 package Pension.serverlet;
 
+import Pension.common.AppException;
 import Pension.common.RtnType;
+import Pension.common.db.DbUtil;
 import Pension.common.sys.audit.AuditBusiness;
 import Pension.common.CommonDbUtil;
 import Pension.common.ParameterUtil;
-import Pension.jdbc.JdbcFactory;
 import net.sf.json.JSONArray;
 
 import javax.servlet.ServletException;
@@ -33,7 +34,7 @@ public class AuditServlet extends HttpServlet {
         }else{
 
             if(eventName!=null&&!"".equals(eventName)){
-                Connection conn= JdbcFactory.getConn();
+                Connection conn= DbUtil.get();
                 try {
                     conn.setAutoCommit(false);
                     request.setAttribute("message",doIf(eventName, request, ParameterUtil.toMap(request),conn));
@@ -47,11 +48,9 @@ public class AuditServlet extends HttpServlet {
                     }
                     e.printStackTrace();
                 }finally {
-                    if(null!=conn) try {
-                        conn.close();
+                    if(null!=conn) {
+                        DbUtil.close();
                         System.out.println("关闭连接");
-                    } catch (SQLException e) {
-                        e.printStackTrace();
                     }
                 }
                 request.getRequestDispatcher("page/output.jsp").forward(request,response);
@@ -83,7 +82,7 @@ public class AuditServlet extends HttpServlet {
         doGet(req,resp);
     }
 
-    private String queryAudit(CommonDbUtil commonDbUtil,String method,Map map,String userid,String dvcode){
+    private String queryAudit(CommonDbUtil commonDbUtil,String method,Map map,String userid,String dvcode) throws AppException {
         return auditbs.query(commonDbUtil,method,map,userid,dvcode);
     }
 

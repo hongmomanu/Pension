@@ -1,6 +1,7 @@
 package Pension.model.manager;
 
 import Pension.common.*;
+import Pension.model.Model;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
@@ -13,24 +14,22 @@ import java.util.*;
  * Date: 14-3-14
  * Time: 下午9:22
  */
-public class Function {
-    private HttpServletRequest request;
-    private Connection conn;
+public class Function extends Model {
 
     /*
     业务操作中的树,左边业务菜单的,根据人员权限的来显示
      */
     public String queryFunctionTree(){
-        CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
+        CommonDbUtil commonDbUtil=new CommonDbUtil();
         StringBuffer sb=new StringBuffer();
-        String node=request.getParameter("node");
+        String node=this.getRequest().getParameter("node");
         if(null==node){
-            node=request.getParameter("id");
+            node=this.getRequest().getParameter("id");
         }
         if(null==node||"".equals(node)||"root".equals(node)){
             node="businessmenu";
         }
-        String userid=(String)request.getSession().getAttribute("userid");
+        String userid=(String)this.getRequest().getSession().getAttribute("userid");
         if(null==userid){
             return RtnType.FAILURE;
         }
@@ -40,11 +39,11 @@ public class Function {
     查询功能全部树
      */
     public String queryFunctionTreeMng(){
-        CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
+        CommonDbUtil commonDbUtil=new CommonDbUtil();
         StringBuffer sb=new StringBuffer();
-        String node=request.getParameter("node");
+        String node=this.getRequest().getParameter("node");
         if(null==node){
-            node=request.getParameter("id");
+            node=this.getRequest().getParameter("id");
         }
         if(null==node||"".equals(node)||"root".equals(node)){
             node="-1";
@@ -56,11 +55,11 @@ public class Function {
     查询功能
      */
     public String queryFunctionById(){
-        CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
+        CommonDbUtil commonDbUtil=new CommonDbUtil();
         StringBuffer sb=new StringBuffer();
-        String node=request.getParameter("node");
+        String node=this.getRequest().getParameter("node");
         if(null==node){
-            node=request.getParameter("id");
+            node=this.getRequest().getParameter("id");
         }
         String sql="select * from xt_function where functionid='"+node+"'";
         List list=commonDbUtil.query(sql);
@@ -102,8 +101,8 @@ public class Function {
     }
 
     public String saveFunction(){
-        CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
-        Map map=ParameterUtil.toMap(request);
+        CommonDbUtil commonDbUtil=new CommonDbUtil();
+        Map map=ParameterUtil.toMap(this.getRequest());
         int result=0;
         if("-1".equals(map.get("functionid"))){
             map.put("functionid", MakeRandomString.genString());
@@ -116,8 +115,8 @@ public class Function {
         return result>0?RtnType.SUCCESS:RtnType.FAILURE;
     }
     public String deleteFunction(){
-        CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
-        String functionid=request.getParameter("functionid");
+        CommonDbUtil commonDbUtil=new CommonDbUtil();
+        String functionid=this.getRequest().getParameter("functionid");
         if(null!=functionid){
             commonDbUtil.execute("delete from xt_function where functionid='"+functionid+"'");
         }
@@ -130,10 +129,17 @@ public class Function {
         sql="select t.functionid id,t.title text,t.functionid,t.parent from xt_function t " +
                 " start with parent='totalroot'" +
                 " connect by prior functionid=parent";
-        CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
+        CommonDbUtil commonDbUtil=new CommonDbUtil();
         List list=commonDbUtil.query(sql);
         JSONArray jsonArray=JSONArray.fromObject(list);
         System.out.println(jsonArray.toString());
         return TreeGenerator.generate(JSONArray.fromObject(list),"functionid","parent","totalroot").toString();
     }
+
+    public void setTest2(){
+        String s=getRequest().getParameter("name");
+        System.out.println(s);
+        this.setTest(s+" by weipan");
+    }
+
 }

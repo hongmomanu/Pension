@@ -2,6 +2,7 @@ package Pension.common;
 
 import Pension.common.db.BaseDbQuery;
 import Pension.common.db.BaseDbUtil;
+import Pension.common.db.DbUtil;
 
 import java.sql.Connection;
 import java.util.List;
@@ -17,6 +18,11 @@ public class CommonDbUtil {
     private BaseDbUtil baseDbUtil=null;
     private BaseDbQuery baseDbQuery=null;
     public CommonDbUtil(Connection conn){
+        baseDbUtil=new BaseDbUtil(conn);
+        baseDbQuery=new BaseDbQuery(conn);
+    }
+    public CommonDbUtil(){
+        Connection conn= DbUtil.get();
         baseDbUtil=new BaseDbUtil(conn);
         baseDbQuery=new BaseDbQuery(conn);
     }
