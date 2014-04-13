@@ -47,6 +47,9 @@ define(function()
 
          })
 
+
+        local.cssCheckBox();
+
         /*家庭成员添加与删除*/
        /* $('#newfamilymemer_btn').bind('click', function () {
             $('#familymembersgrid').datagrid('appendRow', {name: '', relationship: '其它'});
@@ -72,7 +75,7 @@ define(function()
         });*/
 
 
-        local.find('a[opt=newfamilymemeradd_btn]').bind('click', function () {
+        local.find('a[opt=newfamilymemeradd_btn]').bind('click', function () {         //成员信息表添加
             familymembersgrid.datagrid('appendRow', {name: "", relationship: ""});
             var editIndex = familymembersgrid.datagrid('getRows').length-1;
             familymembersgrid.datagrid('selectRow', editIndex)
@@ -85,7 +88,7 @@ define(function()
             var index=$('#familymembersgrid').datagrid('getRowIndex',selectrow);
             $('#familymembersgrid').datagrid('deleteRow', index);*/
 
-        local.find('a[opt=delfamilymemer_btn]').bind('click', function () {
+        local.find('a[opt=delfamilymemer_btn]').bind('click', function () {               //成员信息表删除
 
             var selectrow= familymembersgrid.datagrid('getSelected');
             var index=familymembersgrid.datagrid('getRowIndex',selectrow);
@@ -164,7 +167,7 @@ define(function()
             })
         })
 
-        //根据身份证号初始化出生年月，性别，年龄
+
         /*$('#identityid').change(function()
         {
             require(['views/pension/ShowBirthDay'], function (ShowBirthDay)
@@ -174,14 +177,14 @@ define(function()
                     $('#birthdate').datebox('setValue',sex_birth.birthday) ;
                     $('#sex').combobox('setValue',sex_birth.sex) ;
                     $('#age').val(sex_birth.age);*/
-        local.find(':input[opt=identityid]').change(function()
+        local.find(':input[opt=identityid]').change(function()                                   //根据身份证号初始化出生年月，性别，年龄
         {
             require(['views/pension/ShowBirthDay'], function (ShowBirthDay)
             {
                 var sex_birth = ShowBirthDay.showBirthday(local.find(':input[opt=identityid]').val()) ;
                 if(sex_birth.birthday){
                     local.find(':input[opt=birthdate]').datebox('setValue',sex_birth.birthday) ;
-                    local.find(':input[opt=sex]').combobox('setValue',sex_birth.sex) ;
+                    local.find(':input[opt=sex]').combobox('setValue',sex_birth.sexcode) ;
                     local.find(':input[opt=age]').val(sex_birth.age);
 
                     /*$(birthday.target).val(sex_birth.birthday);
@@ -273,6 +276,8 @@ define(function()
                 local.find('div[opt=form_btns]').height(30);
             }
         });
+
+
 
 
     }

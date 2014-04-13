@@ -27,15 +27,19 @@
             <tr>
                 <td class="formtdtext">性别</td>
                 <td>
-                    <input opt="sex" class="easyui-combobox lazy-combobox"
+                    <input opt="sex" class="easyui-combobox"
                            name="gender"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=gender',
-                                method:'get',
+                                data:cj.getEnum('gender'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
             ">
+                    <!--
+                    url:'cb.do?searchtype=eyesight',
+                    method:'get' ,
+                    -->
                     <!--<select id="sex" class="easyui-combobox lazy-combobox" data-options="valueField: 'value',field:'sex'," name="gender" style="width: 100px">
                         <option value="man">男</option>
                         <option value="woman">女</option>
@@ -49,8 +53,8 @@
                            name="nation"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=NATION',
-                                method:'get',
+                                data:cj.getEnum('NATION'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
             ">
@@ -73,12 +77,13 @@
                 <td colspan="3"><input class="easyui-validatebox" name="address" data-options="required:true" style="width: 300px"></td>
                 <td class="formtdtext">人员类型<span style="color: red">*</span></td>
                 <td>
-                    <input class="easyui-combobox lazy-combobox"
+                    <input class="easyui-combobox" opt = "oldtype"
                            name="type"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=oldtype',
-                                method:'get',
+                                required:true,
+                                data:cj.getEnum('oldtype'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
             ">
@@ -100,8 +105,9 @@
                            name="live"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=liveplace',
-                                method:'get',
+                                required:true,
+                                data:cj.getEnum('liveplace'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -121,8 +127,9 @@
                            name="marriage"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=marriage',
-                                method:'get',
+                                required:true,
+                                data:cj.getEnum('marriage'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -140,8 +147,9 @@
                            name="economy"
                            style="width: auto"
                            data-options="
-                                url:'cb.do?searchtype=economy',
-                                method:'get',
+                                required:true,
+                                data:cj.getEnum('economy'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -164,8 +172,9 @@
                            name="culture"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=culture',
-                                method:'get',
+                                required:true,
+                                data:cj.getEnum('culture'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -197,8 +206,8 @@
                            name="hjj_kind"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=hjjkind',
-                                method:'get',
+                                data:cj.getEnum('hjjkind'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -213,8 +222,8 @@
                            name="hjj_type"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=hjjtype',
-                                method:'get',
+                                data:cj.getEnum('hjjtype'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -235,14 +244,15 @@
 <fieldset style="width: 900px;margin: 0px auto">
     <legend>享受服务类型</legend>
     <div opt="lrxsfwlx">
-        <label><input name="fwlx_jjyl" type="checkbox" value="100" />居家养老服务 </label>
-        <label><input name="fwlx_fwj" type="checkbox" value="100" />服务卷 </label>
-        <label><input name="fwlx_mftj" type="checkbox" value="100" />免费体检 </label>
-        <label><input name="fwlx_dylnb" type="checkbox" value="100" />订阅老年报 </label>
-        <label><input name="fwlx_jgyl" type="checkbox" value="100" />机构养老 </label>
-        <label><input name="fwlx_tyfw" type="checkbox" value="100" />体验服务 </label>
-        <label><input name="fwlx_hjj" type="checkbox" value="100" />呼叫机 </label>
-        <label><input name="fwlx_qt" type="checkbox" value="100" />其他 </label>
+        <!--<input name="gx_laom" type="checkbox" value="10" /><label><span style="width: 100px;">市级以上劳模</span></label>-->
+        <input name="fwlx_jjyl" type="checkbox" value="100" /><label>居家养老服务 </label>
+        <input name="fwlx_fwj" type="checkbox" value="100" /><label>服务卷 </label>
+        <input name="fwlx_mftj" type="checkbox" value="100" /><label>免费体检 </label>
+        <input name="fwlx_dylnb" type="checkbox" value="100" /><label>订阅老年报 </label>
+        <input name="fwlx_jgyl" type="checkbox" value="100" /><label>机构养老 </label>
+        <input name="fwlx_tyfw" type="checkbox" value="100" /><label>体验服务 </label>
+        <input name="fwlx_hjj" type="checkbox" value="100" /><label>呼叫机 </label>
+        <input name="fwlx_qt" type="checkbox" value="100" /><label>其他 </label>
     </div>
 </fieldset>
 
@@ -260,8 +270,8 @@
                            name="jz_yiweiz"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=neighborposition',
-                                method:'get',
+                                data:cj.getEnum('neighborposition'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -283,8 +293,8 @@
                            name="jz_erweiz"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=neighborposition',
-                                method:'get',
+                                data:cj.getEnum('neighborposition'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -329,8 +339,8 @@
                            name="jk_xuex"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=bloodtype',
-                                method:'get',
+                                data:cj.getEnum('bloodtype'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -347,8 +357,8 @@
                            name="jk_xuey"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=bloodpressure',
-                                method:'get',
+                                data:cj.getEnum('bloodpressure'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -364,8 +374,8 @@
                            name="jk_qibq"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=pacemaker',
-                                method:'get',
+                                data:cj.getEnum('pacemaker'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -384,8 +394,8 @@
                            name="jk_shil"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=eyesight',
-                                method:'get',
+                                data:cj.getEnum('eyesight'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -401,8 +411,8 @@
                            name="jk_tingl"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=hearing',
-                                method:'get',
+                                data:cj.getEnum('hearing'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -419,8 +429,8 @@
                            name="jk_huod"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=activity',
-                                method:'get',
+                                data:cj.getEnum('activity'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -435,8 +445,8 @@
                            name="jk_chux"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=goout',
-                                method:'get',
+                                data:cj.getEnum('goout'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -451,8 +461,8 @@
                            name="jk_jiyl"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=memory',
-                                method:'get',
+                                data:cj.getEnum('memory'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -469,8 +479,8 @@
                            name="jk_chuany"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=dress',
-                                method:'get',
+                                data:cj.getEnum('dress'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -485,8 +495,8 @@
                            name="jk_dingx"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=direction',
-                                method:'get',
+                                data:cj.getEnum('direction'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -501,8 +511,8 @@
                            name="jk_xiz"
                            style="width: 100px"
                            data-options="
-                                url:'cb.do?searchtype=bathe',
-                                method:'get',
+                                data:cj.getEnum('bathe'),
+                                editable:false,
                                 valueField:'id',
                                 textField:'text'
                      ">
@@ -515,26 +525,26 @@
             <tr>
                 <td class="formtdtext">日常卫生</td>                   <!--document.getElementById('shutou').checked=true-->
                 <td opt="lrrcws" colspan="5">
-                    <label><input opt="shutou" name="jk_rcws_st" type="checkbox" value="110" />自己梳头 </label>
-                    <label><input opt="xinian" name="jk_rcws_xl" type="checkbox" value="110" />自己洗脸 </label>
-                    <label><input opt="xitou" name="jk_rcws_xt" type="checkbox" value="110" />自己洗头 </label>
-                    <label><input opt="shuaya" name="jk_rcws_sy" type="checkbox" value="110" />自己刷牙 </label>
-                    <label><input opt="xijiao"  name="jk_rcws_xj" type="checkbox" value="110" />自己洗脚 </label>
-                    <label><input opt="tixu" name="jk_rcws_tx" type="checkbox" value="110" />自己剃须 </label>
-                    <label><input opt="xiuzhijia" name="jk_rcws_xzj" type="checkbox" value="110" />自己修指甲 </label>
-                    <label><input opt="xiyi" name="jk_rcws_xy" type="checkbox" value="110" />自己洗衣 </label>
+                    <input opt="shutou" name="jk_rcws_st" type="checkbox" value="110" /><label>自己梳头 </label>
+                    <input opt="xinian" name="jk_rcws_xl" type="checkbox" value="110" /><label>自己洗脸 </label>
+                   <input opt="xitou" name="jk_rcws_xt" type="checkbox" value="110" /> <label>自己洗头 </label>
+                    <input opt="shuaya" name="jk_rcws_sy" type="checkbox" value="110" /><label>自己刷牙 </label>
+                    <input opt="xijiao"  name="jk_rcws_xj" type="checkbox" value="110" /><label>自己洗脚 </label>
+                    <input opt="tixu" name="jk_rcws_tx" type="checkbox" value="110" /><label>自己剃须 </label>
+                    <input opt="xiuzhijia" name="jk_rcws_xzj" type="checkbox" value="110" /><label>自己修指甲 </label>
+                    <input opt="xiyi" name="jk_rcws_xy" type="checkbox" value="110" /><label>自己洗衣 </label>
                 </td>
             </tr>
             <tr>
                 <td class="formtdtext">病史情况</td>
                 <td opt="lrbsqk" colspan="5">
-                    <label><input name="jk_bs_gaoxy" type="checkbox" value="111" />高血压 </label>
-                    <label><input name="jk_bs_tangnb" type="checkbox" value="111" />糖尿病 </label>
-                    <label><input name="jk_bs_fengs" type="checkbox" value="111" />风湿病 </label>
-                    <label><input name="jk_bs_xinzb" type="checkbox" value="111" />心脏病 </label>
-                    <label><input name="jk_bs_chid" type="checkbox" value="111" />老年痴呆 </label>
-                    <label><input name="jk_bs_guz" type="checkbox" value="111" />扭伤骨折 </label>
-                    <label><input name="jk_bs_qit" type="checkbox" value="111" />其他 </label>
+                    <input name="jk_bs_gaoxy" type="checkbox" value="111" /><label>高血压 </label>
+                    <input name="jk_bs_tangnb" type="checkbox" value="111" /><label>糖尿病 </label>
+                    <input name="jk_bs_fengs" type="checkbox" value="111" /><label>风湿病 </label>
+                    <input name="jk_bs_xinzb" type="checkbox" value="111" /><label>心脏病 </label>
+                    <input name="jk_bs_chid" type="checkbox" value="111" /><label>老年痴呆 </label>
+                    <input name="jk_bs_guz" type="checkbox" value="111" /><label>扭伤骨折 </label>
+                    <input name="jk_bs_qit" type="checkbox" value="111" /><label>其他 </label>
                 </td>
             </tr>
             <tr>
@@ -597,11 +607,13 @@
                  <th class="lazy-combobox" data-options="field:'guanx',align:'center',width:100,editor:{
                  type:'combobox',
                  options:{
-                    required:true,
-                    url:'cb.do?searchtype=relation',
-                    width:60,
-                    valueField: 'id',
-                    textField: 'text'
+                     required:true,
+					 url:'cb.do?searchtype=relation',
+                     method:'get' ,
+                     editable:false,
+                     width:60,
+                     valueField: 'id',
+                     textField: 'text'
                  }
                  }">
                     关系<span style="color: red">*</span>
@@ -625,6 +637,8 @@
 							options:{
 							     required:true,
 								url:'cb.do?searchtype=gender',
+                                method:'get' ,
+                                editable:false,
                                 width:60,
                                 valueField: 'id',
                                 textField: 'text'
@@ -640,6 +654,8 @@
 							type:'combobox',
 							options:{
 								url:'cb.do?searchtype=culture',
+                                method:'get' ,
+                                editable:false,
                                 width:60,
                                 valueField: 'id',
                                 textField: 'text'
@@ -651,6 +667,8 @@
 							type:'combobox',
 							options:{
 								url:'cb.do?searchtype=NATION',
+                                method:'get' ,
+                                editable:false,
                                 width:60,
                                 valueField: 'id',
                                 textField: 'text'

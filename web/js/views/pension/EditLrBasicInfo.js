@@ -21,6 +21,8 @@ define(function()
 
         })
 
+        local.cssCheckBox();
+
         /*家庭成员列表添加新成员*/
         local.find('a[opt=newfamilymemeradd_btn]').bind('click', function () {
             familymembersgrid.datagrid('appendRow', {name: "", relationship: ""});
@@ -93,7 +95,7 @@ define(function()
                 var sex_birth = ShowBirthDay.showBirthday(local.find(':input[opt=identityid]').val()) ;
                 if(sex_birth.birthday){
                     local.find(':input[opt=birthdate]').datebox('setValue',sex_birth.birthday) ;
-                    local.find(':input[opt=sex]').combobox('setValue',sex_birth.sex) ;
+                    local.find(':input[opt=sex]').combobox('setValue',sex_birth.sexcode) ;
                     local.find(':input[opt=age]').val(sex_birth.age);
                 }
             })
@@ -113,6 +115,8 @@ define(function()
         {
             local.find('form[opt=pensionform]').form('load',res);
             var lr_id = res.lr_id;
+            local.cssCheckBox();
+            local.cssCheckBoxOnly();
             $.ajax({
                 url:"lr.do?model=hzyl.PensionPeopleInfoEdit&eventName=setGxDate",
                 data:{

@@ -56,6 +56,7 @@ public class LrbasicInfo {
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()){
                 Map<String,Object> obj = new HashMap<String, Object>();
+                obj.put("lr_id",rs.getString("lr_id"));
                 obj.put("name",rs.getString("name"));      //前面“name”与htm页面的name的命名一致，后面和数据库中的命名一致
                 obj.put("gender",rs.getString("gender"));
                 obj.put("birthday",rs.getString("birthd"));
@@ -87,21 +88,21 @@ public class LrbasicInfo {
 
     public String findLrbasicInfo(String lrname,String pages,String rows) {       //查询
         int total = 0;
-        int pagenum = Integer.parseInt(pages);
-        int rowsnum = Integer.parseInt(rows);
+        int pagenum = Integer.parseInt(pages);                                                     //获取当前页数
+        int rowsnum = Integer.parseInt(rows);                                                      //获取当前每页展示数据数
         Map<String,Object> searchmap = new HashMap<String, Object>();
         Connection conn = JdbcFactory.getConn("oracle");
         PreparedStatement pstmt = null;
-        String tsql = "select * from T_OLDPEOPLE WHERE NAME LIKE '"+lrname+"%'";
+        String tsql = "select * from T_OLDPEOPLE WHERE NAME LIKE '"+lrname+"%'";                      //查询所有数据，计算总页数
         total = total(tsql);
         String sql = "SELECT * FROM (SELECT t.*,ROWNUM rum FROM T_OLDPEOPLE t WHERE NAME LIKE '"+lrname+"%' AND ROWNUM<="+pagenum*rowsnum+") WHERE rum >"+(pagenum-1)*rowsnum+" ";
-        pstmt = JdbcFactory.getPstmt(conn,sql);
+        pstmt = JdbcFactory.getPstmt(conn,sql);                                                 //根据pages，rows查找相对应的数据
         ArrayList<Map<String,Object>> list = new ArrayList<Map<String, Object>>();
         try {
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()){
-                Map<String,Object> obj = new HashMap<String, Object>();
-                obj.put("lr_id",rs.getString("LR_ID"));
+                Map<String,Object> obj = new HashMap<String, Object>();                              //将展示的数据存入map中
+                obj.put("lr_id",rs.getString("lr_id"));
                 obj.put("name",rs.getString("name"));
                 obj.put("gender",rs.getString("gender"));
                 obj.put("birthday",rs.getString("birthd"));
@@ -110,8 +111,8 @@ public class LrbasicInfo {
                 list.add(obj);
                // total++;
             }
-            searchmap.put("total",total);
-            searchmap.put("rows",list);
+            searchmap.put("total",total);                                                                  //将总数据数传回页面
+            searchmap.put("rows",list);                                                                    //将当前页面的数据传回页面
             //rs.close();    //要记得close
             //return JSONArray.fromObject(list);
             return  JSONObject.fromObject(searchmap).toString();
@@ -130,22 +131,22 @@ public class LrbasicInfo {
         //return null;  //To change body of created methods use File | Settings | File Templates.
     }
 
-    public String editLrbasicInfo() {
-        String peopleid=request.getParameter("peopleid");
+   /* public String editLrbasicInfo() {                                                                     //对选中的行进行数据查询        ()
+        String peopleid=request.getParameter("lr_id");                                           //获取数据的主键
         CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
         //StringBuffer sb=new StringBuffer();
         //String node=request.getParameter(peopleid);
         String sql="SELECT * FROM T_OLDPEOPLE WHERE identityid='"+peopleid+"'";
-        List list=commonDbUtil.query(sql);
+        List list=commonDbUtil.query(sql);                                                            //根据主键查找对应的数据
         Map map=new HashMap();
         if(list.size()>0){
             map=(Map)list.get(0);
         }
         return JSONObject.fromObject(map).toString();
 
-    }
+    }*/
 
-    public int total(String sql){
+    public int total(String sql){                                                                            //根据sql语句计算数据总条数
         int total = 0;
         Connection conn = JdbcFactory.getConn("oracle");
         PreparedStatement pstmt = null;
