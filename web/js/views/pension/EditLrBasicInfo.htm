@@ -13,16 +13,16 @@
     <tr>
         <td class="formtdtext"  style="width: 100px">行政区划<span style="color: red">*</span></td>
         <td colspan="5"><input class="easyui-validatebox" name="districtid" data-options="required:true" style="width: 300px"></td>
-        <td rowspan="3" colspan="2" style="text-align: center">
-            <img src="img/noperson.gif" opt="personimg" alt="用户照片" width="120" height="70"></td>
+        <td rowspan="4" colspan="2" style="text-align: center">
+            <img name="pensionimgpath" src="img/noperson.gif" value="" opt="personimg" alt="用户照片" width="150px" height="120px">
+            <input name ="pensionimgpath" type="hidden">
+        </td>
     </tr>
     <tr>
         <td class="formtdtext" style="width: 100px">姓名<span style="color: red">*</span></td>
         <td><input class="easyui-validatebox" name="name" data-options="required:true"></td>
         <td class="formtdtext">身份证<span style="color: red">*</span></td>
         <td><input opt="identityid" name="identityid" class="easyui-validatebox" data-options="required:true,invalidMessage:'请输入正确的身份证号',validType:'identityid'"></td>
-        <td class="formtdtext">出生年月</td>
-        <td><input opt="birthdate" class="easyui-datebox" name="birthd" data-options="formatter:myformatter,parser:myparser"></td>
     </tr>
     <tr>
         <td class="formtdtext">性别</td>
@@ -39,6 +39,10 @@
         </td>
         <td class="formtdtext">年龄</td>
         <td><input opt="age" class="easyui-validatebox,field:'age'" name="age"></td>
+    </tr>
+    <tr>
+        <td class="formtdtext">出生年月</td>
+        <td><input opt="birthdate" class="easyui-datebox" name="birthd" data-options="formatter:myformatter,parser:myparser"></td>
         <td class="formtdtext">民族</td>
         <td>
             <input class="easyui-combobox lazy-combobox"
@@ -49,8 +53,7 @@
                                 editable:false,
                                 valueField:'id',
                                 textField:'text'
-            ">
-        </td>
+            "> </td>
     </tr>
 </table>
 <table class="formtable" style="width: 900px">

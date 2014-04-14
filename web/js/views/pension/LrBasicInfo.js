@@ -244,7 +244,7 @@ define(function()
             $('#imgwin').window('close');
         });*/
 
-        local.find('[opt=personimg]').click(function(){
+       /* local.find('[opt=personimg]').click(function(){
             alert(22222)
             $('#imgwin').window('open');
         }) ;
@@ -268,7 +268,21 @@ define(function()
                 $('#personimg_form').ajaxForm(options).submit() ;
 
             });
-        });
+        });*/
+
+
+        local.find('[opt=personimg]').click(function(){
+            require(['commonfuncs/Upload'],function(up){
+                up.show(
+                    function(data){
+                        alert(99) ;
+                        var a = eval('('+data+')');
+                        local.find('[opt=personimg]').attr('src', a.filepath) ;
+                        local.find('[name=pensionimgpath]').val(a.filepath) ;
+                    }
+                )
+            })
+        }) ;
 
         //固定按钮
         local.find('div[opt=pensionformpanel]').panel({

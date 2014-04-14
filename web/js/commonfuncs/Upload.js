@@ -12,6 +12,7 @@ define(function(){
                 if(d.filepath){
                     $('#file_upload_message').text(d.filepath)
                 }
+                f(data)
             }
         });
     }

@@ -46,7 +46,7 @@ define(function()
             var gxmess = JSON.stringify(familymembersgrid.datagrid('acceptChanges').datagrid('getData').rows);
             if(lrid!=null&&lrid!=""){
                 local.find('form[opt=pensionform]').form('submit',{
-                    url:lr.url(option,'update'),
+                    url:'lr.do?model=pension.PensionPeopleInfoEdit&eventName=update',
                     onSubmit:function(param){
                         var isValid = local.find('form[opt=pensionform]').form('validate');
                         param.p1 = gxmess;
@@ -115,6 +115,8 @@ define(function()
         {
             local.find('form[opt=pensionform]').form('load',res);
             var lr_id = res.lr_id;
+            var imgpath = res.pensionimgpath;
+            local.find('[opt=personimg]').attr('src', imgpath) ;
             local.cssCheckBox();
             local.cssCheckBoxOnly();
             $.ajax({
@@ -137,12 +139,29 @@ define(function()
 
         }
 
+        //底层固定按钮
         local.find('div[opt=pensioneditformpanel]').panel({
             onResize:function(width, height){
                 $(this).height($(this).height()-30);
                 local.find('div[opt=pensionbutton]').height(30);
             }
         });
+
+
+        //图片上传
+        local.find('[opt=personimg]').click(function(){
+            require(['commonfuncs/Upload'],function(up){
+                up.show(
+                    function(data){
+                        alert(99) ;
+                        var a = eval('('+data+')');
+                        local.find('[opt=personimg]').attr('src', a.filepath) ;
+                        local.find('[name=pensionimgpath]').val(a.filepath) ;
+                    }
+                )
+            })
+        }) ;
+
 
 
     }
