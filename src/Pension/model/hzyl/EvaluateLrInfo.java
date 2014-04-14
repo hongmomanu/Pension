@@ -32,7 +32,7 @@ public class EvaluateLrInfo implements IMultilevelAudit {
         Long id=commonDbUtil.getSequence("SEQ_T_NEEDASSESSMENT");
         map.put("pg_id",id);
         String tablename="t_needassessment";
-        AuditManager.addAudit(id);
+        AuditManager.addAudit(id );
         commonDbUtil.insertTableVales(map,"t_needassessmentsum");
         result=commonDbUtil.insertTableVales(map,tablename);
         return result>0? RtnType.SUCCESS:RtnType.FAILURE;
