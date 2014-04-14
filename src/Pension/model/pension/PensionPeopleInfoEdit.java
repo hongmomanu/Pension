@@ -24,9 +24,9 @@ import java.util.Map;
  * To change this template use File | Settings | File Templates.
  */
 public class PensionPeopleInfoEdit extends Model implements IMultilevelAudit {
-    private HttpServletRequest request;
-    private Connection conn;
 
+   /* private HttpServletRequest request;
+    private Connection conn;*/
 
 
   /*  public String save(){                 //老年基本信息保存方法
@@ -65,7 +65,8 @@ public class PensionPeopleInfoEdit extends Model implements IMultilevelAudit {
 
     public String update(){                 //老年基本信息修改方法
         int result=0;
-        CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
+        HttpServletRequest  request =this.getRequest();
+        CommonDbUtil commonDbUtil=new CommonDbUtil();
         String lr_id = request.getParameter("lr_id");             //获取唯一标识id
 
         String delsql = "DELETE FROM T_OLDSOCREL WHERE lr_id = '"+lr_id+"'";       //删除原先的关系数据 sql
@@ -102,8 +103,9 @@ public class PensionPeopleInfoEdit extends Model implements IMultilevelAudit {
     }
 
     public String editLrbasicInfo() {
+        HttpServletRequest  request =this.getRequest();
         String lr_id=request.getParameter("lr_id");                                                 //获取选中行的主键
-        CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
+        CommonDbUtil commonDbUtil=new CommonDbUtil();
         //StringBuffer sb=new StringBuffer();
         //String node=request.getParameter(peopleid);
         String sql="SELECT * FROM T_OLDPEOPLE WHERE lr_id='"+lr_id+"'";
@@ -117,7 +119,8 @@ public class PensionPeopleInfoEdit extends Model implements IMultilevelAudit {
     }
 
     public String setGxDate(){                                                                            //获取对应的成员关系数据
-        CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
+        HttpServletRequest  request =this.getRequest();
+        CommonDbUtil commonDbUtil=new CommonDbUtil();
         List<Map<String,Object>> gxlist = new ArrayList<Map<String,Object>>();
         String lr_id = request.getParameter("lr_id");
         String gxsql = "SELECT * FROM T_OLDSOCREL WHERE lr_id = "+lr_id;

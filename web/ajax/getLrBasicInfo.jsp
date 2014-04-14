@@ -5,7 +5,7 @@
   Time: 上午10:54
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page import="Pension.business.control.LrbasicInfo" %>
+<%@ page import="Pension.business.pension.LrbasicInfo" %>
 <%@ page language="java"  contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 
