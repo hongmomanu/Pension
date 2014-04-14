@@ -5,6 +5,7 @@ import Pension.common.ModelManager;
 import Pension.common.ParameterUtil;
 import Pension.common.RtnType;
 import Pension.common.db.DbUtil;
+import Pension.common.sys.ReqBean;
 import Pension.jdbc.JdbcFactory;
 import Pension.model.Model;
 import net.sf.json.JSONObject;
@@ -31,7 +32,7 @@ import java.util.Map;
  */
 public class LRServlet extends HttpServlet {
 
-
+    private ReqBean reqBean=new ReqBean();
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String eventName=(String)request.getParameter("eventName");
@@ -68,6 +69,7 @@ public class LRServlet extends HttpServlet {
             Class pm=  Class.forName(model);
             Model superModel=(Model)o;
             superModel.setRequest(request);
+            reqBean.setLocalReq(request);
             Map map=new HashMap();
             superModel.setLocalMap(map);
             //执行对象的方法

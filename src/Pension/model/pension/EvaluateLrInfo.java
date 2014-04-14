@@ -22,20 +22,11 @@ public class EvaluateLrInfo extends Model implements IMultilevelAudit {
     public String save(){
         CommonDbUtil commonDbUtil=new CommonDbUtil();
         Map map= ParameterUtil.toMap(this.getRequest());
-        String digest=this.getRequest().getParameter("name")+
-                this.getRequest().getParameter("identityid")+
-                this.getRequest().getParameter("registration");
         int result=0;
         Long id=commonDbUtil.getSequence("SEQ_T_NEEDASSESSMENT");
         map.put("pg_id",id);
         String tablename="t_needassessment";
-        User user=(User)this.getRequest().getSession().getAttribute("user");
-        AuditManager.addAudit(id,
-                this.getRequest().getParameter("functionid")
-                , tablename,
-                this.getClass().getName(), digest,
-                user.getLoginname(),user.getUsername(),user.getRegionid()
-                );
+        AuditManager.addAudit(id);
         commonDbUtil.insertTableVales(map,"t_needassessmentsum");
         result=commonDbUtil.insertTableVales(map,tablename);
         return result>0? RtnType.SUCCESS:RtnType.FAILURE;
