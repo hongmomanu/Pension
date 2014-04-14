@@ -35,7 +35,7 @@ define(function(){
             if(getrow!=null){
                     /* alert("edit"+getrow.name);*/
                     $.ajax({
-                        url:'lr.do?model=hzyl.PensionPeopleInfoEdit&eventName=editLrbasicInfo',             //提取选中行的数据
+                        url:'lr.do?model=pension.PensionPeopleInfoEdit&eventName=editLrbasicInfo',             //提取选中行的数据
                         data:{
                             lr_id:getrow.lr_id
                     },

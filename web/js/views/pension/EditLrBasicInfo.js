@@ -118,7 +118,7 @@ define(function()
             local.cssCheckBox();
             local.cssCheckBoxOnly();
             $.ajax({
-                url:lr.url(option,'setGxDate'),
+                url:'lr.do?model=pension.PensionPeopleInfoEdit&eventName=setGxDate',
                 data:{
                     lr_id:lr_id
                 },
