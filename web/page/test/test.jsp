@@ -1,40 +1,29 @@
 <%@ page contentType="text/html; charset=utf-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-    <title>文件上传页面</title>
-    <style>
-        form {
-            margin: 0;
-        }
-        textarea {
-            display: block;
-        }
-    </style>
+<link rel="stylesheet" type="text/css"  href="js/jqueryplugin/upload/uploadify.css">
+<script src="js/jqueryplugin/jquery.uploadify.min.js"></script>
 
-</head>
+<div style="width: 300px;height: 100px;background-color: red;">
+<input type="file" name="file_upload" id="file_upload" />
+</div>
+<p><a href="javascript:$('#file_upload').uploadify('upload')">上传</a>
+    <a href="javascript:alert('关闭')">关闭</a></p>
 
-<body>
-<h2>
-    使用commons-fileupload上传文件
-</h2>
-<hr />
-<!-- 文件上传的表单的属性必设值：method="post" enctype="multipart/form-data" -->
-<form action="upload.do" method="post" enctype="multipart/form-data">
-    <table>
-        <tr>
-            <td>
-                请选择要上传的文件
-            </td>
-            <td>
-                <input type="file" name="filePath" size="50" />
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2" align="center">
-                <input type="submit" value=" 上传 " />
-            </td>
-        </tr>
-    </table>
-</form>
-<br />
+<script type="text/javascript">
+    $(function () {
+        $("#file_upload").uploadify({
+            buttonClass:'some-class',buttonText:'BROWSE...',
+            auto: false,
+            height: 30,
+            swf: 'js/jqueryplugin/upload/uploadify.swf',
+            uploader: 'upload.do',
+            width: 120,
+            onUploadSuccess: function (file, data, response) {
+                console.log(data)
+            }
+        });
+    });
+
+
+
+</script>

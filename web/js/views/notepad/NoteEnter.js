@@ -40,6 +40,26 @@ define(function(){
                    iframe:'lr.do?model=test&page=upload'
                });
            })
+           local.find('[action=upload2]').bind('click',function(){
+               /*require(['text!views/notepad/Upload.htm'],function(uploadhtm){
+                   $.webox({
+                       height:350,
+                       width:500,
+                       top:130,
+                       bgvisibel:true,
+                       title:'<<span style="color: green;">上传</span>>',
+                       html:uploadhtm
+                   });
+               })*/
+               require(['commonfuncs/Upload'],function(up){
+                   up.show(
+                       function(data){
+                           alert(JSON.stringify(data))
+                       }
+                   )
+               })
+
+           })
        }
     }
 

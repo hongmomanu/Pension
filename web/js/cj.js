@@ -88,6 +88,11 @@ var cj=(function(){
         getEnum:function(ename){
             return getEnumlower(ename.toLowerCase())
         },
+        getSelected:function(){
+            require(['commonfuncs/TreeClickEvent'],function(js){
+                return js.getSelected();
+            })
+        },
         showContent:function(option){
 
             var f=function(show,load){
