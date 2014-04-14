@@ -5,7 +5,7 @@ define(function(){
             $(selection).combogrid({
                 panelWidth:350,
                 panelHeight:400,
-                url: 'lr.do?model=manager.Division&eventName=query',
+                url: 'lr.do?model=manager.Division&eventName=queryDivision',
                 mode:'remote',
                 fit:true,
                 pagination:true,
@@ -15,7 +15,7 @@ define(function(){
                 fitColumns:true,
                 onBeforeLoad: function(param){
                     if(param.q!=null){
-                        if(cj.getByteLen(param.q)<4){
+                        if(cj.getByteLen(param.q)<2){
                             return false;
                         }
                         param.q=param.q;
@@ -27,9 +27,13 @@ define(function(){
                     func(index,row)
                 },
                 columns:[[
-                    {field:'dvcode',title:'代码',width:60},
-                    {field:'dvname',title:'地名',width:50},
-                    {field:'parentname',title:'上级地名',width:50}
+                    {field:'dvcode',title:'代码',width:50},
+                    {field:'dvname',title:'地名',width:40},
+                    {field:'totalname',title:'全称',width:70,
+                        formatter:function(v,r,i){
+                            return v.length>3?v.substr(3):v;
+                        }
+                    }
                 ]]
             });
         }
