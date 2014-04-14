@@ -1,6 +1,8 @@
 package Pension.model.manager;
 
+import Pension.common.AppException;
 import Pension.common.CommonDbUtil;
+import Pension.common.RtnType;
 import Pension.model.Model;
 import net.sf.json.JSONObject;
 
@@ -16,20 +18,16 @@ import java.util.Map;
  * Time: 下午2:40
  */
 public class Division extends Model {
-    private HttpServletRequest request;
-    private Connection conn;
 
-    public String query(){
-        CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
-        String userid=request.getParameter("userid");
-        String keyword=request.getParameter("q");
-        String sql="select t.*,t2.dvname parentname from division t,division t2 " +
-                "where t.dvhigh=t2.dvcode and t.dvcode like '33010%' " +
-                "and (t.dvcode like '"+keyword+"%' or t.dvname like '"+keyword+"%')";
-        List list=commonDbUtil.query(sql);
-        Map map=new HashMap();
-        map.put("total",list.size());  //暂时总数这样写
-        map.put("rows",list);
-        return JSONObject.fromObject(map).toString();
+    public int queryDivision() throws AppException {
+        String userid=this.getRequest().getParameter("userid");
+        Integer page=Integer.parseInt(this.getRequest().getParameter("page"));
+        Integer rows=Integer.parseInt(this.getRequest().getParameter("rows"));
+
+        String keyword=this.getRequest().getParameter("q");
+        String sql="select t.* from division t where (t.dvcode like '"
+                +keyword+"%' or t.dvname like '%"+keyword+"%') order by t.dvcode asc";
+        this.query(sql,page,rows);
+        return RtnType.NORMALSUCCESS;
     }
 }
