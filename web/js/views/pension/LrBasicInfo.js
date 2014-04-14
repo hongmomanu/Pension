@@ -4,6 +4,7 @@ define(function()
     function render(local,parameters,res)
     {
         dd = local;
+        console.log(parameters);
         var familymembersgrid =   local.find('[opt=familymembersgrid]');      //家庭成员列表的对象
          // local.find(':input[opt=identityid]')
         /*上传照片*/
@@ -148,7 +149,7 @@ define(function()
              /* local.find('[opt=pensionform]')
              $('#pensionform').form('submit',{*/
             local.find('[opt=pensionform]').form('submit',{
-                url:'lr.do?model=hzyl.PensionPeopleInfo&eventName=save',            //将数据传递到后台进行保存
+                url:'lr.do?model=pension.PensionPeopleInfo&eventName=save',            //将数据传递到后台进行保存
                 onSubmit:function(param){
                     var isValid = local.find('[opt=pensionform]').form('validate');        //传送数据先进性数据验证
                     param.p1 = gxmess;                                                                    //将家庭成员数据独立传递
