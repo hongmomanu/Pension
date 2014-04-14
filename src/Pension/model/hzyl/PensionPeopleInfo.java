@@ -49,12 +49,7 @@ public class PensionPeopleInfo implements IMultilevelAudit {
 
 
 
-        AuditManager.addAudit(id, "mHLcDiwTflgEshNKIiOV", "T_OLDPEOPLE",          //审核功能添加
-                this.getClass().getName(), briefmessage,                                       // + new Date().toString()
-                request.getSession().getAttribute("loginname").toString(),
-                request.getSession().getAttribute("username").toString(),
-                request.getSession().getAttribute("dvcode").toString()
-        );
+        AuditManager.addAudit(id);
         //AuditManager.addAudit(id);
         result=commonDbUtil.insertTableVales(map,"t_oldpeople");                     //将老年基础数据存入数据库中
         return result>0? RtnType.SUCCESS:RtnType.FAILURE;

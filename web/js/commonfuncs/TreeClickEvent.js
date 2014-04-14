@@ -48,6 +48,9 @@ define(function(){
             var index = mainTab.tabs('getTabIndex',pp);
             mainTab.tabs('close',index);
         },
+        getSelected:function(){
+            return mainTab.tabs('getSelected');
+        },
         closeTabByTitle:function(t){
             mainTab.tabs('close',t);
         },

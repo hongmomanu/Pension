@@ -25,6 +25,7 @@
     <title>杭州市民政养老救助管理系统</title>
 
     <script type="text/javascript" src="js/extLocation.js"></script>
+
     <script type="text/javascript">
 
         /*session全局变量*/
@@ -59,11 +60,15 @@
     </script>
     <link rel="stylesheet" type="text/css" href="index.css">
     <script src="js/cj.js"></script>
+
+
     <script data-main="js/mainapp" src="require.js"></script>
     <script type="text/javascript"  src="js/commonfuncs/jquery.json-2.4.js"></script>
 
     <link rel="stylesheet" type="text/css"  href="js/commonfuncs/ext/popwin.css">
     <script type="text/javascript"  src="js/commonfuncs/ext/popwin.js"></script>
+    <link rel="stylesheet" type="text/css"  href="js/jqueryplugin/upload/uploadify.css">
+    <script src="js/jqueryplugin/jquery.uploadify.min.js"></script>
 
 </head>
 <body class="easyui-layout" id="mainlayoutpanel">

@@ -1,9 +1,9 @@
 package Pension.model.notepad;
 
-import Pension.common.CommonDbUtil;
-import Pension.common.ParameterUtil;
-import Pension.common.RtnType;
+import Pension.common.*;
+import Pension.common.db.DbUtil;
 import Pension.common.sys.audit.AuditManager;
+import Pension.model.Model;
 import net.sf.json.JSONObject;
 import oracle.sql.CLOB;
 
@@ -20,20 +20,18 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class NoteEnter {
-    private HttpServletRequest request;
-    private Connection conn;
+public class NoteEnter extends Model {
 
     public String save()  {//先保存clob再问题信息
-        CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
-        Map map= ParameterUtil.toMap(request);
+        CommonDbUtil commonDbUtil=new CommonDbUtil();
+        Map map= ParameterUtil.toMap(this.getRequest());
         Long cid=commonDbUtil.getSequence("SEQ_T_NOTEPADC");
         Long aid=commonDbUtil.getSequence("SEQ_T_NOTEPADA");
         int result=0;
 
         PreparedStatement stmt = null;// 加载SQL语句
         try {
-            stmt = conn.prepareStatement("insert into t_notepadc(notecid,noteclob) values (?,?)");
+            stmt = DbUtil.get().prepareStatement("insert into t_notepadc(notecid,noteclob) values (?,?)");
             String noteclob=map.get("noteclob").toString();
             Reader clobReader = new StringReader(noteclob);
             stmt.setLong(1,cid);
@@ -63,29 +61,26 @@ public class NoteEnter {
         return result>-1? RtnType.SUCCESS:RtnType.FAILURE;
     }
 
-    public String query(){
-        CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
-        Integer page=Integer.parseInt(request.getParameter("page"));
-        Integer rows=Integer.parseInt(request.getParameter("rows"));
+    public String query() throws AppException {
+        CommonDbUtil commonDbUtil=new CommonDbUtil();
+        Integer page=Integer.parseInt(this.getRequest().getParameter("page"));
+        Integer rows=Integer.parseInt(this.getRequest().getParameter("rows"));
 
         Map map= new HashMap();
         String sql="select noteid,text,xiangmulb,wengtilb,sender,sendee,digest,createdate,begindate,enddate,settlement,notecid from t_notepada";
-        List list=commonDbUtil.query("SELECT * FROM (SELECT tt.*, ROWNUM ro FROM ("+sql+") tt WHERE ROWNUM <="+(page)*rows+") WHERE ro > "+(page-1)*rows);
-        int count=commonDbUtil.query(sql).size();
-        map.put("total",count);
-        map.put("rows",list);
-        return JSONObject.fromObject(map).toString();
+
+        return JSONObject.fromObject(CommQuery.query(sql,page,rows)).toString();
     }
 
     public String clobExport() {
         CLOB clob = null;
-        Long notecid=Long.parseLong(request.getParameter("notecid"));
+        Long notecid=Long.parseLong(this.getRequest().getParameter("notecid"));
 
         String sql = "select * from t_notepadc where notecid=?";
         PreparedStatement pstmt = null;
         String content = "";
         try {
-            pstmt = conn.prepareStatement(sql);
+            pstmt = DbUtil.get().prepareStatement(sql);
             pstmt.setLong(1,notecid);
             ResultSet rs = pstmt.executeQuery();
 
@@ -126,7 +121,9 @@ public class NoteEnter {
             s = br.readLine();
         }
         sb.append("</body> </html >");
-        reString = "<!DOCTYPE html><html> <head> <link rel=\"stylesheet\" href=\"http://localhost/kindeditor/themes/default/default.css\"> </head> <body>"+
+        reString = "<!DOCTYPE html><html> <head>" +
+                "<script src=\"js/extLocation.js\"></script>" +
+                "<script> document.write('<link rel=\"stylesheet\" type=\"text/css\" id=\"swicth-style\" href=\"'+extKindeditor+ 'themes/default/default.css\"><\\/>'); </script> </head> <body>"+
                 sb.toString();
         return reString;
     }
