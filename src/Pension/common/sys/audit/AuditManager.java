@@ -14,6 +14,11 @@ import java.util.Map;
  * Time: 下午8:01
  */
 public class AuditManager {
+    private static final ThreadLocal<Map> localMap = new ThreadLocal<Map>();
+
+    public void setLocalMap(Map map){
+
+    }
     public static void addAudit(Long paramLong)
     {
         //_$1().addAudit(paramLong);

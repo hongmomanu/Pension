@@ -3,6 +3,7 @@ package Pension.model;
 import Pension.common.AppException;
 import Pension.common.CommQuery;
 import Pension.common.IParam;
+import Pension.common.sys.audit.AuditBusiness;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -46,4 +47,10 @@ public class Model {
         localMap.get().put(IParam.MESSAGE,message);
     }
 
+    public Map queryCurrentAudit(String functionid,String tprkey) throws AppException {
+        return new AuditBusiness().queryCurrentAudit(functionid,tprkey);
+    }
+    public Map queryHistoryAudit(String functionid,String tprkey) throws AppException {
+        return new AuditBusiness().queryHistoryAudit(functionid,tprkey);
+    }
 }

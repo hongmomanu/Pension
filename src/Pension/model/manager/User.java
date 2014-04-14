@@ -13,18 +13,17 @@ import java.sql.Connection;
 import java.util.*;
 
 public class User extends Model {
-    private HttpServletRequest request;
-    private Connection conn;
+
 
     /*
     业务操作中的树
      */
     public String queryDivisionTree(){
-        CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
+        CommonDbUtil commonDbUtil=new CommonDbUtil();
         StringBuffer sb=new StringBuffer();
-        String node=request.getParameter("node");
+        String node=this.getRequest().getParameter("node");
         if(null==node){
-            node=request.getParameter("id"); //如果node没有值,则取id的值
+            node=this.getRequest().getParameter("id"); //如果node没有值,则取id的值
         }
         if(null==node||"".equals(node)||"root".equals(node)){
             node="330100"; //浙江省杭州市
@@ -33,9 +32,9 @@ public class User extends Model {
     }
 
     public String queryUser(){
-        CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
+        CommonDbUtil commonDbUtil=new CommonDbUtil();
         StringBuffer sb=new StringBuffer();
-        String dvcode=request.getParameter("dvcode");
+        String dvcode=this.getRequest().getParameter("dvcode");
         if(null==dvcode||"".equals(dvcode)){
             dvcode="330100"; //浙江省杭州市
         }
@@ -44,8 +43,8 @@ public class User extends Model {
     }
 
     public String saveUser(){
-        CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
-        Map map= ParameterUtil.toMap(request);
+        CommonDbUtil commonDbUtil=new CommonDbUtil();
+        Map map= ParameterUtil.toMap(this.getRequest());
         //map.put("createdate",) 指定时间
         int result=0;
         if("-1".equals(map.get("userid"))){

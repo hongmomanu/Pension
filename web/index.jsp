@@ -33,7 +33,7 @@
         var username="<%=user.getUsername()%>";
         var displayname=username;
         var regionid=<%=user.getRegionid()%>;
-        var dvname<%=user.getDvname()%>;
+        var dvname='<%=user.getDvname()%>';
 
 
     </script>

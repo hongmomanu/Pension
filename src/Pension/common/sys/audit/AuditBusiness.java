@@ -74,4 +74,20 @@ public class AuditBusiness {
         return RtnType.SUCCESS;
     }
 
+    public Map queryCurrentAudit(String functionid,String tprkey) throws AppException {
+        Map map=CommQuery.query("select a.* from opauditbean b,opaudit a where a.auditid=b.auditid and b.functionid='"
+                +functionid+"' and b.tprkey='"+tprkey+"'");
+        List list=(List)map.get(IParam.ROWS);
+        if(list.size()>0){
+            return (Map)list.get(0);
+        }
+        return null;
+    }
+
+    public Map queryHistoryAudit(String functionid,String tprkey) throws AppException {
+        Map map=CommQuery.query("select h.* from opauditbean b,opaudithistory h where h.auditid=b.auditid and b.functionid='"
+                +functionid+"' and b.tprkey='"+tprkey+"'");
+        return map;
+    }
+
 }

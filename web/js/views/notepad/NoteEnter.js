@@ -30,6 +30,16 @@ define(function(){
                    }
                })
            })
+           local.find('[action=upload]').bind('click',function(){
+               $.webox({
+                   height:350,
+                   width:500,
+                   top:130,
+                   bgvisibel:true,
+                   title:'<<span style="color: green;">上传</span>>',
+                   iframe:'lr.do?model=test&page=upload'
+               });
+           })
        }
     }
 

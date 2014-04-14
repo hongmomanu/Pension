@@ -1,5 +1,6 @@
 package Pension.model.manager;
 
+import Pension.common.AppException;
 import Pension.common.CommonDbUtil;
 import Pension.common.ParameterUtil;
 import Pension.common.RtnType;
@@ -19,33 +20,25 @@ import java.util.Map;
  * Time: 下午1:02
  */
 public class CodeMaintenance extends Model {
-    private HttpServletRequest request;
-    private Connection conn;
-
-    public String queryCode9(){
-        Integer page=Integer.parseInt(request.getParameter("page"));
-        Integer rows=Integer.parseInt(request.getParameter("rows"));
-        CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
+    public int queryCode9() throws AppException {
+        Integer page=Integer.parseInt(this.getRequest().getParameter("page"));
+        Integer rows=Integer.parseInt(this.getRequest().getParameter("rows"));
+        CommonDbUtil commonDbUtil=new CommonDbUtil();
         String sql="select * from aa09 order by aaa100 asc";
-        List list=commonDbUtil.query("SELECT * FROM (SELECT tt.*, ROWNUM ro FROM ("+sql+
-                ") tt WHERE ROWNUM <="+(page)*rows+") WHERE ro > "+(page-1)*rows);
-        int count=commonDbUtil.query(sql).size();
-        Map map=new HashMap();
-        map.put("total",count);
-        map.put("rows",list);
-        return JSONObject.fromObject(map).toString();
+        this.query(sql,page,rows);
+        return RtnType.NORMALSUCCESS;
     }
 
     public String queryCode10(){
-        CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
-        String aaa100=request.getParameter("aaa100");
+        CommonDbUtil commonDbUtil=new CommonDbUtil();
+        String aaa100=this.getRequest().getParameter("aaa100");
         String sql="select * from aa10 where lower(aaa100)=lower('"+aaa100+"') order by aaa102 asc";
         return JSONArray.fromObject(commonDbUtil.query(sql)).toString();
     }
 
     public String saveCode9(){
-        CommonDbUtil commonDbUtil=new CommonDbUtil(conn);
-        Map map= ParameterUtil.toMap(request);
+        CommonDbUtil commonDbUtil=new CommonDbUtil();
+        Map map= ParameterUtil.toMap(this.getRequest());
         String isnew=map.get("isnew").toString();
         int count=0;
         String tableName="aa09";

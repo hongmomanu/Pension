@@ -192,7 +192,7 @@ function saveUserRole(){
         success: function(res){
             $("#win_rolegrid").window('close');
             var obj=eval('('+res+')');
-            if(obj.success=='true'){
+            if(obj.success=='true'||obj.success){
                 $.messager.alert('提示','操作成功!','info');
             }else{
                 $.messager.alert('提示','操作失败!','info');
