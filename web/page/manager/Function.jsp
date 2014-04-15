@@ -139,8 +139,8 @@
                         <td><input type="text" name="owner"></td>
                     </tr>
                     <tr>
-                        <td class="formtdtext">备注:</td>
-                        <td colspan="3"><textarea name="otherfamilyinfo" style="height: 60px;width: 60%;"></textarea></td>
+                        <td class="formtdtext">业务摘要:</td>
+                        <td colspan="3"><textarea name="bsdigest" style="height: 60px;width: 60%;"></textarea></td>
 
                     </tr>
                 </table>

@@ -28,7 +28,7 @@ public class ModelManager {
 
     public static Object getModel(String model){
         Object o= modelMap.get(model);
-        boolean casch=true;
+        boolean casch=!true;//开发时设置为不缓存
         if(null==o){
             try {
                 if(casch){

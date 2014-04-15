@@ -5,5 +5,5 @@ package Pension.business.pension;
  * Date: 14-4-14
  * Time: 上午11:08
  */
-public class TestBs {
+public class TestBS {
 }

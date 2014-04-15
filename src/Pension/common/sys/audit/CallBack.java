@@ -18,12 +18,16 @@ import java.util.Map;
 public class CallBack {
     public static void doAudit(Long id) throws Exception {
         AuditBean ab=new AuditBean();
-        String sql="select b.*,a.auflag,a.auuser,a.audate,a.aulevel,a.audesc,a.auendflag from opauditbean b,opaudit a " +
-                " where b.auditid=a.auditid and b.auditid=?";
+        String sql="select b.*,a.auflag,a.auuser,a.audate,a.aulevel,a.audesc,a.auendflag,f.location from xt_function f,opauditbean b,opaudit a " +
+                " where f.functionid=b.functionid and b.auditid=a.auditid and b.auditid=?";
         PreparedStatement pstmt= DbUtil.get().prepareStatement(sql);
         pstmt.setLong(1, id);
         ResultSet rs=pstmt.executeQuery();
+        String location=null;
         if(rs.next()){
+            if(null==location){
+               location=rs.getString("location");
+            }
            ab.setAuditid(id);
            ab.setClassname(rs.getString("classname"));
            ab.setTname(rs.getString("tname"));
@@ -41,8 +45,8 @@ public class CallBack {
         rs.close();
         pstmt.close();
 
-        if(null!=ab.getClassname()){
-            Class c=Class.forName(ab.getClassname());
+        if(null!=location){
+            Class c=Class.forName("Pension.model."+location);
             Class[] iters=c.getInterfaces();
             boolean b=false;
             for(Class i:iters){

@@ -54,7 +54,7 @@ define(function(){
             }
         })
     }
-    var initIdentityidandOtherComboxGrid=function(local){
+    var initIdentityidandOtherComboxGrid=function(local,option){
         window.setTimeout(function(){
 
             local.find(':input[opt=identityid]').combogrid({
@@ -79,9 +79,9 @@ define(function(){
                 },
                 onClickRow:function(index,row){
                     $.ajax({
-                        url:'lr.do?model=Test&eventName=editLrbasicInfo',
+                        url:'lr.do?model=pension.EvaluateLrInfo&eventName=findLrBaseInfo',
                         data:{
-                            peopleid:row.peopleid
+                            lr_id:row.lr_id
                         },
                         type:'post',
                         success:function(res){

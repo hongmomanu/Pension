@@ -1,6 +1,7 @@
 package Pension.model.pension;
 
 import Pension.business.entity.User;
+import Pension.business.pension.EvaluateBS;
 import Pension.common.CommonDbUtil;
 import Pension.common.ParameterUtil;
 import Pension.common.RtnType;
@@ -100,5 +101,14 @@ public class EvaluateLrInfo extends Model implements IMultilevelAudit {
         }
         dbUtil.execute(sql2);
         return null;
+    }
+
+    public String findLrBaseInfo(){
+        Integer lr_id=Integer.parseInt(this.getRequest().getParameter("lr_id"));
+        Object obj=new EvaluateBS().findLrBaseInfoById(lr_id);
+        if(null!=obj){
+            return JSONObject.fromObject(obj).toString();
+        }
+        return RtnType.FAILURE;
     }
 }
