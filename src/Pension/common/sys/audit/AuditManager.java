@@ -62,7 +62,7 @@ public class AuditManager {
         if(list.size()>0){
             return JSONArray.fromObject(((Map)list.get(0)).get("bsdigest"));
         }else{
-            System.out.println("没有业务摘要的相关配置");
+            System.out.println("没有functionid或者没有业务摘要的相关配置");
             return null;
         }
     }
