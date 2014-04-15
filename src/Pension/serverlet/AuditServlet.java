@@ -1,12 +1,13 @@
 package Pension.serverlet;
 
-import Pension.business.entity.User;
 import Pension.common.AppException;
 import Pension.common.RtnType;
 import Pension.common.db.DbUtil;
 import Pension.common.sys.audit.AuditBusiness;
 import Pension.common.CommonDbUtil;
 import Pension.common.ParameterUtil;
+import Pension.common.sys.util.CurrentUser;
+import Pension.common.sys.util.SysUtil;
 import net.sf.json.JSONArray;
 
 import javax.servlet.ServletException;
@@ -34,6 +35,8 @@ public class AuditServlet extends HttpServlet {
         }else{
 
             if(eventName!=null&&!"".equals(eventName)){
+                CurrentUser user=(CurrentUser)request.getSession().getAttribute("user");
+                SysUtil.setCacheCurrentUser(user);//获得当前用户信息
                 DbUtil.get();
                 try {
                     DbUtil.begin();
@@ -58,8 +61,8 @@ public class AuditServlet extends HttpServlet {
 
     private String doIf(String en,HttpServletRequest request,Map map) throws Exception {
         String method=request.getParameter("method");
-        User user=(User)request.getSession().getAttribute("user");
-        String loginname= user.getLoginname();
+        CurrentUser user= SysUtil.getCacheCurrentUser();
+        String loginname= user.getLoginName();
         String dvcode=user.getRegionid();
         if("queryAudit".equals(en)){
             return auditBusiness.query(method, map, loginname, dvcode);

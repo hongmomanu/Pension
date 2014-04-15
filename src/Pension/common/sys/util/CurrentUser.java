@@ -18,6 +18,7 @@ public class CurrentUser {
     private Date logonTime;
     private String userOtherInfo;
     private List<Object> functionList;
+    private String dvname;
 
 
     public String getUserid() {
@@ -90,5 +91,13 @@ public class CurrentUser {
 
     public void setFunctionList(List<Object> functionList) {
         this.functionList = functionList;
+    }
+
+    public String getDvname() {
+        return dvname;
+    }
+
+    public void setDvname(String dvname) {
+        this.dvname = dvname;
     }
 }

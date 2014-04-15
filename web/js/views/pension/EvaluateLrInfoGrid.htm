@@ -11,7 +11,7 @@
             <th rowspan="2" data-options="field:'ro',width:80,align:'center',formatter:function(value,rowData,rowIndex)
             {
                 var str='<div></div>';
-                str=$(str).append('<a action=&quot;edit&quot;>编辑</a>');
+                str=$(str).append('<a action=&quot;edit&quot;>变更</a>');
                 str=$(str).append('<a action=&quot;logout&quot;>注销</a>');
                 return str.html();
             }">操作</th>
@@ -83,8 +83,4 @@
     </thead>
 </table>
 
-<div id="tb">
-    <input id="lrname" class="easyui-validatebox">
-    <a id="search" href="#" class="easyui-linkbutton" iconCls='icon-search'>查询</a>
-    <a id="edit" href="#" class="easyui-linkbutton" iconCls='icon-edit'>编辑</a>
-</div>
+

@@ -4,9 +4,10 @@ import Pension.common.AppException;
 import Pension.common.CommonDbUtil;
 import Pension.common.ParameterUtil;
 import Pension.common.RtnType;
+import Pension.common.sys.util.CurrentUser;
+import Pension.common.sys.util.SysUtil;
 import Pension.model.Model;
 import net.sf.json.JSONObject;
-import Pension.business.entity.User;
 import javax.servlet.http.HttpServletRequest;
 import java.sql.Connection;
 import java.util.HashMap;
@@ -25,7 +26,7 @@ public class Role extends Model {
 
     public int queryRole() throws AppException {
         CommonDbUtil commonDbUtil=new CommonDbUtil();
-        User user=(User)this.getRequest().getSession().getAttribute("user");
+        CurrentUser user= SysUtil.getCacheCurrentUser();
         String userid=user.getUserid();
         String sql="select r.*,'true' selected from xt_role r";
         if(null!=userid){

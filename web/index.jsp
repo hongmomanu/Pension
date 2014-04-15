@@ -1,13 +1,13 @@
 <%@ page import="Pension.listener.SessionListener" %>
-<%@ page import="Pension.business.entity.User" %>
+<%@ page import="Pension.common.sys.util.CurrentUser" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <% Object o=request.getSession().getAttribute("user");
-    User user=new User();
+    CurrentUser user=new CurrentUser();
     if(o==null) {
         response.sendRedirect("login.jsp");
     }else{
-        user=(User)o;
+        user=(CurrentUser)o;
     }
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -31,7 +31,7 @@
         /*session全局变量*/
         var onlinenums=<%= SessionListener.size()%>;
         var userid='<%=user.getUserid()%>';
-        var username="<%=user.getUsername()%>";
+        var username="<%=user.getUserName()%>";
         var displayname=username;
         var regionid=<%=user.getRegionid()%>;
         var dvname='<%=user.getDvname()%>';

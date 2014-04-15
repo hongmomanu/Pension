@@ -5,14 +5,22 @@ define(function(){
             title:'查看',
             htmfile:'text!views/pension/EvaluateLrInfo.htm',
             jsfile:'views/pension/EvaluateLrInfo',
-            location:option.location,
+            location:'pension.EvaluateLrInfo',
             functionid:option.functionid,
             readonly:true,
             tprkey:row.pg_id
         })
     }
-    var edit=function(row){
-        alert('去编辑')
+    var edit=function(option,row){
+        cj.showContent({
+            url:'lr.do?model=pension.EvaluateLrInfo&eventName=queryById',
+            title:'变更',
+            htmfile:'text!views/pension/EvaluateLrInfoChange.htm',
+            jsfile:'views/pension/EvaluateLrInfoChange',
+            location:'pension.EvaluateLrInfoChange',
+            functionid:'XGcoe8yNX0DfdZHn4CMa',
+            tprkey:row.pg_id
+        })
     }
     var logout=function(row){
         alert('去注销')

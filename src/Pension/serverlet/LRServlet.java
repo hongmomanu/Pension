@@ -6,6 +6,8 @@ import Pension.common.ParameterUtil;
 import Pension.common.RtnType;
 import Pension.common.db.DbUtil;
 import Pension.common.sys.ReqBean;
+import Pension.common.sys.util.CurrentUser;
+import Pension.common.sys.util.SysUtil;
 import Pension.jdbc.JdbcFactory;
 import Pension.model.Model;
 import net.sf.json.JSONObject;
@@ -68,8 +70,10 @@ public class LRServlet extends HttpServlet {
             Object o=ModelManager.getModel(model);
             Class pm=  Class.forName(model);
             Model superModel=(Model)o;
-            superModel.setRequest(request);
-            reqBean.setLocalReq(request);
+            superModel.setRequest(request);  //各模块用
+            reqBean.setLocalReq(request);    //审核功能 用
+            CurrentUser user=(CurrentUser)request.getSession().getAttribute("user");
+            SysUtil.setCacheCurrentUser(user);//获得当前用户信息
             Map map=new HashMap();
             superModel.setLocalMap(map);
             //执行对象的方法
