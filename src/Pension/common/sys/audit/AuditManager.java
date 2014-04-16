@@ -1,11 +1,12 @@
 package Pension.common.sys.audit;
 
-import Pension.business.entity.User;
 import Pension.common.AppException;
 import Pension.common.CommQuery;
 import Pension.common.CommonDbUtil;
 import Pension.common.IParam;
 import Pension.common.sys.ReqBean;
+import Pension.common.sys.util.CurrentUser;
+import Pension.common.sys.util.SysUtil;
 import Pension.jdbc.JdbcFactory;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -30,7 +31,7 @@ public class AuditManager {
     {
         ReqBean reqBean=new ReqBean();
         HttpServletRequest req=reqBean.getLocalReq();
-        User user=(User)req.getSession().getAttribute("user");
+        CurrentUser user= SysUtil.getCacheCurrentUser();
         String functionid=(String)req.getParameter("functionid");
         //_$1().addAudit(paramLong);
         CommonDbUtil dbUtil=new CommonDbUtil();
@@ -41,14 +42,14 @@ public class AuditManager {
         map.put("tprkey",paramLong);
         map.put("functionid",functionid);
         map.put("digest",digest);
-        map.put("loginname",user.getLoginname());
-        map.put("username",user.getUsername());
+        map.put("loginname",user.getLoginName());
+        map.put("username",user.getUserName());
         map.put("dvcode",user.getRegionid());
 
         dbUtil.insertTableVales(map,"opauditbean");
-        String sql_auditbean="insert into opauditbean(auditid,beanvalue) values("+auditid+","+paramLong+")";
+        //String sql_auditbean="insert into opauditbean(auditid,beanvalue) values("+auditid+","+paramLong+")";
         String sql_audit="insert into opaudit(auditid,auflag,auendflag,aulevel)values("+auditid+",0,0,'0')";
-        dbUtil.execute(sql_auditbean);
+        //dbUtil.execute(sql_auditbean);
         dbUtil.execute(sql_audit);
     }
     private static JSONArray getFunctionBSDigest(String functionid) {

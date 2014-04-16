@@ -1,9 +1,9 @@
 package Pension.serverlet;
 
 
-import Pension.business.entity.User;
 import Pension.common.CommonDbUtil;
 import Pension.common.PageUtil;
+import Pension.common.sys.util.CurrentUser;
 
 import java.io.IOException;
 import java.util.List;
@@ -22,15 +22,22 @@ public class Login extends HttpServlet {
         String username=request.getParameter("username");
         String password=request.getParameter("password");
         CommonDbUtil commonDbUtil=new CommonDbUtil();
-        List list=commonDbUtil.query("select userid,loginname,regionid,username,regionid,(select dvname from division where dvcode=regionid) dvname  from xt_user where loginname='"+username+"' and passwd='"+password+"'");
+        List list=commonDbUtil.query("select userid,passwd,loginname,username,regionid,(select dvname from division where dvcode=regionid) dvname  from xt_user where loginname='"+username+"' and passwd='"+password+"'");
         if(list.size()>0){
             Map map=(Map)list.get(0);
-            User user=new User();
+            CurrentUser user=new CurrentUser();
             try {
-                PageUtil.CopyProperties(map,user);
+                //PageUtil.CopyProperties(map,user);
+                user.setUserid(map.get("userid").toString());
+                user.setPasswd(map.get("passwd").toString());
+                user.setLoginName(map.get("loginname").toString());
+                user.setUserName(map.get("username").toString());
+                user.setRegionid(map.get("regionid").toString());
+                user.setDvname(map.get("dvname").toString());
+
                 request.getSession().setAttribute("user",user);
                 System.out.print("************************************");
-                System.out.println(user.getUsername());
+                System.out.println(user.getUserName());
             } catch (Exception e) {
                 e.printStackTrace();
             }

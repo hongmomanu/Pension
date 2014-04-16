@@ -1,6 +1,5 @@
 package Pension.model.pension;
 
-import Pension.business.entity.User;
 import Pension.business.pension.EvaluateBS;
 import Pension.common.CommonDbUtil;
 import Pension.common.ParameterUtil;

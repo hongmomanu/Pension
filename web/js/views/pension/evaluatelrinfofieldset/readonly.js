@@ -59,11 +59,12 @@ define(function(){
         },
         info0:function(local,res){
             $.ajax({
-                url:'lr.do?model=hzyl.EvaluateLrInfo&eventName=queryPeople',
+                url:'lr.do?model=pension.EvaluateLrInfo&eventName=queryPeople',
                 data:{id:res.lr_id},
                 success:function(restext){
                     var res=eval('('+restext+')')
                     local.find('form').form('load',res)
+                    local.find('fieldset[opt=info0] img').attr('src',res.pensionimgpath)
                 }
             })
         }

@@ -1,7 +1,8 @@
 package Pension.model.manager;
 
-import Pension.business.entity.User;
 import Pension.common.*;
+import Pension.common.sys.util.CurrentUser;
+import Pension.common.sys.util.SysUtil;
 import Pension.model.Model;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -27,12 +28,7 @@ public class Function extends Model {
         if(null==node||"".equals(node)||"root".equals(node)){
             node="businessmenu";
         }
-        Object obj=this.getRequest().getSession().getAttribute("user");
-        if(null==obj){
-            return RtnType.FAILURE;
-            //throw new AppException("业务问题");
-        }
-        User user=(User)obj;
+        CurrentUser user= SysUtil.getCacheCurrentUser();
         return query(commonDbUtil,node,user.getUserid());
     }
     /*
