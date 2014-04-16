@@ -292,6 +292,17 @@ define(function()
             }
         });
 
+        //行政区划
+        require(['commonfuncs/division'],function(js){
+            js.initDivisionWidget(
+                local.find(":input[name=districtid]") ,
+                function(index,row){
+                    })
+                /*function(index,row){
+                    $(':input[name=address]').val(row.parentname+row.dvname);
+                }*/
+        })
+
 
 
 
