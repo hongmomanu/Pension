@@ -14,7 +14,10 @@
                 <td class="formtdtext"  style="width: 100px">行政区划<span style="color: red">*</span></td>
                 <!--<td colspan="5"><input class="easyui-validatebox" name="districtid" data-options="required:true" style="width: 300px"></td>-->
                 <!--<td colspan="5"><input class="easyui-combotree" name="districtid" data-options="url:'ajax/divisiontree.jsp',method:'get',required:true" style="width: 300px"></td>-->
-                <td colspan="5"><input name="districtid" class="easyui-validatebox" data-options="idField:'dvcode', textField:'dvname',required:true" style="width: 300px"></td>
+                <!--<td colspan="4"><input name="districtid" class="easyui-validatebox" data-options="required:true,idField:'dvcode', textField:'dvname'" style="width: 300px"></td>-->
+                <td colspan="5"><input class="easyui-combotree" opt="divisiontree"
+                           data-options="required:true,valueField:'divisionpath'"
+                           style="width: 300px;"  name="districtid"></td>
                 <td rowspan="4" colspan="2" style="text-align: center">
                     <img name="pensionimgpath" src="img/noperson.gif" value="" opt="personimg" alt="用户照片" width="150px" height="120px">
                     <input name ="pensionimgpath" type="hidden">
@@ -720,7 +723,7 @@
                 <table style="text-align: right;width: 450px">
                     <tr style="text-align: right">
                        <!-- <td class="formtdtext" style="width: 70px">制单人:</td>-->
-                        <td style="width: 100px" >制单人:<input class="easyui-validatebox" name="operators"></td>
+                        <td style="width: 100px" >制单人:<input class="easyui-validatebox" name="operators" opt="operators"></td>
                     </tr>
                 </table>
             </td>
@@ -737,11 +740,11 @@
     <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-back'">返回</a>
 </div>-->
 
-<div id="imgwin" class="easyui-window"  title="选择头像" style="width:500px;height:160px"
-     data-options="iconCls:'icon-save',modal:true,closed:true">                             <!-- class="easyui-window"-->
+<!--<div id="imgwin" class="easyui-window"  title="选择头像" style="width:500px;height:160px"
+     data-options="iconCls:'icon-save',modal:true,closed:true">                             &lt;!&ndash; class="easyui-window"&ndash;&gt;
 
     <form id="personimg_form" method="POST">
-       <!-- 图片名称:<input class="easyui-validatebox" type="text" name="name" data-options="required:true"><br>-->
+       &lt;!&ndash; 图片名称:<input class="easyui-validatebox" type="text" name="name" data-options="required:true"><br>&ndash;&gt;
         照片:<input type="file" name="my_file" opt="my_file" />
     </form>
     <div style="text-align:center;padding:5px">
@@ -749,9 +752,9 @@
         <a href="#" id="imgwin_cancel"  class="easyui-linkbutton" >取消</a>
     </div>
 
-</div>
+</div>-->
 
-<div id="testdiv"></div>
+<!--<div id="testdiv"></div>-->
 
 </form>
 
@@ -759,9 +762,9 @@
 
 <div opt="form_btns">
     <div opt="pensionbutton" style="width: 900px;text-align: center;margin: 0px auto">
-        <a opt="pensionsubmit" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">保存返回</a>
-        <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">保存添加</a>
-        <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-back'">返回</a>
+        <a opt="pensionsubmit" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">保存添加</a>
+        <!--<a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">保存添加</a>
+        <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-back'">返回</a>-->
     </div>
    <!-- <div style="text-align:center;padding:5px">
         <a href="#">人员基本信息</a>

@@ -12,7 +12,9 @@
 <table class="formtable" style="width: 900px">
     <tr>
         <td class="formtdtext"  style="width: 100px">行政区划<span style="color: red">*</span></td>
-        <td colspan="5"><input name="districtid" data-options="idField:'dvcode', textField:'dvname',required:true" style="width: 300px"></td>
+        <td colspan="5"><input class="easyui-combotree" opt="divisiontree"
+                               data-options="required:true,valueField:'divisionpath'"
+                               style="width: 300px;"  name="districtid"></td>
         <td rowspan="4" colspan="2" style="text-align: center">
             <img name="pensionimgpath" src="img/noperson.gif" value="" opt="personimg" alt="用户照片" width="150px" height="120px">
             <input name ="pensionimgpath" type="hidden">
@@ -596,7 +598,7 @@
 <div opt="pensionbutton" style="width: 900px;text-align: center;margin: 0px auto">
     <a opt="pensionsubmit" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">修改保存</a>
     <!--<a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">保存添加</a>-->
-    <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-back'">返回</a>
+    <!--<a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-back'">返回</a>-->
 </div>
 
 <div>
