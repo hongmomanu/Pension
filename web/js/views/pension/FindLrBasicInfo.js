@@ -21,6 +21,7 @@ define(function(){
             //$('#lrxxid').datagrid({
             local.find('[opt=lrxxid]').datagrid({                                                        //获取查询结果，填充到datagrid表单中
                 url:'ajax/searchLrBasicInfo.jsp' ,
+                method:"post",
                 queryParams:{
                     lrname:searchname
                     /* ,                      ifchick:click*/

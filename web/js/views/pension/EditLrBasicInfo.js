@@ -116,9 +116,11 @@ define(function()
             local.find('form[opt=pensionform]').form('load',res);
             var lr_id = res.lr_id;
             var imgpath = res.pensionimgpath;
-            local.find('[opt=personimg]').attr('src', imgpath) ;
+            var division = res.districtid;
             local.cssCheckBox();
             local.cssCheckBoxOnly();
+            local.find('[opt=personimg]').attr('src', imgpath) ;
+
             $.ajax({
                 url:'lr.do?model=pension.PensionPeopleInfoEdit&eventName=setGxDate',
                 data:{
@@ -135,7 +137,10 @@ define(function()
                 }
 
             })
-        }else{
+            window.setTimeout(function(){
+                local.find(':input[opt=divisiontree]').combotree('setValue',division);
+            },500);
+
 
         }
 
@@ -163,12 +168,33 @@ define(function()
         }) ;
 
         //行政区划
-        require(['commonfuncs/division'],function(js){
+        /*require(['commonfuncs/division'],function(js){
             js.initDivisionWidget(
                 local.find(":input[name=districtid]") ,
                 function(index,row){
             })
-        })
+        })*/
+
+        var divisiontree = local.find(':input[opt=divisiontree]') ;
+
+        divisiontree.combotree({
+            url:'ajax/gettreedivisionnew.jsp?onlychild=true&node=330000',
+            method: 'get',
+            onLoadSuccess:function(load,data){
+                if(!this.firstloaded&&!option){
+                    divisiontree.combotree('setValue', data.divisionpath);
+                    this.firstloaded=true;
+                }
+            },
+            onBeforeExpand: function (node) {
+                divisiontree.combotree("tree").tree("options").url
+                    = "ajax/gettreedivisionnew.jsp?onlychild=true&node=" + node.parentid;
+            },
+            onHidePanel: function () {
+                divisiontree.combotree('setValue',
+                    divisiontree.combotree('tree').tree('getSelected').divisionpath);
+            }
+        });
 
     }
 

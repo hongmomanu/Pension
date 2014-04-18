@@ -5,7 +5,7 @@ define(function()
     {
         dd = local;
         console.log(parameters);
-        var familymembersgrid =   local.find('[opt=familymembersgrid]');      //家庭成员列表的对象
+        var familymembersgrid =   local.find('[opt=familymembersgrid]');                  //家庭成员列表的对象
          // local.find(':input[opt=identityid]')
         /*上传照片*/
         /*$('#personimg').click(function () {
@@ -38,7 +38,7 @@ define(function()
         });*/
 
         /*身份证号验证*/
-         require(['commonfuncs/PersonidValidator'],function(PersonidValidator){
+         require(['commonfuncs/PersonidValidator'],function(PersonidValidator){           //身份证号验证
              $.extend($.fn.validatebox.defaults.rules, {
                  identityid: {
                      validator: PersonidValidator.IdentityCodeValid,
@@ -148,11 +148,13 @@ define(function()
              }else{ */
              /* local.find('[opt=pensionform]')
              $('#pensionform').form('submit',{*/
-            local.find('[opt=pensionform]').form('submit',{
+            local.find('[opt=pensionform]').form('submit',{                                        //保存提交
                 url:'lr.do?model=pension.PensionPeopleInfo&eventName=save',            //将数据传递到后台进行保存
                 onSubmit:function(param){
-                    var isValid = local.find('[opt=pensionform]').form('validate');        //传送数据先进性数据验证
                     param.p1 = gxmess;                                                                    //将家庭成员数据独立传递
+                    param.functionid = parameters.functionid;
+                    var isValid = local.find('[opt=pensionform]').form('validate');        //传送数据先进性数据验证
+                    console.log(isValid);
                     return isValid;
                 },
                 success:function(data){
@@ -200,7 +202,7 @@ define(function()
         local.find(':input[opt=setdaytime]').datebox('setValue',myformatter(new Date())); //设置填表时间
 
 
-        familymembersgrid.datagrid({                     //点击行进行编辑
+        familymembersgrid.datagrid({                                                                    //点击行进行编辑
             onDblClickRow:function(rowIndex,rowData){
                    $(this).datagrid('beginEdit',rowIndex);
             }
@@ -271,7 +273,7 @@ define(function()
         });*/
 
 
-        local.find('[opt=personimg]').click(function(){
+        local.find('[opt=personimg]').click(function(){                                            //图片上传
             require(['commonfuncs/Upload'],function(up){
                 up.show(
                     function(data){
@@ -284,24 +286,45 @@ define(function()
             })
         }) ;
 
-        //固定按钮
-        local.find('div[opt=pensionformpanel]').panel({
+
+        local.find('div[opt=pensionformpanel]').panel({                                            //固定按钮
             onResize:function(width, height){
                 $(this).height($(this).height()-30);
                 local.find('div[opt=form_btns]').height(30);
             }
         });
 
-        //行政区划
-        require(['commonfuncs/division'],function(js){
+
+        /*require(['commonfuncs/division'],function(js){                                  //行政区划
             js.initDivisionWidget(
                 local.find(":input[name=districtid]") ,
                 function(index,row){
                     })
-                /*function(index,row){
-                    $(':input[name=address]').val(row.parentname+row.dvname);
-                }*/
-        })
+
+        })*/
+        var divisiontree = local.find(':input[opt=divisiontree]') ;                               //行政区划的树结构
+
+        divisiontree.combotree({
+            url:'ajax/gettreedivisionnew.jsp?onlychild=true&node=330000',
+            method: 'get',
+            onLoadSuccess:function(load,data){
+                if(!this.firstloaded&&!res){
+                    divisiontree.combotree('setValue', data.divisionpath);
+                    this.firstloaded=true;
+                }
+            },
+            onBeforeExpand: function (node) {
+                divisiontree.combotree("tree").tree("options").url
+                    = "ajax/gettreedivisionnew.jsp?onlychild=true&node=" + node.parentid;
+            },
+            onHidePanel: function () {
+                divisiontree.combotree('setValue',
+                    divisiontree.combotree('tree').tree('getSelected').divisionpath);
+            }
+        });
+
+
+        local.find(':input[opt=operators]').val(username);
 
 
 

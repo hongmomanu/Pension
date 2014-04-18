@@ -93,7 +93,7 @@ public class LrbasicInfo {
         Map<String,Object> searchmap = new HashMap<String, Object>();
         Connection conn = JdbcFactory.getConn("oracle");
         PreparedStatement pstmt = null;
-        String tsql = "select * from T_OLDPEOPLE WHERE NAME LIKE '"+lrname+"%'";
+        String tsql = "select * from T_OLDPEOPLE WHERE NAME LIKE '%"+lrname+"%'";
         total = total(tsql);
         String sql = "SELECT * FROM (SELECT t.*,ROWNUM rum FROM T_OLDPEOPLE t WHERE NAME LIKE '"+lrname+"%' AND ROWNUM<="+pagenum*rowsnum+") WHERE rum >"+(pagenum-1)*rowsnum+" ";
         pstmt = JdbcFactory.getPstmt(conn,sql);
