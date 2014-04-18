@@ -136,17 +136,24 @@ define(function(){
 
 
         local.find('a[action=save]').bind('click',function(){
-            local.find('form[opt=mainform]').form('submit',{
-                url:lr.url(option,'save'),
-                success: function(res){
-                   cj.ifSuccQest(res,"已操作成功是否关闭此页",function(){
-                       require(['commonfuncs/TreeClickEvent'],function(js){
-                           js.closeCurrentTab();
-                       })
-                   })
-                }
+            require(['commonfuncs/Htmldb'],function(js){
+                local.find('form[opt=mainform]').form('submit',{
+                    url:lr.url(option,'save'),
+                    onSubmit: function(param){
+                        param.originalpage=js.parse(local)
+                    },
+                    success: function(res){
+                        cj.ifSuccQest(res,"已操作成功是否关闭此页",function(){
+                            require(['commonfuncs/TreeClickEvent'],function(js){
+                                js.closeCurrentTab();
+                            })
+                        })
+                    }
+                })
             })
+
         })
+
     }
     var b=function(mylocal,option){
         ll=mylocal;

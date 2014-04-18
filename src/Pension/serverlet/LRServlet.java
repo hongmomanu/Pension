@@ -5,7 +5,9 @@ import Pension.common.ModelManager;
 import Pension.common.ParameterUtil;
 import Pension.common.RtnType;
 import Pension.common.db.DbUtil;
+import Pension.common.sys.LogBean;
 import Pension.common.sys.ReqBean;
+import Pension.common.sys.userlog.UserLog;
 import Pension.common.sys.util.CurrentUser;
 import Pension.common.sys.util.SysUtil;
 import Pension.jdbc.JdbcFactory;
@@ -74,6 +76,10 @@ public class LRServlet extends HttpServlet {
             reqBean.setLocalReq(request);    //审核功能 用
             CurrentUser user=(CurrentUser)request.getSession().getAttribute("user");
             SysUtil.setCacheCurrentUser(user);//获得当前用户信息
+            if(model.contains("pension")){
+                UserLog.AddLog();       //用户日志//以后可以使用注解的方式
+            }
+
             Map map=new HashMap();
             superModel.setLocalMap(map);
             //执行对象的方法
