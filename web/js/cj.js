@@ -64,7 +64,7 @@ var cj=(function(){
 
         ifSuccQest: function (res, info, fun, title) {
             var d = eval('(' + res + ')');
-            if (d.success == true || d.success == 'true') {
+            if (!d||d.success == true || d.success == 'true') {
                 cj.question(info, fun, title)
             }
         },
@@ -107,6 +107,18 @@ var cj=(function(){
             }
 
             require(['commonfuncs/TreeClickEvent','commonfuncs/LoadFromData'],f)
+        },
+        showHtml:function(title,texthtml){
+            require(['commonfuncs/TreeClickEvent'],function(js){
+                js.closeTabByTitle(title);
+                js.showHtml(title,texthtml);
+            })
+        },
+        searchLog:function(functionid){
+            require(['commonfuncs/TreeClickEvent'],function(js){
+                var location='log.do?method='+functionid
+                js.ShowIframe(location,'','操作日志')
+            })
         }
     }
     return commonj;

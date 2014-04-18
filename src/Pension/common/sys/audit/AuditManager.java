@@ -4,6 +4,7 @@ import Pension.common.AppException;
 import Pension.common.CommQuery;
 import Pension.common.CommonDbUtil;
 import Pension.common.IParam;
+import Pension.common.sys.LogBean;
 import Pension.common.sys.ReqBean;
 import Pension.common.sys.util.CurrentUser;
 import Pension.common.sys.util.SysUtil;
@@ -29,51 +30,15 @@ public class AuditManager {
 
     public static void addAudit(Long paramLong)
     {
-        ReqBean reqBean=new ReqBean();
-        HttpServletRequest req=reqBean.getLocalReq();
-        CurrentUser user= SysUtil.getCacheCurrentUser();
-        String functionid=(String)req.getParameter("functionid");
-        //_$1().addAudit(paramLong);
-        CommonDbUtil dbUtil=new CommonDbUtil();
+        LogBean logBean =new LogBean();
+        Long opseno=Long.parseLong(logBean.getLocalLog().get("opseno").toString());
+        System.out.println("操作日志流水号-审核:"+opseno);
+        CommonDbUtil dbUtil =new CommonDbUtil();
         Long auditid=dbUtil.getSequence("SEQ_OPAUDIT");
-        Map map=new HashMap();
-        String digest=makeDigest(getFunctionBSDigest(functionid),req);
-        map.put("auditid",auditid);
-        map.put("tprkey",paramLong);
-        map.put("functionid",functionid);
-        map.put("digest",digest);
-        map.put("loginname",user.getLoginName());
-        map.put("username",user.getUserName());
-        map.put("dvcode",user.getRegionid());
-
-        dbUtil.insertTableVales(map,"opauditbean");
-        //String sql_auditbean="insert into opauditbean(auditid,beanvalue) values("+auditid+","+paramLong+")";
         String sql_audit="insert into opaudit(auditid,auflag,auendflag,aulevel)values("+auditid+",0,0,'0')";
-        //dbUtil.execute(sql_auditbean);
+        String sql_userlog="update sysuserlog set auditid="+auditid +" ,tprkey="+paramLong+" where opseno="+opseno;
         dbUtil.execute(sql_audit);
-    }
-    private static JSONArray getFunctionBSDigest(String functionid) {
-        Map map= null;
-        try {
-            map = CommQuery.query("select bsdigest from xt_function where functionid='" + functionid + "'");
-        } catch (AppException e) {
-            e.printStackTrace();
-        }
-        List list=(List)map.get(IParam.ROWS);
-        if(list.size()>0){
-            return JSONArray.fromObject(((Map)list.get(0)).get("bsdigest"));
-        }else{
-            System.out.println("没有functionid或者没有业务摘要的相关配置");
-            return null;
-        }
+        dbUtil.execute(sql_userlog);
     }
 
-    private static String makeDigest(JSONArray array,HttpServletRequest request){
-        StringBuffer sb=new StringBuffer();
-        for(int i=0;i<array.size();i++){
-            JSONObject obj=array.getJSONObject(i);
-            sb.append(obj.getString("label")+request.getParameter(obj.getString("property"))+" ");
-        }
-        return sb.toString();
-    }
 }

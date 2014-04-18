@@ -24,13 +24,17 @@ define(function(){
                         alert('未实现readonly接口')
                     }
                 }else{
-                    js.render(getLocaltab(),option)
+                    var localtab=getLocaltab();
+                    js.render(localtab,option)
+                    localtab.find('a[action=searchlog]').bind('click',function(){
+                        cj.searchLog(option.functionid)
+                    })
                 }
 
             })
         },
         ShowIframe:function(value,jsfile,title,customparam){
-            var require_render=function(jsfile){
+            var require_render=function(){
                 if(mainTab.tabs('exists',title)){
                     mainTab.tabs('select', title);
                     return;
@@ -41,7 +45,7 @@ define(function(){
                     closable: true
                 });
             };
-            require_render(jsfile);
+            require_render();
         },
         closeCurrentTab:function(){
             var pp = mainTab.tabs('getSelected');
@@ -56,6 +60,13 @@ define(function(){
         },
         test:function(t){
             alert(t)
+        },
+        showHtml:function(title,texthtml){
+            mainTab.tabs('add',{
+                title:title,
+                content:texthtml,
+                closable:true
+            })
         }
 
 

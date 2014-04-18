@@ -133,7 +133,9 @@ h2 {
 .yw-busiapproval{
     background: url('img/busiicon/busiapproval.png')  no-repeat center center;
 }
-
+.icon-log{
+    background:url('img/mylog.gif') no-repeat;
+}
 .layout-split-north{
     border-bottom:5px solid #efefef;
 }
