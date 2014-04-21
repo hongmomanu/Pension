@@ -3,5 +3,7 @@
 serverUrl="http://ics7891pc/"
 extEasyui=serverUrl+"easyui/";
 extKindeditor=serverUrl+"kindeditor/";
+extJqueryui=serverUrl+"jqueryui/"
 uploadBase=serverUrl+"jasper/"
+
 

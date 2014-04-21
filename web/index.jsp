@@ -57,6 +57,11 @@
                 'kindeditor-min.js"><\/script>');
         document.write('<script type="text/javascript"  src="'+extKindeditor+
                 'lang/zh_CN.js"><\/script>');
+
+        document.write('<link rel="stylesheet" type="text/css" id="swicth-style" href="'+extJqueryui+
+                'css/ui-lightness/jquery-ui-1.10.4.custom.css"><\/>');
+        document.write('<script type="text/javascript"  src="'+extJqueryui+
+                'js/jquery-ui-1.10.4.custom.js"><\/script>');
     </script>
     <link rel="stylesheet" type="text/css" href="index.css">
     <script src="js/cj.js"></script>

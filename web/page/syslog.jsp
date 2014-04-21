@@ -120,7 +120,6 @@
                 cj.showHtml('原始界面',res);
             }
         })
-
     }
 
 </script>

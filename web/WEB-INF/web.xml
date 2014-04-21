@@ -105,6 +105,7 @@
         <url-pattern>/log.do</url-pattern>
     </servlet-mapping>
 
+
     <servlet>
         <servlet-name>uploadServlet</servlet-name>
         <servlet-class>Pension.serverlet.UploadServlet</servlet-class>

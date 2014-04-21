@@ -18,8 +18,8 @@ import java.util.Map;
 public class CallBack {
     public static void doAudit(Long id) throws Exception {
         AuditBean ab=new AuditBean();
-        String sql="select b.*,a.auflag,a.auuser,a.audate,a.aulevel,a.audesc,a.auendflag,f.location from xt_function f,opauditbean b,opaudit a " +
-                " where f.functionid=b.functionid and b.auditid=a.auditid and b.auditid=?";
+        String sql="select b.tprkey,a.auditid,a.auflag,a.auuser,a.audate,a.aulevel,a.audesc,a.auendflag,f.location from xt_function f,sysuserlog b,opaudit a " +
+                " where f.functionid=b.functionid and b.opseno=a.opseno and a.auditid=?";
         PreparedStatement pstmt= DbUtil.get().prepareStatement(sql);
         pstmt.setLong(1, id);
         ResultSet rs=pstmt.executeQuery();
@@ -29,8 +29,6 @@ public class CallBack {
                location=rs.getString("location");
             }
            ab.setAuditid(id);
-           ab.setClassname(rs.getString("classname"));
-           ab.setTname(rs.getString("tname"));
            ab.setTprkey(rs.getString("tprkey"));
 
            Map currentAudit=new HashMap();

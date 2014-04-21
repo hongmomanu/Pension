@@ -34,8 +34,9 @@ public class AuditBusiness {
                 "   and u.loginname = '"+loginname+"'";
         String sql_divsion;//=" and exists(select 1 from dvhz dv where dv.dvhigh='"+dvcode+"' and dv.dvcode=b.dvcode)";
         sql_divsion=" and (b.dvcode like '"+dvcode+"%' or '"+dvcode+"'='330100')" ;
-        String sql="select a.auflag,a.aulevel,a.audesc,b.*,'1' audefault from opaudit a,opauditbean b,xt_user u where u.loginname=b.loginname and a.auditid=b.auditid and b.functionid='"
-                +method+"' and a.auendflag='0' and to_char(to_number(a.aulevel)+1) in("+sub+") "+sql_divsion +" order by b.auditid desc";
+        String sql="select a.auditid,a.auflag,a.aulevel,a.audesc,b.opseno,b.digest,b.tprkey,b.functionid,b.bsnyue,b.bstime,b.dvcode,b.loginname,b.username," +
+                " '1' audefault from opaudit a,sysuserlog b,xt_user u where u.loginname=b.loginname and a.opseno=b.opseno and b.functionid='"
+                +method+"' and a.auendflag='0' and to_char(to_number(a.aulevel)+1) in("+sub+") "+sql_divsion +" order by b.opseno desc";
 
         return JSONObject.fromObject(CommQuery.query(sql,page,rows)).toString();
     }

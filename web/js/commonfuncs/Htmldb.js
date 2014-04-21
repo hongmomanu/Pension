@@ -18,10 +18,15 @@ define(function(){
             }
         })
 
-        var myclone=$(local).clone();
+        var myclone=$(local.find('div.panel-body')[0]).clone();
         myclone.find(selections).each(function(){   //删除easyui样式
             $(this).removeAttr('data-options').css('display','inline')
                 .removeClass('easyui-combobox').attr('comboname');
+        })
+        myclone.find('input').each(function(){
+            $(this).removeClass('combogrid-f')
+            $(this).removeClass('combo-f')
+            $(this).removeClass('easyui-validatebox')
         })
         myclone.find('textarea,:input').each(function(){      //为input元素赋值
             var name=$(this).attr('name');

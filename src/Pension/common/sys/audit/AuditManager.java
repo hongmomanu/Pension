@@ -34,9 +34,8 @@ public class AuditManager {
         Long opseno=Long.parseLong(logBean.getLocalLog().get("opseno").toString());
         System.out.println("操作日志流水号-审核:"+opseno);
         CommonDbUtil dbUtil =new CommonDbUtil();
-        Long auditid=dbUtil.getSequence("SEQ_OPAUDIT");
-        String sql_audit="insert into opaudit(auditid,auflag,auendflag,aulevel)values("+auditid+",0,0,'0')";
-        String sql_userlog="update sysuserlog set auditid="+auditid +" ,tprkey="+paramLong+" where opseno="+opseno;
+        String sql_audit="insert into opaudit(opseno,auditid,auflag,auendflag,aulevel)values("+opseno+",SEQ_OPAUDIT.NEXTVAL,0,0,'0')";
+        String sql_userlog="update sysuserlog set  tprkey="+paramLong+" where opseno="+opseno;
         dbUtil.execute(sql_audit);
         dbUtil.execute(sql_userlog);
     }

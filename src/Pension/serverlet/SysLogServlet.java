@@ -26,6 +26,7 @@ public class SysLogServlet  extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String eventName=(String)request.getParameter("eventName");
         String method=(String)request.getParameter("method");
+
         if(method==null){
             request.setAttribute("message","缺少请求信息");
             request.getRequestDispatcher("page/output.jsp").forward(request,response);

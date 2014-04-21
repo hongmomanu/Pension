@@ -291,17 +291,6 @@ div.yw-block > span{
     border-bottom: 1px solid red;
 }
 
-#zhongdajibing li{
-    color: green;
-    font-size: 15px;
-}
-.bigSaveBtn{
-    color:green;
-    width: 20px;
-    height: 20px;
-    display: block;
-}
-
 /*radio checkbox打钗样式*/
 .newRadio input+label {
     padding-left: 26px;
@@ -329,7 +318,6 @@ div.yw-block > span{
     /*padding-left: 8px;*/
     border-right-width: 0;
     list-style: none;
-
 }
 .newToolBar li a:link,
 .newToolBar li a:visited,
@@ -342,4 +330,17 @@ div.yw-block > span{
 .newToolBar li a:hover {
     color:brown;
     background-color: lightskyblue;
+}
+
+.icons li {
+    margin: 0 8px 2px;
+    position: relative;
+    padding: 0px 0;
+    cursor: pointer;
+    float: left;
+    list-style: none;
+}
+.icons span.ui-icon {
+    float: left;
+    margin: 0 4px 2px 4px;
 }

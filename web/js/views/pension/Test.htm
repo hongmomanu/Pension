@@ -1,625 +1,760 @@
-<!--老年人基本信息-->
-<div class="panel" style="display: block; width: 1164px;"><div class="easyui-panel newRadio panel-body panel-body-noheader panel-body-noborder" opt="pensionformpanel" style="overflow-y: scroll; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(173, 255, 47); width: 1164px; height: 516px;" data-options="fit:true,border:false" title="">
 
-<form opt="pensionform" method="post">
-
-<fieldset style="width: 900px;margin: 0px auto">
-    <legend>老年人基本信息</legend>
-    <div style="width: 900px;position: relative;margin: 0px auto" region="center">
-        <input type="hidden" name="lr_id">
-        <table class="formtable" style="width: 900px">
+<form opt="mainform" method="post">
+<fieldset style="width: 900px;margin: 0px auto;" opt="info0"><legend>用户基本信息</legend>
+    <div>
+        <input type="hidden" name="lr_id" value="106">
+        <table class="formtable">
             <tbody><tr>
-                <td class="formtdtext" style="width: 100px">行政区划<span style="color: red">*</span></td>
-                <td colspan="5"><input class="easyui-validatebox validatebox-text" name="districtid" data-options="required:true" style="width: 300px" title="" value="ssss"></td>
-                <td rowspan="4" colspan="2" style="text-align: center">
-                    <img name="pensionimgpath" src="img/noperson.gif" value="" opt="personimg" alt="用户照片" width="150px" height="120px">
-                    <input name="pensionimgpath" type="hidden">
-                </td>
+                <td class="formtdtext">行政区划:</td>
+                <td colspan="3">
+                    <input data-options="idField:'dvcode', textField:'dvname'" class="combogrid-f combo-f" comboname="registration" style="display: none;" value="浙江省绍兴市"></td>
+                <td rowspan="4" colspan="2" style="text-align: center;">
+                    <img src="img/noperson.gif" opt="personimg" alt="用户照片" height="120" width="120"></td>
             </tr>
+
             <tr>
-                <td class="formtdtext" style="width: 100px">姓名<span style="color: red">*</span></td>
-                <td><input class="easyui-validatebox validatebox-text" name="name" data-options="required:true" title="" value="ssss"></td>
+                <td class="formtdtext">姓名:</td>
+                <td><input class="easyui-validatebox" type="text" name="name" data-options="required:true" value="孙雪"></td>
                 <td class="formtdtext">身份证<span style="color: red">*</span></td>
-                <td><input opt="identityid" name="identityid" class="easyui-validatebox validatebox-text" data-options="required:true,invalidMessage:'请输入正确的身份证号',validType:'identityid'" title="" value="341282198703241128"></td>
-                <!--<td class="formtdtext">出生年月</td>
-                <td><input opt="birthdate" class="easyui-datebox" name="birthd" data-options="formatter:myformatter,parser:myparser"></td>-->
+                <td><input opt="identityid" class="easyui-validatebox combogrid-f combo-f" data-options="required:true,invalidMessage:'请输入正确的身份证号',validType:'identityid'" comboname="identityid" style="display: none;" value="210303198412082729"></td>
+            </tr>
+
+            <tr>
+                <td class="formtdtext">性别:</td>
+                <td><input class="lazy-combobox" type="text" searchtype="dbglapplytype" name="gender" value="女" style="display: inline;"></td>
+                <td class="formtdtext">出生年月:</td>
+                <td><input name="birthd" value="1984-12-08"></td>
+
+            </tr>
+
+            <tr>
+                <td class="formtdtext">民族:</td>
+                <td><input name="nation" value="02"></td>
+                <td class="formtdtext">文化程度:</td>
+                <td><input type="text" name="culture" value="2"></td>
             </tr>
             <tr>
-                <td class="formtdtext">性别</td>
-                <td>
-                    <input opt="sex" class="combobox-f combo-f" style="width: 100px; display: inline;" comboname="gender" value="女">
-                    <!--
-                    url:'cb.do?searchtype=eyesight',
-                    method:'get' ,
-                    -->
-                    <!--<select id="sex" class="easyui-combobox lazy-combobox" data-options="valueField: 'value',field:'sex'," name="gender" style="width: 100px">
-                        <option value="man">男</option>
-                        <option value="woman">女</option>
-                    </select>-->
-                </td>
-                <td class="formtdtext">年龄</td>
-                <td><input opt="age" class="easyui-validatebox,field:'age'" name="age" value="27"></td>
-                <!--<td class="formtdtext">民族</td>
-                <td>
-                    <input class="easyui-combobox lazy-combobox"
-                           name="nation"
-                           style="width: 100px"
-                           data-options="
-                                data:cj.getEnum('NATION'),
-                                editable:false,
-                                valueField:'id',
-                                textField:'text'
-            "> </td>-->
-                <!--<select class="easyui-combobox lazy-combobox" name="nation" style="width: 100px" data-options="
-                url:'combobox_data1.json',
-                method:'get',
-                valueField:'id',
-                textField:'text',
-                panelHeight:'auto'
-        ">
-                    <option value="han">汉族</option>
-                    <option value="other">少数民族</option>
-                </select>-->
+                <td class="formtdtext">籍贯:</td>
+                <td><input type="text" class="combogrid-f combo-f" comboname="registration" style="display: none;" value="浙江省绍兴市"></td>
+                <td class="formtdtext">婚姻状况:</td>
+                <td><input type="text" name="realaddress"></td>
+
 
             </tr>
             <tr>
-                <td class="formtdtext">出生年月</td>
-                <td><input opt="birthdate" class="easyui-datebox datebox-f combo-f" data-options="formatter:myformatter,parser:myparser" comboname="birthd" style="display: none;" value="1987-03-24"><span class="combo datebox" style="width: 151px; height: 20px;"><input type="text" class="combo-text validatebox-text" autocomplete="off" style="width: 129px; height: 20px; line-height: 20px;" value="2014-04-17"><span><span class="combo-arrow" style="height: 20px;"></span></span><input type="hidden" class="combo-value" name="birthd" value="1987-03-24"></span></td>
-                <td class="formtdtext">民族</td>
-                <td>
-                    <input class="lazy-combobox combobox-f combo-f" style="width: 100px; display: inline;" comboname="nation" value=""> </td>
-            </tr>
-            </tbody></table>
-        <table class="formtable" style="width: 900px">
-            <tbody><tr>
-                <td class="formtdtext">家庭住址<span style="color: red">*</span></td>
-                <td colspan="3"><input class="easyui-validatebox validatebox-text" name="address" data-options="required:true" style="width: 300px" title="" value="sss"></td>
-                <td class="formtdtext">人员类型<span style="color: red">*</span></td>
-                <td>
-                    <input class="combobox-f combo-f" opt="oldtype" style="width: 100px; display: inline;" comboname="type" value="">
-                    <!--<select class="easyui-combobox lazy-combobox" name="type">
-                        <option value="rylx1">低保家庭</option>
-                        <option value="rylx2">农村五保</option>
-                        <option value="rylx3">城镇三无</option>
-                    </select>-->
-                </td>
+                <td class="formtdtext">曾从事职业:</td>
+                <td><input type="text" name="telnum"></td>
+                <td class="formtdtext">社保卡号:</td>
+                <td><input type="text" name="securitid"></td>
             </tr>
             <tr>
-                <td class="formtdtext">户籍地<span style="color: red">*</span></td>
-                <td colspan="5"><input class="easyui-validatebox validatebox-text" name="registration" data-options="required:true" style="width: 300px" title="" value="sss"></td>
+                <td class="formtdtext">居住情况:</td>
+                <td><input type="text" name="bankid"></td>
+                <td class="formtdtext">经济条件:</td>
+                <td><input type="text" name="bankid"></td>
+            </tr>
+
+            <tr>
+                <td class="formtdtext">户籍所在地:</td>
+                <td><input type="text" class="combogrid-f combo-f" comboname="registration" style="display: none;" value="浙江省绍兴市"></td>
+                <td class="formtdtext">邮编:</td>
+                <td><input type="text" name="bankid"></td>
             </tr>
             <tr>
-                <td class="formtdtext">居住环境<span style="color: red">*</span></td>
-                <td>
-                    <input class="lazy-combobox combobox-f combo-f" style="width: 100px; display: inline;" comboname="live" value="">
-                    <!--<select class="easyui-combobox lazy-combobox" name="live" data-options="required:true" style="width: 100px">
-                        <option value="jzhj1">与子女同住</option>
-                        <option value="jzhj2">与配偶同住</option>
-                        <option value="jzhj3">与亲友同住</option>
-                        <option value="jzhj4">独居</option>
-                        <option value="jzhj5">寡居</option>
-                        <option value="jzhj6">空巢</option>
-                        <option value="jzhj7">其他</option>
-                    </select>-->
-                </td>
-                <td class="formtdtext">婚姻状况<span style="color: red">*</span></td>
-                <td>
-                    <input class="lazy-combobox combobox-f combo-f" style="width: 100px; display: inline;" comboname="marriage" value="已婚">
-                    <!--<select class="easyui-combobox lazy-combobox" name="marriage" data-options="required:true" style="width: 100px">
-                        <option value="hyzk1">未婚</option>
-                        <option value="hyzk21">已婚</option>
-                        <option value="hyzk3">丧偶</option>
-                        <option value="hyzk4">离异</option>
-                        <option value="hyzk5">未说明</option>
-                    </select>-->
-                </td>
-                <td class="formtdtext">家庭经济条件<span style="color: red">*</span></td>
-                <td>
-                    <input class="lazy-combobox combobox-f combo-f" style="width: auto; display: inline;" comboname="economy" value="">
-                    <!--<select class="easyui-combobox lazy-combobox" name="economy" data-options="required:true" style="100px">
-                        <option value="jtjjtj1">低保</option>
-                        <option value="jtjjtj2">低收入（低保2倍）</option>
-                        <option value="jtjjtj3">低退休工资（2000以下）</option>
-                        <option value="jtjjtj4">低退休工资（2000以上）</option>
-                        <option value="jtjjtj5">无社保（非低保低收入）</option>
-                        <option value="jtjjtj6">其他</option>
-                    </select>-->
-                </td>
+                <td class="formtdtext">居住地址:</td>
+                <td colspan="3"><input type="text" name="address" size="50" value="浙江省绍兴市"></td>
             </tr>
             <tr>
-                <td class="formtdtext">曾从事职业</td>
-                <td><input class="easyui-validatebox validatebox-text" name="vocation"></td>
-                <td class="formtdtext">文化程度<span style="color: red">*</span></td>
-                <td>
-                    <input class="lazy-combobox combobox-f combo-f" style="width: 100px; display: inline;" comboname="culture" value="初中">
-                    <!--<select class="easyui-combobox lazy-combobox" name="culture" data-options="required:true" style="width: 100px">
-                        <option value="whcd1">小学</option>
-                        <option value="whcd2">初中</option>
-                        <option value="whcd3">高中</option>
-                        <option value="whcd4">专科</option>
-                        <option value="whcd5">本科</option>
-                        <option value="whcd6">研究生</option>
-                        <option value="whcd7">其他</option>
-                    </select>-->
-                </td>
-                <td class="formtdtext">手机号码</td>
-                <td><input class="easyui-validatebox validatebox-text" name="mobilephone"></td>
-            </tr>
-            <tr>
-                <td class="formtdtext">退休工资</td>
-                <td><input class="easyui-validatebox validatebox-text" value="2014-04-17"></td>
-                <td class="formtdtext">住宅电话</td>
-                <td><input class="easyui-validatebox validatebox-text" name="telephone"></td>
-                <td class="formtdtext">老人呼叫机</td>
-                <td><input class="easyui-validate" name="hjj_hjj"></td>
-            </tr>
-            <tr>
-                <td class="formtdtext">呼叫机种类</td>
-                <td>
-                    <input class="lazy-combobox combobox-f combo-f" style="width: 100px; display: inline;" comboname="hjj_kind" value="">
-                    <!-- <select class="easyui-combobox lazy-combobox" name="hjj_kind" style="width: 100px">
-                         <option value="1">a</option>
-                         <option value="2">b</option>
-                     </select>-->
-                </td>
-                <td class="formtdtext">呼叫机类型</td>
-                <td>
-                    <input class="lazy-combobox combobox-f combo-f" style="width: 100px; display: inline;" comboname="hjj_type" value="固定">
-                    <!--<select class="easyui-combobox lazy-combobox" name="hjj_type" style="width: 100px">
-                        <option value="hjjlx1">移动</option>
-                        <option value="hjjlx2">固定</option>
-                    </select>-->
-                </td>
-                <td class="formtdtext">呼叫手机号</td>
-                <td><input class="easyui-validatebox validatebox-text" name="hjj_phone"></td>
+                <td class="formtdtext">住宅电话:</td>
+                <td><input type="text" name="mobilephone"></td>
+                <td class="formtdtext">申请人手机:</td>
+                <td><input type="text" name="telephone"></td>
             </tr>
 
             </tbody></table>
     </div>
-</fieldset>
 
-<!--享受服务类型-->
-<fieldset style="width: 900px;margin: 0px auto">
-    <legend>享受服务类型</legend>
-    <div opt="lrxsfwlx">
-        <!--<input name="gx_laom" type="checkbox" value="10" /><label><span style="width: 100px;">市级以上劳模</span></label>-->
-        <input name="fwlx_jjyl" type="checkbox" value="100" style="display: none;"><label>居家养老服务 </label>
-        <input name="fwlx_fwj" type="checkbox" value="100" style="display: none;"><label>服务卷 </label>
-        <input name="fwlx_mftj" type="checkbox" value="100" style="display: none;"><label>免费体检 </label>
-        <input name="fwlx_dylnb" type="checkbox" value="100" style="display: none;"><label class="checked">订阅老年报 </label>
-        <input name="fwlx_jgyl" type="checkbox" value="100" style="display: none;"><label class="checked">机构养老 </label>
-        <input name="fwlx_tyfw" type="checkbox" value="100" style="display: none;"><label class="checked">体验服务 </label>
-        <input name="fwlx_hjj" type="checkbox" value="100" style="display: none;"><label>呼叫机 </label>
-        <input name="fwlx_qt" type="checkbox" value="100" style="display: none;"><label>其他 </label>
-    </div>
-</fieldset>
+</fieldset><fieldset style="width: 900px;margin: 0px auto;" opt="info1"><legend>生活自理能力</legend>
 
-<!--居住信息-->
-<fieldset style="width: 900px;margin: 0px auto">
-    <legend>居住信息</legend>
-    <div>
-        <table class="formtable" style="width: 900px">
-            <tbody><tr>
-                <td class="formtdtext">邻居一姓名</td>
-                <td><input class="easyui-validatebox validatebox-text" name="jz_yixingm"></td>
-                <td class="formtdtext">邻居一位置</td>
-                <td>
-                    <input class="lazy-combobox combobox-f combo-f" style="width: 100px; display: inline;" comboname="jz_yiweiz" value="">
-                    <!--<select class="easyui-combobox lazy-combobox" name="jz_yiweiz" style="width: 100px">
-                        <option value="ljywz1">楼上</option>
-                        <option value="ljywz2">楼下</option>
-                        <option value="ljywz3">隔壁</option>
-                    </select>-->
-                </td>
-                <td class="formtdtext">邻居一电话</td>
-                <td><input class="easyui-validatebox validatebox-text" name="jz_yidianh"></td>
-            </tr>
-            <tr>
-                <td class="formtdtext">邻居二姓名</td>
-                <td><input class="easyui-validatebox validatebox-text" name="jz_erxingm"></td>
-                <td class="formtdtext">邻居二位置</td>
-                <td>
-                    <input class="lazy-combobox combobox-f combo-f" style="width: 100px; display: inline;" comboname="jz_erweiz" value="楼上">
-                    <!--<select class="easyui-combobox lazy-combobox" name="jz_erweiz" style="width: 100px">
-                        <option value="ljewz1">楼上</option>
-                        <option value="ljewz2">楼下</option>
-                        <option value="ljewz3">隔壁</option>
-                    </select>-->
-                </td>
-                <td class="formtdtext">邻居二电话</td>
-                <td><input class="easyui-validatebox validatebox-text" name="jz_erdianh"></td>
-            </tr>
-            <tr>
-                <td class="formtdtext">物业名称</td>
-                <td><input class="easyui-validatebox validatebox-text" name="jz_wuy"></td>
-                <td class="formtdtext">门卫电话</td>
-                <td><input class="easyui-validatebox validatebox-text" name="jz_menwdh"></td>
-                <td class="formtdtext">值班电话</td>
-                <td><input class="easyui-validatebox validatebox-text" name="jz_zhibdh"></td>
-            </tr>
-            <tr>
-                <td class="formtdtext">社区卫生院名称</td>
-                <td><input class="easyui-validatebox validatebox-text" name="jz_sheqyy"></td>
-                <td class="formtdtext">责任医生</td>
-                <td><input class="easyui-validatebox validatebox-text" name="jz_yis"></td>
-                <td class="formtdtext">联系电话</td>
-                <td><input class="easyui-validatebox validatebox-text" value="2014-04-17"></td>
-            </tr>
-            </tbody></table>
-    </div>
-</fieldset>
+    <table class="formtable">
+        <tbody>
+        <tr style="height: 40px;">
+            <td style="width: 50px;">评估事项</td>
+            <td colspan="4" style="text-align: center;">评估内容</td>
+            <td style="width: 50px;">评估分</td>
+        </tr>
 
-<!--健康信息-->
-<fieldset style="width: 900px;margin: 0px auto">
-    <legend>健康信息</legend>
-    <div>
-        <table class="formtable" style="width: 900px">
-            <tbody><tr>
-                <td class="formtdtext">血型</td>
-                <td>
-                    <input class="lazy-combobox combobox-f combo-f" style="width: 100px; display: inline;" comboname="jk_xuex" value="">
-                    <!--<select class="easyui-combobox lazy-combobox" name="jk_xuex" style="width: 100px">
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                        <option value="AB">AB</option>
-                        <option value="O">O</option>
-                    </select>-->
-                </td>
-                <td class="formtdtext">血压</td>
-                <td>
-                    <input class="lazy-combobox combobox-f combo-f" style="width: 100px; display: inline;" comboname="jk_xuey" value="高">
-                    <!--<select class="easyui-combobox lazy-combobox" name="jk_xuey" style="width: 100px">
-                        <option value="high">高</option>
-                        <option value="normal">正常</option>
-                        <option value="low">低</option>
-                    </select>-->
-                </td>
-                <td class="formtdtext">起搏器情况</td>
-                <td>
-                    <input class="lazy-combobox combobox-f combo-f" style="width: 100px; display: inline;" comboname="jk_qibq" value="">
-                    <!--<select class="easyui-combobox lazy-combobox" name="jk_qibq" style="width: 100px">
-                        <option value="qbqqk1">有</option>
-                        <option value="qbqqk2">没有</option>
-                    </select>-->
-                </td>
-            </tr>
-            <tr>
-                <td class="formtdtext">过敏史</td>
-                <td><input class="easyui-validatebox validatebox-text" name="jk_gms"></td>
-                <td class="formtdtext">视力情况</td>
-                <td>
-                    <input class="lazy-combobox combobox-f combo-f" style="width: 100px; display: inline;" comboname="jk_shil" value="正常">
-                    <!--<select class="easyui-combobox lazy-combobox" name="jk_shil" style="width: 100px">
-                        <option value="normal">正常</option>
-                        <option value="myopia">近视</option>
-                        <option value="hyperopia">远视</option>
-                    </select>-->
-                </td>
-                <td class="formtdtext">听力情况</td>
-                <td>
-                    <input class="lazy-combobox combobox-f combo-f" style="width: 100px; display: inline;" comboname="jk_tingl" value="">
-                    <!--<select class="easyui-combobox lazy-combobox" name="jk_tingl" style="width: 100px">
-                        <option value="normal">正常</option>
-                        <option value="abnormal">听不清</option>
-                    </select>-->
-                </td>
-            </tr>
-            <tr>
-                <td class="formtdtext">活动能力</td>
-                <td>
-                    <input class="lazy-combobox combobox-f combo-f" style="width: 100px; display: inline;" comboname="jk_huod" value="">
-                    <!--<select class="easyui-combobox lazy-combobox" name="jk_huod" style="width: 100px">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                    </select>-->
-                </td>
-                <td class="formtdtext">出行方式</td>
-                <td>
-                    <input class="lazy-combobox combobox-f combo-f" style="width: 100px; display: inline;" comboname="jk_chux" value="独自出行">
-                    <!--<select class="easyui-combobox lazy-combobox" name="jk_chux" style="width: 100px">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                    </select>-->
-                </td>
-                <td class="formtdtext">记忆力情况</td>
-                <td>
-                    <input class="lazy-combobox combobox-f combo-f" style="width: 100px; display: inline;" comboname="jk_jiyl" value="">
-                    <!--<select class="easyui-combobox lazy-combobox" name="jk_jiyl" style="width: 100px">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                    </select>-->
-                </td>
-            </tr>
-            <tr>
-                <td class="formtdtext">穿脱衣服</td>
-                <td>
-                    <input class="lazy-combobox combobox-f combo-f" style="width: 100px; display: inline;" comboname="jk_chuany" value="">
-                    <!--<select class="easyui-combobox lazy-combobox" name="jk_chuany" style="width: 100px">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                    </select>-->
-                </td>
-                <td class="formtdtext">定向能力</td>
-                <td>
-                    <input class="lazy-combobox combobox-f combo-f" style="width: 100px; display: inline;" comboname="jk_dingx" value="独自定向">
-                    <!--<select class="easyui-combobox lazy-combobox" name="jk_dingx" style="width: 100px">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                    </select>-->
-                </td>
-                <td class="formtdtext">洗澡情况</td>
-                <td>
-                    <input class="lazy-combobox combobox-f combo-f" style="width: 100px; display: inline;" comboname="jk_xiz" value="">
-                    <!--<select class="easyui-combobox lazy-combobox" name="jk_xiz" style="width: 100px">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                    </select>-->
-                </td>
-            </tr>
-            <tr>
-                <td class="formtdtext">日常卫生</td>                   <!--document.getElementById('shutou').checked=true-->
-                <td opt="lrrcws" colspan="5">
-                    <input opt="shutou" name="jk_rcws_st" type="checkbox" value="110" style="display: none;"><label>自己梳头 </label>
-                    <input opt="xinian" name="jk_rcws_xl" type="checkbox" value="110" style="display: none;"><label>自己洗脸 </label>
-                    <input opt="xitou" name="jk_rcws_xt" type="checkbox" value="110" style="display: none;"> <label>自己洗头 </label>
-                    <input opt="shuaya" name="jk_rcws_sy" type="checkbox" value="110" style="display: none;"><label class="checked">自己刷牙 </label>
-                    <input opt="xijiao" name="jk_rcws_xj" type="checkbox" value="110" style="display: none;"><label class="checked">自己洗脚 </label>
-                    <input opt="tixu" name="jk_rcws_tx" type="checkbox" value="110" style="display: none;"><label>自己剃须 </label>
-                    <input opt="xiuzhijia" name="jk_rcws_xzj" type="checkbox" value="110" style="display: none;"><label>自己修指甲 </label>
-                    <input opt="xiyi" name="jk_rcws_xy" type="checkbox" value="110" style="display: none;"><label>自己洗衣 </label>
-                </td>
-            </tr>
-            <tr>
-                <td class="formtdtext">病史情况</td>
-                <td opt="lrbsqk" colspan="5">
-                    <input name="jk_bs_gaoxy" type="checkbox" value="111" style="display: none;"><label>高血压 </label>
-                    <input name="jk_bs_tangnb" type="checkbox" value="111" style="display: none;"><label>糖尿病 </label>
-                    <input name="jk_bs_fengs" type="checkbox" value="111" style="display: none;"><label>风湿病 </label>
-                    <input name="jk_bs_xinzb" type="checkbox" value="111" style="display: none;"><label>心脏病 </label>
-                    <input name="jk_bs_chid" type="checkbox" value="111" style="display: none;"><label class="checked">老年痴呆 </label>
-                    <input name="jk_bs_guz" type="checkbox" value="111" style="display: none;"><label class="checked">扭伤骨折 </label>
-                    <input name="jk_bs_qit" type="checkbox" value="111" style="display: none;"><label class="checked">其他 </label>
-                </td>
-            </tr>
-            <tr>
-                <td class="formtdtext">主要疾病</td>
-                <td colspan="5">
-                    <textarea name="jk_jib" style="height:60px;width: 90%">123456789-</textarea>
-                </td>
-            </tr>
-            </tbody></table>
-    </div>
-</fieldset>
+        <tr style="height: 40px;">
+            <td>(1)<br>进食</td>
+            <td style="width: 175px;">
+                <input name="sh_jings" type="radio" value="10" style="display: none;">
+                <label>0分<br>自己在合理的时间内(约十秒种吃一口)可用筷子取食眼前的食物.若需进食辅具的,应会自行穿脱.</label>
+            </td>
+            <td style="width: 175px;"></td>
+            <td style="width: 175px;"><input name="sh_jings" type="radio" value="10" style="display: none;">
+                <label class="checked">5分<br>需别人帮助穿脱辅具或只会用汤匙进食</label>
+            </td>
+            <td style="width: 175px;"><input name="sh_jings" type="radio" value="10" style="display: none;">
+                <label>10分<br>无法自行取食或耗费时间过长.</label>
+            </td>
+            <td><input size="1" class="pingfen" opt="info1pingfeng" disabled="disabled" value="0"></td>
+        </tr>
+        <tr style="height: 40px;">
+            <td>(2)<br>移动</td>
+            <td><input name="sh_yid" type="radio" value="15" style="display: none;"><label>可独立完成,包括轮椅的刹车及移开脚踏板.</label></td>
+            <td><input name="sh_yid" type="radio" value="15" style="display: none;"><label>需要稍微的协助(例如:予以轻扶以保持平衡)或需要口头指导.</label></td>
+            <td><input name="sh_yid" type="radio" value="15" style="display: none;"><label class="checked">可自行从床上坐起来,但移位时仍需别人帮助.</label></td>
+            <td><input name="sh_yid" type="radio" value="15" style="display: none;"><label>需别人帮助方可坐起来或需别人帮助方可移位.</label></td>
+            <td><input size="1" class="pingfen" opt="info1pingfeng" disabled="disabled" value="0"></td>
+        </tr>
+        <tr style="height: 40px;">
+            <td>(3)<br>个人卫生</td>
+            <td><input name="sh_weis" type="radio" value="5" style="display: none;"><label>可独立完成洗脸,洗手,刷牙及梳头.</label></td>
+            <td></td>
+            <td></td>
+            <td><input name="sh_weis" type="radio" value="5" style="display: none;"><label>需要别人帮助</label></td>
+            <td><input size="1" class="pingfen" opt="info1pingfeng" disabled="disabled" value="0"></td>
+        </tr>
+        <tr>
+            <td>(4)<br>入厕</td>
+            <td><input name="sh_ruc" type="radio" value="10" style="display: none;"><label>可自行进出厕所,不会弄脏衣物,并能穿好衣服,使用便盆者,可自行清理便盆.</label></td>
+            <td></td>
+            <td><input name="sh_ruc" type="radio" value="10" style="display: none;"><label class="checked">需要别人帮助</label></td>
+            <td><input name="sh_ruc" type="radio" value="10" style="display: none;"><label>需帮助保持姿势平衡,整理衣物或使用卫生纸.使用便盆者,可自行取放,但须依赖他人清理.</label></td>
+            <td><input size="1" class="pingfen" opt="info1pingfeng" disabled="disabled" value="0"></td>
+        </tr>
+        <tr>
+            <td>(5)<br>洗澡</td>
+            <td><input name="sh_xiz" type="radio" value="5" style="display: none;"><label>可独立完成(不论是盆浴或沐浴)</label></td>
+            <td></td>
+            <td></td>
+            <td><input name="sh_xiz" type="radio" value="5" style="display: none;"><label>需要别人帮助.</label></td>
+            <td><input size="1" class="pingfen" opt="info1pingfeng" disabled="disabled" value="0"></td>
+        </tr>
+        <tr>
+            <td>(6)<br>行走于平地上</td>
+            <td><input name="sh_xingz" type="radio" value="15" style="display: none;"><label>使用或不使用辅具皆可独立行走50米以上</label></td>
+            <td><input name="sh_xingz" type="radio" value="15" style="display: none;"><label>需要稍微的扶持或口头指导方可行走50米以上</label></td>
+            <td><input name="sh_xingz" type="radio" value="15" style="display: none;"><label class="checked">虽无法行走,但可独立操纵轮椅(包括转弯,进门,接近桌子和床沿)并可推行轮椅50米以上.</label></td>
+            <td><input name="sh_xingz" type="radio" value="15" style="display: none;"><label>需别人帮助推轮椅</label></td>
+            <td><input size="1" class="pingfen" opt="info1pingfeng" disabled="disabled" value="0"></td>
+        </tr>
+        <tr>
+            <td>(7)<br>上下楼梯</td>
+            <td><input name="sh_lout" type="radio" value="10" style="display: none;"><label>独立完成</label></td>
+            <td></td>
+            <td><input name="sh_lout" type="radio" value="10" style="display: none;"><label>需要稍微帮助或口头指导</label></td>
+            <td><input name="sh_lout" type="radio" value="10" style="display: none;"><label>无法上下楼梯</label></td>
+            <td><input size="1" class="pingfen" opt="info1pingfeng" disabled="disabled" value="0"></td>
+        </tr>
+        <tr>
+            <td>(8)<br>穿脱衣服</td>
+            <td><input name="sh_chuany" type="radio" value="10" style="display: none;"><label>可自行穿脱衣服,鞋子及辅具</label></td>
+            <td></td>
+            <td><input name="sh_chuany" type="radio" value="10" style="display: none;"><label class="checked">在别人帮助下,可完成一半以上的上述动作</label></td>
+            <td><input name="sh_chuany" type="radio" value="10" style="display: none;"><label>不能自行穿脱衣服</label></td>
+            <td><input size="1" class="pingfen" opt="info1pingfeng" disabled="disabled" value="0"></td>
+        </tr>
 
-<!--爱好及活动需求-->
-<fieldset style="width: 900px;margin: 0px auto">
-    <legend>爱好及活动需求</legend>
-    <div>
-        <table class="formtable" style="width: 900px">
-            <tbody><tr>
-                <td class="formtdtext">性格特征</td>
-                <td colspan="5">
-                    <textarea name="xq_tez" style="height:60px;width: 90%">wertyuiop</textarea>
-                </td>
-            </tr>
-            <tr>
-                <td class="formtdtext">兴趣爱好</td>
-                <td colspan="5">
-                    <textarea name="xq_aih" style="height:60px;width: 90%">zxcvbnm,</textarea>
-                </td>
-            </tr>
-            <tr>
-                <td class="formtdtext">特长</td>
-                <td><input class="easyui-validatebox validatebox-text" name="xq_tec" value="fff"></td>
-                <td class="formtdtext">社会活动</td>
-                <td colspan="3"><input class="easyui-validatebox validatebox-text" name="xq_huod" style="width: 80%" value="ffff"></td>
-            </tr>
-            <tr>
-                <td class="formtdtext">参加社团</td>
-                <td><input class="easyui-validatebox validatebox-text" name="xq_canjiast" value="www"></td>
-                <td class="formtdtext">担当角色</td>
-                <td colspan="3"><input class="easyui-validatebox validatebox-text" name="xq_jiaos" style="width: 80%" value="fff"></td>
-            </tr>
-            </tbody></table>
-    </div>
-</fieldset>
+        <tr>
+            <td>(9)<br>大便控制</td>
+            <td><input name="sh_dab" type="radio" value="10" style="display: none;"><label>无大小便失禁,并可自行使用塞剂.</label></td>
+            <td></td>
+            <td><input name="sh_dab" type="radio" value="10" style="display: none;"><label class="checked">偶有失禁(每周不超过一次)或使用塞剂时需人帮助</label></td>
+            <td><input name="sh_dab" type="radio" value="10" style="display: none;"><label>经常失禁,需要别人处理.</label></td>
+            <td><input size="1" class="pingfen" opt="info1pingfeng" disabled="disabled" value="0"></td>
+        </tr>
 
-<!--家庭成员-->
-<fieldset style="width: 900px;margin: 0px auto">
-    <div opt="familymembersdiv">
-        <div class="panel datagrid" style="width: 900px;"><div class="panel-header" style="width: 888px;"><div class="panel-title">家庭成员列表</div><div class="panel-tool"></div></div><div class="datagrid-wrap panel-body" title="" style="width: 898px; height: auto;"><div class="datagrid-view" style="width: 898px; height: 26px;"><div class="datagrid-view1" style="width: 168px;"><div class="datagrid-header" style="width: 168px; height: 24px;"><div class="datagrid-header-inner" style="display: block;"><table class="datagrid-htable" border="0" cellspacing="0" cellpadding="0" style="height: 25px;"><tbody><tr class="datagrid-header-row"><td rowspan="1"><div class="datagrid-header-rownumber"></div></td><td field="bottom"><div class="datagrid-cell datagrid-cell-c2-bottom" style="text-align: center;"><span>
-                         <a data-options="plain:true">选择</a>
-                 </span><span class="datagrid-sort-icon">&nbsp;</span></div></td><td field="guanx"><div class="datagrid-cell datagrid-cell-c2-guanx" style="text-align: center;"><span>
-                    关系<span style="color: red">*</span>
-                 </span><span class="datagrid-sort-icon">&nbsp;</span></div></td></tr></tbody></table></div></div><div class="datagrid-body" style="width: 168px; height: 0px;"><div class="datagrid-body-inner"></div></div><div class="datagrid-footer" style="width: 168px;"><div class="datagrid-footer-inner" style="display: block;"></div></div></div><div class="datagrid-view2" style="width: 730px;"><div class="datagrid-header" style="width: 730px; height: 24px;"><div class="datagrid-header-inner" style="display: block;"><table class="datagrid-htable" border="0" cellspacing="0" cellpadding="0" style="height: 25px;"><tbody><tr class="datagrid-header-row"><td field="gx_name"><div class="datagrid-cell datagrid-cell-c2-gx_name" style="text-align: center;"><span>姓名<span style="color: red">*</span></span><span class="datagrid-sort-icon">&nbsp;</span></div></td><td field="gx_identityid" class=""><div class="datagrid-cell datagrid-cell-c2-gx_identityid" style="text-align: center;"><span>身份证号<span style="color: red">*</span></span><span class="datagrid-sort-icon">&nbsp;</span></div></td><td field="gx_gender"><div class="datagrid-cell datagrid-cell-c2-gx_gender" style="text-align: center;"><span>性别<span style="color: red">*</span></span><span class="datagrid-sort-icon">&nbsp;</span></div></td><td field="gx_birth"><div class="datagrid-cell datagrid-cell-c2-gx_birth" style="text-align: center;"><span>出生日期</span><span class="datagrid-sort-icon">&nbsp;</span></div></td><td field="gx_telephone"><div class="datagrid-cell datagrid-cell-c2-gx_telephone" style="text-align: center;"><span>宅电</span><span class="datagrid-sort-icon">&nbsp;</span></div></td><td field="gx_mobilephone"><div class="datagrid-cell datagrid-cell-c2-gx_mobilephone" style="text-align: center;"><span>手机</span><span class="datagrid-sort-icon">&nbsp;</span></div></td><td field="gx_economy"><div class="datagrid-cell datagrid-cell-c2-gx_economy" style="text-align: center;"><span>月收入</span><span class="datagrid-sort-icon">&nbsp;</span></div></td><td field="gx_culture"><div class="datagrid-cell datagrid-cell-c2-gx_culture" style="text-align: center;"><span>文化程度</span><span class="datagrid-sort-icon">&nbsp;</span></div></td><td field="gx_registration"><div class="datagrid-cell datagrid-cell-c2-gx_registration" style="text-align: center;"><span>籍贯</span><span class="datagrid-sort-icon">&nbsp;</span></div></td><td field="gx_nation"><div class="datagrid-cell datagrid-cell-c2-gx_nation" style="text-align: center;"><span>民族</span><span class="datagrid-sort-icon">&nbsp;</span></div></td><td field="gx_work"><div class="datagrid-cell datagrid-cell-c2-gx_work" style="text-align: center;"><span>工作地点</span><span class="datagrid-sort-icon">&nbsp;</span></div></td></tr></tbody></table></div></div><div class="datagrid-body" style="width: 730px; height: 0px;"></div><div class="datagrid-footer" style="width: 730px;"><div class="datagrid-footer-inner" style="display: block;"></div></div></div><table class="easyui-datagrid" title="家庭成员列表" opt="familymembersgrid" style="display: none;" data-options="rownumbers:true,toolbar:'#pensionmembertb',singleSelect:true,showFooter:true">
+        <tr>
+            <td>(10)<br>小便控制</td>
+            <td><input name="sh_xiaob" type="radio" value="10" style="display: none;"><label>日夜皆不会尿失禁,或可自行使用并清理尿套</label></td>
+            <td></td>
+            <td><input name="sh_xiaob" type="radio" value="10" style="display: none;"><label>偶尔会尿失禁(每周不超过一次)或尿急(无法等待便盆或无法及时赶到厕所)或需别人帮助处理尿套</label></td>
+            <td><input name="sh_xiaob" type="radio" value="10" style="display: none;"><label>经常失禁,需要别人处理.</label></td>
+            <td><input size="1" class="pingfen" opt="info1pingfeng" disabled="disabled" value="0"></td>
+        </tr>
 
-            <thead data-options="frozen:true">
-            <tr>
-                <!--<th data-options="field:'bottom',width:60,align:'center',editor:'icon-remove'">
-                    <a id="newfamilymemeradd_btn" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true">新增</a>
-                </th>-->
-                <th data-options="field:'bottom',width:40,align:'center',editor:'icon-remove'">
-                    <a data-options="plain:true">选择</a>
-                </th>
-                <th class="lazy-combobox" data-options="field:'guanx',align:'center',width:100,editor:{
-                 type:'combobox',
-                 options:{
-                     required:true,
-					 url:'cb.do?searchtype=relation',
-                     method:'get' ,
-                     editable:false,
-                     width:60,
-                     valueField: 'id',
-                     textField: 'text'
-                 }
-                 }">
-                    关系<span style="color: red">*</span>
-                </th>
-            </tr>
-            </thead>
-            <thead>
-            <tr>
-                <th data-options="required:true,field:'gx_name',width:90,align:'center',editor:{
-                    type:'validatebox',
-                    options:{required:true}
-                   } ">姓名<span style="color: red">*</span></th>
-                <th opt="gxidentityid" data-options="field:'gx_identityid',width:150,align:'center',editor:{
-                            type:'validatebox',
-                            options:{
-                                required:true
-                            }
-                        }">身份证号<span style="color: red">*</span></th>
-                <th class="lazy-combobox" data-options="field:'gx_gender',align:'center',width:60,editor:{
-							type:'combobox',
-							options:{
-							     required:true,
-								url:'cb.do?searchtype=gender',
-                                method:'get' ,
-                                editable:false,
-                                width:60,
-                                valueField: 'id',
-                                textField: 'text'
-							}
-						}">性别<span style="color: red">*</span></th>
-                <th data-options="field:'gx_birth',width:90,align:'center',editor:'text'">出生日期</th>
-                <th data-options="field:'gx_telephone',width:160,align:'center',editor:'text'">宅电</th>
-                <th data-options="field:'gx_mobilephone',width:160,align:'center',editor:'text'">手机</th>
-                <!--<th data-options="field:'phone3',width:160,align:'center',editor:'text'">小灵通</th>-->
-                <th data-options="field:'gx_economy',width:100,align:'center',editor:'text'">月收入</th>
-                <!--<th  data-options="field:'gx_culture',width:100,align:'center',editor:'text'">-->
-                <th class="lazy-combobox" data-options="field:'gx_culture',align:'center',width:60,editor:{
-							type:'combobox',
-							options:{
-								url:'cb.do?searchtype=culture',
-                                method:'get' ,
-                                editable:false,
-                                width:60,
-                                valueField: 'id',
-                                textField: 'text'
-							}
-						}">文化程度</th>
-                <th data-options="field:'gx_registration',width:100,align:'center',editor:'text'">籍贯</th>
-                <!--<th  data-options="field:'gx_nation',width:100,align:'center',editor:'text'">-->
-                <th class="lazy-combobox" data-options="field:'gx_nation',align:'center',width:60,editor:{
-							type:'combobox',
-							options:{
-								url:'cb.do?searchtype=NATION',
-                                method:'get' ,
-                                editable:false,
-                                width:60,
-                                valueField: 'id',
-                                textField: 'text'
-							}
-						}">民族</th>
-                <th data-options="field:'gx_work',width:100,align:'center',editor:'text'">工作地点</th>
+        <tr>
+            <td>总分</td>
+            <td colspan="2" style="text-align: center;">
+                <input name="sh_zongf" disabled="disabled" value="40">
+            </td>
+            <td>评估分</td>
+            <td colspan="2" style="text-align: center;">
+                <input name="sh_pingguf" value="40">
+            </td>
+        </tr>
 
-            </tr>
-            </thead>
-        </table><style type="text/css">
-            .datagrid-cell-c1-bottom{width:32px}
-            .datagrid-cell-c1-guanx{width:92px}
-            .datagrid-cell-c1-gx_name{width:82px}
-            .datagrid-cell-c1-gx_identityid{width:142px}
-            .datagrid-cell-c1-gx_gender{width:52px}
-            .datagrid-cell-c1-gx_birth{width:82px}
-            .datagrid-cell-c1-gx_telephone{width:152px}
-            .datagrid-cell-c1-gx_mobilephone{width:152px}
-            .datagrid-cell-c1-gx_economy{width:92px}
-            .datagrid-cell-c1-gx_culture{width:52px}
-            .datagrid-cell-c1-gx_registration{width:92px}
-            .datagrid-cell-c1-gx_nation{width:52px}
-            .datagrid-cell-c1-gx_work{width:92px}
-            .datagrid-cell-c2-bottom{width:32px}
-            .datagrid-cell-c2-guanx{width:92px}
-            .datagrid-cell-c2-gx_name{width:82px}
-            .datagrid-cell-c2-gx_identityid{width:142px}
-            .datagrid-cell-c2-gx_gender{width:52px}
-            .datagrid-cell-c2-gx_birth{width:82px}
-            .datagrid-cell-c2-gx_telephone{width:152px}
-            .datagrid-cell-c2-gx_mobilephone{width:152px}
-            .datagrid-cell-c2-gx_economy{width:92px}
-            .datagrid-cell-c2-gx_culture{width:52px}
-            .datagrid-cell-c2-gx_registration{width:92px}
-            .datagrid-cell-c2-gx_nation{width:52px}
-            .datagrid-cell-c2-gx_work{width:92px}
-        </style></div></div></div>
-        <div opt="familymembertb" style="height:auto">
-            <a opt="newfamilymemeradd_btn" class="easyui-linkbutton l-btn l-btn-plain" data-options="iconCls:'icon-add',plain:true" group="" id=""><span class="l-btn-left"><span class="l-btn-text icon-add l-btn-icon-left">新增</span></span></a>
-            <a opt="delfamilymemer_btn" class="easyui-linkbutton l-btn l-btn-plain" data-options="iconCls:'icon-remove',plain:true" group="" id=""><span class="l-btn-left"><span class="l-btn-text icon-remove l-btn-icon-left">删除</span></span></a>
-        </div>
-    </div>
-</fieldset>
-
-<div style="width: 900px;margin: 0px auto">
-    <table style="width: 900px">
+        <tr>
+            <td>结论</td>
+            <td colspan="5">
+                <ul>
+                    <li style="margin-left: 20px; display: inline;"><input name="sh_jiel" type="radio" value="3" style="display: none;"><label>正常 </label></li>
+                    <li style="margin-left: 40px; display: inline;"><input name="sh_jiel" type="radio" value="3" style="display: none;"><label>轻度依赖 </label></li>
+                    <li style="margin-left: 40px; display: inline;"><input name="sh_jiel" type="radio" value="3" style="display: none;"><label>中度依赖 </label></li>
+                    <li style="margin-left: 40px; display: inline;"><input name="sh_jiel" type="radio" value="3" style="display: none;"><label>重度依赖 </label></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>评估员</td>
+            <td colspan="5">
+                <input name="sh_pingguy" value="张三">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</fieldset><fieldset style="width: 900px;margin: 0px auto;" opt="info2"><legend>生活自理能力</legend>
+    <table class="formtable">
         <tbody><tr>
-            <td style="text-align: left">
-                <table style="width: 450px">
-                    <tbody><tr>
-                        <td class="formtdtext" style="text-align: right;width: 70px">制单日期:</td>
-                        <td style="width: 100;text-align: left"><input class="easyui-datebox datebox-f combo-f" opt="setdaytime" data-options="formatter:myformatter,parser:myparser" comboname="operator_date" style="display: none;" value="2014-04-17"><span class="combo datebox" style="width: 151px; height: 20px;"><input type="text" class="combo-text validatebox-text" autocomplete="off" style="width: 129px; height: 20px; line-height: 20px;" value="2014-04-17"><span><span class="combo-arrow" style="height: 20px;"></span></span><input type="hidden" class="combo-value" name="operator_date" value="2014-04-17"></span></td>
-                    </tr>
-                    </tbody></table>
+            <td rowspan="5">经济条件</td>
+            <td>分类</td>
+            <td>判断评分</td>
+            <td>本人收入</td>
+        </tr>
+        <tr>
+            <td>退休工资(2000元-3000元)</td>
+            <td><input name="jj_shour" type="radio" value="25" style="display: none;"><label>10分</label></td>
+            <td>本人收入<input size="1" class="pingfen" value="0">元/月</td>
+        </tr>
+        <tr>
+            <td>低退休工资(2000元以下)</td>
+            <td><input name="jj_shour" type="radio" value="25" style="display: none;"><label>15分</label></td>
+            <td>本人收入<input size="1" class="pingfen" value="0">元/月</td>
+        </tr>
+        <tr>
+            <td>无社保</td>
+            <td><input name="jj_shour" type="radio" value="25" style="display: none;"><label>20分</label></td>
+            <td>本人收入<input size="1" class="pingfen" value="0">元/月</td>
+        </tr>
+        <tr>
+            <td>低保</td>
+            <td><input name="jj_shour" type="radio" value="25" style="display: none;"><label>25分</label></td>
+            <td></td>
+        </tr>
+        <tr><td>评分</td>
+            <td colspan="3">
+                <input name="jj_pingguf">
             </td>
-            <td style="text-align: right">
-                <table style="text-align: right;width: 450px">
-                    <tbody><tr style="text-align: right">
-                        <!-- <td class="formtdtext" style="width: 70px">制单人:</td>-->
-                        <td style="width: 100px">制单人:<input class="easyui-validatebox validatebox-text" name="operators"></td>
-                    </tr>
-                    </tbody></table>
+        </tr>
+        <tr><td>评估员</td>
+            <td colspan="3">
+                <input name="jj_pingguy" value="张三">
             </td>
-
-
         </tr>
         </tbody></table>
-</div>
+</fieldset><fieldset style="width: 900px;margin: 0px auto;" opt="info3"><legend>居住环境</legend>
+    <table class="formtable">
+        <tbody><tr>
+            <td rowspan="4">居住环境</td>
+            <td style="text-align: center;">分类</td>
+            <td>判断评分</td>
+            <td>是否有生活照料</td>
+        </tr>
+        <tr>
+            <td>与子女,亲友共住</td>
+            <td><input name="jz_fenl" type="radio" value="25" style="display: none;"><label>15分</label></td>
+            <td>
+                <input name="jz_zhaol" type="radio" value="jk_bs_gaoxy" style="display: none;"><label>是</label>
+                <input name="jz_zhaol" type="radio" value="jk_bs_gaoxy" style="display: none;"><label>否</label>
+            </td>
+        </tr>
+        <tr>
+            <td>空巢</td>
+            <td><input name="jz_fenl" type="radio" value="25" style="display: none;"><label>20分</label></td>
+            <td>
+                <input name="jz_zhaol" type="radio" value="jk_bs_gaoxy" style="display: none;"><label>是</label>
+                <input name="jz_zhaol" type="radio" value="jk_bs_gaoxy" style="display: none;"><label>否</label>
+            </td>
+        </tr>
+        <tr>
+            <td>独居,孤寡</td>
+            <td><input name="jz_fenl" type="radio" value="25" style="display: none;"><label>25分</label></td>
+            <td>
+                <input name="jz_zhaol" type="radio" value="jk_bs_gaoxy" style="display: none;"><label>是</label>
+                <input name="jz_zhaol" type="radio" value="jk_bs_gaoxy" style="display: none;"><label>否</label>
+            </td>
+        </tr>
+
+        <tr><td>评分</td>
+            <td colspan="3">
+                <input name="jz_pingguf">
+            </td>
+        </tr>
+        <tr><td>评估员</td>
+            <td colspan="3">
+                <input name="jz_pingguy" value="张三">
+            </td>
+        </tr>
+        </tbody></table>
+</fieldset><fieldset style="width: 900px;margin: 0px auto;" opt="info4"><legend>年龄情况</legend>
+    <table class="formtable">
+        <tbody><tr>
+            <td rowspan="2">年龄情况</td>
+            <td>出生日期:
+                <input opt="csrq" class="datebox-f combo-f" comboname="chushengriqi" style="display: none;" value="2014-04-08"><span class="combo datebox" style="width: 151px; height: 20px;"><input type="text" class="combo-text validatebox-text" autocomplete="off" title="" style="width: 129px; height: 20px; line-height: 20px;" value="0"><span><span class="combo-arrow" style="height: 20px;"></span></span><input type="hidden" class="combo-value" name="chushengriqi" value="2014-04-08"></span>
+            </td>
+            <td opt="textymd">2014年04月08日(以身份证为准)</td>
+        </tr>
+        <tr>
+            <td>现有年龄:<input size="1" class="pingfen" opt="xynl" value="0"></td>
+            <td>
+                <ul style="list-style-type:none">
+                    <li><span style="width: 100px;">1. 60-79&nbsp;&nbsp;</span><input name="nl_fenl" type="radio" value="10" style="display: none;"><label class="checked">0分</label></li>
+                    <li><span style="width: 100px;">2. 80-89&nbsp;&nbsp;</span><input name="nl_fenl" type="radio" value="10" style="display: none;"><label>5分</label></li>
+                    <li><span style="width: 100px;">3. 90以上</span><input name="nl_fenl" type="radio" value="10" style="display: none;"><label>10分</label></li>
+                </ul>
+            </td>
+
+        </tr>
 
 
-<!--<div opt="pensionbutton" style="width: 900px;text-align: center;margin: 0px auto">
-    <a opt="pensionsubmit" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">保存返回</a>
-    <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">保存添加</a>
-    <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-back'">返回</a>
-</div>-->
+        <tr><td>评分</td>
+            <td colspan="3">
+                <input name="nl_pingguf" value="0">
+            </td>
+        </tr>
 
-</form>
+        </tbody></table>
+</fieldset><fieldset style="width: 900px;margin: 0px auto;" opt="info5"><legend>特殊贡献</legend>
+    <table class="formtable">
+        <tbody><tr>
+            <td>特殊贡献</td>
+            <td>
+                <ul style="list-style-type:none">
+                    <li><span style="width: 100px;">1. 市级以上劳模</span><input name="gx_laom" type="checkbox" value="10" style="display: none;"><label class="checked">10分</label></li>
+                    <li><span style="width: 100px;">2. 重点优抚对象</span><input name="gx_youf" type="checkbox" value="10" style="display: none;"><label class="checked">10分</label></li>
+                    <li><span style="width: 100px;">2. 纯居干&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </span><input name="gx_chunjg" type="checkbox" value="10" style="display: none;"><label>10分</label></li>
+                    <li><span style="width: 100px;">3. 离休干部&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </span><input name="gx_ganb" type="checkbox" value="10" style="display: none;"><label>10分</label></li>
+                </ul>
+            </td>
 
-<div id="testdiv"></div>
-
-
-
-</div></div>
-
-<div opt="form_btns" style="height: 30px;">
-    <div opt="pensionbutton" style="width: 900px;text-align: center;margin: 0px auto">
-        <a opt="pensionsubmit" href="#" class="easyui-linkbutton l-btn" data-options="iconCls:'icon-add'" group="" id=""><span class="l-btn-left"><span class="l-btn-text icon-add l-btn-icon-left">保存返回</span></span></a>
-        <a href="#" class="easyui-linkbutton l-btn" data-options="iconCls:'icon-add'" group="" id=""><span class="l-btn-left"><span class="l-btn-text icon-add l-btn-icon-left">保存添加</span></span></a>
-        <a href="#" class="easyui-linkbutton l-btn" data-options="iconCls:'icon-back'" group="" id=""><span class="l-btn-left"><span class="l-btn-text icon-back l-btn-icon-left">返回</span></span></a>
-    </div>
-    <!-- <div style="text-align:center;padding:5px">
-         <a href="#">人员基本信息</a>
-         <a href="#">生活自理能力</a>
-         <a href="#">经济条件</a>
-         <a href="#">居住环境</a>
-         <a href="#">年龄情况</a>
-         <a href="#">特殊贡献</a>
-         <a href="#">残障情况</a>
-         <a href="#">住房环境</a>
-         <a href="#">重大疾病</a>
-         <a href="#">评估总分计算</a>
-         <a href="#">评估报告确认</a>
-         <a href="#" opt="hiddenOthers">隐藏其他</a>
-         <a action="save">保存</a>
-     </div>-->
-
-</div>
-
-<div>
-    <br>
-</div>
+        </tr>
 
 
-<!--
-<script type="text/javascript">
-    $('#setdaytime').datebox('setValue',myformatter(new Date()));
-</script>-->
+        <tr><td>评分</td>
+            <td>
+                <input name="gx_pingguf" value="20">
+            </td>
+        </tr>
+        <tr><td>评估员</td>
+            <td>
+                <input name="gx_pingguy" value="张三">
+            </td>
+        </tr>
+
+        </tbody></table>
+</fieldset><fieldset style="width: 900px;margin: 0px auto;" opt="info6"><legend>残障情况</legend>
+    <table class="formtable">
+        <tbody><tr>
+            <td>视力</td>
+            <td>
+                <ul style="list-style-type:none">
+                    <li><input name="cz_shil" type="radio" value="2" style="display: none;"><label class="checked">轻度不健全,但尚能照顾个人安全</label></li>
+                    <li><input name="cz_shil" type="radio" value="2" style="display: none;"><label>重度不健全,只有光感,但在熟悉的环境下,足以照顾自己</label></li>
+                    <li><input name="cz_shil" type="radio" value="2" style="display: none;"><label>失明,需他人护理</label></li>
+                </ul>
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>听力</td>
+            <td>
+                <ul style="list-style-type:none">
+                    <li><input name="cz_tingl" type="radio" value="3" style="display: none;"><label class="">需配带助听器</label></li>
+                    <li><input name="cz_tingl" type="radio" value="3" style="display: none;"><label class="checked">轻度受损</label></li>
+                    <li><input name="cz_tingl" type="radio" value="3" style="display: none;"><label>重度受损</label></li>
+                    <li><input name="cz_tingl" type="radio" value="3" style="display: none;"><label>失聪</label></li>
+                </ul>
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>肢体</td>
+            <td>
+                <ul style="list-style-type:none">
+                    <li><input name="cz_zhit" type="radio" value="1" style="display: none;"><label>上肢</label></li>
+                    <li><input name="cz_zhit" type="radio" value="1" style="display: none;"><label>下肢</label></li>
+                </ul>
+            </td>
+
+        </tr>
+
+
+        <tr><td>其他</td>
+            <td><textarea name="cz_qit" style="height: 20px;width: 99%;"></textarea></td>
+        </tr>
+        <tr><td>评估员</td>
+            <td>
+                <input name="cz_pingguy" value="张三">
+            </td>
+        </tr>
+
+        </tbody></table>
+</fieldset><fieldset style="width: 900px;margin: 0px auto;" opt="info7"><legend>住房情况</legend>
+    <table class="formtable">
+        <tbody><tr>
+            <td>住房情况</td>
+            <td>
+                <ul style="list-style-type:none">
+                    <li><span style="width: 100px;display:inline-block;">1.廉租房</span>
+                        <input name="zf_lianzf" type="radio" value="1" style="display: none;"><label>无</label>
+                        <input name="zf_lianzf" type="radio" value="1" style="display: none;"><label class="checked">有</label>
+                    </li>
+                    <li><span style="width: 100px;display:inline-block;">2.租赁房</span>
+                        <input name="zf_zhulf" type="radio" value="1" style="display: none;"><label>无</label>
+                        <input name="zf_zhulf" type="radio" value="1" style="display: none;"><label class="checked">有</label>
+                    </li>
+                    <li><span style="width: 100px;display:inline-block;">3.经济适用房</span>
+                        <input name="zf_shiyf" type="radio" value="1" style="display: none;"><label>无</label>
+                        <input name="zf_shiyf" type="radio" value="1" style="display: none;"><label class="checked">有</label>
+                        <input size="1" class="pingfen" value="0">套
+                    </li>
+                    <li><span style="width: 100px;display:inline-block;">4.商品房</span>
+                        <input name="zf_shangpf" type="radio" value="1" style="display: none;"><label>无</label>
+                        <input name="zf_shangpf" type="radio" value="1" style="display: none;"><label>有</label>
+                        <input size="1" class="pingfen" value="0">套
+                    </li>
+                    <li><span style="width: 100px;display:inline-block;">5.农村自建房</span>
+                        <input name="zf_zijf" type="radio" value="1" style="display: none;"><label>无</label>
+                        <input name="zf_zijf" type="radio" value="1" style="display: none;"><label>有</label>
+                        <input size="1" class="pingfen" value="0">套
+
+                    </li>
+                    <li><span style="width: 100px;display:inline-block;">6.其他
+                        <input name="zf_qit">
+                    </span>
+                    </li>
+                </ul>
+            </td>
+
+        </tr>
+        <tr><td>评估员</td>
+            <td>
+                <input name="zf_pingguy" value="张三">
+            </td>
+        </tr>
+
+        </tbody></table>
+</fieldset><fieldset style="width: 900px;margin: 0px auto;" opt="info8"><legend>重大疾病</legend>
+    <table class="formtable">
+        <tbody><tr>
+            <td>疾病名称</td>
+            <td>医生诊断</td>
+            <td>在接受治疗</td>
+            <td>结束治疗</td>
+        </tr>
+        <tr opt="zhongdajibing">
+            <td>
+                <ol>
+                    <li style="line-height: 21px;">高血压</li>
+                    <li style="line-height: 21px;">老年心力衰竭</li>
+                    <li style="line-height: 21px;">冠心病</li>
+                    <li style="line-height: 21px;">心律失常</li>
+                    <li style="line-height: 21px;">慢性支气管炎</li>
+                    <li style="line-height: 21px;">肺气肿</li>
+                    <li style="line-height: 21px;">肺心病</li>
+                    <li style="line-height: 21px;">肺炎</li>
+                    <li style="line-height: 21px;">脑血管意外</li>
+                    <li style="line-height: 21px;">帕金森氏症</li>
+                    <li style="line-height: 21px;">老年痴呆症</li>
+                    <li style="line-height: 21px;">忧郁症</li>
+                    <li style="line-height: 21px;">糖尿病</li>
+                    <li style="line-height: 21px;">痛风</li>
+                    <li style="line-height: 21px;">肢体骨折</li>
+                    <li style="line-height: 21px;">肩周炎</li>
+                    <li style="line-height: 21px;">颈椎病</li>
+                    <li style="line-height: 21px;">类风湿性关节炎</li>
+                    <li style="line-height: 21px;">肝胆疾病</li>
+                    <li style="line-height: 21px;">白内障</li>
+                    <li style="line-height: 21px;">青光眼</li>
+                    <li style="line-height: 21px;">视网膜血管性疾病</li>
+                    <li style="line-height: 21px;">糖尿病视网膜病变</li>
+                    <li style="line-height: 21px;">肾脏疾病</li>
+                    <li style="line-height: 21px;">恶性肿瘤</li>
+                    <li style="line-height: 21px;">其他</li>
+                    <li style="line-height: 21px;">__</li>
+                    <li style="line-height: 21px;">__</li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                    <li opt1="1" opt2="0"><span style="width: 20px;display:inline-block;">1</span><input name="jb_gaoxy" type="radio" value="3" style="display: none;"><label title="高血压" qk="医生诊断"></label></li>
+                    <li opt1="1" opt2="1"><span style="width: 20px;display:inline-block;">1</span><input name="jb_xinlsj" type="radio" value="3" style="display: none;"><label title="老年心力衰竭" qk="医生诊断"></label></li>
+                    <li opt1="1" opt2="2"><span style="width: 20px;display:inline-block;">1</span><input name="jb_guanxb" type="radio" value="3" style="display: none;"><label title="冠心病" qk="医生诊断"></label></li>
+                    <li opt1="1" opt2="3"><span style="width: 20px;display:inline-block;">1</span><input name="jb_xinlshic" type="radio" value="3" style="display: none;"><label title="心律失常" qk="医生诊断"></label></li>
+                    <li opt1="1" opt2="4"><span style="width: 20px;display:inline-block;">1</span><input name="jb_manxzhiqguany" type="radio" value="3" style="display: none;"><label title="慢性支气管炎" qk="医生诊断"></label></li>
+                    <li opt1="1" opt2="5"><span style="width: 20px;display:inline-block;">1</span><input name="jb_feiqz" type="radio" value="3" style="display: none;"><label title="肺气肿" qk="医生诊断"></label></li>
+                    <li opt1="1" opt2="6"><span style="width: 20px;display:inline-block;">1</span><input name="jb_feixb" type="radio" value="3" style="display: none;"><label title="肺心病" qk="医生诊断"></label></li>
+                    <li opt1="1" opt2="7"><span style="width: 20px;display:inline-block;">1</span><input name="jb_feiy" type="radio" value="3" style="display: none;"><label title="肺炎" qk="医生诊断"></label></li>
+                    <li opt1="1" opt2="8"><span style="width: 20px;display:inline-block;">1</span><input name="jb_naoxguanyw" type="radio" value="3" style="display: none;"><label title="脑血管意外" qk="医生诊断"></label></li>
+                    <li opt1="1" opt2="9"><span style="width: 20px;display:inline-block;">1</span><input name="jb_pajshensz" type="radio" value="3" style="display: none;"><label title="帕金森氏症" qk="医生诊断"></label></li>
+                    <li opt1="1" opt2="10"><span style="width: 20px;display:inline-block;">1</span><input name="jb_laonchidz" type="radio" value="3" style="display: none;"><label title="老年痴呆症" qk="医生诊断"></label></li>
+                    <li opt1="1" opt2="11"><span style="width: 20px;display:inline-block;">1</span><input name="jb_youyz" type="radio" value="3" style="display: none;"><label title="忧郁症" qk="医生诊断"></label></li>
+                    <li opt1="1" opt2="12"><span style="width: 20px;display:inline-block;">1</span><input name="jb_tangnb" type="radio" value="3" style="display: none;"><label title="糖尿病" qk="医生诊断"></label></li>
+                    <li opt1="1" opt2="13"><span style="width: 20px;display:inline-block;">1</span><input name="jb_tongf" type="radio" value="3" style="display: none;"><label title="痛风" qk="医生诊断"></label></li>
+                    <li opt1="1" opt2="14"><span style="width: 20px;display:inline-block;">1</span><input name="jb_zhitguz" type="radio" value="3" style="display: none;"><label title="肢体骨折" qk="医生诊断"></label></li>
+                    <li opt1="1" opt2="15"><span style="width: 20px;display:inline-block;">1</span><input name="jb_jianzy" type="radio" value="3" style="display: none;"><label title="肩周炎" qk="医生诊断"></label></li>
+                    <li opt1="1" opt2="16"><span style="width: 20px;display:inline-block;">1</span><input name="jb_jinzb" type="radio" value="3" style="display: none;"><label title="颈椎病" qk="医生诊断"></label></li>
+                    <li opt1="1" opt2="17"><span style="width: 20px;display:inline-block;">1</span><input name="jb_leifshigjiey" type="radio" value="3" style="display: none;"><label title="类风湿性关节炎" qk="医生诊断"></label></li>
+                    <li opt1="1" opt2="18"><span style="width: 20px;display:inline-block;">1</span><input name="jb_gandjib" type="radio" value="3" style="display: none;"><label title="肝胆疾病" qk="医生诊断"></label></li>
+                    <li opt1="1" opt2="19"><span style="width: 20px;display:inline-block;">1</span><input name="jb_bainz" type="radio" value="3" style="display: none;"><label title="白内障" qk="医生诊断"></label></li>
+                    <li opt1="1" opt2="20"><span style="width: 20px;display:inline-block;">1</span><input name="jb_qinguany" type="radio" value="3" style="display: none;"><label title="青光眼" qk="医生诊断"></label></li>
+                    <li opt1="1" opt2="21"><span style="width: 20px;display:inline-block;">1</span><input name="jb_shiwmoxguanjib" type="radio" value="3" style="display: none;"><label title="视网膜血管性疾病" qk="医生诊断"></label></li>
+                    <li opt1="1" opt2="22"><span style="width: 20px;display:inline-block;">1</span><input name="jb_tangnbingswangmbingb" type="radio" value="3" style="display: none;"><label title="糖尿病视网膜病变" qk="医生诊断"></label></li>
+                    <li opt1="1" opt2="23"><span style="width: 20px;display:inline-block;">1</span><input name="jb_shenzjib" type="radio" value="3" style="display: none;"><label title="肾脏疾病" qk="医生诊断"></label></li>
+                    <li opt1="1" opt2="24"><span style="width: 20px;display:inline-block;">1</span><input name="jb_qit1" type="radio" value="1" style="display: none;"><label title="恶性肿瘤" qk="医生诊断"></label></li>
+                    <li opt1="1" opt2="25"><span style="width: 20px;display:inline-block;">1</span><input name="jb_qit2" type="radio" value="3" style="display: none;"><label title="其他" qk="医生诊断"></label></li>
+                    <li opt1="1" opt2="26"><span style="width: 20px;display:inline-block;">1</span><input name="jb_qit3" type="radio" value="3" style="display: none;"><label title="__" qk="医生诊断"></label></li>
+                    <li opt1="1" opt2="27"><span style="width: 20px;display:inline-block;">1</span><input name="jb_qit4" type="radio" value="3" style="display: none;"><label title="__" qk="医生诊断"></label></li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                    <li opt1="2" opt2="0"><span style="width: 20px;display:inline-block;">2</span><input name="jb_gaoxy" type="radio" value="3" style="display: none;"><label title="高血压" qk="在接受治疗"></label></li>
+                    <li opt1="2" opt2="1"><span style="width: 20px;display:inline-block;">2</span><input name="jb_xinlsj" type="radio" value="3" style="display: none;"><label title="老年心力衰竭" qk="在接受治疗"></label></li>
+                    <li opt1="2" opt2="2"><span style="width: 20px;display:inline-block;">2</span><input name="jb_guanxb" type="radio" value="3" style="display: none;"><label title="冠心病" qk="在接受治疗"></label></li>
+                    <li opt1="2" opt2="3"><span style="width: 20px;display:inline-block;">2</span><input name="jb_xinlshic" type="radio" value="3" style="display: none;"><label title="心律失常" qk="在接受治疗"></label></li>
+                    <li opt1="2" opt2="4"><span style="width: 20px;display:inline-block;">2</span><input name="jb_manxzhiqguany" type="radio" value="3" style="display: none;"><label title="慢性支气管炎" qk="在接受治疗"></label></li>
+                    <li opt1="2" opt2="5"><span style="width: 20px;display:inline-block;">2</span><input name="jb_feiqz" type="radio" value="3" style="display: none;"><label title="肺气肿" qk="在接受治疗"></label></li>
+                    <li opt1="2" opt2="6"><span style="width: 20px;display:inline-block;">2</span><input name="jb_feixb" type="radio" value="3" style="display: none;"><label title="肺心病" qk="在接受治疗"></label></li>
+                    <li opt1="2" opt2="7"><span style="width: 20px;display:inline-block;">2</span><input name="jb_feiy" type="radio" value="3" style="display: none;"><label title="肺炎" qk="在接受治疗"></label></li>
+                    <li opt1="2" opt2="8"><span style="width: 20px;display:inline-block;">2</span><input name="jb_naoxguanyw" type="radio" value="3" style="display: none;"><label title="脑血管意外" qk="在接受治疗"></label></li>
+                    <li opt1="2" opt2="9"><span style="width: 20px;display:inline-block;">2</span><input name="jb_pajshensz" type="radio" value="3" style="display: none;"><label title="帕金森氏症" qk="在接受治疗"></label></li>
+                    <li opt1="2" opt2="10"><span style="width: 20px;display:inline-block;">2</span><input name="jb_laonchidz" type="radio" value="3" style="display: none;"><label title="老年痴呆症" qk="在接受治疗"></label></li>
+                    <li opt1="2" opt2="11"><span style="width: 20px;display:inline-block;">2</span><input name="jb_youyz" type="radio" value="3" style="display: none;"><label title="忧郁症" qk="在接受治疗"></label></li>
+                    <li opt1="2" opt2="12"><span style="width: 20px;display:inline-block;">2</span><input name="jb_tangnb" type="radio" value="3" style="display: none;"><label title="糖尿病" qk="在接受治疗"></label></li>
+                    <li opt1="2" opt2="13"><span style="width: 20px;display:inline-block;">2</span><input name="jb_tongf" type="radio" value="3" style="display: none;"><label title="痛风" qk="在接受治疗"></label></li>
+                    <li opt1="2" opt2="14"><span style="width: 20px;display:inline-block;">2</span><input name="jb_zhitguz" type="radio" value="3" style="display: none;"><label title="肢体骨折" qk="在接受治疗"></label></li>
+                    <li opt1="2" opt2="15"><span style="width: 20px;display:inline-block;">2</span><input name="jb_jianzy" type="radio" value="3" style="display: none;"><label title="肩周炎" qk="在接受治疗"></label></li>
+                    <li opt1="2" opt2="16"><span style="width: 20px;display:inline-block;">2</span><input name="jb_jinzb" type="radio" value="3" style="display: none;"><label title="颈椎病" qk="在接受治疗"></label></li>
+                    <li opt1="2" opt2="17"><span style="width: 20px;display:inline-block;">2</span><input name="jb_leifshigjiey" type="radio" value="3" style="display: none;"><label title="类风湿性关节炎" qk="在接受治疗"></label></li>
+                    <li opt1="2" opt2="18"><span style="width: 20px;display:inline-block;">2</span><input name="jb_gandjib" type="radio" value="3" style="display: none;"><label title="肝胆疾病" qk="在接受治疗"></label></li>
+                    <li opt1="2" opt2="19"><span style="width: 20px;display:inline-block;">2</span><input name="jb_bainz" type="radio" value="3" style="display: none;"><label title="白内障" qk="在接受治疗"></label></li>
+                    <li opt1="2" opt2="20"><span style="width: 20px;display:inline-block;">2</span><input name="jb_qinguany" type="radio" value="3" style="display: none;"><label title="青光眼" qk="在接受治疗"></label></li>
+                    <li opt1="2" opt2="21"><span style="width: 20px;display:inline-block;">2</span><input name="jb_shiwmoxguanjib" type="radio" value="3" style="display: none;"><label title="视网膜血管性疾病" qk="在接受治疗"></label></li>
+                    <li opt1="2" opt2="22"><span style="width: 20px;display:inline-block;">2</span><input name="jb_tangnbingswangmbingb" type="radio" value="3" style="display: none;"><label title="糖尿病视网膜病变" qk="在接受治疗"></label></li>
+                    <li opt1="2" opt2="23"><span style="width: 20px;display:inline-block;">2</span><input name="jb_shenzjib" type="radio" value="3" style="display: none;"><label title="肾脏疾病" qk="在接受治疗"></label></li>
+                    <li opt1="2" opt2="24"><span style="width: 20px;display:inline-block;">2</span><input name="jb_qit2" type="radio" value="3" style="display: none;"><label title="恶性肿瘤" qk="在接受治疗"></label></li>
+                    <li opt1="2" opt2="25"><span style="width: 20px;display:inline-block;">2</span><input name="jb_qit2" type="radio" value="3" style="display: none;"><label title="其他" qk="在接受治疗"></label></li>
+                    <li opt1="2" opt2="26"><span style="width: 20px;display:inline-block;">2</span><input name="jb_qit3" type="radio" value="3" style="display: none;"><label title="__" qk="在接受治疗"></label></li>
+                    <li opt1="2" opt2="27"><span style="width: 20px;display:inline-block;">2</span><input name="jb_qit4" type="radio" value="3" style="display: none;"><label title="__" qk="在接受治疗"></label></li>
+                </ol>
+            </td>
+
+            <td>
+                <ol>
+                    <li opt1="3" opt2="0"><span style="width: 20px;display:inline-block;">3</span><input name="jb_gaoxy" type="radio" value="3" style="display: none;"><label title="高血压" qk="结束治疗"></label></li>
+                    <li opt1="3" opt2="1"><span style="width: 20px;display:inline-block;">3</span><input name="jb_xinlsj" type="radio" value="3" style="display: none;"><label title="老年心力衰竭" qk="结束治疗"></label></li>
+                    <li opt1="3" opt2="2"><span style="width: 20px;display:inline-block;">3</span><input name="jb_guanxb" type="radio" value="3" style="display: none;"><label title="冠心病" qk="结束治疗"></label></li>
+                    <li opt1="3" opt2="3"><span style="width: 20px;display:inline-block;">3</span><input name="jb_xinlshic" type="radio" value="3" style="display: none;"><label title="心律失常" qk="结束治疗"></label></li>
+                    <li opt1="3" opt2="4"><span style="width: 20px;display:inline-block;">3</span><input name="jb_manxzhiqguany" type="radio" value="3" style="display: none;"><label title="慢性支气管炎" qk="结束治疗"></label></li>
+                    <li opt1="3" opt2="5"><span style="width: 20px;display:inline-block;">3</span><input name="jb_feiqz" type="radio" value="3" style="display: none;"><label title="肺气肿" qk="结束治疗"></label></li>
+                    <li opt1="3" opt2="6"><span style="width: 20px;display:inline-block;">3</span><input name="jb_feixb" type="radio" value="3" style="display: none;"><label title="肺心病" qk="结束治疗"></label></li>
+                    <li opt1="3" opt2="7"><span style="width: 20px;display:inline-block;">3</span><input name="jb_feiy" type="radio" value="3" style="display: none;"><label title="肺炎" qk="结束治疗"></label></li>
+                    <li opt1="3" opt2="8"><span style="width: 20px;display:inline-block;">3</span><input name="jb_naoxguanyw" type="radio" value="3" style="display: none;"><label title="脑血管意外" qk="结束治疗"></label></li>
+                    <li opt1="3" opt2="9"><span style="width: 20px;display:inline-block;">3</span><input name="jb_pajshensz" type="radio" value="3" style="display: none;"><label title="帕金森氏症" qk="结束治疗"></label></li>
+                    <li opt1="3" opt2="10"><span style="width: 20px;display:inline-block;">3</span><input name="jb_laonchidz" type="radio" value="3" style="display: none;"><label title="老年痴呆症" qk="结束治疗"></label></li>
+                    <li opt1="3" opt2="11"><span style="width: 20px;display:inline-block;">3</span><input name="jb_youyz" type="radio" value="3" style="display: none;"><label title="忧郁症" qk="结束治疗"></label></li>
+                    <li opt1="3" opt2="12"><span style="width: 20px;display:inline-block;">3</span><input name="jb_tangnb" type="radio" value="3" style="display: none;"><label title="糖尿病" qk="结束治疗"></label></li>
+                    <li opt1="3" opt2="13"><span style="width: 20px;display:inline-block;">3</span><input name="jb_tongf" type="radio" value="3" style="display: none;"><label title="痛风" qk="结束治疗"></label></li>
+                    <li opt1="3" opt2="14"><span style="width: 20px;display:inline-block;">3</span><input name="jb_zhitguz" type="radio" value="3" style="display: none;"><label title="肢体骨折" qk="结束治疗"></label></li>
+                    <li opt1="3" opt2="15"><span style="width: 20px;display:inline-block;">3</span><input name="jb_jianzy" type="radio" value="3" style="display: none;"><label title="肩周炎" qk="结束治疗"></label></li>
+                    <li opt1="3" opt2="16"><span style="width: 20px;display:inline-block;">3</span><input name="jb_jinzb" type="radio" value="3" style="display: none;"><label title="颈椎病" qk="结束治疗"></label></li>
+                    <li opt1="3" opt2="17"><span style="width: 20px;display:inline-block;">3</span><input name="jb_leifshigjiey" type="radio" value="3" style="display: none;"><label title="类风湿性关节炎" qk="结束治疗"></label></li>
+                    <li opt1="3" opt2="18"><span style="width: 20px;display:inline-block;">3</span><input name="jb_gandjib" type="radio" value="3" style="display: none;"><label title="肝胆疾病" qk="结束治疗"></label></li>
+                    <li opt1="3" opt2="19"><span style="width: 20px;display:inline-block;">3</span><input name="jb_bainz" type="radio" value="3" style="display: none;"><label title="白内障" qk="结束治疗"></label></li>
+                    <li opt1="3" opt2="20"><span style="width: 20px;display:inline-block;">3</span><input name="jb_qinguany" type="radio" value="3" style="display: none;"><label title="青光眼" qk="结束治疗"></label></li>
+                    <li opt1="3" opt2="21"><span style="width: 20px;display:inline-block;">3</span><input name="jb_shiwmoxguanjib" type="radio" value="3" style="display: none;"><label title="视网膜血管性疾病" qk="结束治疗"></label></li>
+                    <li opt1="3" opt2="22"><span style="width: 20px;display:inline-block;">3</span><input name="jb_tangnbingswangmbingb" type="radio" value="3" style="display: none;"><label title="糖尿病视网膜病变" qk="结束治疗"></label></li>
+                    <li opt1="3" opt2="23"><span style="width: 20px;display:inline-block;">3</span><input name="jb_shenzjib" type="radio" value="3" style="display: none;"><label title="肾脏疾病" qk="结束治疗"></label></li>
+                    <li opt1="3" opt2="24"><span style="width: 20px;display:inline-block;">3</span><input name="jb_qit3" type="radio" value="3" style="display: none;"><label title="恶性肿瘤" qk="结束治疗"></label></li>
+                    <li opt1="3" opt2="25"><span style="width: 20px;display:inline-block;">3</span><input name="jb_qit2" type="radio" value="3" style="display: none;"><label title="其他" qk="结束治疗"></label></li>
+                    <li opt1="3" opt2="26"><span style="width: 20px;display:inline-block;">3</span><input name="jb_qit3" type="radio" value="3" style="display: none;"><label title="__" qk="结束治疗"></label></li>
+                    <li opt1="3" opt2="27"><span style="width: 20px;display:inline-block;">3</span><input name="jb_qit4" type="radio" value="3" style="display: none;"><label title="__" qk="结束治疗"></label></li>
+                </ol>
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>评估员</td>
+            <td colspan="3">
+                <input name="jb_pingguy" value="张三">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4"><textarea name="jb_beiz" style="width: 100%;" placeholder="填写备注信息"></textarea></td>
+        </tr>
+        </tbody></table>
+</fieldset><fieldset style="width: 900px;margin: 0px auto;" opt="result1">
+    <legend>评估报告一:评估总分计算</legend>
+    <input type="hidden" name="pg_id">
+    <table class="formtable" style="width:100%">
+        <tbody><tr>
+            <td style="width: 90px;">评估参数</td>
+            <td>判断等级</td>
+            <td style="width: 70px;">评估分值</td>
+        </tr>
+        <tr>
+            <td>1.生活处理能力<br>(0-50分)</td>
+            <td>
+                <input name="sum_sh_jiel" type="radio" value="3" style="display: none;"><label>正常</label>
+                <input name="sum_sh_jiel" type="radio" value="3" style="display: none;"><label>轻度</label>
+                <input name="sum_sh_jiel" type="radio" value="3" style="display: none;"><label>中度依赖</label>
+                <input name="sum_sh_jiel" type="radio" value="3" style="display: none;"><label>重度依赖</label>
+            </td>
+            <td><input size="1" class="pingfen" name="sum_sh_pingguf" value="40"></td>
+        </tr>
+        <tr>
+            <td>2.经济条件<br>(0-25分)</td>
+            <td>
+                <input name="sum_jj_shour" type="radio" value="25" style="display: none;"><label>低保</label>
+                <input name="sum_jj_shour" type="radio" value="25" style="display: none;"><label>无社保</label>
+                <input name="sum_jj_shour" type="radio" value="25" style="display: none;"><label>低退休工资</label>
+                <input name="sum_jj_shour" type="radio" value="25" style="display: none;"><label>退休工资</label>
+            </td>
+            <td><input size="1" class="pingfen" name="sum_jj_pingguf"></td>
+        </tr>
+        <tr>
+            <td>3.居住环境<br>(0-25分)</td>
+            <td>
+                <input name="sum_jz_fenl" type="radio" value="25" style="display: none;"><label>独居,孤寡</label>
+                <input name="sum_jz_fenl" type="radio" value="25" style="display: none;"><label>空巢</label>
+                <input name="sum_jz_fenl" type="radio" value="25" style="display: none;"><label>与子女,亲友共住</label>
+            </td>
+            <td><input size="1" class="pingfen" name="sum_jz_pingguf"></td>
+        </tr>
+        <tr>
+            <td>4.年龄<br>(0-10分)</td>
+            <td>
+                <input name="sum_nl_fenl" type="radio" value="10" style="display: none;"><label class="checked">60-79</label>
+                <input name="sum_nl_fenl" type="radio" value="10" style="display: none;"><label>80-90</label>
+                <input name="sum_nl_fenl" type="radio" value="10" style="display: none;"><label>90以上</label>
+            </td>
+            <td><input size="1" class="pingfen" name="sum_nl_pingguf" value="0"></td>
+        </tr>
+        <tr>
+            <td>5.特殊贡献<br>(0-10分)</td>
+            <td>
+                <input name="sum_gx_laom" type="checkbox" value="10" style="display: none;"><label class="checked">市级以上劳模</label>
+                <input name="sum_gx_youf" type="checkbox" value="10" style="display: none;"><label class="checked">重点优抚对象</label>
+                <input name="sum_gx_chunjg" type="checkbox" value="10" style="display: none;"><label>纯居干</label>
+                <input name="sum_gx_ganb" type="checkbox" value="10" style="display: none;"><label>离休干部</label>
+            </td>
+            <td><input size="1" class="pingfen" name="sum_gx_pingguf" value="20"></td>
+        </tr>
+        <tr>
+            <td>6.残障情况</td>
+            <td>
+                <textarea style="width: 99%;height: 50px;" opt="canzhangqingkuang" name="canzhangqingkuang">-视力 : 轻度不健全,但尚能照顾个人安全--听力 : 轻度受损-</textarea>
+            </td>
+            <td><input size="1" class="pingfen" name="cz_pingguf"></td>
+        </tr>
+        <tr>
+            <td>7.住房情况</td>
+            <td>
+                <textarea style="width: 99%;height: 50px;" opt="zhufangqingkuang" name="zhufangqingkuang">&lt;廉租房有&gt;&lt;租赁房有&gt;&lt;经济适用房有&gt;&lt;其他&gt;</textarea>
+            </td>
+            <td><input size="1" class="pingfen" name="zf_pingguf"></td>
+        </tr>
+        <tr>
+            <td>8.重大疾病</td>
+            <td>
+                <textarea style="width: 99%;height: 50px;" opt="zhongdajibing" name="zhongdajibing"></textarea>
+            </td>
+            <td><input size="1" class="pingfen" name="jb_pingguf"></td>
+        </tr>
+        <tr>
+            <td>评估总分</td>
+            <td style="text-align: center;">
+                <label><input name="pinggusum" size="2" class="pingfen">分</label>
+            </td>
+            <td><a opt="recalculate">重新计算</a></td>
+        </tr>
+        <tr>
+            <td>建议服务标准</td>
+            <td colspan="2" style="text-align: center;">
+                <label><input name="standard" size="2" class="pingfen">小时</label>
+            </td>
+        </tr>
+        <tr>
+            <td>建议服务形式</td>
+            <td colspan="2" style="text-align: center;">
+                <input name="fuwuxingshi" type="radio" value="2" style="display: none;"><label>居家养老</label>
+                <input name="fuwuxingshi" type="radio" value="2" style="display: none;"><label>机构养老</label>
+            </td>
+        </tr>
+
+        </tbody></table>
+</fieldset><fieldset style="width: 900px;margin: 0px auto;" opt="result2" name="result2">
+    <legend>评估报告三:评估报告确认</legend>
+
+    <table class="formtable">
+        <tbody><tr>
+            <td colspan="5" style="text-align: center;">评估表基本信息</td>
+        </tr>
+        <tr>
+            <td colspan="2">评估表编号</td>
+            <td opt="pg_id"></td>
+            <td>完成日期</td>
+            <td opt="pingguenddate"></td>
+        </tr>
+        <tr>
+            <td rowspan="5" style="width: 30px;">评估确认员完成</td>
+            <td style="width: 200px;">评估员姓名</td>
+            <td style="width: 200px;"><input size="25" name="pingguyname"></td>
+            <td rowspan="2" style="width: 150px;">确认完成</td>
+            <td rowspan="2">
+                <ul style="list-style-type:none">
+                    <li>首次评估<input type="radio" name="realend" style="display: none;" value="on"><label></label></li>
+                    <li>复检评估<input type="radio" name="realend" style="display: none;" value="on"><label></label></li>
+                    <li>变更评估<input type="radio" name="realend" style="display: none;" value="on"><label></label></li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td>联络电话</td>
+            <td><input size="25" name="pingguyphone"></td>
+        </tr>
+
+        <tr>
+            <td>所属单位</td>
+            <td colspan="3"><input size="75" name="pingguydept"></td>
+        </tr>
+
+        <tr>
+            <td>评估员签名</td>
+            <td><input size="25" value="0"></td>
+            <td>日期</td>
+            <td><input size="25" value="0"></td>
+        </tr>
+
+        <tr>
+            <td>评估分值</td>
+            <td><input size="25" name="pinggusum"></td>
+            <td>服务时间</td>
+            <td><input size="25" value="0"></td>
+        </tr>
+
+        <tr>
+            <td>社区(村)意见</td>
+            <td colspan="4"><textarea style="width: 99%;height: 50px;" name="shequcomment"></textarea></td>
+        </tr>
+        <tr>
+            <td>街镇审查</td>
+            <td colspan="4"><textarea style="width: 99%;height: 50px;" name="xiangzhencomment"></textarea></td>
+        </tr>
+        <tr>
+            <td>民政局审核</td>
+            <td colspan="4"><textarea style="width: 99%;height: 50px;" name="minzhengcomment"></textarea></td>
+        </tr>
+
+
+        </tbody></table>
+</fieldset></form>

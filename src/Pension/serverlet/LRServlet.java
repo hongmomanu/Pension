@@ -7,6 +7,7 @@ import Pension.common.RtnType;
 import Pension.common.db.DbUtil;
 import Pension.common.sys.LogBean;
 import Pension.common.sys.ReqBean;
+import Pension.common.sys.annotation.OpLog;
 import Pension.common.sys.userlog.UserLog;
 import Pension.common.sys.util.CurrentUser;
 import Pension.common.sys.util.SysUtil;
@@ -22,6 +23,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -76,14 +78,15 @@ public class LRServlet extends HttpServlet {
             reqBean.setLocalReq(request);    //审核功能 用
             CurrentUser user=(CurrentUser)request.getSession().getAttribute("user");
             SysUtil.setCacheCurrentUser(user);//获得当前用户信息
-            if(model.contains("pension")){
-                UserLog.AddLog();       //用户日志//以后可以使用注解的方式
-            }
 
             Map map=new HashMap();
             superModel.setLocalMap(map);
+            Method method=pm.getMethod(request.getParameter("eventName"));
+            if(null!=method.getAnnotation(OpLog.class)){
+                UserLog.AddLog();       //用户日志
+            }
             //执行对象的方法
-            result=(String)(pm.getMethod(request.getParameter("eventName")).invoke(o)+"");
+            result=(String)(method.invoke(o)+"");
             if((RtnType.NORMALFAILURE+"").equals(result)||(RtnType.NORMALSUCCESS+"").equals(result)){
                 result=JSONObject.fromObject(map).toString();
             }

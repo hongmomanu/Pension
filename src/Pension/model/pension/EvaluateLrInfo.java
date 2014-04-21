@@ -4,13 +4,17 @@ import Pension.business.pension.EvaluateBS;
 import Pension.common.CommonDbUtil;
 import Pension.common.ParameterUtil;
 import Pension.common.RtnType;
+import Pension.common.sys.annotation.OpLog;
 import Pension.common.sys.audit.AuditBean;
 import Pension.common.sys.audit.AuditManager;
 import Pension.common.sys.audit.IMultilevelAudit;
 import Pension.model.Model;
 import net.sf.json.JSONObject;
+import org.junit.Test;
 
 import javax.servlet.http.HttpServletRequest;
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Method;
 import java.sql.Connection;
 import java.util.HashMap;
 import java.util.List;
@@ -18,7 +22,7 @@ import java.util.Map;
 
 public class EvaluateLrInfo extends Model implements IMultilevelAudit {
 
-
+    @OpLog
     public String save(){
         CommonDbUtil commonDbUtil=new CommonDbUtil();
         Map map= ParameterUtil.toMap(this.getRequest());
@@ -101,7 +105,6 @@ public class EvaluateLrInfo extends Model implements IMultilevelAudit {
         dbUtil.execute(sql2);
         return null;
     }
-
     public String findLrBaseInfo(){
         Integer lr_id=Integer.parseInt(this.getRequest().getParameter("lr_id"));
         Object obj=new EvaluateBS().findLrBaseInfoById(lr_id);
@@ -109,5 +112,20 @@ public class EvaluateLrInfo extends Model implements IMultilevelAudit {
             return JSONObject.fromObject(obj).toString();
         }
         return RtnType.FAILURE;
+    }
+
+    @Test
+    @OpLog
+    public void test(){
+        Class c=this.getClass();
+        Method[] ms=c.getDeclaredMethods();
+        for(Method m:ms){
+            Annotation[] as=m.getAnnotations();
+            Annotation a=m.getAnnotation(OpLog.class);
+            if(null!=a){
+
+                System.out.println(OpLog.class.equals(a));
+            }
+        }
     }
 }

@@ -62,11 +62,12 @@ define(function(){
             alert(t)
         },
         showHtml:function(title,texthtml){
-            mainTab.tabs('add',{
+            var logpage=mainTab.tabs('add',{
                 title:title,
-                content:texthtml,
+                content:"<div></div>",
                 closable:true
             })
+            logpage.tabs('getTab', title).find('div').append(texthtml)
         }
 
 
