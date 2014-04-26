@@ -1,9 +1,7 @@
 package Pension.model.pension;
 
 import Pension.business.pension.EvaluateBS;
-import Pension.common.CommonDbUtil;
-import Pension.common.ParameterUtil;
-import Pension.common.RtnType;
+import Pension.common.*;
 import Pension.common.sys.annotation.OpLog;
 import Pension.common.sys.audit.AuditBean;
 import Pension.common.sys.audit.AuditManager;
@@ -23,7 +21,7 @@ import java.util.Map;
 public class EvaluateLrInfo extends Model implements IMultilevelAudit {
 
     @OpLog
-    public String save(){
+    public String save() throws AppException {
         CommonDbUtil commonDbUtil=new CommonDbUtil();
         Map map= ParameterUtil.toMap(this.getRequest());
         int result=0;
@@ -33,6 +31,7 @@ public class EvaluateLrInfo extends Model implements IMultilevelAudit {
         AuditManager.addAudit(id);
         commonDbUtil.insertTableVales(map,"t_needassessmentsum");
         result=commonDbUtil.insertTableVales(map,tablename);
+        this.test2();
         return result>0? RtnType.SUCCESS:RtnType.FAILURE;
     }
     public String query(){
@@ -74,7 +73,11 @@ public class EvaluateLrInfo extends Model implements IMultilevelAudit {
         }
         return JSONObject.fromObject(map).toString();
     }
-
+    @OpLog
+    public int test2() throws AppException {
+        System.out.println(JSONObject.fromObject(CommQuery.query("select * from xt_log")).toString());
+        return RtnType.NORMALSUCCESS;
+    }
     /*审核成功后的回调
     * 设置评估信息的状态为有效
     * */

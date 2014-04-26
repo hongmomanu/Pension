@@ -45,6 +45,31 @@ public class BaseDbQuery {
         return result;
     }
 
+    //获得数据库会话id
+    public Long querySid(){
+        Statement stmt=null;
+        Long result=0l;
+        try {
+            stmt=conn.createStatement();
+            ResultSet rs=stmt.executeQuery("select userenv('sid') from dual");
+            if(rs.next()){
+                result=rs.getLong(1);
+            }
+            rs.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            if(null!=stmt){
+                try {
+                    stmt.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return result;
+    }
+
     //查询,返回List<Map>
     public List<Map<String,Object>> query(String sql){
         ArrayList<Map<String,Object>> list=new ArrayList<Map<String, Object>>();

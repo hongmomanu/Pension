@@ -2,6 +2,7 @@ package Pension.model.pension;
 
 import Pension.common.*;
 import Pension.common.db.DbUtil;
+import Pension.common.sys.annotation.OpLog;
 import Pension.model.Model;
 import net.sf.json.JSONObject;
 import org.junit.Test;
@@ -19,14 +20,15 @@ import java.util.Map;
  * Time: 下午1:55
  */
 public class EvaluateLrInfoChange extends Model {
+    @OpLog
     public String save() throws AppException, SQLException {
         CommonDbUtil commonDbUtil=new CommonDbUtil();
         Map map= ParameterUtil.toMap(this.getRequest());
         int result=0;
         Long id=Long.parseLong((String)map.get("pg_id"));
-        map.put("pg_id",id);
         Map where=new HashMap();
         where.put("pg_id",id+"");
+        System.out.println(JSONObject.fromObject(CommQuery.query("select * from xt_log")).toString());
         Map bgbefore= queryOldData("select a.*,b.* from t_needassessment a,t_needassessmentsum b where a.pg_id=b.pg_id and a.pg_id=" + id);
         saveBgData(bgbefore,map);
         result=commonDbUtil.updateTableVales(map,"t_needassessmentsum",where);

@@ -18,7 +18,7 @@ import java.util.Map;
 public class CallBack {
     public static void doAudit(Long id) throws Exception {
         AuditBean ab=new AuditBean();
-        String sql="select b.tprkey,a.auditid,a.auflag,a.auuser,a.audate,a.aulevel,a.audesc,a.auendflag,f.location from xt_function f,sysuserlog b,opaudit a " +
+        String sql="select b.tprkey,a.auditid,a.auflag,a.auuser,a.audate,a.aulevel,a.audesc,a.auendflag,f.location from xt_function f,xt_userlog b,opaudit a " +
                 " where f.functionid=b.functionid and b.opseno=a.opseno and a.auditid=?";
         PreparedStatement pstmt= DbUtil.get().prepareStatement(sql);
         pstmt.setLong(1, id);

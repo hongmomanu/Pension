@@ -18,6 +18,9 @@
      }.icon-log{
           background:url('img/mylog.gif') no-repeat;
       }
+    .icon-chexiao{
+        background:url('img/chexiao.jpg') no-repeat;
+    }
     a:link, a:visited, a:active {
         color: #404040;
         text-decoration: none;
@@ -36,6 +39,9 @@
     var bstimeformatter=function(v,r,i){
         return v.split('.')[0]
     }
+    var chexiaoformat=function(v,r,i){
+        return '<a href="#" class="icon-chexiao" '+'>回退</a>';
+    }
 </script>
 <body>
 <table id="logGrid" class="easyui-datagrid-noauto"
@@ -50,6 +56,7 @@
         <th data-options="field:'username',width:60,align:'left'">办理人</th>
         <th data-options="field:'bsnyue',width:60,align:'left'">业务期</th>
         <th data-options="field:'bstime',width:120,align:'left',formatter:bstimeformatter">时间</th>
+        <th data-options="field:'ro',width:120,align:'left',formatter:chexiaoformat">回退</th>
     </tr>
     </thead>
 </table>

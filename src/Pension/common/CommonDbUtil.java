@@ -60,6 +60,9 @@ public class CommonDbUtil {
     public Long getSequence(String sequence){
         return baseDbQuery.querySequence(sequence);
     }
+    public Long getSid(){
+        return baseDbQuery.querySid();
+    }
 
     //查询,返回List<Map>
     public List<Map<String,Object>> query(String sql){

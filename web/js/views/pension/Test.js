@@ -1,22 +1,31 @@
 define(function(){
     return {
-        render:function(){
-            /*$('#businessgrid').datagrid(
-                {
-                    singleSelect: true,
-                    collapsible: true,
-                    rownumbers: true,
-                    method:'post',
-                    remoteSort: false,
-                    sortName:'time',
-                    sortOrder:'desc',
-                    //fit:true,
-                    pagination:true,
-                    pageSize:10,
-                    rowStyler:function(index,row){
-                        return 'color: #aa0099; ';
-                    }
-                })*/
+        render:function(local,option){
+            local.find('div[opt=formcontentpanel]').panel({
+                onResize:function(width, height){
+                    $(this).height($(this).height()-30);
+                    local.find('div[opt=form_btns]').height(30);
+                }
+            });
+
+            local.find('a[action=save]').bind('click',function(){
+                require(['commonfuncs/Htmldb'],function(js){
+                    local.find('form[opt=mainform]').form('submit',{
+                        url:lr.url(option,'save'),
+                        onSubmit: function(param){
+                            param.originalpage=js.parse(local)
+                        },
+                        success: function(res){
+                            cj.ifSuccQest(res,"已操作成功是否关闭此页",function(){
+                                require(['commonfuncs/TreeClickEvent'],function(js){
+                                    js.closeCurrentTab();
+                                })
+                            })
+                        }
+                    })
+                })
+
+            })
         }
     }
 })

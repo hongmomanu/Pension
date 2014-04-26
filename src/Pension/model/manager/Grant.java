@@ -2,6 +2,7 @@ package Pension.model.manager;
 
 import Pension.common.CommonDbUtil;
 import Pension.common.RtnType;
+import Pension.common.sys.annotation.OpLog;
 import Pension.model.Model;
 
 import javax.servlet.http.HttpServletRequest;

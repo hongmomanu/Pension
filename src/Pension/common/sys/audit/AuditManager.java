@@ -35,7 +35,7 @@ public class AuditManager {
         System.out.println("操作日志流水号-审核:"+opseno);
         CommonDbUtil dbUtil =new CommonDbUtil();
         String sql_audit="insert into opaudit(opseno,auditid,auflag,auendflag,aulevel)values("+opseno+",SEQ_OPAUDIT.NEXTVAL,0,0,'0')";
-        String sql_userlog="update sysuserlog set  tprkey="+paramLong+" where opseno="+opseno;
+        String sql_userlog="update xt_userlog set  tprkey="+paramLong+" where opseno="+opseno;
         dbUtil.execute(sql_audit);
         dbUtil.execute(sql_userlog);
     }

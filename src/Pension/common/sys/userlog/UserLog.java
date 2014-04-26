@@ -35,10 +35,12 @@ public class UserLog {
     public static void AddLog(){
         LogBean logBean =new LogBean();
         Map localmap=new HashMap();
-        Long opseno=new CommonDbUtil().getSequence("SEQ_OPSENO");
+        CommonDbUtil commonDbUtil=new CommonDbUtil();
+        Long opseno=commonDbUtil.getSequence("SEQ_OPSENO");
         localmap.put("opseno",opseno);
         logBean.setLocalLog(localmap);
-        System.out.println("操作日志流水号"+logBean.getLocalLog().get("opseno"));
+        System.out.println("操作日志流水号:" + logBean.getLocalLog().get("opseno"));
+        System.out.println("数据库会话id:"+commonDbUtil.getSid());
 
         ReqBean reqBean=new ReqBean();
         HttpServletRequest req=reqBean.getLocalReq();
@@ -49,14 +51,19 @@ public class UserLog {
         PreparedStatement stmt = null;// 加载SQL语句
         try {
             stmt = DbUtil.get().prepareStatement(
-                    "insert into sysuserlog(opseno,digest,functionid,dvcode,loginname,username,originalpage) values (?,?,?,?,?,?,?)");
+                    "insert into xt_userlog(opseno,digest,functionid,dvcode,loginname,username,originalpage) values (?,?,?,?,?,?,?)");
             stmt.setLong(1,opseno);
             stmt.setString(2,digest);
             stmt.setString(3,functionid);
             stmt.setString(4,user.getRegionid());
             stmt.setString(5,user.getLoginName());
             stmt.setString(6,user.getUserName());
-            String originalpage=req.getParameter("originalpage").toString();    //保存原始界面
+            String ol= req.getParameter("originalpage");
+            String originalpage="";
+            if(null!=ol){
+                originalpage=ol;    //保存原始界面
+            }
+
             Reader clobReader = new StringReader(originalpage);
             stmt.setCharacterStream(7, clobReader, originalpage.length());
             stmt.executeUpdate();
@@ -100,7 +107,7 @@ public class UserLog {
 
 
     public Map query(String functionid,int page,int rows) throws AppException {
-         return CommQuery.query("select opseno,functionid,digest,bsnyue,bstime,username from sysuserlog where functionid='"
+         return CommQuery.query("select opseno,functionid,digest,bsnyue,bstime,username from xt_userlog where functionid='"
                  +functionid+"' order by opseno desc",page,rows);
     }
 
@@ -108,7 +115,7 @@ public class UserLog {
     public String clobExport(Long opseno) {
         CLOB clob = null;
 
-        String sql = "select originalpage from sysuserlog where opseno=?";
+        String sql = "select originalpage from xt_userlog where opseno=?";
         PreparedStatement pstmt = null;
         String content = "";
         try {

@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -84,9 +85,17 @@ public class LRServlet extends HttpServlet {
             Method method=pm.getMethod(request.getParameter("eventName"));
             if(null!=method.getAnnotation(OpLog.class)){
                 UserLog.AddLog();       //用户日志
+                CallableStatement cstmt=DbUtil.get().prepareCall("{call glog.cutab()}");
+                cstmt.execute();
+                cstmt.close();
             }
             //执行对象的方法
             result=(String)(method.invoke(o)+"");
+            if(null!=method.getAnnotation(OpLog.class)){
+                CallableStatement cstmt=DbUtil.get().prepareCall("{call glog.dutab()}");
+                cstmt.execute();
+                cstmt.close();
+            }
             if((RtnType.NORMALFAILURE+"").equals(result)||(RtnType.NORMALSUCCESS+"").equals(result)){
                 result=JSONObject.fromObject(map).toString();
             }

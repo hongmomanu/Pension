@@ -1,5 +1,10 @@
 package Pension.test;
 
+import Pension.common.db.DbUtil;
+import org.junit.Test;
+
+import java.sql.CallableStatement;
+import java.sql.SQLException;
 import java.util.Map;
 
 /**
@@ -17,16 +22,11 @@ public class Testlocal {
         return local.get();
     }
 
-    public static void main(String[] args) {
-        Testlocal t1=new Testlocal();
-        t1.setLocal("eeeeeeeeee");
-        System.out.println(t1.getLocal());
-        Testlocal t2=new Testlocal();
-        System.out.println(t2.getLocal());
-
-        Testlocal t3=new Testlocal();
-        System.out.println(t3.getLocal());
-        t1.setLocal("eeeee222eeeee");
-        System.out.println(t3.getLocal());
+    @Test
+    public void test() throws SQLException {
+        CallableStatement cstmt=DbUtil.get().prepareCall("{call cutab()}");
+        cstmt.execute();
+        cstmt.close();
+        DbUtil.close();
     }
 }
