@@ -24,9 +24,10 @@ public class Testlocal {
 
     @Test
     public void test() throws SQLException {
-        CallableStatement cstmt=DbUtil.get().prepareCall("{call cutab()}");
+        /*CallableStatement cstmt=DbUtil.get().prepareCall("{call cutab()}");
         cstmt.execute();
         cstmt.close();
-        DbUtil.close();
+        DbUtil.close();*/
+        System.out.println("wwwwwww");
     }
 }
