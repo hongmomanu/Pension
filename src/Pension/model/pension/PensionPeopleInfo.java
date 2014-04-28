@@ -23,8 +23,6 @@ import java.util.Map;
  */
 public class PensionPeopleInfo extends Model implements IMultilevelAudit {
 
-
-
     public String save(){                 //老年基本信息保存方法
         int result=0;
         CommonDbUtil commonDbUtil=new CommonDbUtil();
