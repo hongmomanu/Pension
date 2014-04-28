@@ -3,6 +3,7 @@ package Pension.model.pension;
 import Pension.common.CommonDbUtil;
 import Pension.common.ParameterUtil;
 import Pension.common.RtnType;
+import Pension.common.sys.annotation.OpLog;
 import Pension.common.sys.audit.AuditBean;
 import Pension.common.sys.audit.AuditManager;
 import Pension.common.sys.audit.IMultilevelAudit;
@@ -23,6 +24,7 @@ import java.util.Map;
  */
 public class PensionPeopleInfo extends Model implements IMultilevelAudit {
 
+    @OpLog
     public String save(){                 //老年基本信息保存方法
         int result=0;
         CommonDbUtil commonDbUtil=new CommonDbUtil();
