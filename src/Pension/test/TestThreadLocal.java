@@ -14,7 +14,7 @@ public class TestThreadLocal extends TestCase{
     public void test001(){
         for(int i=0;i<100;i++){
             DbUtil.get();
-            
+
         }
     }
     public void test002(){

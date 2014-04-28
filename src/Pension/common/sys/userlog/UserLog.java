@@ -11,16 +11,16 @@ import Pension.common.sys.util.CurrentUser;
 import Pension.common.sys.util.SysUtil;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
+import oracle.jdbc.oracore.OracleType;
 import oracle.sql.CLOB;
+import org.junit.Test;
 
 import javax.servlet.http.HttpServletRequest;
+import java.sql.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -32,16 +32,14 @@ import java.util.Map;
  */
 public class UserLog {
 
-    public static void AddLog(){
+    public static void AddLog() throws SQLException {
         LogBean logBean =new LogBean();
         Map localmap=new HashMap();
-        CommonDbUtil commonDbUtil=new CommonDbUtil();
-        Long opseno=commonDbUtil.getSequence("SEQ_OPSENO");
+
+        Long opseno=getOpseno();
         localmap.put("opseno",opseno);
         logBean.setLocalLog(localmap);
         System.out.println("操作日志流水号:" + logBean.getLocalLog().get("opseno"));
-        System.out.println("数据库会话id:"+commonDbUtil.getSid());
-
         ReqBean reqBean=new ReqBean();
         HttpServletRequest req=reqBean.getLocalReq();
         CurrentUser user= SysUtil.getCacheCurrentUser();
@@ -160,5 +158,26 @@ public class UserLog {
             s = br.readLine();
         }
         return sb.toString();
+    }
+
+    private static Long getOpseno() {
+        CallableStatement cst =null;
+        Long opseno=0l;
+        try{
+            String sql = "{?= call glog.getopseno()}";
+            cst = DbUtil.get().prepareCall(sql);
+            cst.registerOutParameter(1, Types.INTEGER);
+            cst.execute();
+            opseno=cst.getLong(1);
+        }catch (SQLException e){
+            e.printStackTrace();
+        }finally {
+             try {
+                 if(cst!=null) cst.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return opseno;
     }
 }
