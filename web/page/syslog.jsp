@@ -40,7 +40,11 @@
         return v.split('.')[0]
     }
     var chexiaoformat=function(v,r,i){
-        return '<a href="#" class="icon-chexiao" onclick="dbrol(\''+ r.functionid+','+ r.opseno+','+ r.loginname+'\')"'+'>回退</a>';
+        if(r.rbflag=='1'){
+           return '已回退';
+        }else{
+            return '<a href="#" class="icon-chexiao" onclick="dbrol(\''+ r.functionid+','+ r.opseno+','+ r.loginname+'\')"'+'>回退</a>';
+        }
     }
 </script>
 <body>

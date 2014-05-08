@@ -1,10 +1,14 @@
 package Pension.common.sys.audit;
 
 import Pension.common.*;
+import Pension.common.db.DbUtil;
+import Pension.jdbc.JdbcFactory;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -47,7 +51,7 @@ public class AuditBusiness {
     不通过,当前级别不通过,也回调接口,附加更新结束标示和不通过原因(备注)
      */
     public String doBanchAudit(String method,JSONArray jarray,String loginname) throws Exception {
-        CommonDbUtil commonDbUtil=new CommonDbUtil();
+
         for(int i=0;i<jarray.size();i++){
             Map map= ParameterUtil.toMap((JSONObject) jarray.get(i));
             String auditid=map.get("auditid").toString();
@@ -60,20 +64,50 @@ public class AuditBusiness {
 
             int aulevel=Integer.parseInt(map.get("aulevel").toString())+1;
             map.put("aulevel",aulevel+"");
-            if("1".equals(map.get("auflag"))){   //审核成功 :0不通过1通过
-                if(aulevel==3){                   //3级审核结束
-                    map.put("auendflag", "1");
-                }
-                commonDbUtil.updateTableVales(map, "opaudit", where);
-            }else{    //不成功,也应该调用doAudit;;;;;;;;;;
-                map.put("auendflag", "1");        //不通过,审核结束
-                commonDbUtil.updateTableVales(map, "opaudit", where);
-            }
-            CallBack.doAudit(Long.parseLong(auditid));   //回调
 
+            doOneAuditWithOpLog(auditid,aulevel,map,where);
         }
         return RtnType.SUCCESS;
     }
+
+    private void doOneAudit(String auditid,int aulevel,Map map,Map where) throws Exception {
+        CommonDbUtil commonDbUtil=new CommonDbUtil();
+        if("1".equals(map.get("auflag"))){   //审核成功 :0不通过1通过
+            if(aulevel==3){                   //3级审核结束
+                map.put("auendflag", "1");
+            }
+            commonDbUtil.updateTableVales(map, "opaudit", where);
+        }else{    //不成功,也应该调用doAudit;;;;;;;;;;
+            map.put("auendflag", "1");        //不通过,审核结束
+            commonDbUtil.updateTableVales(map, "opaudit", where);
+        }
+        CallBack.doAudit(Long.parseLong(auditid));   //回调
+    }
+    private void doOneAuditWithOpLog(String auditid,int aulevel,Map map,Map where) throws Exception {
+        Connection conn= JdbcFactory.getConn();
+        CallableStatement cstmt= null;
+        CallableStatement cstmtd= null;
+        try {
+            cstmt=conn.prepareCall("{call glog.cutab()}");
+            cstmt.execute();
+            cstmt.close();
+            doOneAudit(auditid,aulevel,map,where);
+
+            cstmtd=conn.prepareCall("{call glog.dutab()}");
+            cstmtd.execute();
+            cstmtd.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
 
     public Map queryCurrentAudit(String functionid,String tprkey) throws AppException {
         Map map=CommQuery.query("select a.* from opauditbean b,opaudit a where a.auditid=b.auditid and b.functionid='"
