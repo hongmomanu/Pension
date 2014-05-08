@@ -4,6 +4,11 @@ import Pension.common.db.DbUtil;
 import Pension.jdbc.JdbcFactory;
 import junit.framework.TestCase;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  * User: Administrator
  * Date: 14-4-12
@@ -38,7 +43,23 @@ public class TestThreadLocal extends TestCase{
             this.test004();
         }
     }
+
+    public void test006() throws ParseException {
+        SimpleDateFormat fmt=new SimpleDateFormat("yyyy-MM");
+        Date dt= fmt.parse("2014-05");
+        Calendar cl=Calendar.getInstance();
+        cl.setTime(dt);
+        int currentyear=cl.get(Calendar.YEAR);
+       cl.add(Calendar.MONTH,-4);
+        if(cl.get(Calendar.YEAR)!=currentyear){
+            cl.set(Calendar.YEAR,currentyear);
+            cl.set(Calendar.MONTH,0);
+        }
+
+        System.out.println(fmt.format(cl.getTime()));
+    }
 }
+
 
 
 class A{

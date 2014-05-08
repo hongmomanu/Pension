@@ -105,7 +105,7 @@ public class UserLog {
 
 
     public Map query(String functionid,int page,int rows) throws AppException {
-         return CommQuery.query("select opseno,functionid,digest,bsnyue,bstime,username from xt_userlog where functionid='"
+         return CommQuery.query("select opseno,functionid,digest,bsnyue,bstime,username,loginname from xt_userlog where functionid='"
                  +functionid+"' order by opseno desc",page,rows);
     }
 
