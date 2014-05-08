@@ -148,25 +148,30 @@ define(function()
              }else{ */
              /* local.find('[opt=pensionform]')
              $('#pensionform').form('submit',{*/
-            local.find('[opt=pensionform]').form('submit',{                                        //保存提交
-                url:'lr.do?model=pension.PensionPeopleInfo&eventName=save',            //将数据传递到后台进行保存
-                onSubmit:function(param){
-                    param.p1 = gxmess;                                                                    //将家庭成员数据独立传递
-                    param.functionid = parameters.functionid;
-                    var isValid = local.find('[opt=pensionform]').form('validate');        //传送数据先进性数据验证
-                    console.log(isValid);
-                    return isValid;
-                },
-                success:function(data){
-                    var obj=eval('('+data+')')
-                    if(obj.success){
-                        var tab=$('#tabs');
-                        var pp = tab.tabs('getSelected');
-                        var index = tab.tabs('getTabIndex',pp);
-                        tab.tabs('close',index);
-                    }
 
-                }
+
+            require(['commonfuncs/Htmldb'],function(js){
+                local.find('[opt=pensionform]').form('submit',{                                        //保存提交
+                    url:'lr.do?model=pension.PensionPeopleInfo&eventName=save',            //将数据传递到后台进行保存
+                    onSubmit:function(param){
+                        param.p1 = gxmess;                                                                    //将家庭成员数据独立传递
+                        param.functionid = parameters.functionid;
+                        param.originalpage=js.parse(local)
+                        var isValid = local.find('[opt=pensionform]').form('validate');        //传送数据先进性数据验证
+                        console.log(isValid);
+                        return isValid;
+                    },
+                    success:function(data){
+                        var obj=eval('('+data+')')
+                        if(obj.success){
+                            var tab=$('#tabs');
+                            var pp = tab.tabs('getSelected');
+                            var index = tab.tabs('getTabIndex',pp);
+                            tab.tabs('close',index);
+                        }
+
+                    }
+                })
             })
         })
 
