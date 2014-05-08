@@ -86,7 +86,9 @@ define(function(){
                         type:'post',
                         success:function(res){
                             if(res){
-                                local.find('form[opt=mainform]').form('load',eval('('+res+')'));
+                                var ores= eval('('+res+')');
+                                local.find('form[opt=mainform]').form('load',ores);
+                                local.find('[opt=csrq]').datebox('setValue',ores.birthd);
                             }else{
                                 alert('无数据')
                             }
@@ -140,7 +142,12 @@ define(function(){
                 local.find('form[opt=mainform]').form('submit',{
                     url:lr.url(option,'save'),
                     onSubmit: function(param){
-                        param.originalpage=js.parse(local)
+                        var isValid = $(this).form('validate');
+                        if(isValid){
+                            param.originalpage=js.parse(local)
+                        }
+                        return isValid;
+
                     },
                     success: function(res){
                         cj.ifSuccQest(res,"已操作成功是否关闭此页",function(){

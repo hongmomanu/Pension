@@ -110,7 +110,7 @@ public class AuditBusiness {
 
 
     public Map queryCurrentAudit(String functionid,String tprkey) throws AppException {
-        Map map=CommQuery.query("select a.* from opauditbean b,opaudit a where a.auditid=b.auditid and b.functionid='"
+        Map map=CommQuery.query("select a.* from xt_userlog b,opaudit a where a.auditid=b.auditid and b.functionid='"
                 +functionid+"' and b.tprkey='"+tprkey+"'");
         List list=(List)map.get(IParam.ROWS);
         if(list.size()>0){
@@ -120,7 +120,7 @@ public class AuditBusiness {
     }
 
     public Map queryHistoryAudit(String functionid,String tprkey) throws AppException {
-        Map map=CommQuery.query("select h.* from opauditbean b,opaudithistory h where h.auditid=b.auditid and b.functionid='"
+        Map map=CommQuery.query("select h.* from xt_userlog b,opaudithistory h where h.auditid=b.auditid and b.functionid='"
                 +functionid+"' and b.tprkey='"+tprkey+"'");
         return map;
     }
