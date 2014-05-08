@@ -2,6 +2,8 @@ package Pension.common.sys.audit;
 
 import Pension.common.*;
 import Pension.common.db.DbUtil;
+import Pension.common.sys.LogBean;
+import Pension.common.sys.userlog.UserLog;
 import Pension.jdbc.JdbcFactory;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -72,6 +74,7 @@ public class AuditBusiness {
 
     private void doOneAudit(String auditid,int aulevel,Map map,Map where) throws Exception {
         CommonDbUtil commonDbUtil=new CommonDbUtil();
+
         if("1".equals(map.get("auflag"))){   //审核成功 :0不通过1通过
             if(aulevel==3){                   //3级审核结束
                 map.put("auendflag", "1");
@@ -84,26 +87,28 @@ public class AuditBusiness {
         CallBack.doAudit(Long.parseLong(auditid));   //回调
     }
     private void doOneAuditWithOpLog(String auditid,int aulevel,Map map,Map where) throws Exception {
-        Connection conn= JdbcFactory.getConn();
         CallableStatement cstmt= null;
         CallableStatement cstmtd= null;
+        DbUtil.get();
         try {
-            cstmt=conn.prepareCall("{call glog.cutab()}");
+            DbUtil.begin();
+            cstmt=DbUtil.get().prepareCall("{call glog.cutab()}");
             cstmt.execute();
             cstmt.close();
+            UserLog.AddAuditLog(Long.parseLong(auditid),"审核通过测试");       //用户日志
+            map.put("auopseno", new LogBean().getLocalLog().get("opseno")); //审核日志号
+
             doOneAudit(auditid,aulevel,map,where);
 
-            cstmtd=conn.prepareCall("{call glog.dutab()}");
+            cstmtd=DbUtil.get().prepareCall("{call glog.dutab()}");
             cstmtd.execute();
             cstmtd.close();
+            DbUtil.commit();
         } catch (SQLException e) {
             e.printStackTrace();
+            DbUtil.rollback();
         }finally {
-            try {
-                conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            DbUtil.close();
         }
 
     }

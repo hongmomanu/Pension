@@ -3,6 +3,7 @@ package Pension.serverlet;
 import Pension.common.AppException;
 import Pension.common.RtnType;
 import Pension.common.db.DbUtil;
+import Pension.common.sys.ReqBean;
 import Pension.common.sys.audit.AuditBusiness;
 import Pension.common.CommonDbUtil;
 import Pension.common.ParameterUtil;
@@ -25,6 +26,7 @@ import java.util.Map;
  * Time: 下午8:46
  */
 public class AuditServlet extends HttpServlet {
+    private ReqBean reqBean=new ReqBean();
     private AuditBusiness auditBusiness=new AuditBusiness();
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String eventName=(String)request.getParameter("eventName");
@@ -39,20 +41,21 @@ public class AuditServlet extends HttpServlet {
                 SysUtil.setCacheCurrentUser(user);//获得当前用户信息
                 DbUtil.get();
                 try {
-                    DbUtil.begin();
+                    //DbUtil.begin();
                     request.setAttribute("message",doIf(eventName, request, ParameterUtil.toMap(request)));
-                    DbUtil.commit();
+                    //DbUtil.commit();
                 }  catch (Exception e) {
                     e.printStackTrace();
                     request.setAttribute("message", RtnType.FAILURE);
-                    DbUtil.rollback();
+                    //DbUtil.rollback();
                 }finally {
-                    DbUtil.close();
+                    //DbUtil.close();
                 }
                 request.getRequestDispatcher("page/output.jsp").forward(request,response);
             }else{
                 request.setAttribute("page","page/audit.jsp");
                 request.setAttribute("method",method);
+                request.setAttribute("functionid",request.getParameter("functionid"));
                 request.getRequestDispatcher("main.jsp").forward(request, response);
             }
         }
@@ -61,9 +64,15 @@ public class AuditServlet extends HttpServlet {
 
     private String doIf(String en,HttpServletRequest request,Map map) throws Exception {
         String method=request.getParameter("method");
-        CurrentUser user= SysUtil.getCacheCurrentUser();
+        reqBean.setLocalReq(request);
+        CurrentUser user=(CurrentUser)request.getSession().getAttribute("user");
+        SysUtil.setCacheCurrentUser(user);//获得当前用户信息
+        if(null==user){
+            return "缺少会话信息";
+        }
         String loginname= user.getLoginName();
         String dvcode=user.getRegionid();
+
         if("queryAudit".equals(en)){
             return auditBusiness.query(method, map, loginname, dvcode);
         }if("saveAudit".equals(en)){

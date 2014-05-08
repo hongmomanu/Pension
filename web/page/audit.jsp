@@ -96,6 +96,9 @@
 
 <script>
     var editindex=undefined;
+    var method='<%=request.getAttribute("method")%>';
+    var functionid='<%=request.getAttribute("functionid")%>';
+
     var toolbar = [
         {
         text:'审核',
@@ -112,9 +115,9 @@
     },{
         text:'操作日志',
         iconCls:'icon-log',
-        handler:function(){$('#auditGrid').datagrid('reload')}
+        handler:function(){cj.searchLog(functionid)}
     }];
-var method='<%=request.getAttribute("method")%>';
+
 function loadAuditData(){
     $('#auditGrid').datagrid({
         url:'audit.do?method='+method+'&eventName=queryAudit'
@@ -149,7 +152,8 @@ var saveApproval=function(){
         url:'audit.do?method='+method+'&eventName=saveAudit',
         type:'post',
         data:{
-            auditmsgs:JSON.stringify(auditmsgs)
+            auditmsgs:JSON.stringify(auditmsgs),
+            functionid:functionid
         },
         success:loadAuditData
     })

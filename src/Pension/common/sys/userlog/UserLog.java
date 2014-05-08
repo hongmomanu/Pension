@@ -78,6 +78,52 @@ public class UserLog {
         }
     }
 
+    public static void AddAuditLog(Long auditid,String auditlogmsg) throws SQLException {
+        LogBean logBean =new LogBean();
+        Map localmap=new HashMap();
+
+        Long opseno=getOpseno();
+        localmap.put("opseno",opseno);
+        logBean.setLocalLog(localmap);
+        System.out.println("操作日志流水号:" + logBean.getLocalLog().get("opseno"));
+        ReqBean reqBean=new ReqBean();
+        HttpServletRequest req=reqBean.getLocalReq();
+        CurrentUser user= SysUtil.getCacheCurrentUser();
+        String functionid=(String)req.getParameter("functionid");
+        String digest=getAuditDigest(auditid)+auditlogmsg;
+
+        PreparedStatement stmt = null;// 加载SQL语句
+        try {
+            stmt = DbUtil.get().prepareStatement(
+                    "insert into xt_userlog(opseno,digest,functionid,dvcode,loginname,username,originalpage) values (?,?,?,?,?,?,?)");
+            stmt.setLong(1,opseno);
+            stmt.setString(2,digest);
+            stmt.setString(3,functionid);
+            stmt.setString(4,user.getRegionid());
+            stmt.setString(5,user.getLoginName());
+            stmt.setString(6,user.getUserName());
+            String ol= req.getParameter("originalpage");
+            String originalpage="";
+            if(null!=ol){
+                originalpage=ol;    //保存原始界面
+            }
+
+            Reader clobReader = new StringReader(originalpage);
+            stmt.setCharacterStream(7, clobReader, originalpage.length());
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if(null!=stmt){
+                try {
+                    stmt.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
     private static JSONArray getFunctionBSDigest(String functionid) {
         Map map= null;
         try {
@@ -101,6 +147,22 @@ public class UserLog {
             sb.append(obj.getString("label")+request.getParameter(obj.getString("property"))+" ");
         }
         return sb.toString();
+    }
+
+    private static String getAuditDigest(Long auditid){
+        Map map= null;
+        try {
+            map = CommQuery.query("select x.digest from opaudit o,xt_userlog x where o.opseno=x.opseno and o.auditid=" + auditid + "");
+        } catch (AppException e) {
+            e.printStackTrace();
+        }
+        List list=(List)map.get(IParam.ROWS);
+        if(list.size()>0){
+            return ((Map)list.get(0)).get("digest").toString();
+        }else{
+            System.out.println("没有functionid或者没有业务摘要的相关配置");
+            return null;
+        }
     }
 
 

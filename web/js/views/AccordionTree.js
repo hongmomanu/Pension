@@ -23,7 +23,8 @@ define(function () {
                     currentfolder:'views/'+nodelocaltion.substr(0,nodelocaltion.lastIndexOf('.')).replace('.','/')
                 });
             }else if(node.type=='0'){//url
-                TreeClickEvent.ShowIframe(value,jsfile,title);
+                console.log(node)
+                TreeClickEvent.ShowIframe(value+'&functionid='+node.functionid,jsfile,title);
             }
         });
     }
