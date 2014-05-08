@@ -40,7 +40,7 @@
         return v.split('.')[0]
     }
     var chexiaoformat=function(v,r,i){
-        return '<a href="#" class="icon-chexiao" '+'>回退</a>';
+        return '<a href="#" class="icon-chexiao" onclick="dbrol(\''+ r.functionid+','+ r.opseno+','+ r.loginname+'\')"'+'>回退</a>';
     }
 </script>
 <body>
@@ -125,6 +125,18 @@
             data:{opseno:opseno,method:functionid},
             success:function(res){
                 cj.showHtml('原始界面',res);
+            }
+        })
+    }
+    function dbrol(a){
+        var functionid= a.split(',')[0];
+        var opseno= a.split(',')[1];
+        var loginname= a.split(',')[2];
+        $.ajax({
+            url:'log.do?eventName=rollback',
+            data:{opseno:opseno,loginname:loginname,method:functionid},
+            success:function(res){
+                alert('100')
             }
         })
     }

@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.CallableStatement;
 import java.util.Map;
 
 /**
@@ -67,9 +68,24 @@ public class SysLogServlet  extends HttpServlet {
             Integer page=Integer.parseInt(request.getParameter("page"));
             Integer rows=Integer.parseInt(request.getParameter("rows"));
             return JSONObject.fromObject(userLog.query(method,page,rows)).toString();
-        }if("queryOriginalpage".equals(en)){
+        }else if("queryOriginalpage".equals(en)){
             Long opseno=Long.parseLong(request.getParameter("opseno"));
             return userLog.clobExport(opseno);
+        }else if("rollback".equals(en)){
+            CallableStatement cstmt=DbUtil.get().prepareCall("{call glog.cutab()}");
+            cstmt.execute();
+            cstmt.close();
+
+            CallableStatement cstmt2=DbUtil.get().prepareCall("{call glog.dbrol(?,?)}");
+            cstmt2.setInt(1,Integer.parseInt(request.getParameter("opseno")));
+            cstmt2.setString(2,request.getParameter("loginname"));
+            cstmt2.execute();
+            cstmt2.close();
+
+            CallableStatement cstmt3=DbUtil.get().prepareCall("{call glog.dutab()}");
+            cstmt3.execute();
+            cstmt3.close();
+            return null;
         }else{
             return null;
         }
