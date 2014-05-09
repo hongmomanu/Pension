@@ -170,7 +170,16 @@ public class UserLog {
          return CommQuery.query("select opseno,functionid,digest,bsnyue,bstime,username,loginname,rbflag from xt_userlog where functionid='"
                  +functionid+"' order by opseno desc",page,rows);
     }
+    public Map queryAuditLog(String functionid,int page,int rows) throws AppException {
+        return CommQuery.query(
+                "select x.opseno,x.functionid,x.digest,x.bsnyue,x.bstime,x.username,x.loginname,x.rbflag,o.auditid from xt_userlog x,opaudit o " +
+                        " where (x.opseno=o.opseno or x.opseno=o.auopseno) and x.functionid='" + functionid + "' order by x.opseno desc",page,rows);
+    }
 
+    public Map hasAuditLog(Integer opseno,int page,int rows) throws AppException {
+        return CommQuery.query(
+                "select 1 duringAudit from opaudit where opseno="+opseno+" and auopseno>0 ",page,rows);
+    }
 
     public String clobExport(Long opseno) {
         CLOB clob = null;

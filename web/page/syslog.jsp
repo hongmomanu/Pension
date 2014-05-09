@@ -51,11 +51,13 @@
 <table id="logGrid" class="easyui-datagrid-noauto"
        data-options="rownumbers:true,singleSelect:true,toolbar:toolbar,
            fit:true, pagination:true,
-           pageSize:15,
-		    pageList: [15, 30,50],border:false,rowStyler:styleFn,fitColumns: true">
+           pageSize:cj.getDataGridAttr('pageSize'),
+           pageList:cj.getDataGridAttr('pageList'),
+           border:false,rowStyler:styleFn,fitColumns: true">
     <thead>
     <tr>
         <th data-options="field:'opseno',width:100">操作日志流水号</th>
+        <th data-options="field:'auditid',width:100,hidden:true">业务序号</th>
         <th data-options="field:'digest',width:300,align:'left',formatter:digestformatter"><a>摘要</a></th>
         <th data-options="field:'username',width:60,align:'left'">办理人</th>
         <th data-options="field:'bsnyue',width:60,align:'left'">业务期</th>
@@ -81,10 +83,15 @@
             handler:function(){$('#logGrid').datagrid('reload')}
         }];
     var method='<%=request.getAttribute("method")%>';
+    var isAuditLog='<%=request.getAttribute("isAuditLog")%>';
     function loadLogData(){
+        var showAuditIdFlag=(!!isAuditLog&&isAuditLog!='null');
         $('#logGrid').datagrid({
-            url:'log.do?method='+method+'&eventName=queryLog'
+            url:'log.do?method='+method+'&eventName='+(showAuditIdFlag?"queryAuditLog":"queryLog")
         })
+        if(showAuditIdFlag){
+            $('#logGrid').datagrid('showColumn','auditid');
+        }
     }
     loadLogData();
     var saveApproval11=function(){
@@ -140,7 +147,12 @@
             url:'log.do?eventName=rollback',
             data:{opseno:opseno,loginname:loginname,method:functionid},
             success:function(res){
-                alert('100')
+                var d=eval('('+res+')');
+                if(d.success=='true'){
+                    $('#logGrid').datagrid('reload');
+                }else{
+                    $.messager.alert(cj.defaultTitle, d.message, 'info');
+                }
             }
         })
     }

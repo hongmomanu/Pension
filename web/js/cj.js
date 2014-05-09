@@ -114,10 +114,15 @@ var cj=(function(){
                 js.showHtml(title,texthtml);
             })
         },
-        searchLog:function(functionid){
+        searchLog:function(functionid,isAuditLog){
             require(['commonfuncs/TreeClickEvent'],function(js){
-                var location='log.do?method='+functionid
-                js.ShowIframe(location,'','操作日志')
+                var location='log.do?method='+functionid;
+                if(isAuditLog){
+                    location+='&isAuditLog='+isAuditLog
+                }
+                var title='操作日志';
+                js.closeTabByTitle(title)
+                js.ShowIframe(location,'',title)
             })
         }
     }

@@ -61,8 +61,9 @@
     <table id="auditGrid" class="easyui-datagrid-noauto"
            data-options="rownumbers:true,singleSelect:false,toolbar:toolbar,
            fit:true, pagination:true,
-           pageSize:15,
-		    pageList: [15, 30,50],border:false,rowStyler:styleFn,fitColumns: true,
+           pageSize:cj.getDataGridAttr('pageSize'),
+           pageList:cj.getDataGridAttr('pageList'),
+           border:false,rowStyler:styleFn,fitColumns: true,
            onClickCell:onClickCellFun">
     <thead>
         <tr>
@@ -115,7 +116,7 @@
     },{
         text:'操作日志',
         iconCls:'icon-log',
-        handler:function(){cj.searchLog(functionid)}
+        handler:function(){cj.searchLog(functionid,true)}
     }];
 
 function loadAuditData(){

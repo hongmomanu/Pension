@@ -1,5 +1,6 @@
 package Pension.serverlet;
 
+import Pension.common.IParam;
 import Pension.common.ParameterUtil;
 import Pension.common.RtnType;
 import Pension.common.db.DbUtil;
@@ -15,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.CallableStatement;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -52,6 +54,7 @@ public class SysLogServlet  extends HttpServlet {
             }else{
                 request.setAttribute("page","page/syslog.jsp");
                 request.setAttribute("method",method);
+                request.setAttribute("isAuditLog",request.getParameter("isAuditLog"));
                 request.getRequestDispatcher("main.jsp").forward(request, response);
             }
         }
@@ -64,14 +67,23 @@ public class SysLogServlet  extends HttpServlet {
 
         CurrentUser user= SysUtil.getCacheCurrentUser();
 
-        if("queryLog".equals(en)){
+        if("queryLog".equals(en)){ //查询一般操作日志
             Integer page=Integer.parseInt(request.getParameter("page"));
             Integer rows=Integer.parseInt(request.getParameter("rows"));
             return JSONObject.fromObject(userLog.query(method,page,rows)).toString();
+        }if("queryAuditLog".equals(en)){  //查询审核产生的日志
+            Integer page=Integer.parseInt(request.getParameter("page"));
+            Integer rows=Integer.parseInt(request.getParameter("rows"));
+            return JSONObject.fromObject(userLog.queryAuditLog(method, page, rows)).toString();
         }else if("queryOriginalpage".equals(en)){
             Long opseno=Long.parseLong(request.getParameter("opseno"));
             return userLog.clobExport(opseno);
         }else if("rollback".equals(en)){
+
+            Map logmap=userLog.hasAuditLog(Integer.parseInt(request.getParameter("opseno")),0,1);
+            if(((Integer)logmap.get(IParam.TOTAL))>0){
+                return "{'success':'false','message':'业务已经审核，请取消审核再回退业务'}";
+            }
             CallableStatement cstmt=DbUtil.get().prepareCall("{call glog.cutab()}");
             cstmt.execute();
             cstmt.close();
@@ -85,7 +97,7 @@ public class SysLogServlet  extends HttpServlet {
             CallableStatement cstmt3=DbUtil.get().prepareCall("{call glog.dutab()}");
             cstmt3.execute();
             cstmt3.close();
-            return null;
+            return RtnType.SUCCESS;
         }else{
             return null;
         }
