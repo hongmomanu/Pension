@@ -8,6 +8,7 @@
 </div>
 <p><a href="javascript:$('#file_upload').uploadify('upload')">上传</a>
     <a href="javascript:alert('关闭')">关闭</a></p>
+    <a id="testalert">测试easyui alert</a></p>
 
 <script type="text/javascript">
     $(function () {
@@ -22,6 +23,13 @@
                 console.log(data)
             }
         });
+
+        $('#testalert').bind('click',function(){
+            parent.require(['text!http://localhost:8080/jsondata/testeasyuialert.json'],function(res){
+               var d=eval('('+res+')');
+               $.messager.alert(cj.defaultTitle, d.message, 'info');
+            })
+        })
     });
 
 

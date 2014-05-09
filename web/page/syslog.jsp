@@ -24,7 +24,7 @@
     a:link, a:visited, a:active {
         color: #404040;
         text-decoration: none;
-        display: block;
+        /*display: block;*/
     }
 
 </style>
@@ -43,7 +43,7 @@
         if(r.rbflag=='1'){
            return '已回退';
         }else{
-            return '<a href="#" class="icon-chexiao" onclick="dbrol(\''+ r.functionid+','+ r.opseno+','+ r.loginname+'\')"'+'>回退</a>';
+            return '<a href="#"  onclick="dbrol(\''+ r.functionid+','+ r.opseno+','+ r.loginname+'\')"'+'>回退</a>';
         }
     }
 </script>
@@ -148,11 +148,12 @@
             data:{opseno:opseno,loginname:loginname,method:functionid},
             success:function(res){
                 var d=eval('('+res+')');
-                if(d.success=='true'){
+                if(d.success=='true'||d.success==true){
                     $('#logGrid').datagrid('reload');
                 }else{
                     $.messager.alert(cj.defaultTitle, d.message, 'info');
                 }
+
             }
         })
     }

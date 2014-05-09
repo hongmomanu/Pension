@@ -77,39 +77,42 @@ define(function(){
                     me.syncRadioToResult(local,':input[name=sum_nl_fenl]+label',v);
                 })
             })
+            var onSelectOrChange=function(t,date){
+                var p=t.parent().parent().parent();
+                var m= (date.getMonth()+1);
+                m=m>9?m:'0'+m;
+                var d= date.getDate();
+                d=d>9?d:'0'+d;
+                p.find("[opt=textymd]").text(
+                    date.getFullYear()+"年"+m+"月"+d+"日(以身份证为准)"
+                );
+                var nl=new Date().getFullYear()-date.getFullYear();
+                p.find("[opt=xynl]").val(nl);
+
+                var nldf=0;
+                if(nl<80){
+                    nldf=0;
+                }else if(nl>=90){
+                    nldf=2;
+                }else{
+                    nldf=1;
+                }
+                p.find(":input[type=radio] + label").each(function(){
+                    $(this).prev()[0].checked = false;
+                    $(this).removeClass("checked");
+                })
+                var label=$(p.find(":input[type=radio] + label")[nldf])
+                label.addClass("checked").prev()[0].checked=true;
+                var v=$(label.prev()[0]).val();
+                p.find(":input[name=nl_pingguf]").val(v);
+                local.find('[opt=result1] :input[name=sum_nl_pingguf]').val(v) //同步
+                me.syncRadioToResult(local,':input[name=sum_nl_fenl]+label',v);
+            }
             info4.find(':input[opt=csrq]')
                 .datebox({
                     required:true,
-                    onSelect: function(date){
-                        var p=$(this).parent().parent().parent();
-                        var m= (date.getMonth()+1);
-                        m=m>9?m:'0'+m;
-                        var d= date.getDate();
-                        d=d>9?d:'0'+d;
-                        p.find("[opt=textymd]").text(
-                            date.getFullYear()+"年"+m+"月"+d+"日(以身份证为准)"
-                        );
-                        var nl=new Date().getFullYear()-date.getFullYear();
-                        p.find("[opt=xynl]").val(nl);
-
-                        var nldf=0;
-                        if(nl<80){
-                            nldf=0;
-                        }else if(nl>=90){
-                            nldf=2;
-                        }else{
-                            nldf=1;
-                        }
-                        p.find(":input[type=radio] + label").each(function(){
-                            $(this).prev()[0].checked = false;
-                            $(this).removeClass("checked");
-                        })
-                        var label=$(p.find(":input[type=radio] + label")[nldf])
-                        label.addClass("checked").prev()[0].checked=true;
-                        var v=$(label.prev()[0]).val();
-                        p.find(":input[name=nl_pingguf]").val(v);
-                        local.find('[opt=result1] :input[name=sum_nl_pingguf]').val(v) //同步
-                        me.syncRadioToResult(local,':input[name=sum_nl_fenl]+label',v);
+                    onSelect:function(date){
+                        onSelectOrChange($(this),date);
                     }
                 });
         },
