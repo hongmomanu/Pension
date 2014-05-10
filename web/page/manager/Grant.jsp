@@ -11,6 +11,7 @@
 <body>
 
 <a href="#" class="easyui-linkbutton" onclick="getChecked()">GetChecked</a>
+<a href="#" class="easyui-linkbutton" onclick="testChecked()">testChecked</a>
 <input type="hidden" value="<%=request.getParameter("roleid")%>" name="roleid">
 <div class="easyui-tabs" style="height:400px" data-options="tools:'#tab-tools'" >
 
@@ -44,15 +45,12 @@
 $(function(){
     $('#functiontree').tree({
         checkbox:true,
-        url:'lr.do?model=manager.Function&eventName=queryFunctionTreeMng',
-        onClick:function(node){
-            //funObj=node;
-            //$('#form').form('load','lr.do?model=manager.Function&eventName=queryFunctionById&node='+node.functionid);
-        }
+        url:'lr.do?model=manager.Function&eventName=queryFunctionTreeMng'
     });
 })
 function getChecked(){
-    var nodes = $('#functiontree').tree('getChecked');
+    var $functionTree=$('#functiontree');
+    var nodes = $functionTree.tree('getChecked');
     var s = '';
     for(var i=0; i<nodes.length; i++){
         if(s.indexOf(nodes[i].functionid)<0){
@@ -60,6 +58,11 @@ function getChecked(){
             s += nodes[i].functionid;
         }
     }
+    $functionTree.tree('getChildren').forEach(function (i) {
+        if($(i.target).find('span.tree-checkbox2').size()){
+            s+=','+i.functionid;
+        }
+    })
     $.ajax(
             {
                 type: "POST",
@@ -76,5 +79,22 @@ function getChecked(){
                 }
             }
     )
+}
+
+function testChecked(){
+    var nodes = $('#functiontree').tree('getChecked');
+    var s = '';
+    for(var i=0; i<nodes.length; i++){
+        if(s.indexOf(nodes[i].functionid)<0){
+            if (s != '') s += ',';
+            s += nodes[i].functionid;
+        }
+    }
+
+    $('#functiontree').tree('getChildren').forEach(function (i) {
+        if($(i.target).find('span.tree-checkbox2').size()){
+            s+=','+i.functionid;
+        }
+    })
 }
 </script>
