@@ -29,9 +29,16 @@
 
 </style>
 <script>
+    var method='<%=request.getAttribute("method")%>';
+    var isAuditLog='<%=request.getAttribute("isAuditLog")%>';
+    var showAuditIdFlag=(!!isAuditLog&&isAuditLog!='null');
+
     var digestformatter=function(v,r,i){
-        var s = '<a style="text-decoration: none" href="#" onclick="view(\''+ r.functionid+','+ r.opseno+'\')">'+v+'</a> ';
-        return s;
+        if(showAuditIdFlag){
+            return v;
+        }else{
+            return '<a style="text-decoration: none" href="#" onclick="view(\''+ r.functionid+','+ r.opseno+'\')">'+v+'</a> ';
+        }
     }
     var styleFn=function(i,data){
         //if(++i%2==0)return "background-color:#EEE";
@@ -56,8 +63,8 @@
            border:false,rowStyler:styleFn,fitColumns: true">
     <thead>
     <tr>
-        <th data-options="field:'opseno',width:100">操作日志流水号</th>
-        <th data-options="field:'auditid',width:100,hidden:true">业务序号</th>
+        <th data-options="field:'opseno',width:70">操作日志流水号</th>
+        <th data-options="field:'tprkey',width:50,hidden:true">业务序号</th>
         <th data-options="field:'digest',width:300,align:'left',formatter:digestformatter"><a>摘要</a></th>
         <th data-options="field:'username',width:60,align:'left'">办理人</th>
         <th data-options="field:'bsnyue',width:60,align:'left'">业务期</th>
@@ -82,51 +89,17 @@
             iconCls:'icon-search',
             handler:function(){$('#logGrid').datagrid('reload')}
         }];
-    var method='<%=request.getAttribute("method")%>';
-    var isAuditLog='<%=request.getAttribute("isAuditLog")%>';
+
     function loadLogData(){
-        var showAuditIdFlag=(!!isAuditLog&&isAuditLog!='null');
+
         $('#logGrid').datagrid({
             url:'log.do?method='+method+'&eventName='+(showAuditIdFlag?"queryAuditLog":"queryLog")
         })
         if(showAuditIdFlag){
-            $('#logGrid').datagrid('showColumn','auditid');
+            $('#logGrid').datagrid('showColumn','tprkey');
         }
     }
     loadLogData();
-    var saveApproval11=function(){
-        var auditmsgs=[];
-        $('#logGrid').datagrid('acceptChanges');
-        $('#logGrid').datagrid('getSelections').forEach(function(item,i){
-            auditmsgs.push({
-                auditid:$(item).attr('auditid'),
-                auflag:$(item).attr('audefault'),
-                aulevel:$(item).attr('aulevel'),
-                audesc:$(item).attr('audesc')
-            })
-        })
-
-        if(auditmsgs.length==0){
-            $.messager.alert('提示','请选中再操作!','info');
-            return;
-        }
-        var a= eval('('+JSON.stringify(auditmsgs)+')')
-        for(var i=0;i<a.length;i++){
-            m=a[i];
-            if(m.auflag=='0'&&(!m.audesc || !(m.audesc.trim()))){
-                $.messager.alert('提示','业务没有通过,请填写备注信息!','info');
-                return;
-            }
-        }
-        $.ajax({
-            url:'audit.do?method='+method+'&eventName=saveAudit',
-            type:'post',
-            data:{
-                auditmsgs:JSON.stringify(auditmsgs)
-            },
-            success:loadAuditData
-        })
-    }
 
     function view(a){
         var functionid= a.split(',')[0];

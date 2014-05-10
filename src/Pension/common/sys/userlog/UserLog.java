@@ -95,13 +95,14 @@ public class UserLog {
         PreparedStatement stmt = null;// 加载SQL语句
         try {
             stmt = DbUtil.get().prepareStatement(
-                    "insert into xt_userlog(opseno,digest,functionid,dvcode,loginname,username,originalpage) values (?,?,?,?,?,?,?)");
+                    "insert into xt_userlog(opseno,digest,functionid,dvcode,loginname,username,originalpage,tprkey) values (?,?,?,?,?,?,?,?)");
             stmt.setLong(1,opseno);
             stmt.setString(2,digest);
             stmt.setString(3,functionid);
             stmt.setString(4,user.getRegionid());
             stmt.setString(5,user.getLoginName());
             stmt.setString(6,user.getUserName());
+            stmt.setString(8,auditid.toString());
             String ol= req.getParameter("originalpage");
             String originalpage="";
             if(null!=ol){
@@ -167,18 +168,24 @@ public class UserLog {
 
 
     public Map query(String functionid,int page,int rows) throws AppException {
-         return CommQuery.query("select opseno,functionid,digest,bsnyue,bstime,username,loginname,rbflag from xt_userlog where functionid='"
+         return CommQuery.query("select opseno,functionid,digest,bsnyue,bstime,username,loginname,rbflag,tprkey from xt_userlog where functionid='"
                  +functionid+"' order by opseno desc",page,rows);
     }
     public Map queryAuditLog(String functionid,int page,int rows) throws AppException {
-        return CommQuery.query(
+        /*return CommQuery.query(
                 "select x.opseno,x.functionid,x.digest,x.bsnyue,x.bstime,x.username,x.loginname,x.rbflag,o.auditid from xt_userlog x,opaudit o " +
-                        " where (x.opseno=o.opseno or x.opseno=o.auopseno) and x.functionid='" + functionid + "' order by x.opseno desc",page,rows);
+                        " where (x.opseno=o.opseno or x.opseno=o.auopseno) and x.functionid='" + functionid + "' order by x.opseno desc",page,rows);*/
+        return this.query(functionid,page,rows);
     }
 
     public Map hasAuditLog(Integer opseno,int page,int rows) throws AppException {
         return CommQuery.query(
-                "select 1 duringAudit from opaudit where opseno="+opseno+" and auopseno>0 ",page,rows);
+                "select opseno duringAudit from opaudit where opseno="+opseno+" and auopseno>0 " + //判断是否在审核中
+                        "union all "+
+                "select opseno duringAudit from xt_userlog where tprkey=(select tprkey from xt_userlog where opseno="+opseno+
+                        ") and (rbflag <> '1' or rbflag is null) and opseno>"+opseno
+                //判断上级审核是否存在或否回退
+                ,page,rows);
     }
 
     public String clobExport(Long opseno) {

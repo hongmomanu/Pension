@@ -82,7 +82,7 @@ public class SysLogServlet  extends HttpServlet {
 
             Map logmap=userLog.hasAuditLog(Integer.parseInt(request.getParameter("opseno")),0,1);
             if(((Integer)logmap.get(IParam.TOTAL))>0){
-                return "{'success':'false','message':'业务已经审核，请取消审核再回退业务'}";
+                return "{'success':'false','message':'已经审核或存在更高级别的审核，请取消审核再回退业务'}";
             }
             CallableStatement cstmt=DbUtil.get().prepareCall("{call glog.cutab()}");
             cstmt.execute();

@@ -86,6 +86,18 @@ public class AuditBusiness {
         }
         CallBack.doAudit(Long.parseLong(auditid));   //回调
     }
+    private String getAuditDigest(Map map){
+        int aulevel=Integer.parseInt(map.get("aulevel").toString());//此处不需要加1，前面已经加过
+        String aulevellabel="";
+        switch (aulevel){
+            case 1: aulevellabel="提交";break;
+            case 2: aulevellabel="审核";break;
+            case 3: aulevellabel="审批";break;
+            default: aulevellabel="其他";
+        }
+        return aulevellabel+("1".equals(map.get("auflag"))?"通过":"不通过");
+
+    }
     private void doOneAuditWithOpLog(String auditid,int aulevel,Map map,Map where) throws Exception {
         CallableStatement cstmt= null;
         CallableStatement cstmtd= null;
@@ -95,7 +107,7 @@ public class AuditBusiness {
             cstmt=DbUtil.get().prepareCall("{call glog.cutab()}");
             cstmt.execute();
             cstmt.close();
-            UserLog.AddAuditLog(Long.parseLong(auditid),"审核通过测试");       //用户日志
+            UserLog.AddAuditLog(Long.parseLong(auditid),getAuditDigest(map)); //用户日志
             map.put("auopseno", new LogBean().getLocalLog().get("opseno")); //审核日志号
 
             doOneAudit(auditid,aulevel,map,where);
