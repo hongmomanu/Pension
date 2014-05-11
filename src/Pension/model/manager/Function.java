@@ -6,6 +6,8 @@ import Pension.common.sys.util.SysUtil;
 import Pension.model.Model;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
+import org.junit.Test;
+
 import java.util.*;
 
 /**
@@ -29,7 +31,7 @@ public class Function extends Model {
             node="businessmenu";
         }
         CurrentUser user= SysUtil.getCacheCurrentUser();
-        return query(commonDbUtil,node,user.getUserid());
+        return query(commonDbUtil,node,user.getUserid(),null);
     }
     /*
     查询功能全部树
@@ -44,7 +46,9 @@ public class Function extends Model {
         if(null==node||"".equals(node)||"root".equals(node)){
             node="-1";
         }
-        return query(commonDbUtil,node,null);
+        String roleid=this.getRequest().getParameter("roleid");
+
+        return query(commonDbUtil,node,null,roleid);
         //return generateTotalTree();
     }
     /*
@@ -66,11 +70,16 @@ public class Function extends Model {
         return JSONObject.fromObject(map).toString();
     }
 
-    private String query(CommonDbUtil commonDbUtil,String node,String userid){
+    private String query(CommonDbUtil commonDbUtil,String node,String userid,String roleid){
         String sql="select t.*,(select count(1) from xt_function where parent=t.functionid) leafcount from xt_function t where t.parent='"+node+"'";
         if(userid!=null){
             sql+=" and t.nodetype <> '2' and t.functionid in (select rf.functionid from xt_roleuser ru,xt_rolefunc rf where ru.userid='"+userid+
                     "' and ru.roleid=rf.roleid)";
+        }
+        if(roleid!=null){
+            sql="select t.*,(select count(1) from xt_function where parent=t.functionid) leafcount, rf.roleid checked \n" +
+                    "  from xt_function t\n" +
+                    "  left join (select * from xt_rolefunc where roleid='"+roleid+"') rf    on t.functionid = rf.functionid where t.parent='"+node+"'";
         }
         sql+=" order by t.orderno asc";
         List<Map<String,Object>> list=new ArrayList<Map<String,Object>>();
@@ -88,6 +97,9 @@ public class Function extends Model {
                 map.put("leafcount",map.get("leafcount"));//子类的数量
             }else{
                 map.put("state","closed");
+            }
+            if(roleid!=null){
+                map.put("checked",(null!=map.get("checked"))?true:false);
             }
             list.add(map);
         }
@@ -132,10 +144,10 @@ public class Function extends Model {
         return TreeGenerator.generate(JSONArray.fromObject(list),"functionid","parent","totalroot").toString();
     }
 
+    @Test
     public void setTest2(){
-        String s=getRequest().getParameter("name");
+        String s=query(new CommonDbUtil(),"LzMZzw0cvT7DLQAQH29i3A5obNmKHrgE",null,"1234567");
         System.out.println(s);
-        this.setTest(s+" by weipan");
     }
     private String getSql(String node){
         String sql="select t.functionid,\n" +

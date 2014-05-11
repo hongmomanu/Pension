@@ -45,7 +45,7 @@
 $(function(){
     $('#functiontree').tree({
         checkbox:true,
-        url:'lr.do?model=manager.Function&eventName=queryFunctionTreeMng'
+        url:'lr.do?model=manager.Function&eventName=queryFunctionTreeMng&roleid='+$("input[name='roleid']").val()
     });
 })
 function getChecked(){
