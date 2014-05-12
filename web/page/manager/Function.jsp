@@ -140,7 +140,7 @@
                     </tr>
                     <tr>
                         <td class="formtdtext">业务摘要:</td>
-                        <td colspan="3"><textarea name="bsdigest" style="height: 60px;width: 60%;"></textarea></td>
+                        <td colspan="3"><textarea name="bsdigest" style="height: 100px;width: 90%;"></textarea></td>
 
                     </tr>
                 </table>

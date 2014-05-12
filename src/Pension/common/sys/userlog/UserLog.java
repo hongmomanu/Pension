@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -140,12 +141,53 @@ public class UserLog {
             return null;
         }
     }
+    private static List getCombox(String labelcodes) {
+        Map map= null;
+        try {
+            map = CommQuery.query("select * from aa10 where lower(aaa100) in (" + labelcodes +")");
+        } catch (AppException e) {
+            e.printStackTrace();
+        }
+        List list=(List)map.get(IParam.ROWS);
+        return list;
+    }
 
     private static String makeDigest(JSONArray array,HttpServletRequest request){
         StringBuffer sb=new StringBuffer();
+        String labelcodes="";
+        for(int i=0;i<array.size();i++){
+            JSONObject object=array.getJSONObject(i);
+            boolean iscombox=array.getJSONObject(i).has("iscombox")?true:false;
+            if(iscombox){
+                 if(labelcodes.length()>0){
+                     labelcodes+=",";
+                 }
+                labelcodes+="'"+array.getJSONObject(i).get("property")+"'";
+            };
+        }
+        List list=null;
+        if(labelcodes.length()>0){
+            list=getCombox(labelcodes);
+        }
         for(int i=0;i<array.size();i++){
             JSONObject obj=array.getJSONObject(i);
-            sb.append(obj.getString("label")+request.getParameter(obj.getString("property"))+" ");
+            String labelValue="";
+            if(array.getJSONObject(i).has("iscombox")){
+                Iterator it=list.iterator();
+                while(it.hasNext()){
+                    Map map=(Map)it.next();
+                    if(obj.get("property").equals(map.get("aaa100"))
+                            &&request.getParameter(obj.getString("property"))!=null
+                            &&request.getParameter(obj.getString("property")).equals(map.get("aaa102"))){
+                        labelValue=map.get("aaa103").toString();
+                        break;
+                    }
+                }
+            }else{
+                labelValue=request.getParameter(obj.getString("property"));
+            }
+            sb.append(obj.getString("label")+
+                    labelValue+" ");
         }
         return sb.toString();
     }
