@@ -37,7 +37,7 @@
         if(showAuditIdFlag){
             return v;
         }else{
-            return '<a style="text-decoration: none" href="#" onclick="view(\''+ r.functionid+','+ r.opseno+'\')">'+v+'</a> ';
+            return '<a style="text-decoration: none" href="#" onclick="view(\''+ r.functionid+','+ r.opseno+','+ r.tprkey+'\')">'+v+'</a> ';
         }
     }
     var styleFn=function(i,data){
@@ -104,13 +104,40 @@
     function view(a){
         var functionid= a.split(',')[0];
         var opseno= a.split(',')[1];
+        var tprkey= a.split(',')[2];
         $.ajax({
-            url:'log.do?eventName=queryOriginalpage',
-            data:{opseno:opseno,method:functionid},
+            url:'lr.do?model=manager.Function&eventName=queryFunctionById',
+            data:{id:functionid},
             success:function(res){
-                cj.showHtml('原始界面',res);
+                var d=eval('('+res+')');
+                var htmlfile, jsfile;
+                if(d.location){
+                    var widget=d.location.replace(/\./g,'/');
+                    htmlfile='text!views/'+widget+'.htm';
+                    jsfile='views/'+widget;
+                }
+                var title='查看-'+d.title;
+
+                $.ajax({
+                    url:'log.do?eventName=queryOriginalpage',
+                    data:{opseno:opseno,method:functionid},
+                    success:function(res2){
+                        cj.showContent({
+                            title:title,
+                            htmfile:htmlfile,
+                            jsfile:jsfile,
+                            readonly:true,
+                            location:d.location,
+                            functionid: d.functionid,
+                            res:parent.$.evalJSON(res2),
+                            tprkey:tprkey,
+                            useproxy:!true
+                        })
+                    }
+                })
             }
         })
+
     }
     function dbrol(a){
         var functionid= a.split(',')[0];

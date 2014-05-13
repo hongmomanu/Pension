@@ -88,9 +88,41 @@ define(function(){
             content:myclone.html(),
             closable:true
         })*/
+
+        /*var options=myclone.find('.easyui-datagrid').datagrid('options');
+        var clumns=options.columns;
+        for(var i in clumns){
+            if(clumns[i].editor.type=='combobox'){
+                var data=myclone.find('.easyui-datagrid').datagrid('getData');
+                for(var j in data){
+                    for(var p in data[j]){
+                        if(p==clumns[i].editor.field){
+                            data[j][p]='100';
+                        }
+                    }
+                }
+            }
+        }*/
+
+
         console.log(eobj)
         return myclone.html();
     }
+    function toJsonString(local){
+        var obj={};
+        var formdata=local.find('form').serializeArray();
+        var formObj={};
+        for(var j in formdata){
+            formObj[formdata[j].name]=formdata[j].value;
+        }
+        var i=0;
+        local.find('.easyui-datagrid').each(function(){
+             var gridname=$(this).attr('gridname')||'defaultgrid'+(i++);
+             obj[gridname]=$(this).datagrid('getData');
+        })
+        obj.formdata=formObj;
+        return JSON.stringify(obj);
+    }
 
-    return {parse:parse}
+    return {parse:toJsonString}
 })

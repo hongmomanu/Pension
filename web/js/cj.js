@@ -124,6 +124,9 @@ var cj=(function(){
                 js.closeTabByTitle(title)
                 js.ShowIframe(location,'',title)
             })
+        },
+        getCurrTab:function(){
+            return $('#tabs').tabs('getSelected');
         }
     }
     return commonj;

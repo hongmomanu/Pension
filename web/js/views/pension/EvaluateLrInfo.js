@@ -165,11 +165,12 @@ define(function(){
 
     }
     var b=function(mylocal,option){
+        console.log(option)
         ll=mylocal;
         local=mylocal;
         initPage(local,function(){
             var loadform=function(l,o){
-                l.find('form[opt=mainform]').form('load',o.res)
+                l.find('form[opt=mainform]').form('load',o.res.formdata)
                 l.cssRadioOnly();
                 l.cssCheckBoxOnly();
                 require(['views/pension/evaluatelrinfofieldset/edit',
@@ -179,9 +180,9 @@ define(function(){
 
                     js.info4(l);
 
-                    js.result1(l,o.res);
-                    js.result2(l,o.res);
-                    js.info0(l, o.res);
+                    js.result1(l,o.res.formdata);
+                    js.result2(l,o.res.formdata);
+                    js.info0(l, o.res.formdata);
                 })
             }
             if(!option.res){
