@@ -122,6 +122,14 @@
 </div>
 
 
+<div id="mm" class="easyui-menu" style="width:120px;">
+    <div id="mm-tabclose">关闭</div>
+    <div id="mm-tabcloseall">关闭全部</div>
+    <div id="mm-tabcloseother">关闭其他</div>
+    <div class="menu-sep"></div>
+    <div id="mm-tabcloseright">关闭右侧全部</div>
+    <div id="mm-tabcloseleft">关闭左侧全部</div>
 
+</div>
 </body>
 </html>

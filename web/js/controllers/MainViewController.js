@@ -1,14 +1,13 @@
 /**
  * Created by jack on 13-12-31.
  */
-define(['views/MainTree','commonfuncs/LoadingMask'], function(MainTree,LoadingMask){
+define(['views/MainTree','commonfuncs/LoadingMask','commonfuncs/TabRightClick'],
+    function(MainTree,LoadingMask,TabRightClick){
 
     function start(){
         addAccordion();
-        //MainTree.render({LoadingMask:LoadingMask});
-        /*require(['commonfuncs/initFuncs'],function(initFuncs){
-            initFuncs.initProcessFromRole(roleid,"流程操作");
-        })*/
+        TabRightClick.init();
+
     }
     function addAccordion(){
         var menu_pension=$('#menu_pension');

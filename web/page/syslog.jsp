@@ -116,7 +116,7 @@
                     htmlfile='text!views/'+widget+'.htm';
                     jsfile='views/'+widget;
                 }
-                var title='查看-'+d.title;
+                var title='原始界面';
 
                 $.ajax({
                     url:'log.do?eventName=queryOriginalpage',
