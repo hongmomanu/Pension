@@ -3,6 +3,30 @@
       style="overflow-y: scroll;border-bottom: 1px solid greenyellow;"
       data-options="fit:true,border:false">
     <form opt="mainform" method="post">
+        <fieldset style="width: 900px;margin: 0px auto;" opt="logout"><legend>注销信息</legend>
+
+            <table class="formtable">
+
+                <tr>
+                    <td>注销时间</td>
+                    <td colspan="4"><input size="25"></td>
+                </tr>
+
+                <tr>
+                    <td>注销原因</td>
+                    <td colspan="4"><textarea style="width: 99%;height: 50px;" name="shequcomment"></textarea></td>
+                </tr>
+                <tr>
+                    <td>测试</td>
+                    <td>
+                        <input class="easyui-combobox" name="gender"
+                               data-options=" data:cj.getEnum('gender'), editable:false, valueField:'id', textField:'text' ">
+                    </td>
+                </tr>
+
+
+            </table>
+        </fieldset>
     </form>
 </div>
 

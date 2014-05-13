@@ -21,7 +21,6 @@
     a:link, a:visited, a:active {
         color: #404040;
         text-decoration: none;
-        display: block;
     }
 
 </style>
@@ -54,7 +53,7 @@
         //if(++i%2==0)return "background-color:#EEE";
     }
     var bstimeformatter=function(v,r,i){
-        return v.split('.')[0]
+        return v.split('.')[0].substr(5)
     }
 </script>
 <body>
@@ -68,7 +67,7 @@
     <thead>
         <tr>
             <th data-options="field:'ck',checkbox:true"></th>
-            <th data-options="field:'auditid',width:100">业务序号</th>
+            <th data-options="field:'auditid',width:60">业务序号</th>
             <th data-options="field:'aulevel',width:60,align:'center',
             formatter: function(value,row,index){
                 return approvalProcess[value]
@@ -78,16 +77,16 @@
                 options: { data:pass, valueField: 'id', textField: 'text',panelHeight:'auto' } },
             formatter:passformatter
             ">通过</th>
-            <th  data-options="field:'audesc',width:250,align:'right',
+            <th  data-options="field:'audesc',width:200,align:'right',
                         editor:{
                             type:'validatebox',
                             options:{
-                                invalidMessage:'请输入正确身份证号!',validType:'mustDesc'
+                                invalidMessage:'请输入备注信息!',validType:'mustDesc'
                             }}">备注</th>
-            <th data-options="field:'digest',width:300,align:'left',formatter:digestformatter"><a>摘要</a></th>
+            <th data-options="field:'digest',width:350,align:'left',formatter:digestformatter"><a>摘要</a></th>
             <th data-options="field:'username',width:60,align:'left'">办理人</th>
-            <th data-options="field:'bsnyue',width:60,align:'left'">业务期</th>
-            <th data-options="field:'bstime',width:120,align:'left',formatter:bstimeformatter">时间</th>
+            <th data-options="field:'bsnyue',width:60,align:'center'">业务期</th>
+            <th data-options="field:'bstime',width:90,align:'center',formatter:bstimeformatter">时间</th>
         </tr>
         </thead>
     </table>

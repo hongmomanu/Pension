@@ -15,6 +15,11 @@ define(function(){
                 }
             })
         },
+        info0:function(local){     //手动渲染combox组件
+            local.find('fieldset[opt=info0] .easyui-combobox').each(function(){
+                $.parser.parse($(this).parent())
+            })
+        },
         info1:function(local){
             var me=this;
             local.find('fieldset[opt=info1]')

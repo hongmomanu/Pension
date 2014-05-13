@@ -24,9 +24,7 @@ define(function(){
             for(var i=0;i<arguments.length;i++){
                 local.find('form[opt=mainform]').append(arguments[i]);
             }
-            if(f){
-                f();
-            }
+            //$.parser.parse(local.find('form[opt=mainform]'))
         })
     }
     var a=function(local,option){

@@ -49,6 +49,7 @@ define(function(){
             for(var i=0;i<arguments.length;i++){
                 local.find('form[opt=mainform]').append(arguments[i]);
             }
+            //$.parser.parse(local.find('form[opt=mainform]'));//渲染
             if(f){
                 f();
             }
@@ -106,9 +107,9 @@ define(function(){
 
         require(['commonfuncs/division'],function(js){
             js.initDivisionWidget(
-                local.find(":input[name=registration]"),
+                local.find(":input[opt=registration]"),
                 function(index,row){
-                    $(':input[name=address]').val(row.parentname+row.dvname);
+                    $(':input[name=address]').val(row.totalname);
                 })
         })
     }
@@ -121,6 +122,7 @@ define(function(){
             require(['views/pension/evaluatelrinfofieldset/edit',
                 'views/pension/evaluatelrinfofieldset/readonly'],function(js1,js2){
                 var js=js1;
+                js.info0(local);
                 js.info1(local);
                 js.info2(local);
                 js.info3(local);

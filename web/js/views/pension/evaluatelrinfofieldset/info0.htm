@@ -20,10 +20,10 @@
 
             <tr>
                 <td class="formtdtext">性别:</td>
-                <td><input class="easyui-combobox lazy-combobox" type="text" searchtype="dbglapplytype"
-                           name="gender"
-                           data-options="required:true,valueField: 'value',
-                                         textField: 'label' "></td>
+                <td><input class="easyui-combobox" name="gender"
+                           data-options=" data:cj.getEnum('gender'), editable:false, valueField:'id', textField:'text' ">
+
+                </td>
                 <td class="formtdtext">出生年月:</td>
                 <td><input name="birthd"></td>
 
@@ -31,9 +31,13 @@
 
             <tr>
                 <td class="formtdtext">民族:</td>
-                <td><input name="nation"></td>
+                <td><input class="easyui-combobox" name="nation"
+                           data-options=" data:cj.getEnum('nation'), editable:false, valueField:'id', textField:'text' ">
+                </td>
                 <td class="formtdtext">文化程度:</td>
-                <td><input  type="text" name="culture"></td>
+                <td><input class="easyui-combobox" name="culture"
+                           data-options=" data:cj.getEnum('culture'), editable:false, valueField:'id', textField:'text' ">
+                </td>
             </tr>
             <tr>
                 <td class="formtdtext">籍贯:</td>

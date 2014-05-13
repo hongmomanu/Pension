@@ -44,7 +44,7 @@
         //if(++i%2==0)return "background-color:#EEE";
     }
     var bstimeformatter=function(v,r,i){
-        return v.split('.')[0]
+        return v.split('.')[0].substr(5)
     }
     var chexiaoformat=function(v,r,i){
         if(r.rbflag=='1'){
@@ -65,11 +65,11 @@
     <tr>
         <th data-options="field:'opseno',width:70">操作日志流水号</th>
         <th data-options="field:'tprkey',width:50,hidden:true">业务序号</th>
-        <th data-options="field:'digest',width:300,align:'left',formatter:digestformatter"><a>摘要</a></th>
+        <th data-options="field:'digest',width:350,align:'left',formatter:digestformatter"><a>摘要</a></th>
         <th data-options="field:'username',width:60,align:'left'">办理人</th>
-        <th data-options="field:'bsnyue',width:60,align:'left'">业务期</th>
-        <th data-options="field:'bstime',width:120,align:'left',formatter:bstimeformatter">时间</th>
-        <th data-options="field:'ro',width:120,align:'left',formatter:chexiaoformat">回退</th>
+        <th data-options="field:'bsnyue',width:60,align:'center'">业务期</th>
+        <th data-options="field:'bstime',width:100,align:'center',formatter:bstimeformatter">时间</th>
+        <th data-options="field:'ro',width:80,align:'center',formatter:chexiaoformat">回退</th>
     </tr>
     </thead>
 </table>

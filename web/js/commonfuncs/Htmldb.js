@@ -7,10 +7,16 @@ define(function(){
         var selectiondatas='.easyui-datebox'; //easyui-datebox
         var eobj={};
         dd = local;
-
+        var extid=1;
         local.find('textarea,:input').each(function(){    //获得元素input的value
             if($(this).val()){
-                eobj[$(this).attr('name')]=$(this).val();
+                var name=$(this).attr('name');
+                if(!name&&!$(this).attr('comboname')){
+                    name="extname"+(extid++);
+                    $(this).attr('name',name);
+
+                }
+                eobj[name]=$(this).val();
             }
         })
 
@@ -33,7 +39,7 @@ define(function(){
             }
         })
 
-        var myclone=$(local.find('div.panel-body')[0]).clone();
+        var myclone=$('<div class="newRadio"></div>').append($(local.find('div.panel-body')[0]).clone());
         myclone.find(selections).each(function(){   //删除easyui-combobox样式
             $(this).removeAttr('data-options').css('display','inline')
                 .removeClass('easyui-combobox').attr('comboname');
@@ -58,9 +64,12 @@ define(function(){
         })*/
         myclone.find('textarea,:input').each(function(){      //为input元素赋值
             var name=$(this).attr('name');
+
             var tagName=$(this).prop('tagName');
             if(tagName=="INPUT"){
-                $(this).attr('value',eobj[name]);
+                if(name){
+                    $(this).attr('value',eobj[name]);
+                }
             }else if(tagName=="TEXTAREA"){
                 $(this).text(eobj[name]);
             }
