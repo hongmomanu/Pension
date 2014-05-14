@@ -138,28 +138,42 @@ define(function(){
             initIdentityidandOtherComboxGrid(local);
         });
 
+        require(['commonfuncs/CommToolBar'],function(tb){
+            local.find('[opt=form_btns]').append(new tb([{
+                text:'保存',
+                iconCls:'icon-save',
+                handler:function(){
+                    require(['commonfuncs/Htmldb'],function(js){
+                        local.find('form[opt=mainform]').form('submit',{
+                            url:lr.url(option,'save'),
+                            onSubmit: function(param){
+                                var isValid = $(this).form('validate');
+                                if(isValid){
+                                    param.originalpage=js.parse(local)
+                                }
+                                return isValid;
+
+                            },
+                            success: function(res){
+                                cj.ifSuccQest(res,"已操作成功是否关闭此页",function(){
+                                    require(['commonfuncs/TreeClickEvent'],function(js){
+                                        js.closeCurrentTab();
+                                    })
+                                })
+                            }
+                        })
+                    })
+                }
+            },{
+                text:'查看日志',
+                iconCls:'icon-log',
+                action:'searchlog'
+            }]))
+        })
+
 
         local.find('a[action=save]').bind('click',function(){
-            require(['commonfuncs/Htmldb'],function(js){
-                local.find('form[opt=mainform]').form('submit',{
-                    url:lr.url(option,'save'),
-                    onSubmit: function(param){
-                        var isValid = $(this).form('validate');
-                        if(isValid){
-                            param.originalpage=js.parse(local)
-                        }
-                        return isValid;
 
-                    },
-                    success: function(res){
-                        cj.ifSuccQest(res,"已操作成功是否关闭此页",function(){
-                            require(['commonfuncs/TreeClickEvent'],function(js){
-                                js.closeCurrentTab();
-                            })
-                        })
-                    }
-                })
-            })
 
         })
 

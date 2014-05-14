@@ -29,6 +29,9 @@ define(function(){
                     localtab.find('a[action=searchlog]').bind('click',function(){
                         cj.searchLog(option.functionid)
                     })
+                    localtab.bind('searchlog',function(){
+                        cj.searchLog(option.functionid)
+                    })
                 }
 
             })
