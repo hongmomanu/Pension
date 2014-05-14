@@ -1,6 +1,6 @@
 define(function(){
-    var toolbartr=' <div class="datagrid-toolbar" style="border-top: 1px solid yellowgreen;"> <table cellspacing="0" cellpadding="0" style="margin: 0 auto;"> <tbody> <tr></tr> </tbody> </table> </div>';
-    var getToolBar=function(buttons){
+    var toolbartr=' <div class="datagrid-toolbar" style="border-top: 1px solid yellowgreen;"><table cellspacing="0" cellpadding="0" style="margin: 0 auto;"> <tbody> <tr></tr> </tbody> </table></div>';
+    var getToolBar=function(buttons,align){
         var tb=$(toolbartr);
         var tr=tb.find('tr');
         for(var i in buttons){
@@ -20,6 +20,9 @@ define(function(){
                    })
                }
            }
+        }
+        if(align){
+            tb.find('table').removeAttr('style');
         }
 
         return tb.get(0)

@@ -34,27 +34,14 @@
             white-space:normal;
         }
             /*表头样式*/
-        .formtable th {
-            font-size:12px;
-            font-weight:600;
-            color: #303030;
-            border-right: 1px solid #ADD8E6;
-            border-bottom: 1px solid #ADD8E6;
-            border-top: 1px solid #ADD8E6;
-            letter-spacing: 2px;
-            text-align: left;
-            padding: 10px 0px 10px 0px;
-            background: url(img/tablehdbg.png);
-            white-space:nowrap;
-            text-align:center;
-            overflow: hidden;
-        }
+
         .formtdtext {
             width: 13%;
         }
 
 
     </style>
+    <link rel="stylesheet" type="text/css" href="img/css/icon.css">
 </head>
 <body>
 <form id="form" method="post">
@@ -63,12 +50,10 @@
         <ul id="functiontree"></ul>
     </div>
 
-    <div data-options="region:'center',title:'功能详细信息'">
+    <div id="functiondt" data-options="region:'center',title:'功能详细信息'">
 
 
-        <a href="#" class="easyui-linkbutton" id="newFun">新建</a>
-        <a href="#" class="easyui-linkbutton" id="saveFun">保存</a>
-        <a href="#" class="easyui-linkbutton" id="deleteFun">删除</a>
+
         <input type="hidden" name="functionid">
         <fieldset ><legend>功能</legend>
             <div>
@@ -165,44 +150,59 @@ $(function(){
             $('#form').form('load','lr.do?model=manager.Function&eventName=queryFunctionById&node='+node.functionid);
         }
     });
-    $('#newFun').bind('click',function(){
-        if(!funObj){
-            alert('请选择节点!');return;
-        }
-         if(!funObj.leaf){
-             $('#form').form('clear').form('load',{
-                 parent:funObj.functionid,
-                 functionid:'-1'
-             })
-         }
-    });
-    $('#saveFun').bind('click',function(){
-        $('#form').form('submit', {
-            url:'lr.do?model=manager.Function&eventName=saveFunction',
-            onSubmit: function(){
-            var isValid = $(this).form('validate');
-            if (!isValid){
-                $.messager.progress('close');	// hide progress bar while the form is invalid
+
+    parent.require(['commonfuncs/CommToolBar'],function(tb){
+        $('#functiondt').first().before(new tb([{
+            text:'保存',
+            iconCls:'icon-save',
+            handler:function(){
+                $('#form').form('submit', {
+                    url:'lr.do?model=manager.Function&eventName=saveFunction',
+                    onSubmit: function(){
+
+                        var isValid = $(this).form('validate');
+                        if (!isValid){
+                            $.messager.progress('close');	// hide progress bar while the form is invalid
+                        }
+                        return isValid;	// return false will stop the form submission
+                    },
+                    success: function(res){
+                        parent.cj.calert(res);
+                        $.messager.progress('close');	// hide progress bar while submit successfully
+                    }
+                });
             }
-            return isValid;	// return false will stop the form submission
-        },
-        success: function(res){
-            alert(res)
-            $.messager.progress('close');	// hide progress bar while submit successfully
-        }
-    });
-    });
-    $('#deleteFun').bind('click',function(){
-        $.ajax(
-                {
-                    type: "POST",
-                    data: { functionid : funObj.functionid },
-                    url:'lr.do?model=manager.Function&eventName=deleteFunction',
-                    success:function(){$.messager.alert('提示','操作成功!','info');}
+        },{
+            text:'删除',
+            iconCls:'icon-remove',
+            handler:function(){
+                $.ajax(
+                        {
+                            type: "POST",
+                            data: { functionid : funObj.functionid },
+                            url:'lr.do?model=manager.Function&eventName=deleteFunction',
+                            success:function(){$.messager.alert('提示','操作成功!','info');}
+                        }
+                )
+            }
+        },{
+            text:'添加新节点',
+            iconCls:'icon-add',
+            handler:function(){
+                if(!funObj){
+                    alert('请选择节点!');return;
                 }
-        )
+                if(!funObj.leaf){
+                    $('#form').form('clear').form('load',{
+                        parent:funObj.functionid,
+                        functionid:'-1'
+                    })
+                }
+            }
+        }],'left'))
     })
-    //$('functiontree').tree('expandAll');
+
+
 })
 
 </script>

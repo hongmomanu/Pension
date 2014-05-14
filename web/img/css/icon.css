@@ -10,3 +10,9 @@
 .icon-log{
     background:url('../../img/mylog.gif') no-repeat;
 }
+.icon-remove{
+    background:url('../../img/remove.gif') no-repeat;
+}
+.icon-add{
+    background:url('../../img/add.gif') no-repeat;
+}
