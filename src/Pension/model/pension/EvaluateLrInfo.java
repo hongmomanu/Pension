@@ -73,6 +73,16 @@ public class EvaluateLrInfo extends Model implements IMultilevelAudit {
         }
         return JSONObject.fromObject(map).toString();
     }
+    public String existsPGPerson(){
+        CommonDbUtil commonDbUtil=new CommonDbUtil();
+        String id=this.getRequest().getParameter("id");
+
+        Map map= new HashMap();
+        String sql="SELECT t2.identityid from t_needassessment t1,t_oldpeople t2 where t1.lr_id=t2.lr_id and t2.identityid='"+id+"'";
+        List list=commonDbUtil.query(sql);
+        map.put(IParam.ROWS,list);
+        return JSONObject.fromObject(map).toString();
+    }
     @OpLog
     public int test2() throws AppException {
         System.out.println(JSONObject.fromObject(CommQuery.query("select * from xt_log")).toString());

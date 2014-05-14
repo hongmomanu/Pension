@@ -63,9 +63,12 @@ define(function(){
                 data:{id:res.lr_id},
                 success:function(restext){
                     var res=eval('('+restext+')')
-                    local.find('form').form('load',res)
+                    //local.find('form').form('load',res)
                     local.find('fieldset[opt=info0] img').attr('src',res.pensionimgpath)
                 }
+            })
+            local.find('fieldset[opt=info0]').find('.easyui-combobox,.easyui-validatebox').each(function(){
+                $.parser.parse($(this).parent())
             })
         }
     }

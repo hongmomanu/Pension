@@ -64,7 +64,7 @@ define(function(){
                 url: 'ajax/getLrBasicInfo.jsp',
                 idField:'owerid',
                 textField:'owerid',
-                validType:'personid',
+                validType:['identityid','minLength[17]','exists["lr.do?model=pension.EvaluateLrInfo&eventName=existsPGPerson"]'],
                 mode:'remote',
                 fit:true,
                 pagination:true,

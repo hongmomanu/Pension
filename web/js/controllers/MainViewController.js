@@ -1,13 +1,13 @@
 /**
  * Created by jack on 13-12-31.
  */
-define(['views/MainTree','commonfuncs/LoadingMask','commonfuncs/TabRightClick'],
-    function(MainTree,LoadingMask,TabRightClick){
+define(['views/MainTree','commonfuncs/LoadingMask','commonfuncs/TabRightClick','commonfuncs/validate/Init'],
+    function(MainTree,LoadingMask,TabRightClick,Init){
 
     function start(){
         addAccordion();
         TabRightClick.init();
-
+        window.setTimeout(function(){new Init()},2000);
     }
     function addAccordion(){
         var menu_pension=$('#menu_pension');
