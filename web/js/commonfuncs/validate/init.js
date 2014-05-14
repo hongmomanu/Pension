@@ -1,0 +1,24 @@
+/**
+ * Time: 下午2:46
+ * 初始化所有自定义校验
+ */
+define(function(){
+    var validateDesc={
+        identityid:'通用身份证号码校验',
+            exists:'是否已经存在',
+        minLength:'最小长度'
+    }
+    var validates=(function(a){
+       var arr=[];
+       for(var p in a){
+           arr.push('commonfuncs/validate/'+p);
+       }
+       return arr;
+    })(validateDesc);
+
+    var init=function(){
+        console.log(validates)
+        require(validates,function(){})
+    }
+    return init;
+})

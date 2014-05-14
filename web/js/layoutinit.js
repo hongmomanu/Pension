@@ -123,6 +123,7 @@ define(function(){
         }
         //setInterval(t,1000);
     }
+
     function initroutnavigation(){
         $('#routermenu').combobox({
             onSelect: function(rec){
@@ -152,9 +153,18 @@ define(function(){
     }
 
      return {
-         inithead :inithead,
-         initroutnavigation:initroutnavigation,
-         initindextime:initindextime
+         inithead :function(){
+
+             inithead();
+         },
+         initroutnavigation:function(){
+
+             //initroutnavigation();
+         },
+         initindextime:function(){
+
+             //initindextime();
+         }
      }
 
 })

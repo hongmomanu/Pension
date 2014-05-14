@@ -5,8 +5,8 @@ define(function(){
 
     var routes = [{hash:'#menu_pension', controller:'MainViewController'},
         {hash:'#menu_qxgl',  controller:'ManagerController'}];
-    //var defaultRoute = '#mainview';
-    var defaultRoute ='';
+    var defaultRoute = '#menu_pension';
+    //var defaultRoute ='';
     var currentHash = '';
 
     function startRouting(){

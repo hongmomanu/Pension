@@ -6,8 +6,10 @@ define(['views/MainTree','commonfuncs/LoadingMask','commonfuncs/TabRightClick','
 
     function start(){
         addAccordion();
+
+        console.log(111)
         TabRightClick.init();
-        window.setTimeout(function(){new Init()},2000);
+        //window.setTimeout(function(){new Init()},2000);
     }
     function addAccordion(){
         var menu_pension=$('#menu_pension');

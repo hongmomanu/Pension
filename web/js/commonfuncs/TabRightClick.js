@@ -1,6 +1,6 @@
 define(function(){
     var mainPage="主页";
-
+    var loadValidated=false;
     (function(){
 
         //关闭当前
@@ -55,7 +55,7 @@ define(function(){
     })();
     var init=function(){
         $('#tabs').tabs({
-            'onContextMenu':function(e, title,index){
+            onContextMenu:function(e, title,index){
                 e.preventDefault();
                 if(title==mainPage){
                     return;
@@ -63,6 +63,15 @@ define(function(){
                 //$(this).tabs('select',title);
                 $('#mm').menu('show', { left: e.pageX, top: e.pageY });
                 $('#mm').data("currtab",title);
+            },
+            onAdd:function(){
+                if(!loadValidated){
+                    require(['commonfuncs/validate/Init'],function(Init){
+                        new Init();
+                        loadValidated=true;
+                    })
+                }
+
             }
         })
     }

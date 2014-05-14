@@ -95,21 +95,22 @@
             <li class="li-skinitem"><img src="img/head/5.png"/><a id="domshowalterpwd">重设密码</a></li>
             <li class="li-skinitem"><img src="img/head/7.png"/>
                 <a id="domlogout" style="text-decoration: none;">退出</a></li>
-            <li class="li-skinitem">
+            <%--<li class="li-skinitem">
                 <input id="routermenu" class="easyui-combobox" style="position: absolute;top:20px;float: left;padding:0;" data-options="
         valueField: 'value',
         mode:'remote',
         textField: 'name',
         url: 'ajax/getfuncsbyrule.json'">
 
-            </li>
+            </li>--%>
         </ul>
 
 
     </div>
 </div>
 <div region="west" id="westpanel" border="true" split="true" title="业务导航" class="cs-west">
-
+    <div class="easyui-accordion" id="menu_pension" fit="true" border="false">
+    </div>
 </div>
 <div id="mainPanle" region="center" border="true" border="false">
     <div id="tabs" class="easyui-tabs"   fit="true" border="false" >
