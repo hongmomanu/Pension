@@ -1,0 +1,27 @@
+<div opt="form_btns">
+    <input class="xsearchbox" style="width:300px">
+</div>
+<div opt="formcontentpanel" data-options="fit:true,border:false">
+<div class="easyui-tabs" data-options="fit:true,plain:true">
+    <div title="人员基本信息" class="newRadio">
+
+    </div>
+    <div title="人员信息变更注销">
+        <table class="easyui-datagrid"
+               data-options="singleSelect:true,collapsible:true,url:'datagrid_data1.json',method:'get',fit:true">
+            <thead>
+            <tr>
+                <th data-options="field:'itemid',width:80">Item ID</th>
+                <th data-options="field:'productid',width:100">Product</th>
+                <th data-options="field:'listprice',width:80,align:'right'">List Price</th>
+                <th data-options="field:'unitcost',width:80,align:'right'">Unit Cost</th>
+                <th data-options="field:'attr1',width:250">Attribute</th>
+                <th data-options="field:'status',width:60,align:'center'">Status</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+    <div title="资金发放记录">
+    </div>
+</div>
+</div>

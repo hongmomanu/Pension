@@ -35,7 +35,6 @@ define(function(){
     }
     var a={
         render:function(local,option){
-            console.log(option)
             local.find('.easyui-datagrid-noauto').datagrid({
                 url:lr.url(option,'query'),
                 onLoadSuccess:function(data){
@@ -46,6 +45,14 @@ define(function(){
                     var rows=data.rows;
                     for(var i=0;i<rows.length;i++){
                         for(var j=0;j<btns_arr.length;j++){
+                            var row=rows[i];
+                            if(row.unauditchange*1>0||row.active=='2'){
+                                //存在未审核的数据时，不能变更和注销
+                                //是注销通过的数据，不能变更和注销
+                                if(j!=0){  //j==0时为查看
+                                    $(btns_arr[j][i]).hide();
+                                }
+                            }
                             (function(index){
                                 $(btns_arr[j][i]).click(function(){
                                     var record=rows[index];

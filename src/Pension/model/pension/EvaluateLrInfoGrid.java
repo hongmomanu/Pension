@@ -22,6 +22,7 @@ public class EvaluateLrInfoGrid extends Model {
 
         Map map= new HashMap();
         String sql="select o.name,o.identityid,o.birthd,o.gender,o.age,o.nation,o.address,o.type,o.registration" +
+                ",(select count(pg_id) from t_needassessmentbg where bgactive is null and bgid=(select max(bgid) from t_needassessmentbg where pg_id=n.pg_id)) unauditchange"+
                 ",n.* from t_needassessment n,t_oldpeople o where o.lr_id=n.lr_id order by n.pg_id desc";
         List list=commonDbUtil.query("SELECT * FROM (SELECT tt.*, ROWNUM ro FROM ("+sql+") tt WHERE ROWNUM <="+(page)*rows+") WHERE ro > "+(page-1)*rows);
         int count=commonDbUtil.query(sql).size();
