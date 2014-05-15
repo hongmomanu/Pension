@@ -1,24 +1,9 @@
 <fieldset style="width: 900px;margin: 0px auto;" opt="logout"><legend>注销信息</legend>
-
+    <input type="hidden" name="pg_id">
     <table class="formtable">
-
-        <tr>
-            <td>注销时间</td>
-            <td colspan="4"><input size="25"></td>
-        </tr>
-
         <tr>
             <td>注销原因</td>
-            <td colspan="4"><textarea style="width: 99%;height: 50px;" name="shequcomment"></textarea></td>
+            <td colspan="4"><textarea style="width: 99%;height: 50px;" name="bgreason"></textarea></td>
         </tr>
-        <tr>
-            <td>测试</td>
-            <td>
-                <input class="easyui-combobox" name="gender"
-                       data-options=" data:cj.getEnum('gender'), editable:false, valueField:'id', textField:'text' ">
-            </td>
-        </tr>
-
-
     </table>
 </fieldset>

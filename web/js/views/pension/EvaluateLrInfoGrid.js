@@ -22,8 +22,16 @@ define(function(){
             tprkey:row.pg_id
         })
     }
-    var logout=function(row){
-        alert('去注销')
+    var logout=function(option,row){
+        cj.showContent({
+            url:'lr.do?model=pension.EvaluateLrInfo&eventName=queryById',
+            title:'注销',
+            htmfile:'text!views/pension/EvaluateLrInfoLogout.htm',
+            jsfile:'views/pension/EvaluateLrInfoLogout',
+            location:'pension.EvaluateLrInfoLogout',
+            functionid:'P6IyVH34P1sgn7VzU4q8',
+            tprkey:row.pg_id
+        })
     }
     var a={
         render:function(local,option){

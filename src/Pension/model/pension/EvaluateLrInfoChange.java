@@ -3,6 +3,9 @@ package Pension.model.pension;
 import Pension.common.*;
 import Pension.common.db.DbUtil;
 import Pension.common.sys.annotation.OpLog;
+import Pension.common.sys.audit.AuditBean;
+import Pension.common.sys.audit.AuditManager;
+import Pension.common.sys.audit.IMultilevelAudit;
 import Pension.model.Model;
 import net.sf.json.JSONObject;
 import org.junit.Test;
@@ -19,13 +22,14 @@ import java.util.Map;
  * Date: 14-4-10
  * Time: 下午1:55
  */
-public class EvaluateLrInfoChange extends Model {
+public class EvaluateLrInfoChange extends Model implements IMultilevelAudit {
     @OpLog
     public String save() throws AppException, SQLException {
         CommonDbUtil commonDbUtil=new CommonDbUtil();
         Map map= ParameterUtil.toMap(this.getRequest());
         int result=0;
         Long id=Long.parseLong((String)map.get("pg_id"));
+        AuditManager.addAudit(id);
         Map where=new HashMap();
         where.put("pg_id",id+"");
         System.out.println(JSONObject.fromObject(CommQuery.query("select * from xt_log")).toString());
@@ -43,6 +47,7 @@ public class EvaluateLrInfoChange extends Model {
         bgmap.put("bgid",bgid);
         bgmap.put("pg_id",afterdata.get("pg_id"));
         bgmap.put("bgreason",afterdata.get("bgreason"));
+        bgmap.put("bgtype","1");
         commonDbUtil.insertTableVales(bgmap,"t_needassessmentbg");
         PreparedStatement pstmt= DbUtil.get().prepareStatement(
                 "insert into t_needassessmentbgdt(BGDTID,BGID,BGCOLUMN,BGVAL1,BGVAL2)" +
@@ -94,4 +99,17 @@ public class EvaluateLrInfoChange extends Model {
         System.out.println(JSONObject.fromObject(map).toString());
     }
 
+    @Override
+    public Long audit(AuditBean auditBean) {
+        Long pg_id=Long.parseLong(auditBean.getTprkey());
+        CommonDbUtil dbUtil=new CommonDbUtil();
+        Map currentAudit=auditBean.getCurrentAudit();
+        String level=(String)currentAudit.get("aulevel");
+        String auflag=(String)currentAudit.get("auflag");
+        if("3".equals(level)){
+            dbUtil.execute("update t_needassessmentbg set bgactive='"+auflag+
+                    "' where bgid=(select max(a.bgid) from t_needassessmentbg a where a.pg_id ="+pg_id+")");
+        }
+        return null;
+    }
 }
