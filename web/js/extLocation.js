@@ -7,7 +7,7 @@ extKindeditor=serverUrl+"kindeditor/";
 extJqueryui=serverUrl+"jqueryui/"
 uploadBase=serverUrl+"jasper/"
 
-if (!window.console || !console.firebug)
+/*if (!window.console || !console.firebug)
 
 {
     var names = ["log", "debug", "info", "warn", "error", "assert", "dir", "dirxml",
@@ -16,5 +16,5 @@ if (!window.console || !console.firebug)
     window.console = {};
     for (var i = 0; i < names.length; ++i)
         window.console[names[i]] = function() {}
-}
+}*/
 

@@ -49,7 +49,7 @@
         document.write('<script type="text/javascript"  src="'+extEasyui+
                 'locale/easyui-lang-zh_CN.js"><\/script>');
         document.write('<link rel="stylesheet" type="text/css" id="swicth-style" href="'+extEasyui+
-                'themes/gray/easyui.css"><\/>');
+                'themes/default/easyui.css"><\/>');
 
         document.write('<link rel="stylesheet" type="text/css" id="swicth-style" href="'+extKindeditor+
                 'themes/default/default.css"><\/>');
@@ -61,16 +61,7 @@
 
     </script>
     <link rel="stylesheet" type="text/css" href="index.css">
-    <script src="js/cj.js"></script>
 
-
-    <script data-main="js/mainapp" src="require.js"></script>
-    <script type="text/javascript"  src="js/commonfuncs/jquery.json-2.4.js"></script>
-
-    <link rel="stylesheet" type="text/css"  href="js/commonfuncs/ext/popwin.css">
-    <script type="text/javascript"  src="js/commonfuncs/ext/popwin.js"></script>
-    <link rel="stylesheet" type="text/css"  href="js/jqueryplugin/upload/uploadify.css">
-    <script src="js/jqueryplugin/jquery.uploadify.min.js"></script>
 
 </head>
 <body class="easyui-layout" id="mainlayoutpanel">
@@ -81,25 +72,17 @@
         </div>
 
 
-        <ul class="ui-skin-nav" style="display: block;">
+        <%--<ul class="ui-skin-nav" style="display: block;">
             <li class="li-skinitem" title="default"><span class="default" rel="default"></span></li>
-        </ul>
+        </ul>--%>
 
         <ul id="headnavul">
             <li class="li-skinitem" ><img src="img/head/1.png"/><a id="welcomename">欢迎您:</a></li>
             <li class="li-skinitem"><img src="img/head/2.png"/><a id="domneedtodocount" style="cursor:pointer">待办业务(55)</a></li>
             <li class="li-skinitem"><img src="img/head/4.png"/><a id="onlinenums">在线人数(1)</a></li>
             <li class="li-skinitem"><img src="img/head/5.png"/><a id="domshowalterpwd">重设密码</a></li>
-            <li class="li-skinitem"><img src="img/head/7.png"/>
-                <a id="domlogout" style="text-decoration: none;">退出</a></li>
-            <%--<li class="li-skinitem">
-                <input id="routermenu" class="easyui-combobox" style="position: absolute;top:20px;float: left;padding:0;" data-options="
-        valueField: 'value',
-        mode:'remote',
-        textField: 'name',
-        url: 'ajax/getfuncsbyrule.json'">
-
-            </li>--%>
+            <li class="li-skinitem"><img src="img/head/7.png"/> <a id="domlogout" style="text-decoration: none;cursor:pointer">退出</a></li>
+            <li class="li-skinitem"><span id="currentDate"></span></li>
         </ul>
 
 
@@ -131,3 +114,14 @@
 </div>
 </body>
 </html>
+
+<script src="js/cj.js"></script>
+
+
+<script data-main="js/mainapp" src="require.js"></script>
+<script type="text/javascript"  src="js/commonfuncs/jquery.json-2.4.js"></script>
+
+<link rel="stylesheet" type="text/css"  href="js/commonfuncs/ext/popwin.css">
+<script type="text/javascript"  src="js/commonfuncs/ext/popwin.js"></script>
+<link rel="stylesheet" type="text/css"  href="js/jqueryplugin/upload/uploadify.css">
+<script src="js/jqueryplugin/jquery.uploadify.min.js"></script>

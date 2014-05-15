@@ -1,15 +1,13 @@
 /**
  * Created by jack on 13-12-31.
  */
-define(['views/MainTree','commonfuncs/LoadingMask','commonfuncs/TabRightClick','commonfuncs/validate/Init'],
-    function(MainTree,LoadingMask,TabRightClick,Init){
+define(['views/MainTree','commonfuncs/LoadingMask','commonfuncs/TabRightClick','commonfuncs/FullCalendar'],
+    function(MainTree,LoadingMask,TabRightClick,FullCalendar){
 
     function start(){
         addAccordion();
-
-        console.log(111)
         TabRightClick.init();
-        //window.setTimeout(function(){new Init()},2000);
+        window.setTimeout(function(){$('#currentDate').text(FullCalendar.RunGLNL())},1000);
     }
     function addAccordion(){
         var menu_pension=$('#menu_pension');
