@@ -1,7 +1,7 @@
 <table class="easyui-datagrid-noauto"
        data-options="
                method:'post',
-               fit:true,
+               fit:true,border:false,
               pageSize:cj.getDataGridAttr('pageSize'),
                pageList:cj.getDataGridAttr('pageList'),
                singleSelect:true,
@@ -29,9 +29,7 @@
     <thead>
     <tr>
         <th colspan="4">基本信息</th>
-        <th colspan="13">生活方面</th>
-        <th colspan="9">经济方面</th>
-        <th colspan="10">年龄和贡献</th>
+        <th colspan="7">生活方面</th>
     </tr>
 
     <tr>
@@ -50,34 +48,6 @@
         <th data-options="field:'sh_xiz'">洗澡</th>
         <th data-options="field:'sh_xingz'">行走于平地上</th>
         <th data-options="field:'sh_lout'">上下楼梯</th>
-        <th data-options="field:'sh_chuany'">穿脱衣服</th>
-        <th data-options="field:'sh_dab'">大便控制</th>
-        <th data-options="field:'sh_xiaob'">小便控制</th>
-        <th data-options="field:'sh_zongf'">总分（生活）</th>
-        <th data-options="field:'sh_pingguf'">评估分（生活）</th>
-        <th data-options="field:'sh_pingguy'">评估员（生活）</th>
-
-        <th data-options="field:'jj_shour'">经济_收入</th>
-        <th data-options="field:'jj_fenl'">经济分类</th>
-        <th data-options="field:'jj_leix'">低保类型</th>
-        <th data-options="field:'jj_pingguf'">评估分（经济）</th>
-        <th data-options="field:'jj_pingguy'">评估员（经济）</th>
-        <th data-options="field:'jz_fenl'">居住-分类</th>
-        <th data-options="field:'jz_zhaol'">是否有生活照料</th>
-        <th data-options="field:'jz_pingguf'">评估分（居住）</th>
-        <th data-options="field:'jz_pingguy'">评估员（居住）</th>
-
-
-        <th data-options="field:'nl_fenl',formatter:cj.enumFormatter('nl_fenl') ">年龄_分类</th>
-        <th data-options="field:'nl_pingguf'">评估分（年龄）</th>
-        <th data-options="field:'nl_pingguy'">评估员（年龄）</th>
-        <th data-options="field:'gx_laom'">市级以上劳模</th>
-        <th data-options="field:'gx_youf'">重点优抚对象</th>
-        <th data-options="field:'gx_youf_kind'">优抚类型</th>
-        <th data-options="field:'gx_chunjg'">纯居干</th>
-        <th data-options="field:'gx_ganb'">离休干部</th>
-        <th data-options="field:'gx_pingguf'">评估分（贡献）</th>
-        <th data-options="field:'gx_pingguy'">评估员（贡献）</th>
 
     </tr>
     </thead>
@@ -94,7 +64,7 @@
 
     <a><span class="icon-search" >&nbsp;&nbsp;&nbsp;&nbsp;</span>搜索</a>
     <a><span class="icon-search" >&nbsp;&nbsp;&nbsp;&nbsp;</span>高级搜索</a>
-    <a><span class="icon-add" >&nbsp;&nbsp;&nbsp;&nbsp;</span>新增</a>
+    <a><span class="icon-add newgrant" >&nbsp;&nbsp;&nbsp;&nbsp;</span>新增</a>
 
 
 </div>

@@ -70,7 +70,7 @@ define(function(){
                 }
             });
 
-            var options=$('#businessgrid').datagrid('options');
+            /*var options=$('#businessgrid').datagrid('options');
             options.search_params={
                 businesstype:businesstype,
                 type:type,
@@ -102,20 +102,12 @@ define(function(){
                 }
 
 
-            });
+            });*/
 
-            require(['commonfuncs/LookupItemName'],function(lookjs){
-                var isfind=lookjs.lookup(processRoleBtn,
-                    {name:"name",value:"资金发放"});
-                if(isfind){
-                    $('#businesstb .newgrant').bind('click',function(e){
-                        require(['views/dbgl/addnewgrantwin','jqueryplugin/jquery-formatDateTime'],function(js){
-                            js.render();
-                        });
-                    });
-                }else{
-                    $('#businesstb .newgrant').hide();
-                }
+            $('.businesstb .newgrant').bind('click',function(e){
+                require(['views/pension/addnewgrantwin','jqueryplugin/jquery-formatDateTime'],function(js){
+                    js.render();
+                });
             });
         }
 

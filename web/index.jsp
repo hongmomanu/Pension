@@ -64,8 +64,8 @@
 
 
 </head>
-<body class="easyui-layout" id="mainlayoutpanel">
-<div region="north" border="true" class="cs-north" >
+<body class="easyui-layout" id="mainlayoutpanel" border="false">
+<div region="north" border="false" class="cs-north" >
     <div class="cs-north-bg">
         <div class="cs-north-logo">
 
@@ -88,7 +88,7 @@
 
     </div>
 </div>
-<div region="west" id="westpanel" border="true" split="true" title="业务导航" class="cs-west">
+<div region="west" id="westpanel" border="true" split="true" title="业务导航" class="cs-west" style="border-right: 0">
     <div class="easyui-accordion" id="menu_pension" fit="true" border="false">
     </div>
 </div>
