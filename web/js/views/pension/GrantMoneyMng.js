@@ -35,7 +35,8 @@ define(function(){
     var a={
         render:function(local,option){
             local.find('.easyui-datagrid-noauto').datagrid({
-                url:lr.url(option,'query'),
+                toolbar:local.find('.businesstb'),
+                url:'lr.do?model=pension.EvaluateLrInfoGrid&eventName=query',//lr.url(option,'query'),
                 onLoadSuccess:function(data){
                     var viewbtns=local.find('[action=view]');
                     var editbtns=local.find('[action=edit]');
@@ -67,7 +68,55 @@ define(function(){
                         }
                     }
                 }
-            })
+            });
+
+            var options=$('#businessgrid').datagrid('options');
+            options.search_params={
+                businesstype:businesstype,
+                type:type,
+                divisionpath:divisionpath
+            };
+
+            if(options.type==='month'){
+                options.search_params.name=['time'];
+                options.search_params.compare=['month'];
+                options.search_params.value=[$('#businesstb .year').combobox('getValue')+"-"+
+                    ($('#businesstb .month').combobox('getValue')<10?'0'+
+                        $('#businesstb .month').combobox('getValue'):$('#businesstb .month').combobox('getValue'))];
+                options.search_params.logic =['and'];
+            }
+
+            $('#businesstb .search,#businesstb .keyword').bind('click keypress',function(e){
+                var keycode = (event.keyCode ? event.keyCode : event.which);
+                if($(this).attr("type")==='keyword'&&keycode!=13)return;
+                var search_params={
+                    bgdate:$('#businesstb .bgdate').length>0?$('#businesstb .bgdate').datebox('getValue'):null,
+                    eddate:$('#businesstb .eddate').length>0?$('#businesstb .eddate').datebox('getValue'):null,
+                    keyword:$('#businesstb .keyword').val(),
+                    statusType:($('#cc').attr('statusType')||0)
+                };
+                $('#businessgrid').datagrid('load',search_params);
+                for(var item in search_params){
+                    var options=$('#businessgrid').datagrid('options');
+                    options.search_params[item]=search_params[item];
+                }
+
+
+            });
+
+            require(['commonfuncs/LookupItemName'],function(lookjs){
+                var isfind=lookjs.lookup(processRoleBtn,
+                    {name:"name",value:"资金发放"});
+                if(isfind){
+                    $('#businesstb .newgrant').bind('click',function(e){
+                        require(['views/dbgl/addnewgrantwin','jqueryplugin/jquery-formatDateTime'],function(js){
+                            js.render();
+                        });
+                    });
+                }else{
+                    $('#businesstb .newgrant').hide();
+                }
+            });
         }
 
     }

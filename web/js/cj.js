@@ -95,15 +95,9 @@ var cj=(function(){
         },
         showContent:function(option){
 
-            var f=function(show,load){
-                var js=show;
-                if(option.res){  //已经有数据
-                    show.closeTabByTitle(option.title);
-                    show.ShowContent(option)
-                }else{
-                    show.closeTabByTitle(option.title);
-                    show.ShowContent(option)
-                }
+            var f=function(show){
+                show.closeTabByTitle(option.title);
+                show.ShowContent(option)
             }
 
             require(['commonfuncs/TreeClickEvent','commonfuncs/LoadFromData'],f)

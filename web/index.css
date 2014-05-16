@@ -265,3 +265,15 @@ a:active {
     background-color: lightskyblue;
 }
 
+.businesstb a:hover{
+    text-decoration: none;
+    cursor:pointer;
+    background-color: #52CCCC;
+}
+#westpanel div.accordion-body{
+    background-color:#ECFFF5;
+}
+#westpanel .tree-node-hover {
+    background: #52CCCC;
+    color: #660033;
+}

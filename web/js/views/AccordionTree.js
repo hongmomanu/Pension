@@ -32,6 +32,7 @@ define(function () {
         render: function (panel) {
             $(panel).children('.easyui-tree').tree({
                 lines:true,
+                animate:true,
                 onClick: function (node) {
                     if (!node['leaf'])return;  //如果是不是叶子而是目录文件则返回
                     var title = $((node.target)).text();
@@ -53,7 +54,8 @@ define(function () {
 
                 },
                 formatter: function (node) {
-                    return Number(node['leafcount']) > 0 ? node.text + '(' + node['leafcount'] + ')' : node.text;
+                    return node.text;
+                    //return Number(node['leafcount']) > 0 ? node.text + '(' + node['leafcount'] + ')' : node.text;
                 },
                 url: 'lr.do?model=manager.Function&eventName=queryFunctionTree'
             });

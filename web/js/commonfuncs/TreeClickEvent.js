@@ -21,7 +21,7 @@ define(function(){
                     if(js.readonly){
                         js.readonly(getLocaltab(),option)
                     }else{
-                        alert('未实现readonly接口')
+                        $.messager.alert('Warning',option.jsfile+'未实现readonly接口');
                     }
                 }else{
                     var localtab=getLocaltab();

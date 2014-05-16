@@ -41,18 +41,15 @@ define(function(){
             }
         })
     }
-    var a=function(local){
+    var a=function(local,option){
         initPage(local,function(){
             local.cssRadio(true);//渲染单选样式
             local.cssCheckBox();//渲染多选样式
         })
 
-        $('.xsearchbox').searchbox({
-            searcher:function(value,name){
-                alert(value + "," + name)
-            },
-            prompt:'Please Input Value'
-        });
+        local.find('[opt=form_btns] input').val(option.identityid).bind('click',function(){
+            alert(option.identityid)
+        })
     }
 
 
