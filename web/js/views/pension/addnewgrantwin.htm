@@ -1,90 +1,36 @@
-
+<div id="dd">Dialog Content.</div>
 <div id="addnewgrantwin" >
 
     <div class="easyui-tabs">
-        <div title="月发放" style="padding:10px">
-            <form method="post">
-                <table class="formtable">
+        <div title="月发放">
+                <table class="formtable grantmoneypersonquery0">
                     <tr>
-                      <td>本次发放从:</td>
-                       <td><input class="easyui-datebox" name="bgdate" style="width:100px"></td>
-                       <td>到:</td>
-                       <td><input class="easyui-datebox" name="eddate" style="width:100px"></td>
-                    </tr>
-                    <tr>
-                        <td>调整金额:</td>
-                        <td colspan="3"><input type="text" name="adjustmoney" value="0"></td>
+                       <td>
+                           <input placeholder="业务期" name="bsnyue" style="width:100px">
+                           <input id="querytype"/>
+                           <input name="query_text" type="text" value=""/>
+                           <input id="money" placeholder="金额">
+                       </td>
                     </tr>
                 </table>
 
-
-
-            </form>
-
-            <div id="grantmoneyperson0">
-                <div style="float: right">
-                    <input name="query_text" type="text" value="" size="55"/>
-                    <input type="button" name="querybtn" value="&nbsp;&nbsp;查&nbsp;&nbsp;&nbsp;&nbsp;询&nbsp;&nbsp;"/>
-                </div>
+            <div class="grantmoneyperson0">
                 <div style="clear:both"></div>
                 <table name="grid" style="height:250px;"
-                       data-options="rownumbers:true,singleSelect:false,url:'ajax/searchbusinessbypid.jsp',method:'post',pagination:true">
+                       data-options="rownumbers:true,singleSelect:false, method:'post',pagination:true">
                     <thead>
                     <tr>
                         <th data-options="field:'ck',checkbox:true"></th>
-                        <th data-options="field:'name',width:150">姓名</th>
-                        <th data-options="field:'owerid',width:150">户主身份证</th>
+                        <th data-options="field:'name',width:60">姓名</th>
+                        <th data-options="field:'identityid',width:150">户主身份证</th>
+                        <th data-options="field:'money',width:60,editor:'numberbox'">金额</th>
+                        <!--<th data-options="field:'madeflag',width:60">到账</th>-->
                     </tr>
                     </thead>
                 </table>
             </div>
-
-
         </div>
 
-        <div title="年末第13月发放"  style="padding:10px">
-            <form type="year" method="post">
-                <table class="formtable">
-                    <tr>
-                        <td>发放年份:</td>
-                        <td><input name="grantdate" type="text"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            调整金额（元）：
-                        </td>
-                        <td>
-                            <input type="text" value="0" name="adjustmoney">
-                        </td>
-                    </tr>
 
-                </table>
-
-            </form>
-
-            <div id="grantmoneyperson1">
-                <div style="float: right">
-                    <input name="query_text" type="text" value="" size="55"/>
-                    <input type="button" name="querybtn" value="&nbsp;&nbsp;查&nbsp;&nbsp;&nbsp;&nbsp;询&nbsp;&nbsp;"/>
-                </div>
-                <div style="clear:both"></div>
-                <table name="grid" style="height:250px;"
-                       data-options="rownumbers:true,singleSelect:false,url:'ajax/searchbusinessbypid.jsp',method:'post',pagination:true">
-                    <thead>
-                    <tr>
-                        <th data-options="field:'ck',checkbox:true"></th>
-                        <th data-options="field:'name',width:150">姓名</th>
-                        <th data-options="field:'owerid',width:150">户主身份证</th>
-                    </tr>
-                    </thead>
-                </table>
-            </div>
-
-
-
-        </div>
     </div>
-
-
-
 </div>

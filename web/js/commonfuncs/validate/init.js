@@ -6,7 +6,8 @@ define(function(){
     var validateDesc={
         identityid:'通用身份证号码校验',
             exists:'是否已经存在',
-        minLength:'最小长度'
+        minLength:'最小长度',
+        method_datagrid_editCell:'datagrid 单元格编辑扩展方法'
     }
     var validates=(function(a){
        var arr=[];
@@ -17,7 +18,6 @@ define(function(){
     })(validateDesc);
 
     var init=function(){
-        console.log(validates)
         require(validates,function(){})
     }
     return init;

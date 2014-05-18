@@ -8,5 +8,6 @@ package Pension.common;
 public interface IParam {
     String TOTAL="total";
     String ROWS="rows";
+    String PAGE="page";
     String MESSAGE="message";
 }

@@ -1,9 +1,14 @@
 define(function () {
-    var selectItmes=[];
     var gridInit=function(index){
-        var gridid='#grantmoneyperson'+index+' [name=grid]';
-        var btnid='#grantmoneyperson'+index+' [name=querybtn]';
-        var query_textid='#grantmoneyperson'+index+' [name=query_text]';
+
+        var date = new Date();
+        var month=date.getMonth()+1;
+        $(':input[name=bsnyue]').val(date.getFullYear()+(month>9?month:'0'+month));
+
+
+        var gridid='.grantmoneyperson'+index+' [name=grid]';
+        var btnid='.grantmoneypersonquery'+index+' [name=querybtn]';
+        var query_textid='.grantmoneypersonquery'+index+' [name=query_text]';
         var persongrid=$(gridid);
         var fn=function(){persongrid.datagrid('load')}
         $(btnid).on('click',fn);
@@ -12,157 +17,123 @@ define(function () {
                 fn();
             }
         });
-        persongrid.datagrid({
-            onCheck: function(rowIndex, rowData){
-                if(selectItmes.indexOf(rowData.id)==-1){
-                    selectItmes.push(rowData.id);
+        $('#money').bind('keydown',function(event){
+            if(event.which=='13'){
+                var rows=persongrid.datagrid('getData').rows;
+                for(var i in rows){
+                    rows[i].money=$(this).val();
                 }
-            },
-            onUncheck:function(rowIndex, rowData){
-                selectItmes.splice(selectItmes.indexOf(rowData.id));
-            },
-            onCheckAll:function(rows){
-                rows.forEach(function(rowData,index){
-                    if(selectItmes.indexOf(rowData.id)==-1){
-                        selectItmes.push(rowData.id);
-                    }
-                })
-            },
-            onUncheckAll:function(rows){
-                rows.forEach(function(rowData,index){
-                    selectItmes.splice(selectItmes.indexOf(rowData.id));
-                })
+                console.log(rows)
+                persongrid.datagrid('loadData',rows)
             }
-        });
+        })
 
-        $.parser.parse(persongrid.parent());
-        var grid=persongrid;
-
-        var obj={
-            url:'ajax/getpeopleinfo.jsp',
-            onBeforeLoad: function (params) {
-
-            },
-            onLoadSuccess:function(data){
-                data.rows.forEach(function(record,index){
-                    if(selectItmes.indexOf(record.id)>-1){
-                        grid.datagrid('checkRow',index);
-                    }
-                })
+        var editIndex = undefined;
+        function endEditing(){
+            if (editIndex == undefined){return true}
+            if (persongrid.datagrid('validateRow', editIndex)){
+                persongrid.datagrid('endEdit', editIndex);
+                editIndex = undefined;
+                return true;
+            } else {
+                return false;
             }
         }
-        grid.datagrid(obj);
-    }
-
-    return {
-        grantmoney:function(btn,local){
-            var form=local.find('.addnewgrantwin .easyui-tabs').tabs('getSelected').find('form');
-            var isnew=$(btn).linkbutton('options').isnew;
-            require(['commonfuncs/AjaxForm'],function(ajax){
-                var onsubmit=function(param){
-                    if(form.attr('type')!='year'){
-                        param.grantdate= $.formatDateTime('yy-mm-dd',new Date());
-                    }
-                    var businesstype=$('#tabs').tabs('getSelected').panel('options').businesstype;
-                    param.isnew=isnew;
-                    param.userid=userid;
-
-                    if(selectItmes.length>0){
-                        param.grantid=selectItmes;
-                    }
-                    param.businesstype=businesstype;
-                    param.divisionpath=divisionpath;
-
-
-                };
-                var success=function(){
-                    $.messager.alert('消息提示','资金发放成功');
-                    local.find('.addnewgrantwin').dialog('close');
-                    local.find('.businessgrid').datagrid('reload');
-                };
-                ajax.ajaxform(form,'ajax/grantmoneyform.jsp',onsubmit,success);
-            });
-        },
-        render:function(local){
-
-            var me=this;
-            var addnewgrantwindiv=local.find('.addnewgrantwin');
-
-            if(addnewgrantwindiv.length>0){
-                addnewgrantwindiv.dialog('open');
-                selectItmes=[]; //清除checkbox选中的状态,并刷新数据
-                for(var i=0;i<=1;i++){
-                    var gridid='#grantmoneyperson'+i+' [name=grid]';
-                    $(gridid).datagrid('load');
-                }
+        function onClickCell(index, field){
+            if (endEditing()){
+                persongrid.datagrid('selectRow', index)
+                    .datagrid('editCell', {index:index,field:field});
+                editIndex = index;
             }
+        }
 
-            else{
-                require(['text!views/pension/addnewgrantwin.htm'],function(windiv){
-                    local.append(windiv);
+        var obj={
+            onClickCell: onClickCell,
+            url:'lr.do?model=pension.GrantMoneyMng&eventName=queryNeedGrant',
+            onBeforeLoad: function (params) {
+                 params.bsnyue=$(':input[name=bsnyue]').val();
+                 params.querytype=$(querytype).val();
+                params.keyword=$('[name=query_text]').val();
+            }
+        }
+        persongrid.datagrid(obj);
+    }
+    var comboxInit=function(){
+        $('#querytype').combobox({
+            valueField: 'value', textField: 'label',readonly:!true,
+            data: [{ label: '全部', value: '0' },{ label: '未发放', value: '1' },{ label: '已发放', value: '2' },{ label: '已到账', value: '3' }]
+        });
+    }
+    var grantmoney=function(granttype){
+        var rows=$('#addnewgrantwin .grantmoneyperson0 [name=grid]').datagrid('getChecked');
+        var grantdata=[];
+        for( var i in rows){
 
+           grantdata.push({
+               pg_id:rows[i].pg_id,
+               money:rows[i].money||0
+           })
+        }
+        var ajaxdata={
+            granttype:granttype,
+            money:$('#money').val(),
+            bsnyue:$('#addnewgrantwin :input[name=bsnyue]').val()
+        }
+        if(grantdata.length>0){
+            ajaxdata.grantdata=JSON.stringify(grantdata);
+        }
+        $.ajax({
+            url:'lr.do?model=pension.GrantMoneyMng&eventName=save',
+            data:ajaxdata,
+            type:'post',
+            success:function(){
+                $('#addnewgrantwin .grantmoneyperson0 [name=grid]').datagrid('reload');
+            }
+        })
+    }
+    return {
 
-                    local.find('.easyui-tabs').tabs({'onSelect':function(title,index){
+        render:function(local){
+            require(['text!views/pension/addnewgrantwin.htm'],function(windiv){
+                var $grantwin=$('#addnewgrantwin');
+                if($grantwin==null||$grantwin.length==0){
+                    $('body').append(windiv);
+                    $grantwin=$('#addnewgrantwin');
+                    $grantwin.find('.easyui-tabs').tabs({'onSelect':function(title,index){
                         gridInit(index);
                     }});
-                    local.find('.addnewgrantwin').dialog({
+                    comboxInit();
+                    $grantwin.dialog({
                         title: '资金发放',
-                        width: 490,
+                        width: 590,
                         height: 470,
-                        //fit:true,
-
                         closed: false,
                         cache: false,
-                        onOpen:function(){
-
-
-                        },
-                        buttons:[{
-                            text:'资金发放',
-                            isnew:true,
-                            handler:function(){
-                                me.grantmoney(this);
-
+                        onOpen:function(){ },
+                        onClose:function(){$grantwin.dialog('destroy');},
+                        buttons: [
+                            { text: '资金发放', isnew: true,
+                                handler: function () {
+                                    grantmoney('normalgrant');
+                                }
+                            },
+                            { text: '重新发放', isnew: true,
+                                handler: function () {
+                                    grantmoney('regrant');
+                                }
+                            },
+                            { text: '取消', handler: function () {
+                                $grantwin.dialog('destroy');
                             }
-                        },{
-                            text:'重新发放',
-                            isnew:false,
-                            handler:function(){
-                                me.grantmoney(this);
                             }
-                        },{
-                            text:'取消',
-                            handler:function(){
-                                local.find('.addnewgrantwin').dialog('close');
-                            }
-                        }],
+                        ],
                         maximized:false,
                         modal:true
                     });
-                    $.parser.parse($('.addnewgrantwin').parent());
-                    var date = new Date();
-                    var firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
-                    var lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
-                    var form_1=local.find('.addnewgrantwin').find('.easyui-tabs').tabs('getTab',0).find('form');
-                    var form_2=local.find('.addnewgrantwin').find('.easyui-tabs').tabs('getTab',1).find('form');
+                    $grantwin.dialog('open');
+                }
 
-                    form_1.form('load',
-                        {
-                            bgdate:$.formatDateTime('yy-mm-dd',firstDay),
-                            eddate:$.formatDateTime('yy-mm-dd',lastDay)
-                        });
-                    form_2.form('load',{
-                        grantdate:$.formatDateTime('yy',new Date())
-                    });
-
-                });
-
-            }
-
-
+            })
         }
-
     }
-
-
 })

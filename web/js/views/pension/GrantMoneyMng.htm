@@ -16,7 +16,7 @@
                 return str.html();
             }">操作</th>
         <th rowspan="2" data-options="field:'pg_id'">评估序号</th>
-        <th rowspan="2" data-options="field:'active', formatter:cj.enumFormatter('active') ">有效</th>
+        <!--<th rowspan="2" data-options="field:'active', formatter:cj.enumFormatter('active') ">有效</th>-->
         <th rowspan="2" data-options="field:'name',formatter:function(v,r,i)
             {
                 var str='<div></div>';
@@ -24,6 +24,8 @@
                 return str.html();
             }">姓名</th>
         <th rowspan="2" data-options="field:'identityid'">身份证号码</th>
+        <th rowspan="2" data-options="field:'bsnyue'">业务期</th>
+        <th rowspan="2" data-options="field:'money'">金额</th>
     </tr>
     </thead>
     <thead>
@@ -64,7 +66,7 @@
 
     <a><span class="icon-search" >&nbsp;&nbsp;&nbsp;&nbsp;</span>搜索</a>
     <a><span class="icon-search" >&nbsp;&nbsp;&nbsp;&nbsp;</span>高级搜索</a>
-    <a><span class="icon-add newgrant" >&nbsp;&nbsp;&nbsp;&nbsp;</span>新增</a>
+    <a class="newgrant"><span class="icon-add " >&nbsp;&nbsp;&nbsp;&nbsp;</span>新增</a>
 
 
 </div>
