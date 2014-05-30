@@ -10,7 +10,7 @@
         user=(CurrentUser)o;
     }
 %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -51,13 +51,6 @@
         document.write('<link rel="stylesheet" type="text/css" id="swicth-style" href="'+extEasyui+
                 'themes/default/easyui.css"><\/>');
 
-        document.write('<link rel="stylesheet" type="text/css" id="swicth-style" href="'+extKindeditor+
-                'themes/default/default.css"><\/>');
-        document.write('<script type="text/javascript"  src="'+extKindeditor+
-                'kindeditor-min.js"><\/script>');
-        document.write('<script type="text/javascript"  src="'+extKindeditor+
-                'lang/zh_CN.js"><\/script>');
-
 
     </script>
     <link rel="stylesheet" type="text/css" href="index.css">
@@ -67,15 +60,7 @@
 <body class="easyui-layout" id="mainlayoutpanel" border="false">
 <div region="north" border="false" class="cs-north" >
     <div class="cs-north-bg">
-        <div class="cs-north-logo">
-
-        </div>
-
-
-        <%--<ul class="ui-skin-nav" style="display: block;">
-            <li class="li-skinitem" title="default"><span class="default" rel="default"></span></li>
-        </ul>--%>
-
+        <div class="cs-north-logo"></div>
         <ul id="headnavul">
             <li class="li-skinitem" ><img src="img/head/1.png"/><a id="welcomename">欢迎您:</a></li>
             <li class="li-skinitem"><img src="img/head/2.png"/><a id="domneedtodocount" style="cursor:pointer">待办业务(55)</a></li>
@@ -89,12 +74,13 @@
     </div>
 </div>
 <div region="west" id="westpanel" border="true" split="true" title="业务导航" class="cs-west" style="border-right: 0">
-    <div class="easyui-accordion" id="menu_pension" fit="true" border="false">
+    <div id="menu_pension" fit="true" border="false">
     </div>
 </div>
 <div id="mainPanle" region="center" border="true" border="false">
     <div id="tabs" class="easyui-tabs"   fit="true" border="false" >
-        <div title="主页" class="indexbackground">
+        <div title="主页" class="indexbackground_2">
+            <%--主页有图片时显示会有闪烁--%>
             <div class="cs-home-remark">
                 <h3 style="font-family: 'courier new'">欢迎使用民政养老救助系统</h3>
             </div>
@@ -103,21 +89,13 @@
 </div>
 
 
-<div id="mm" class="easyui-menu" style="width:120px;">
-    <div id="mm-tabclose">关闭</div>
-    <div id="mm-tabcloseall">关闭全部</div>
-    <div id="mm-tabcloseother">关闭其他</div>
-    <div class="menu-sep"></div>
-    <div id="mm-tabcloseright">关闭右侧全部</div>
-    <div id="mm-tabcloseleft">关闭左侧全部</div>
 
-</div>
 </body>
 </html>
 
+
+
 <script src="js/cj.js"></script>
-
-
 <script data-main="js/mainapp" src="require.js"></script>
 <script type="text/javascript"  src="js/commonfuncs/jquery.json-2.4.js"></script>
 
