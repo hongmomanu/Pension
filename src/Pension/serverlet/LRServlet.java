@@ -84,7 +84,7 @@ public class LRServlet extends HttpServlet {
             superModel.setLocalMap(map);
             Method method=pm.getMethod(request.getParameter("eventName"));
             if(null!=method.getAnnotation(OpLog.class)){
-                CallableStatement cstmt=DbUtil.get().prepareCall("{call glog.cutab()}");
+                CallableStatement cstmt=DbUtil.get().prepareCall("{call pensionpkg.cutab()}");
                 cstmt.execute();
                 cstmt.close();
                 UserLog.AddLog();       //用户日志
@@ -92,7 +92,7 @@ public class LRServlet extends HttpServlet {
             //执行对象的方法
             result=(String)(method.invoke(o)+"");
             if(null!=method.getAnnotation(OpLog.class)){
-                CallableStatement cstmt=DbUtil.get().prepareCall("{call glog.dutab()}");
+                CallableStatement cstmt=DbUtil.get().prepareCall("{call pensionpkg.dutab()}");
                 cstmt.execute();
                 cstmt.close();
             }

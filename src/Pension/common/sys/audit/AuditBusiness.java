@@ -104,7 +104,7 @@ public class AuditBusiness {
         DbUtil.get();
         try {
             DbUtil.begin();
-            cstmt=DbUtil.get().prepareCall("{call glog.cutab()}");
+            cstmt=DbUtil.get().prepareCall("{call pensionpkg.cutab()}");
             cstmt.execute();
             cstmt.close();
             UserLog.AddAuditLog(Long.parseLong(auditid),getAuditDigest(map)); //用户日志
@@ -112,7 +112,7 @@ public class AuditBusiness {
 
             doOneAudit(auditid,aulevel,map,where);
 
-            cstmtd=DbUtil.get().prepareCall("{call glog.dutab()}");
+            cstmtd=DbUtil.get().prepareCall("{call pensionpkg.dutab()}");
             cstmtd.execute();
             cstmtd.close();
             DbUtil.commit();

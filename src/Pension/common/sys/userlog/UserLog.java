@@ -284,7 +284,7 @@ public class UserLog {
         CallableStatement cst =null;
         Long opseno=0l;
         try{
-            String sql = "{?= call glog.getopseno()}";
+            String sql = "{?= call pensionpkg.getopseno()}";
             cst = DbUtil.get().prepareCall(sql);
             cst.registerOutParameter(1, Types.INTEGER);
             cst.execute();

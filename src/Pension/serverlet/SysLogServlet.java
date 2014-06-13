@@ -84,17 +84,17 @@ public class SysLogServlet  extends HttpServlet {
             if(((Integer)logmap.get(IParam.TOTAL))>0){
                 return "{'success':'false','message':'已经审核或存在更高级别的审核，请取消审核再回退业务'}";
             }
-            CallableStatement cstmt=DbUtil.get().prepareCall("{call glog.cutab()}");
+            CallableStatement cstmt=DbUtil.get().prepareCall("{call pensionpkg.cutab()}");
             cstmt.execute();
             cstmt.close();
 
-            CallableStatement cstmt2=DbUtil.get().prepareCall("{call glog.dbrol(?,?)}");
+            CallableStatement cstmt2=DbUtil.get().prepareCall("{call pensionpkg.dbrol(?,?)}");
             cstmt2.setInt(1,Integer.parseInt(request.getParameter("opseno")));
             cstmt2.setString(2,request.getParameter("loginname"));
             cstmt2.execute();
             cstmt2.close();
 
-            CallableStatement cstmt3=DbUtil.get().prepareCall("{call glog.dutab()}");
+            CallableStatement cstmt3=DbUtil.get().prepareCall("{call pensionpkg.dutab()}");
             cstmt3.execute();
             cstmt3.close();
             return RtnType.SUCCESS;
