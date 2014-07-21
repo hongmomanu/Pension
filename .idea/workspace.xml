@@ -2,114 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" name="Default" comment="first commit&#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/logtest.log" afterPath="$PROJECT_DIR$/logs/logtest.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pension.iml" afterPath="$PROJECT_DIR$/Pension.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pension/common/ReadDbColumns.java" afterPath="$PROJECT_DIR$/src/Pension/common/ReadDbColumns.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pension/serverlet/UploadServlet.java" afterPath="$PROJECT_DIR$/src/Pension/serverlet/UploadServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/config.properties" afterPath="$PROJECT_DIR$/src/config.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/extLocation.js" afterPath="$PROJECT_DIR$/web/js/extLocation.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.jsp" afterPath="$PROJECT_DIR$/web/index.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Pension.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1397089558538" ignored="false" />
-    <file path="/EvaluateLrInfo.htm" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396927395554" ignored="false" />
-    <file path="/a.dummy" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396922667515" ignored="false" />
-    <file path="/fragment.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396857607565" ignored="false" />
-    <file path="/EvaluateLrInfo.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1397020634709" ignored="false" />
-    <file path="/BaseDbUtil.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1395294506233" ignored="false" />
-    <file path="/ParameterUtil.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1395460015511" ignored="false" />
-    <file path="/ComboboxServlet.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1397005898513" ignored="false" />
-    <file path="/config.properties" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396918125723" ignored="false" />
-    <file path="/audit.jsp" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1397009487070" ignored="false" />
-    <file path="/AuditServlet.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1395564541618" ignored="false" />
-    <file path="/AuditBusiness.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396530767606" ignored="false" />
-    <file path="/AuditManager.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1395471804111" ignored="false" />
-    <file path="/config.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396505117289" ignored="false" />
-    <file path="/CallBack.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396409790100" ignored="false" />
-    <file path="/AuditBean.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1395562568763" ignored="false" />
-    <file path="/IMultilevelAudit.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396409454967" ignored="false" />
-    <file path="/test.jsp" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396679517426" ignored="false" />
-    <file path="/Test.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1395571619118" ignored="false" />
-    <file path="/Test.htm" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1395573411721" ignored="false" />
-    <file path="/index.jsp" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396587421270" ignored="false" />
-    <file path="/Function.jsp" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396243580791" ignored="false" />
-    <file path="/Role.jsp" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1395575110031" ignored="false" />
-    <file path="/student.json" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1395582204794" ignored="false" />
-    <file path="/Grant.jsp" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1395628212749" ignored="false" />
-    <file path="/User.jsp" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1395628287081" ignored="false" />
-    <file path="$PROJECT_DIR$/../Zsmzj/web/jsnew/commonfuncs/LocationGridCommon.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1395629886177" ignored="false" />
-    <file path="/LocationGridCommon.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1395629751744" ignored="false" />
-    <file path="/EvaluateLrInfo.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1397031565431" ignored="false" />
-    <file path="/info3.htm" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396928679144" ignored="false" />
-    <file path="/info1.htm" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396926257257" ignored="false" />
-    <file path="/index.css" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396627926064" ignored="false" />
-    <file path="/info2.htm" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396928206769" ignored="false" />
-    <file path="/info4.htm" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396928732912" ignored="false" />
-    <file path="/info5.htm" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396931544371" ignored="false" />
-    <file path="/info6.htm" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396934825864" ignored="false" />
-    <file path="/info7.htm" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396936578154" ignored="false" />
-    <file path="/index.html" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1395727993756" ignored="false" />
-    <file path="/info8.htm" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396941621062" ignored="false" />
-    <file path="/result1.htm" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396948958098" ignored="false" />
-    <file path="/result2.htm" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1397036346202" ignored="false" />
-    <file path="$PROJECT_DIR$/../lumprj/project.clj" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1395821172618" ignored="false" />
-    <file path="$PROJECT_DIR$/../untitled2/src/myapp/models/schema.clj" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1395891272317" ignored="false" />
-    <file path="/schema.clj" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1395891272317" ignored="false" />
-    <file path="$PROJECT_DIR$/../untitled2/src/myapp/routes/manager.clj" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1395891421253" ignored="false" />
-    <file path="$PROJECT_DIR$/../untitled2/src/myapp/controller/manager.clj" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1395891553689" ignored="false" />
-    <file path="$PROJECT_DIR$/../untitled2/src/myapp/models/db.clj" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1395889654615" ignored="false" />
-    <file path="/db.clj" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1395889514868" ignored="false" />
-    <file path="$PROJECT_DIR$/../untitled2/src/myapp/handler.clj" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1395890854926" ignored="false" />
-    <file path="/handler.clj" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1395889549563" ignored="false" />
-    <file path="$PROJECT_DIR$/../untitled2/src/myapp/models/manager.clj" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1395891315864" ignored="false" />
-    <file path="/manager.clj" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1395891553689" ignored="false" />
-    <file path="$PROJECT_DIR$/../untitled2/src/myapp/views/templates/login.html" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1395890875688" ignored="false" />
-    <file path="/login.html" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1395890875351" ignored="false" />
-    <file path="$PROJECT_DIR$/../untitled2/src/myapp/routes/home.clj" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1395890579483" ignored="false" />
-    <file path="/home.clj" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1395890525124" ignored="false" />
-    <file path="$PROJECT_DIR$/../untitled2/resources/public/index.css" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1395890811412" ignored="false" />
-    <file path="$PROJECT_DIR$/../untitled2/src/myapp/models/entity.txt" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1395891179286" ignored="false" />
-    <file path="/entity.txt" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1395891081283" ignored="false" />
-    <file path="/info0.htm" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396924059269" ignored="false" />
-    <file path="/cj.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1397031900892" ignored="false" />
-    <file path="/easyui.css" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396343229890" ignored="false" />
-    <file path="/TreeClickEvent.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1397025887261" ignored="false" />
-    <file path="/CodeMaintenance.jsp" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396517106420" ignored="false" />
-    <file path="/CodeMaintenance.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396416021493" ignored="false" />
-    <file path="/EvaluateLrInfoGrid.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1397025878201" ignored="false" />
-    <file path="/EvaluateLrInfoGrid.htm" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1397014267531" ignored="false" />
-    <file path="/ReadDbColumns.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396418264309" ignored="false" />
-    <file path="$PROJECT_DIR$/../Zsmzj/web/js/config.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396505128493" ignored="false" />
-    <file path="$PROJECT_DIR$/../Zsmzj/web/jsnew/config.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396505141565" ignored="false" />
-    <file path="/division.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396513808211" ignored="false" />
-    <file path="/Division.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396510595670" ignored="false" />
-    <file path="/NoteEnter.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396685791460" ignored="false" />
-    <file path="/NoteEnter.htm" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396685351124" ignored="false" />
-    <file path="/NoteEnter.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396680417663" ignored="false" />
-    <file path="/NoteQueryGrid.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396689843701" ignored="false" />
-    <file path="/NoteQueryGrid.htm" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396860481254" ignored="false" />
-    <file path="/t.html" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396678375944" ignored="false" />
-    <file path="/popwin.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396681133916" ignored="false" />
-    <file path="$PROJECT_DIR$/../JasperDemo/src/db/jdbc/SqliteSql.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396855126911" ignored="false" />
-    <file path="$PROJECT_DIR$/../JasperDemo/src/db/jdbc/PostgreSql.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396855127271" ignored="false" />
-    <file path="$PROJECT_DIR$/../JasperDemo/src/db/jdbc/OracleSql.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396855126911" ignored="false" />
-    <file path="$PROJECT_DIR$/../JasperDemo/src/db/jdbc/JdbcFactory.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396855209029" ignored="false" />
-    <file path="$PROJECT_DIR$/../JasperDemo/src/db/jdbc/DBPool.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396855304172" ignored="false" />
-    <file path="/JdbcFactory.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396855200604" ignored="false" />
-    <file path="$PROJECT_DIR$/../JasperDemo/src/db/jdbc/Config.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396855249587" ignored="false" />
-    <file path="$PROJECT_DIR$/../JasperDemo/src/config.properties" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396856636757" ignored="false" />
-    <file path="$PROJECT_DIR$/../JasperDemo/src/com/report/JasperReportsWrapper.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396856851299" ignored="false" />
-    <file path="/JasperReportsWrapper.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396855440289" ignored="false" />
-    <file path="$PROJECT_DIR$/../JasperDemo/MonthlyCustomerInvoices.jrxml" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396856074794" ignored="false" />
-    <file path="/CustomerInvoicesReport_FINAL.jsp" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396856158046" ignored="false" />
-    <file path="$PROJECT_DIR$/../JasperDemo/web/CustomerInvoicesReport_FINAL.jsp" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396856162906" ignored="false" />
-    <file path="$PROJECT_DIR$/../JasperDemo/src/com/report/CommonReport.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396858382356" ignored="false" />
-    <file path="/CommonReport.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396858337621" ignored="false" />
-    <file path="/AccordionTree.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1397018975492" ignored="false" />
-    <file path="/LRServlet.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396868800533" ignored="false" />
-    <file path="/DBPool.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1396870161086" ignored="false" />
-    <file path="/extLocation.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1397003713793" ignored="false" />
-    <file path="/LoadFromData.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1397031863088" ignored="false" />
-    <file path="/edit.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1397030936561" ignored="false" />
-    <file path="/test.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1397029440836" ignored="false" />
-    <file path="/readonly.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1397032369607" ignored="false" />
-    <file path="/.gitignore" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1397089421107" ignored="false" />
+    <file path="/Dummy.txt" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1405928406418" ignored="false" />
+    <file path="$PROJECT_DIR$/../PlatformDisplay/pensionweb/js/views/pensionweb/HealthExaminationInfo.htm" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1405927691905" ignored="false" />
+    <file path="/HealthExaminationInfo.htm" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1405927383327" ignored="false" />
+    <file path="$PROJECT_DIR$/../PlatformDisplay/pensionweb/js/views/pensionweb/HealthExaminationInfoQuery.htm" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1405927635155" ignored="false" />
+    <file path="$PROJECT_DIR$/../PlatformDisplay/pensionweb/js/mainapp2.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1405927739650" ignored="false" />
+    <file path="/fragment.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1405928737845" ignored="false" />
+    <file path="/index.jsp" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1405929648819" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,6 +33,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -160,7 +70,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -170,26 +79,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="EvaluateLrInfo.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/views/pension/EvaluateLrInfo.js">
+      <file leaf-file-name="ReadDbColumns.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Pension/common/ReadDbColumns.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="0" selection-start="1745" selection-end="1745" vertical-scroll-proportion="0.0">
+            <state line="71" column="36" selection-start="2586" selection-end="2609" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="info3.htm" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/views/pension/evaluatelrinfofieldset/info3.htm">
+      <file leaf-file-name="UploadServlet.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Pension/serverlet/UploadServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="39" selection-start="1573" selection-end="1583" vertical-scroll-proportion="0.0">
+            <state line="44" column="41" selection-start="854" selection-end="1764" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="info2.htm" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/views/pension/evaluatelrinfofieldset/info2.htm">
+      <file leaf-file-name="LrbasicInfo.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Pension/business/pension/LrbasicInfo.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
@@ -197,52 +106,57 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="result1.htm" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/views/pension/evaluatelrinfofieldset/result1.htm">
+      <file leaf-file-name="Upload.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/commonfuncs/Upload.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="95" column="63" selection-start="4213" selection-end="4213" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="result2.htm" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/views/pension/evaluatelrinfofieldset/result2.htm">
+      <file leaf-file-name="index.jsp" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="72" selection-start="556" selection-end="556" vertical-scroll-proportion="-0.6896552">
+            <state line="12" column="102" selection-start="486" selection-end="486" vertical-scroll-proportion="0.3508772">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Upload.htm" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/views/notepad/Upload.htm">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NoteEnter.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/views/notepad/NoteEnter.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="n#style#0;n#fieldset#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#fieldset#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#1;n#tr#2;n#table#0;n#fieldset#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#2;n#tr#2;n#table#0;n#fieldset#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#3;n#tr#2;n#table#0;n#fieldset#0;n#!!top" expanded="true" />
+                <marker date="1403146212445" expanded="false" signature="1670:1683" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="config.properties" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/config.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="10" selection-start="91" selection-end="91" vertical-scroll-proportion="0.3558719">
+            <state line="8" column="13" selection-start="253" selection-end="253" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/test.js">
+      <file leaf-file-name="extLocation.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/extLocation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="53" selection-start="182" selection-end="182" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/views/pension/evaluatelrinfofieldset/edit.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="101" selection-start="1628" selection-end="1705" vertical-scroll-proportion="0.0">
+            <state line="3" column="38" selection-start="89" selection-end="89" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -251,61 +165,7 @@
       <file leaf-file-name="readonly.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/js/views/pension/evaluatelrinfofieldset/readonly.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="0" selection-start="1318" selection-end="1318" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="info4.htm" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/views/pension/evaluatelrinfofieldset/info4.htm">
-          <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="info5.htm" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/views/pension/evaluatelrinfofieldset/info5.htm">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="info6.htm" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/views/pension/evaluatelrinfofieldset/info6.htm">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cj.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/cj.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="102" column="63" selection-start="3406" selection-end="3406" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TreeClickEvent.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/commonfuncs/TreeClickEvent.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="23" selection-start="1518" selection-end="1533" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoadFromData.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/commonfuncs/LoadFromData.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="35" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -329,11 +189,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/Pension/serverlet/ComboboxServlet.java" />
-        <option value="$PROJECT_DIR$/web/js/views/pension/EvaluateLrInfoGrid.htm" />
-        <option value="$PROJECT_DIR$/web/js/views/AccordionTree.js" />
-        <option value="$PROJECT_DIR$/src/Pension/model/hzyl/EvaluateLrInfo.java" />
-        <option value="$PROJECT_DIR$/web/js/views/pension/EvaluateLrInfoGrid.js" />
         <option value="$PROJECT_DIR$/web/js/commonfuncs/TreeClickEvent.js" />
         <option value="$PROJECT_DIR$/web/js/test.js" />
         <option value="$PROJECT_DIR$/web/js/views/pension/evaluatelrinfofieldset/edit.js" />
@@ -345,6 +200,11 @@
         <option value="$PROJECT_DIR$/web/js/views/pension/evaluatelrinfofieldset/result1.htm" />
         <option value="$PROJECT_DIR$/web/js/views/pension/evaluatelrinfofieldset/result2.htm" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/Pension/common/ReadDbColumns.java" />
+        <option value="$PROJECT_DIR$/src/Pension/serverlet/UploadServlet.java" />
+        <option value="$PROJECT_DIR$/src/config.properties" />
+        <option value="$PROJECT_DIR$/web/js/extLocation.js" />
+        <option value="$PROJECT_DIR$/web/index.jsp" />
       </list>
     </option>
   </component>
@@ -356,9 +216,7 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
+    <option name="width" value="1366" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -423,6 +281,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pension" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pension" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -430,14 +306,15 @@
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="131" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="159" />
-    <property name="OverrideImplement.combined" value="true" />
     <property name="project.structure.proportion" value="0.15" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="159" />
+    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="154" />
+    <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="162" />
@@ -452,34 +329,37 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
-    <property name="LayoutCode.rearrangeEntries&lt;Generic&gt;" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="LayoutCode.rearrangeEntries&lt;Generic&gt;" value="false" />
+    <property name="options.lastSelected" value="settings.github" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="LayoutCode.rearrangeEntriesOracle" value="false" />
+    <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Pension.jdbc" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\hvit\Pension\web\img" />
-      <recent name="D:\hvit\Pension\web\img\ext" />
-      <recent name="D:\hvit\Pension\web\img\form" />
-      <recent name="D:\hvit\Pension\web\img\htm" />
-      <recent name="D:\hvit\Pension\web\js\jqueryplugin" />
-    </key>
     <key name="OPEN_URL_DIALOG">
       <recent name="http://localhost/backbone/mybtns.html" />
       <recent name="http://localhost/ext-4.2.1/myid.html" />
       <recent name="http://localhost/backbone/" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/js/views/notepad" />
+      <recent name="D:\hvit\Pension\web\img" />
+      <recent name="D:\hvit\Pension\web\img\ext" />
+      <recent name="D:\hvit\Pension\web\img\form" />
+      <recent name="D:\hvit\Pension\web\img\htm" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\hvit\Pension\web\img" />
@@ -487,90 +367,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 7.0">
-    <configuration default="false" name="JdbcFactory" type="Application" factoryName="Application" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="Pension.jdbc.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="Pension.jdbc.JdbcFactory" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="Pension" />
-      <envs />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="CallBack" type="Application" factoryName="Application" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="Pension.common.sys.audit.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="Pension.common.sys.audit.CallBack" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="Pension" />
-      <envs />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="ReadDbColumns" type="Application" factoryName="Application" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="Pension.common.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="Pension.common.ReadDbColumns" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="Pension" />
-      <envs />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -626,13 +422,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Remote" singleton="true">
-      <JSRemoteDebuggerConfigurationSettings>
-        <option name="engineId" value="embedded" />
-        <option name="fileUrl" />
-      </JSRemoteDebuggerConfigurationSettings>
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -774,6 +563,19 @@
       <option name="CLEAR_LOGCAT" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" output_log_level="null" package_name="" scope="Class">
+      <option name="BCName" value="" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browserFamily" value="FIREFOX" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="playerPath" value="/usr/bin/flashplayerdebugger" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="" />
+      <option name="trusted" value="true" />
+      <method />
+    </configuration>
     <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="GLUE" />
@@ -840,9 +642,7 @@
       <method />
     </configuration>
     <configuration default="false" name="Tomcat 7.0" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0">
-      <option name="OPEN_IN_BROWSER" value="false" />
-      <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
-      <option name="UPDATING_POLICY" value="update-resources" />
+      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="web:war exploded">
           <settings>
@@ -917,19 +717,9 @@
         </option>
       </method>
     </configuration>
-    <list size="4">
+    <list size="1">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.Tomcat 7.0" />
-      <item index="1" class="java.lang.String" itemvalue="Application.JdbcFactory" />
-      <item index="2" class="java.lang.String" itemvalue="Application.CallBack" />
-      <item index="3" class="java.lang.String" itemvalue="Application.ReadDbColumns" />
     </list>
-    <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Application.ReadDbColumns" />
-        <item index="1" class="java.lang.String" itemvalue="Application.CallBack" />
-        <item index="2" class="java.lang.String" itemvalue="Application.JdbcFactory" />
-      </list>
-    </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
       <Port>5050</Port>
@@ -959,6 +749,7 @@
     <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
     <option name="FORCE_UPDATE" value="false" />
     <option name="IGNORE_EXTERNALS" value="false" />
+    <configuration useDefault="false" />
     <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
   </component>
   <component name="TaskManager">
@@ -972,6 +763,14 @@
       <workItem from="1394680641329" duration="6204000" />
       <workItem from="1394687998094" duration="1519000" />
       <workItem from="1395206715245" duration="103000" />
+      <workItem from="1403146222673" duration="1266000" />
+      <workItem from="1403233052065" duration="169000" />
+      <workItem from="1403248888137" duration="147000" />
+      <workItem from="1403250072642" duration="70000" />
+      <workItem from="1403489442300" duration="5384000" />
+      <workItem from="1404463548401" duration="519000" />
+      <workItem from="1404875566543" duration="646000" />
+      <workItem from="1405135093776" duration="476000" />
     </task>
     <task id="LOCAL-00001" summary="first commit&#10;">
       <created>1394673738568</created>
@@ -1137,7 +936,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24084000" />
+    <option name="totallyTimeSpent" value="32761000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1160,44 +959,47 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
+    <frame x="0" y="0" width="1366" height="744" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="SQL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38134205" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47966102" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33660132" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38562092" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28641573" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7372881" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25493172" sideWeight="0.6143791" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.54664487" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18768997" sideWeight="0.06440678" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.93559325" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="SQL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43535188" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.71497583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
-    <option name="RECENTLY_FILTERED_USERS">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
       <collection />
     </option>
   </component>
@@ -1265,7 +1067,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="3" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1273,120 +1075,108 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/js/views/pension/EvaluateLrInfoGrid.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="57" selection-start="695" selection-end="701" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="53" selection-start="182" selection-end="182" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/commonfuncs/LoadFromData.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="35" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/commonfuncs/TreeClickEvent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="23" selection-start="1518" selection-end="1533" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/cj.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="63" selection-start="3406" selection-end="3406" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/views/pension/evaluatelrinfofieldset/edit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="101" selection-start="1628" selection-end="1705" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/views/pension/evaluatelrinfofieldset/info2.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/views/pension/evaluatelrinfofieldset/info3.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="39" selection-start="1573" selection-end="1583" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/views/pension/evaluatelrinfofieldset/info4.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/views/pension/evaluatelrinfofieldset/info5.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/views/pension/evaluatelrinfofieldset/info6.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/views/pension/evaluatelrinfofieldset/readonly.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="1318" selection-end="1318" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/js/views/pension/EvaluateLrInfo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="0" selection-start="1745" selection-end="1745" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/views/pension/evaluatelrinfofieldset/result1.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="63" selection-start="4213" selection-end="4213" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/views/pension/evaluatelrinfofieldset/result2.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="72" selection-start="556" selection-end="556" vertical-scroll-proportion="-0.6896552">
-          <folding>
-            <element signature="n#style#0;n#fieldset#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#fieldset#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#2;n#table#0;n#fieldset#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#2;n#tr#2;n#table#0;n#fieldset#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#3;n#tr#2;n#table#0;n#fieldset#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="10" selection-start="91" selection-end="91" vertical-scroll-proportion="0.3558719">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pension/Filter/JspEncoding.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pension/listener/SessionListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/views/pension/evaluatelrinfofieldset/readonly.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pension/business/pension/LrbasicInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/commonfuncs/Upload.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/views/notepad/Upload.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/views/notepad/NoteEnter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1403146212445" expanded="false" signature="1670:1683" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pension/serverlet/UploadServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="41" selection-start="854" selection-end="1764" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pension/common/ReadDbColumns.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="36" selection-start="2586" selection-end="2609" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="13" selection-start="253" selection-end="253" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/extLocation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="38" selection-start="89" selection-end="89" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="102" selection-start="486" selection-end="486" vertical-scroll-proportion="0.3508772">
           <folding />
         </state>
       </provider>
@@ -1402,7 +1192,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -1451,6 +1240,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
