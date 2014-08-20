@@ -14,8 +14,11 @@
     background:url('../../img/remove.gif') no-repeat;
 }
 .icon-add{
-    background:url('../../img/add.gif') no-repeat;
+    background:url('../../img/vcard_add.png') no-repeat;
 }
 .icon-search{
-    background:url('../../img/search.gif') no-repeat;
+    background:url('../../img/zoom.png') no-repeat;
+}
+.icon-edit{
+    background:url("../../img/table_edit.png")   no-repeat;
 }
