@@ -74,7 +74,7 @@ public class Function extends Model {
         String sql="select t.*,(select count(1) from xt_function where parent=t.functionid) leafcount from xt_function t where t.parent='"+node+"'";
         if(userid!=null){
             sql+=" and t.nodetype <> '2' and t.functionid in (select rf.functionid from xt_roleuser ru,xt_rolefunc rf where ru.userid='"+userid+
-                    "' and ru.roleid=rf.roleid)";
+                    "' and ru.roleid=rf.roleid) and (t.param2<>'1' or t.param2 is null)";
         }
         if(roleid!=null){
             sql="select t.*,(select count(1) from xt_function where parent=t.functionid) leafcount, rf.roleid checked \n" +
