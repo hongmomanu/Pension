@@ -7,7 +7,7 @@ import Pension.common.RtnType;
 import Pension.common.db.DbUtil;
 import Pension.common.sys.LogBean;
 import Pension.common.sys.ReqBean;
-import Pension.common.sys.annotation.OpLog;
+import Pension.common.sys.annotation.OperationLog;
 import Pension.common.sys.userlog.UserLog;
 import Pension.common.sys.util.CurrentUser;
 import Pension.common.sys.util.SysUtil;
@@ -83,7 +83,7 @@ public class LRServlet extends HttpServlet {
             Map map=new HashMap();
             superModel.setLocalMap(map);
             Method method=pm.getMethod(request.getParameter("eventName"));
-            if(null!=method.getAnnotation(OpLog.class)){
+            if(null!=method.getAnnotation(OperationLog.class)){
                 CallableStatement cstmt=DbUtil.get().prepareCall("{call pensionpkg.cutab()}");
                 cstmt.execute();
                 cstmt.close();
@@ -91,7 +91,7 @@ public class LRServlet extends HttpServlet {
             }
             //执行对象的方法
             result=(String)(method.invoke(o)+"");
-            if(null!=method.getAnnotation(OpLog.class)){
+            if(null!=method.getAnnotation(OperationLog.class)){
                 CallableStatement cstmt=DbUtil.get().prepareCall("{call pensionpkg.dutab()}");
                 cstmt.execute();
                 cstmt.close();

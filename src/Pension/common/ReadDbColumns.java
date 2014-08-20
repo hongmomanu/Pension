@@ -29,7 +29,7 @@ public class ReadDbColumns {
         conn.close();
     }
     public static  void main(String[] args) throws SQLException {
-        ReadDbColumns.query("select * from t_oldpeople");
+        ReadDbColumns.query("select * from T_FAMILYINFOS");
         //<th data-options="field:'name',width:100">姓名</th>
     }
 }

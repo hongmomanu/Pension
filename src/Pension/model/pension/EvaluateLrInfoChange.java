@@ -2,7 +2,7 @@ package Pension.model.pension;
 
 import Pension.common.*;
 import Pension.common.db.DbUtil;
-import Pension.common.sys.annotation.OpLog;
+import Pension.common.sys.annotation.OperationLog;
 import Pension.common.sys.audit.AuditBean;
 import Pension.common.sys.audit.AuditManager;
 import Pension.common.sys.audit.IMultilevelAudit;
@@ -23,7 +23,7 @@ import java.util.Map;
  * Time: 下午1:55
  */
 public class EvaluateLrInfoChange extends Model implements IMultilevelAudit {
-    @OpLog
+    @OperationLog
     public String save() throws AppException, SQLException {
         CommonDbUtil commonDbUtil=new CommonDbUtil();
         Map map= ParameterUtil.toMap(this.getRequest());

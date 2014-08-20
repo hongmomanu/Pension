@@ -11,8 +11,8 @@ import java.lang.annotation.Target;
  * Time: 上午10:04
  */
 
-@Target({java.lang.annotation.ElementType.METHOD})
+@Target({ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface OpLog {
+public @interface OperationLog {
     boolean value() default true;
 }
