@@ -1,0 +1,41 @@
+.datagrid-header td, .datagrid-body td, .datagrid-footer td {
+    border-bottom-color: #ddd;
+    border-bottom-style: solid;
+}
+span.error,a.error{
+    color:red;
+}
+
+
+
+.datagrid-view a:hover{
+    text-decoration: underline;
+}
+
+.datagrid-htable, .datagrid-btable, .datagrid-ftable {
+    color: gray;
+}
+.datagrid-htable{
+    color: #707070;
+}
+
+.gray7{
+    color: #707070;
+}
+
+/**调整行高**/
+.datagrid-cell, .datagrid-cell-group, .datagrid-header-rownumber, .datagrid-cell-rownumber{
+    line-height: 28px;
+}
+.datagrid-cell-rownumber {
+    height: auto;
+}
+.datagrid-cell{
+    word-wrap: normal;
+}
+.panel-title{
+    padding-left: 1em;
+}
+datagrid-header-row datagrid-cell-group {
+    line-height: 30px;
+ }
