@@ -13,8 +13,10 @@
             'jquery.easyui.min.js"><\/script>');
     document.write('<script type="text/javascript"  src="'+extEasyui+
             'locale/easyui-lang-zh_CN.js"><\/script>');
-    document.write('<link rel="stylesheet" type="text/css" id="swicth-style" href="'+extEasyui+
+    document.write('<link rel="stylesheet" type="text/css"  href="'+extEasyui+
             'themes/default/easyui.css"><\/>');
+    document.write('<link rel="stylesheet" type="text/css"  href="'+
+            'img/css/easyui_overwrite.css"><\/>');
 
     var cj=parent.cj;
 </script>
