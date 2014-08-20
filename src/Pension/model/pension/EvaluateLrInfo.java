@@ -2,7 +2,7 @@ package Pension.model.pension;
 
 import Pension.business.pension.EvaluateBS;
 import Pension.common.*;
-import Pension.common.sys.annotation.OpLog;
+import Pension.common.sys.annotation.OperationLog;
 import Pension.common.sys.audit.AuditBean;
 import Pension.common.sys.audit.AuditManager;
 import Pension.common.sys.audit.IMultilevelAudit;
@@ -20,7 +20,7 @@ import java.util.Map;
 
 public class EvaluateLrInfo extends Model implements IMultilevelAudit {
 
-    @OpLog
+    @OperationLog
     public String save() throws AppException {
         CommonDbUtil commonDbUtil=new CommonDbUtil();
         Map map= ParameterUtil.toMap(this.getRequest());
@@ -50,7 +50,8 @@ public class EvaluateLrInfo extends Model implements IMultilevelAudit {
     }
     public String queryById(){
         CommonDbUtil commonDbUtil=new CommonDbUtil();
-        Integer id=Integer.parseInt(this.getRequest().getParameter("id"));
+        String id=this.getRequest().getParameter("id");
+        //Integer id=Integer.parseInt(this.getRequest().getParameter("id"));
 
         Map map= new HashMap();
         String sql="SELECT t1.*,t2.* from t_needassessment t1,t_needassessmentsum t2 where t1.pg_id=t2.pg_id and t1.pg_id="+id;
@@ -83,9 +84,8 @@ public class EvaluateLrInfo extends Model implements IMultilevelAudit {
         map.put(IParam.ROWS,list);
         return JSONObject.fromObject(map).toString();
     }
-    @OpLog
+    @OperationLog
     public int test2() throws AppException {
-        System.out.println(JSONObject.fromObject(CommQuery.query("select * from xt_log")).toString());
         return RtnType.NORMALSUCCESS;
     }
     /*审核成功后的回调
@@ -128,16 +128,16 @@ public class EvaluateLrInfo extends Model implements IMultilevelAudit {
     }
 
     @Test
-    @OpLog
+    @OperationLog
     public void test(){
         Class c=this.getClass();
         Method[] ms=c.getDeclaredMethods();
         for(Method m:ms){
             Annotation[] as=m.getAnnotations();
-            Annotation a=m.getAnnotation(OpLog.class);
+            Annotation a=m.getAnnotation(OperationLog.class);
             if(null!=a){
 
-                System.out.println(OpLog.class.equals(a));
+                System.out.println(OperationLog.class.equals(a));
             }
         }
     }

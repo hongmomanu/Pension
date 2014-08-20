@@ -21,7 +21,7 @@
         return v;
     }
     var loadCodeDetail=function(i,r){
-        $('#aa10').datagrid({
+        $('#xt_combodt').datagrid({
             url:'lr.do?model=manager.CodeMaintenance&eventName=queryCode10',
             queryParams: {
                 aaa100: r.aaa100
@@ -41,7 +41,7 @@
         <div class="easyui-layout" style="width:1010px;height:100%;margin: 0px auto;"
              data-options="border:false">
             <div  data-options="region:'west',split:false,lines:true" style="width:500px;">
-                <table id="aa09" class="easyui-datagrid"
+                <table id="xt_combo" class="easyui-datagrid"
                        data-options="url:'lr.do?model=manager.CodeMaintenance&eventName=queryCode9',
                        pageSize:15, pageList: [15, 30,50], onClickRow:loadCodeDetail,
                        fitColumns:true,singleSelect:true,border:false,pagination:true,fit:true">
@@ -59,7 +59,7 @@
                 </table>
             </div>
             <div data-options="region:'center',split:false,lines:true">
-                <table id="aa10" class="easyui-datagrid"
+                <table id="xt_combodt" class="easyui-datagrid"
                        data-options="fitColumns:true,singleSelect:true,border:false,toolbar:toolbar">
                     <thead>
                     <tr>
@@ -106,11 +106,11 @@
             handler:function(){addCodeDetail();}
         }]
     function addCodeDetail(){
-        $('#aa10').datagrid('appendRow',{isnew:'-1',aaa102:'newcode',aaa103:'中文名称',aaa104:'1'});
+        $('#xt_combodt').datagrid('appendRow',{isnew:'-1',aaa102:'newcode',aaa103:'中文名称',aaa104:'1'});
     }
     $(function(){
         var a=100;
-        var dg=$('#aa09');
+        var dg=$('#xt_combo');
         var editIndex = undefined;
         function endEditing(){
             if (editIndex == undefined){return true}

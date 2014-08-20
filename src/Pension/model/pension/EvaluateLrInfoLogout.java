@@ -1,7 +1,7 @@
 package Pension.model.pension;
 
 import Pension.common.*;
-import Pension.common.sys.annotation.OpLog;
+import Pension.common.sys.annotation.OperationLog;
 import Pension.common.sys.audit.AuditBean;
 import Pension.common.sys.audit.AuditManager;
 import Pension.common.sys.audit.IMultilevelAudit;
@@ -20,7 +20,7 @@ public class EvaluateLrInfoLogout extends Model implements IMultilevelAudit {
     /*
     保存注销数据
      */
-    @OpLog
+    @OperationLog
     public String save() throws AppException, SQLException {
         Map map= ParameterUtil.toMap(this.getRequest());
         int result=0;

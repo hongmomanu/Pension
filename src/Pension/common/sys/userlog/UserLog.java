@@ -144,7 +144,7 @@ public class UserLog {
     private static List getCombox(String labelcodes) {
         Map map= null;
         try {
-            map = CommQuery.query("select * from aa10 where lower(aaa100) in (" + labelcodes +")");
+            map = CommQuery.query("select * from xt_combodt where lower(aaa100) in (" + labelcodes +")");
         } catch (AppException e) {
             e.printStackTrace();
         }

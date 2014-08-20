@@ -1,5 +1,6 @@
 @import url("img/css/icon.css");
 @import url("img/css/ywstatus.css");
+@import url("img/css/easyui_overwrite.css");
 
 html,body {
     font: 12px/20px "微软雅黑", "宋体", Arial, sans-serif, Verdana, Tahoma;
@@ -277,3 +278,4 @@ a:active {
     background: #52CCCC;
     color: #660033;
 }
+

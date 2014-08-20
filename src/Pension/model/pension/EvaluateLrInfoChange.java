@@ -2,7 +2,7 @@ package Pension.model.pension;
 
 import Pension.common.*;
 import Pension.common.db.DbUtil;
-import Pension.common.sys.annotation.OpLog;
+import Pension.common.sys.annotation.OperationLog;
 import Pension.common.sys.audit.AuditBean;
 import Pension.common.sys.audit.AuditManager;
 import Pension.common.sys.audit.IMultilevelAudit;
@@ -23,7 +23,7 @@ import java.util.Map;
  * Time: 下午1:55
  */
 public class EvaluateLrInfoChange extends Model implements IMultilevelAudit {
-    @OpLog
+    @OperationLog
     public String save() throws AppException, SQLException {
         CommonDbUtil commonDbUtil=new CommonDbUtil();
         Map map= ParameterUtil.toMap(this.getRequest());
@@ -32,7 +32,6 @@ public class EvaluateLrInfoChange extends Model implements IMultilevelAudit {
         AuditManager.addAudit(id);
         Map where=new HashMap();
         where.put("pg_id",id+"");
-        System.out.println(JSONObject.fromObject(CommQuery.query("select * from xt_log")).toString());
         Map bgbefore= queryOldData("select a.*,b.* from t_needassessment a,t_needassessmentsum b where a.pg_id=b.pg_id and a.pg_id=" + id);
         saveBgData(bgbefore,map);
         result=commonDbUtil.updateTableVales(map,"t_needassessmentsum",where);

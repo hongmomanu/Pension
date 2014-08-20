@@ -9,14 +9,14 @@
         height:100%;
     }
     .icon-save{
-        background:url('img/shenghe.gif') no-repeat;
+        background:url('img/accept.png') no-repeat;
     }
     .icon-refresh{
         background:url('img/refresh.gif') no-repeat;
     }.icon-search{
-        background:url('img/search.gif') no-repeat;
+        background:url('img/zoom.png') no-repeat;
     }.icon-log{
-        background:url('img/mylog.gif') no-repeat;
+        background:url('img/application_cascade.png') no-repeat;
     }
     a:link, a:visited, a:active {
         color: #404040;
@@ -53,13 +53,15 @@
         //if(++i%2==0)return "background-color:#EEE";
     }
     var bstimeformatter=function(v,r,i){
-        return v.split('.')[0].substr(5)
+        //return v.split('.')[0].substr(5)
+        return v.split('.')[0]
     }
 </script>
 <body>
     <table id="auditGrid" class="easyui-datagrid-noauto"
            data-options="rownumbers:true,singleSelect:false,toolbar:toolbar,
            fit:true, pagination:true,
+           striped:true,
            pageSize:cj.getDataGridAttr('pageSize'),
            pageList:cj.getDataGridAttr('pageList'),
            border:false,rowStyler:styleFn,fitColumns: true,
@@ -83,10 +85,10 @@
                             options:{
                                 invalidMessage:'请输入备注信息!',validType:'mustDesc'
                             }}">备注</th>
-            <th data-options="field:'digest',width:350,align:'left',formatter:digestformatter"><a>摘要</a></th>
+            <th data-options="field:'digest',width:350,align:'left',formatter:digestformatter"><a>摘要信息</a></th>
             <th data-options="field:'username',width:60,align:'left'">办理人</th>
-            <th data-options="field:'bsnyue',width:60,align:'center'">业务期</th>
-            <th data-options="field:'bstime',width:90,align:'center',formatter:bstimeformatter">时间</th>
+            <%--<th data-options="field:'bsnyue',width:60,align:'center'">业务期</th>--%>
+            <th data-options="field:'bstime',width:120,align:'center',formatter:bstimeformatter">时间</th>
         </tr>
         </thead>
     </table>
@@ -113,7 +115,7 @@
         iconCls:'icon-search',
         handler:function(){$('#auditGrid').datagrid('reload')}
     },{
-        text:'操作日志',
+        text:'日志信息',
         iconCls:'icon-log',
         handler:function(){cj.searchLog(functionid,true)}
     }];

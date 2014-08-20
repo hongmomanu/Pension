@@ -67,7 +67,7 @@ public class AuditBusiness {
             int aulevel=Integer.parseInt(map.get("aulevel").toString())+1;
             map.put("aulevel",aulevel+"");
 
-            doOneAuditWithOpLog(auditid,aulevel,map,where);
+            doOneAuditWithOperationLog(auditid,aulevel,map,where);
         }
         return RtnType.SUCCESS;
     }
@@ -98,7 +98,7 @@ public class AuditBusiness {
         return aulevellabel+("1".equals(map.get("auflag"))?"通过":"不通过");
 
     }
-    private void doOneAuditWithOpLog(String auditid,int aulevel,Map map,Map where) throws Exception {
+    private void doOneAuditWithOperationLog(String auditid,int aulevel,Map map,Map where) throws Exception {
         CallableStatement cstmt= null;
         CallableStatement cstmtd= null;
         DbUtil.get();
