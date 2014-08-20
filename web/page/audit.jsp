@@ -9,14 +9,14 @@
         height:100%;
     }
     .icon-save{
-        background:url('img/shenghe.gif') no-repeat;
+        background:url('img/accept.png') no-repeat;
     }
     .icon-refresh{
         background:url('img/refresh.gif') no-repeat;
     }.icon-search{
-        background:url('img/search.gif') no-repeat;
+        background:url('img/zoom.png') no-repeat;
     }.icon-log{
-        background:url('img/mylog.gif') no-repeat;
+        background:url('img/application_cascade.png') no-repeat;
     }
     a:link, a:visited, a:active {
         color: #404040;

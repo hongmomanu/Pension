@@ -24,7 +24,7 @@ public class CodeMaintenance extends Model {
         Integer page=Integer.parseInt(this.getRequest().getParameter("page"));
         Integer rows=Integer.parseInt(this.getRequest().getParameter("rows"));
         CommonDbUtil commonDbUtil=new CommonDbUtil();
-        String sql="select * from aa09 order by aaa100 asc";
+        String sql="select * from xt_combo order by aaa100 asc";
         this.query(sql,page,rows);
         return RtnType.NORMALSUCCESS;
     }
@@ -32,7 +32,7 @@ public class CodeMaintenance extends Model {
     public String queryCode10(){
         CommonDbUtil commonDbUtil=new CommonDbUtil();
         String aaa100=this.getRequest().getParameter("aaa100");
-        String sql="select * from aa10 where lower(aaa100)=lower('"+aaa100+"') order by aaa102 asc";
+        String sql="select * from xt_combodt where lower(aaa100)=lower('"+aaa100+"') order by aaa102 asc";
         return JSONArray.fromObject(commonDbUtil.query(sql)).toString();
     }
 
@@ -41,7 +41,7 @@ public class CodeMaintenance extends Model {
         Map map= ParameterUtil.toMap(this.getRequest());
         String isnew=map.get("isnew").toString();
         int count=0;
-        String tableName="aa09";
+        String tableName="xt_combo";
         if("-1".equals(isnew)){
             count=commonDbUtil.insertTableVales(map,tableName);
         }else{

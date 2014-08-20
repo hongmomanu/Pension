@@ -32,7 +32,6 @@ public class EvaluateLrInfoChange extends Model implements IMultilevelAudit {
         AuditManager.addAudit(id);
         Map where=new HashMap();
         where.put("pg_id",id+"");
-        System.out.println(JSONObject.fromObject(CommQuery.query("select * from xt_log")).toString());
         Map bgbefore= queryOldData("select a.*,b.* from t_needassessment a,t_needassessmentsum b where a.pg_id=b.pg_id and a.pg_id=" + id);
         saveBgData(bgbefore,map);
         result=commonDbUtil.updateTableVales(map,"t_needassessmentsum",where);

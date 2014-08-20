@@ -47,7 +47,7 @@ public class ComboboxServlet extends HttpServlet {
         Connection conn= JdbcFactory.getConn();
         CommonDbUtil dbUtil=new CommonDbUtil();
         try{
-            String sql="select aaa102 id,aaa103 text from aa10 where aaa100='"+searchtype+"' order by aaa102 asc";
+            String sql="select aaa102 id,aaa103 text from xt_combodt where aaa100='"+searchtype+"' order by aaa102 asc";
             if("-1".equals(rows)){
                 sql="select  LOWER(AAA100) ename,aaa102 id,aaa103 text from aa10 order by id,text";
                 Map map=new HashMap();

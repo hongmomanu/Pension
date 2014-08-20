@@ -86,7 +86,6 @@ public class EvaluateLrInfo extends Model implements IMultilevelAudit {
     }
     @OperationLog
     public int test2() throws AppException {
-        System.out.println(JSONObject.fromObject(CommQuery.query("select * from xt_log")).toString());
         return RtnType.NORMALSUCCESS;
     }
     /*审核成功后的回调
