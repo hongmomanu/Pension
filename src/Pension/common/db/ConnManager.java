@@ -71,6 +71,7 @@ class  ConnManager {
         try{
             if (conn != null){
                 if (!conn.getAutoCommit()){
+                    System.out.println("commit");
                     conn.commit();
                 }
             }
