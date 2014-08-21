@@ -2,21 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/headnew.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/views/pension/FindLrBasicInfo.htm" afterPath="$PROJECT_DIR$/web/js/views/pension/FindLrBasicInfo.htm" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.css" afterPath="$PROJECT_DIR$/web/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/page/manager/CodeMaintenance.jsp" afterPath="$PROJECT_DIR$/web/page/manager/CodeMaintenance.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pension.iml" afterPath="$PROJECT_DIR$/Pension.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/page/manager/Role.jsp" afterPath="$PROJECT_DIR$/web/page/manager/Role.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/page/manager/User.jsp" afterPath="$PROJECT_DIR$/web/page/manager/User.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/main.jsp" afterPath="$PROJECT_DIR$/web/main.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Pension.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408605724710" ignored="false" />
+    <file path="/Dummy.txt" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408611531669" ignored="false" />
     <file path="/SysLogServlet.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1399617047660" ignored="false" />
     <file path="/syslog.jsp" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1399986688656" ignored="false" />
     <file path="/TestThreadLocal.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1399513142411" ignored="false" />
     <file path="$PROJECT_DIR$/../Zsmzj/src/Zsmzj/business/control/BusinessProcessControl.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1399513376680" ignored="false" />
     <file path="/BusinessProcessControl.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1399513376680" ignored="false" />
     <file path="/.gitignore" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1399513641781" ignored="false" />
-    <file path="/a.dummy" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408606107064" ignored="false" />
+    <file path="/a.dummy" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408613037267" ignored="false" />
     <file path="/AuditBusiness.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1402624424173" ignored="false" />
     <file path="/EvaluateLrInfo.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1400059362097" ignored="false" />
     <file path="/UserLog.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1402624508178" ignored="false" />
@@ -92,11 +94,13 @@
     <file path="D:/HVITWPSPlatform/02 Project/PlatformDisplay/pensionweb/js/views/pensionweb/FamilyInfo.htm" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1402984122108" ignored="false" />
     <file path="D:/HVITWPSPlatform/02 Project/PlatformDisplay/pensionweb/js/views/pensionweb/FamilyInfoQuery.htm" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1402986482114" ignored="false" />
     <file path="/Grant.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408504969543" ignored="false" />
-    <file path="/CodeMaintenance.jsp" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408506153827" ignored="false" />
+    <file path="/CodeMaintenance.jsp" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408613351704" ignored="false" />
     <file path="/FindLrBasicInfo.htm" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408611235842" ignored="false" />
     <file path="/EditLrBasicInfo.htm" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408528296814" ignored="false" />
     <file path="/easyui_overwrite.css" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408583725640" ignored="false" />
     <file path="/login.jsp" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408605519356" ignored="false" />
+    <file path="/Role.jsp" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408612526521" ignored="false" />
+    <file path="/main.jsp" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408612478881" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,60 +161,57 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="login.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/login.jsp">
+      <file leaf-file-name="icon.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/img/css/icon.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="104" column="39" selection-start="3610" selection-end="3610" vertical-scroll-proportion="-1.0363636">
+            <state line="7" column="38" selection-start="183" selection-end="191" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/index.css">
+      <file leaf-file-name="Role.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/page/manager/Role.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="140" column="67" selection-start="2474" selection-end="2474" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="head.jpg" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/img/head.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="t01.jpg" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/img/t01.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FindLrBasicInfo.htm" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/js/views/pension/FindLrBasicInfo.htm">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="61" selection-start="1101" selection-end="1101" vertical-scroll-proportion="0.50416666">
+            <state line="130" column="80" selection-start="4710" selection-end="4710" vertical-scroll-proportion="-2.9642856">
               <folding>
-                <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
+                <marker date="1408612679975" expanded="false" signature="1992:2002" placeholder="..." />
+                <marker date="1408612679975" expanded="false" signature="2203:2216" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="t02.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/img/t02.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
+      <file leaf-file-name="CommToolBar.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/commonfuncs/CommToolBar.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="57" selection-start="582" selection-end="582" vertical-scroll-proportion="-2.6666667">
+              <folding>
+                <marker date="1408521794421" expanded="false" signature="76:110" placeholder="..." />
+                <marker date="1408521794421" expanded="false" signature="158:173" placeholder="..." />
+              </folding>
+            </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="t03.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/img/t03.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
+      <file leaf-file-name="User.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/page/manager/User.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="96" column="71" selection-start="4288" selection-end="4288" vertical-scroll-proportion="-2.7857144">
+              <folding>
+                <marker date="1408612915656" expanded="false" signature="456:466" placeholder="..." />
+                <marker date="1408612915656" expanded="false" signature="598:610" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CodeMaintenance.jsp" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/page/manager/CodeMaintenance.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="103" column="29" selection-start="4012" selection-end="4012" vertical-scroll-proportion="0.4204947">
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -232,10 +233,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/Pension/model/pension/PensionPeopleInfo.java" />
-        <option value="$PROJECT_DIR$/web/page/manager/CodeMaintenance.jsp" />
-        <option value="$PROJECT_DIR$/src/Pension/common/sys/userlog/UserLog.java" />
-        <option value="$PROJECT_DIR$/src/Pension/model/manager/CodeMaintenance.java" />
         <option value="$PROJECT_DIR$/src/Pension/serverlet/ComboboxServlet.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/db.sql" />
         <option value="$PROJECT_DIR$/web/page/audit.jsp" />
@@ -248,6 +245,10 @@
         <option value="$PROJECT_DIR$/web/login.jsp" />
         <option value="$PROJECT_DIR$/web/index.css" />
         <option value="$PROJECT_DIR$/web/js/views/pension/FindLrBasicInfo.htm" />
+        <option value="$PROJECT_DIR$/web/main.jsp" />
+        <option value="$PROJECT_DIR$/web/page/manager/Role.jsp" />
+        <option value="$PROJECT_DIR$/web/page/manager/User.jsp" />
+        <option value="$PROJECT_DIR$/web/page/manager/CodeMaintenance.jsp" />
       </list>
     </option>
   </component>
@@ -375,129 +376,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pension" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pension" />
+              <option name="myItemId" value="page" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pension" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pension" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pension" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pension" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pension" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="notepad" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pension" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pension" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="commonfuncs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pension" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pension" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="commonfuncs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="validate" />
+              <option name="myItemId" value="manager" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -570,28 +453,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Pension" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pension" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pension" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pension" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="serverlet" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1566,7 +1427,11 @@
       <created>1408605771419</created>
       <updated>1408605771419</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="width&#10;">
+      <created>1408611546031</created>
+      <updated>1408611546031</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1581,10 +1446,10 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.72555745" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.75814754" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43598056" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20745543" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43598056" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34683955" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -1593,8 +1458,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32847896" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2840909" sideWeight="0.87034035" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12965964" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2840909" sideWeight="0.55105346" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4489465" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1648,7 +1513,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="login&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="width&#10;" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1671,6 +1536,7 @@
     <MESSAGE value="pw&#10;" />
     <MESSAGE value="pw2&#10;" />
     <MESSAGE value="login&#10;" />
+    <MESSAGE value="width&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1682,65 +1548,12 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/img/css/easyui_overwrite.css">
+    <entry file="file://$PROJECT_DIR$/web/js/views/pension/FindLrBasicInfo.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="49" selection-start="758" selection-end="758" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pension/serverlet/LRServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="0" selection-start="3490" selection-end="3490" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/views/pension/EditLrBasicInfo.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="73" selection-start="636" selection-end="648" vertical-scroll-proportion="-3.0357144">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/views/pension/EditLrBasicInfo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="176" column="60" selection-start="6397" selection-end="6397" vertical-scroll-proportion="-90.03704">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/img/loginbtn.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/img/loginbg.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/img/loading.gif">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/img/mainbg.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="39" selection-start="3610" selection-end="3610" vertical-scroll-proportion="-1.0363636">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/views/notepad/NoteEnter.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.4716981">
-          <folding />
+        <state line="22" column="61" selection-start="1101" selection-end="1101" vertical-scroll-proportion="0.9718875">
+          <folding>
+            <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1749,34 +1562,106 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pension/common/ParameterUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="25" selection-start="82" selection-end="82" vertical-scroll-proportion="0.22591361">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/img/t02.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/img/t01.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$PROJECT_DIR$/web/ajax/searchbusinessbypid.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="21" selection-start="1059" selection-end="1059" vertical-scroll-proportion="1.4652015">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/img/head.jpg">
+    <entry file="file://$PROJECT_DIR$/web/img/zoom.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="67" selection-start="2474" selection-end="2474" vertical-scroll-proportion="0.0">
+        <state line="133" column="1" selection-start="2308" selection-end="2308" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/views/pension/FindLrBasicInfo.htm">
+    <entry file="file://$PROJECT_DIR$/web/js/commonfuncs/CommToolBar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="61" selection-start="1101" selection-end="1101" vertical-scroll-proportion="0.50416666">
+        <state line="9" column="57" selection-start="582" selection-end="582" vertical-scroll-proportion="-2.6666667">
           <folding>
-            <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
+            <marker date="1408521794421" expanded="false" signature="76:110" placeholder="..." />
+            <marker date="1408521794421" expanded="false" signature="158:173" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/manager/User.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="71" selection-start="4288" selection-end="4288" vertical-scroll-proportion="-2.7857144">
+          <folding>
+            <marker date="1408612915656" expanded="false" signature="456:466" placeholder="..." />
+            <marker date="1408612915656" expanded="false" signature="598:610" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/manager/Role.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="130" column="80" selection-start="4710" selection-end="4710" vertical-scroll-proportion="-2.9642856">
+          <folding>
+            <marker date="1408612679975" expanded="false" signature="1992:2002" placeholder="..." />
+            <marker date="1408612679975" expanded="false" signature="2203:2216" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/views/pension/Test.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="67" selection-start="791" selection-end="791" vertical-scroll-proportion="-2.7857144">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/views/pension/PensionPeopleInfo.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="785" column="24" selection-start="38480" selection-end="38480" vertical-scroll-proportion="-3.142857">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/views/notepad/NoteEnter.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="24" selection-start="4341" selection-end="4341" vertical-scroll-proportion="-2.9642856">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/main.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="46" selection-start="906" selection-end="906" vertical-scroll-proportion="0.6007326">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/img/css/icon.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="38" selection-start="183" selection-end="191" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/manager/CodeMaintenance.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="103" column="29" selection-start="4012" selection-end="4012" vertical-scroll-proportion="0.4204947">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1811,7 +1696,6 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Node.js v0.10.5 Core Modules</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1845,21 +1729,9 @@
           </splitter-proportions>
         </settings>
       </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.6</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.31152633" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>lib1</last-edited>
+          <last-edited>Java EE 6-Java EE 6</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

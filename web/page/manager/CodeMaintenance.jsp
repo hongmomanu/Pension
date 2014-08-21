@@ -4,7 +4,10 @@
     <title>代码维护</title>
     <style>
         .icon-save{
-            background:url('img/busiapproval.png') no-repeat;
+            background:url('../../img/save.gif') no-repeat;
+        }
+        .icon-add{
+            background:url('../../img/add.gif') no-repeat;
         }
     </style>
 </head>
@@ -98,7 +101,7 @@
     var toolbar = [
         {
             text:'添加',
-            iconCls:'icon-save',
+            iconCls:'icon-add',
             handler:function(){addCodeDetail();}
         },{
             text:'保存',
