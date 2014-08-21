@@ -10,7 +10,7 @@
         user=(CurrentUser)o;
     }
 %>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
 <head>
@@ -23,7 +23,7 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" >
     <title>杭州市民政养老救助管理系统</title>
-
+    <script type="text/javascript" src="http://112.124.50.195:8080/pensionweb/js/jquery-1.8.0.min.js"></script>
     <script type="text/javascript" src="js/extLocation.js"></script>
 
     <script type="text/javascript">
@@ -42,8 +42,6 @@
     <script>
         /**加载easyui**/
 
-        document.write('<script type="text/javascript"  src="'+extEasyui+
-                'jquery-1.8.0.min.js"><\/script>');
         document.write('<script type="text/javascript"  src="'+extEasyui+
                 'jquery.easyui.min.js"><\/script>');
         document.write('<script type="text/javascript"  src="'+extEasyui+
