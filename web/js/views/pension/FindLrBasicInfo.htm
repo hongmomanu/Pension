@@ -1,26 +1,26 @@
 <!--<fieldset>-->   <!--fitColumns:true,-->
     <!--<div id="lrmessageid">-->
-        <table opt="lrxxid" class="easyui-datagrid"  style="width: auto"
+        <table opt="lrxxid" class="easyui-datagrid"  style="width: auto;text-align: center"
                data-options="
                url:'ajax/getLrBasicInfo.jsp',
                method:'get',
                toolbar:'.tb',
                rownumbers:true,
                fit:true,
-               fitColumns:true,
-               striped:true,
                singleSelect:true,
                pagination:true,
                pageSize:15,
                pageList: [15,30,45,60]">
             <thead>
+           <!-- fitColumns:true,
+            striped:true,-->
             <tr>
-                <th  data-options="field:'lr_id',hidden:true"></th>
-                <th data-options="field:'name'">姓名</th>
-                <th data-options="field:'gender',formatter:cj.enumFormatter('gender')">性别</th>
-                <th data-options="field:'birthday'">出生年月</th>
-                <th data-options="field:'peopleid'">身份证号</th>
-                <th data-options="field:'place',align:'right'">住址</th>
+                <th  data-options="field:'lr_id',hidden:true" ></th>
+                <th data-options="field:'name',width:150,align:'center'">姓名</th>
+                <th data-options="field:'gender',formatter:cj.enumFormatter('gender'),width:100,align:'center'">性别</th>
+                <th data-options="field:'birthday',width:150,align:'center'">出生年月</th>
+                <th data-options="field:'peopleid',width:200,align:'center'">身份证号</th>
+                <th data-options="field:'place',align:'center',width:350">住址</th>
             </tr>
             </thead>
         </table>

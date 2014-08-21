@@ -2,31 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/application_go.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/bg01.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/bg02.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/bg03.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/page_edit.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/t01.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/t02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/t03.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/views/pension/EditLrBasicInfo.htm" afterPath="$PROJECT_DIR$/web/js/views/pension/EditLrBasicInfo.htm" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pension.iml" afterPath="$PROJECT_DIR$/Pension.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/img/css/easyui_overwrite.css" afterPath="$PROJECT_DIR$/web/img/css/easyui_overwrite.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/img/css/icon.css" afterPath="$PROJECT_DIR$/web/img/css/icon.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/login.jsp" afterPath="$PROJECT_DIR$/web/login.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/headnew.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/views/pension/FindLrBasicInfo.htm" afterPath="$PROJECT_DIR$/web/js/views/pension/FindLrBasicInfo.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.css" afterPath="$PROJECT_DIR$/web/index.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Pension.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408583104350" ignored="false" />
+    <file path="/Dummy.txt" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408605724710" ignored="false" />
     <file path="/SysLogServlet.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1399617047660" ignored="false" />
     <file path="/syslog.jsp" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1399986688656" ignored="false" />
     <file path="/TestThreadLocal.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1399513142411" ignored="false" />
     <file path="$PROJECT_DIR$/../Zsmzj/src/Zsmzj/business/control/BusinessProcessControl.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1399513376680" ignored="false" />
     <file path="/BusinessProcessControl.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1399513376680" ignored="false" />
     <file path="/.gitignore" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1399513641781" ignored="false" />
-    <file path="/a.dummy" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408514489796" ignored="false" />
+    <file path="/a.dummy" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408606107064" ignored="false" />
     <file path="/AuditBusiness.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1402624424173" ignored="false" />
     <file path="/EvaluateLrInfo.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1400059362097" ignored="false" />
     <file path="/UserLog.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1402624508178" ignored="false" />
@@ -53,7 +43,7 @@
     <file path="D:/weipan789.github.io/data/2014/05/14/01.html" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1400027606381" ignored="false" />
     <file path="/CommToolBar.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1400038315125" ignored="false" />
     <file path="/TreeClickEvent.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1400204781294" ignored="false" />
-    <file path="/index.css" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408517664267" ignored="false" />
+    <file path="/index.css" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408606553586" ignored="false" />
     <file path="/icon.css" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408528308305" ignored="false" />
     <file path="/identityid.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1400049624263" ignored="false" />
     <file path="/init.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1400050524927" ignored="false" />
@@ -103,7 +93,7 @@
     <file path="D:/HVITWPSPlatform/02 Project/PlatformDisplay/pensionweb/js/views/pensionweb/FamilyInfoQuery.htm" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1402986482114" ignored="false" />
     <file path="/Grant.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408504969543" ignored="false" />
     <file path="/CodeMaintenance.jsp" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408506153827" ignored="false" />
-    <file path="/FindLrBasicInfo.htm" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408526981688" ignored="false" />
+    <file path="/FindLrBasicInfo.htm" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408611235842" ignored="false" />
     <file path="/EditLrBasicInfo.htm" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408528296814" ignored="false" />
     <file path="/easyui_overwrite.css" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408583725640" ignored="false" />
     <file path="/login.jsp" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408605519356" ignored="false" />
@@ -167,12 +157,60 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="login.jsp" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="login.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="104" column="39" selection-start="3610" selection-end="3610" vertical-scroll-proportion="0.12954545">
+            <state line="104" column="39" selection-start="3610" selection-end="3610" vertical-scroll-proportion="-1.0363636">
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/index.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="140" column="67" selection-start="2474" selection-end="2474" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="head.jpg" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/img/head.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="t01.jpg" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/img/t01.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FindLrBasicInfo.htm" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/js/views/pension/FindLrBasicInfo.htm">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="61" selection-start="1101" selection-end="1101" vertical-scroll-proportion="0.50416666">
+              <folding>
+                <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="t02.png" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/img/t02.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="t03.png" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/img/t03.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
@@ -203,13 +241,13 @@
         <option value="$PROJECT_DIR$/web/page/audit.jsp" />
         <option value="$PROJECT_DIR$/src/Pension/model/pension/EvaluateLrInfoChange.java" />
         <option value="$PROJECT_DIR$/src/Pension/model/pension/EvaluateLrInfo.java" />
-        <option value="$PROJECT_DIR$/web/index.css" />
-        <option value="$PROJECT_DIR$/web/js/views/pension/FindLrBasicInfo.htm" />
         <option value="$PROJECT_DIR$/web/js/views/pension/PensionPeopleInfo.htm" />
         <option value="$PROJECT_DIR$/web/js/views/pension/EditLrBasicInfo.htm" />
         <option value="$PROJECT_DIR$/web/img/css/icon.css" />
         <option value="$PROJECT_DIR$/web/img/css/easyui_overwrite.css" />
         <option value="$PROJECT_DIR$/web/login.jsp" />
+        <option value="$PROJECT_DIR$/web/index.css" />
+        <option value="$PROJECT_DIR$/web/js/views/pension/FindLrBasicInfo.htm" />
       </list>
     </option>
   </component>
@@ -412,6 +450,54 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="notepad" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pension" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pension" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="commonfuncs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pension" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pension" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="commonfuncs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="validate" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1476,7 +1562,11 @@
       <created>1408527848526</created>
       <updated>1408527848526</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="login&#10;">
+      <created>1408605771419</created>
+      <updated>1408605771419</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1486,6 +1576,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46515396" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.72555745" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1512,7 +1603,6 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46655232" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1558,7 +1648,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="pw2&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="login&#10;" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1580,6 +1670,7 @@
     <MESSAGE value="主页有图片时显示会有闪烁" />
     <MESSAGE value="pw&#10;" />
     <MESSAGE value="pw2&#10;" />
+    <MESSAGE value="login&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1591,57 +1682,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Pension/listener/SessionListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="98" selection-start="560" selection-end="560" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/views/notepad/Upload.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="281" column="0" selection-start="5494" selection-end="5494" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/views/pension/FindLrBasicInfo.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="75" selection-start="1314" selection-end="1314" vertical-scroll-proportion="0.61041665">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/views/pension/PensionPeopleInfo.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="766" column="97" selection-start="37782" selection-end="37782" vertical-scroll-proportion="0.03640257">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pension/common/ParameterUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="44" selection-start="185" selection-end="185" vertical-scroll-proportion="0.033464566">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/img/css/icon.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="1" selection-start="655" selection-end="655" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/img/css/easyui_overwrite.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="43" column="49" selection-start="758" selection-end="758" vertical-scroll-proportion="0.0">
@@ -1692,8 +1732,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="39" selection-start="3610" selection-end="3610" vertical-scroll-proportion="0.12954545">
+        <state line="104" column="39" selection-start="3610" selection-end="3610" vertical-scroll-proportion="-1.0363636">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/views/notepad/NoteEnter.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.4716981">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/img/t03.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/img/t02.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/img/t01.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/img/head.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="140" column="67" selection-start="2474" selection-end="2474" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/views/pension/FindLrBasicInfo.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="61" selection-start="1101" selection-end="1101" vertical-scroll-proportion="0.50416666">
+          <folding>
+            <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
