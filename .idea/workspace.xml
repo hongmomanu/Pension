@@ -1,33 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" name="Default" comment="pw&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/accept.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/application_cascade.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/zoom.png" />
-      <change type="DELETED" beforePath="D:\Administrator\IdeaProjects\Pension\src\Pension\model\notepad\NoteEnter.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Administrator\IdeaProjects\Pension\web\img\mylog.gif" afterPath="" />
-      <change type="DELETED" beforePath="D:\Administrator\IdeaProjects\Pension\web\img\shenghe.gif" afterPath="" />
-      <change type="DELETED" beforePath="D:\Administrator\IdeaProjects\Pension\web\js\views\notepad\NoteEnter.htm" afterPath="" />
-      <change type="DELETED" beforePath="D:\Administrator\IdeaProjects\Pension\web\js\views\notepad\NoteEnter.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Administrator\IdeaProjects\Pension\web\js\views\notepad\NoteQueryGrid.htm" afterPath="" />
-      <change type="DELETED" beforePath="D:\Administrator\IdeaProjects\Pension\web\js\views\notepad\NoteQueryGrid.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Administrator\IdeaProjects\Pension\web\js\views\notepad\Upload.htm" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pension/model/manager/CodeMaintenance.java" afterPath="$PROJECT_DIR$/src/Pension/model/manager/CodeMaintenance.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/page/manager/CodeMaintenance.jsp" afterPath="$PROJECT_DIR$/web/page/manager/CodeMaintenance.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pension/serverlet/ComboboxServlet.java" afterPath="$PROJECT_DIR$/src/Pension/serverlet/ComboboxServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pension/model/pension/EvaluateLrInfo.java" afterPath="$PROJECT_DIR$/src/Pension/model/pension/EvaluateLrInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pension/model/pension/EvaluateLrInfoChange.java" afterPath="$PROJECT_DIR$/src/Pension/model/pension/EvaluateLrInfoChange.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pension/common/sys/userlog/UserLog.java" afterPath="$PROJECT_DIR$/src/Pension/common/sys/userlog/UserLog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/page/audit.jsp" afterPath="$PROJECT_DIR$/web/page/audit.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/db.sql" afterPath="$PROJECT_DIR$/web/WEB-INF/db.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.css" afterPath="$PROJECT_DIR$/web/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pension.iml" afterPath="$PROJECT_DIR$/Pension.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Pension.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408505322862" ignored="false" />
+    <file path="/Dummy.txt" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408582269223" ignored="false" />
     <file path="/SysLogServlet.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1399617047660" ignored="false" />
     <file path="/syslog.jsp" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1399986688656" ignored="false" />
     <file path="/TestThreadLocal.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1399513142411" ignored="false" />
@@ -40,7 +20,7 @@
     <file path="/UserLog.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1402624508178" ignored="false" />
     <file path="/AuditServlet.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1399553388571" ignored="false" />
     <file path="/AccordionTree.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1400206821813" ignored="false" />
-    <file path="/audit.jsp" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408513281803" ignored="false" />
+    <file path="/audit.jsp" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408521081691" ignored="false" />
     <file path="/cj.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1399960214778" ignored="false" />
     <file path="/test.jsp" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1399621530157" ignored="false" />
     <file path="/edit.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1400047288585" ignored="false" />
@@ -62,7 +42,7 @@
     <file path="/CommToolBar.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1400038315125" ignored="false" />
     <file path="/TreeClickEvent.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1400204781294" ignored="false" />
     <file path="/index.css" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408517664267" ignored="false" />
-    <file path="/icon.css" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1400210974722" ignored="false" />
+    <file path="/icon.css" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408521822451" ignored="false" />
     <file path="/identityid.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1400049624263" ignored="false" />
     <file path="/init.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1400050524927" ignored="false" />
     <file path="/Init.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1400379677437" ignored="false" />
@@ -80,7 +60,7 @@
     <file path="D:/weipan789.github.io/data/2014/05/14/02.html" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1400160127769" ignored="false" />
     <file path="/GrantMoneyMng.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1400290899595" ignored="false" />
     <file path="/GrantMoneyMng.htm" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1400389360857" ignored="false" />
-    <file path="/EvaluateLrInfoGrid.htm" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1400227134993" ignored="false" />
+    <file path="/EvaluateLrInfoGrid.htm" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408521100967" ignored="false" />
     <file path="/addnewgrantwin.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1400388924253" ignored="false" />
     <file path="/addnewgrantwin.htm" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1400380659352" ignored="false" />
     <file path="/GrantMoneyMng.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1400389623425" ignored="false" />
@@ -111,6 +91,7 @@
     <file path="D:/HVITWPSPlatform/02 Project/PlatformDisplay/pensionweb/js/views/pensionweb/FamilyInfoQuery.htm" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1402986482114" ignored="false" />
     <file path="/Grant.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408504969543" ignored="false" />
     <file path="/CodeMaintenance.jsp" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408506153827" ignored="false" />
+    <file path="/main.jsp" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408520219057" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,9 +161,7 @@
         <entry file="file://$PROJECT_DIR$/src/Pension/model/pension/EvaluateLrInfo.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="88" column="0" selection-start="3573" selection-end="3573" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -191,15 +170,6 @@
         <entry file="file://$PROJECT_DIR$/src/Pension/model/pension/EvaluateLrInfoChange.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="34" column="0" selection-start="1041" selection-end="1041" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CodeMaintenance.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/page/manager/CodeMaintenance.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="108" column="16" selection-start="4153" selection-end="4153" vertical-scroll-proportion="-2.892857">
               <folding />
             </state>
           </provider>
@@ -214,30 +184,46 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CodeMaintenance.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Pension/model/manager/CodeMaintenance.java">
+      <file leaf-file-name="ComboboxServlet.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Pension/serverlet/ComboboxServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="58" selection-start="1133" selection-end="1133" vertical-scroll-proportion="0.0">
+            <state line="49" column="68" selection-start="1684" selection-end="1684" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ComboboxServlet.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Pension/serverlet/ComboboxServlet.java">
+      <file leaf-file-name="index.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="68" selection-start="1684" selection-end="1684" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+            <state line="2" column="37" selection-start="107" selection-end="107" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.css" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/index.css">
+      <file leaf-file-name="easyui_overwrite.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/img/css/easyui_overwrite.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="317" column="0" selection-start="6095" selection-end="6095" vertical-scroll-proportion="1.0966767">
+            <state line="38" column="39" selection-start="666" selection-end="666" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="icon.css" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/img/css/icon.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="53" selection-start="271" selection-end="271" vertical-scroll-proportion="0.5539359">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/main.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="41" selection-start="789" selection-end="789" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -246,30 +232,19 @@
       <file leaf-file-name="audit.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/page/audit.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="24" selection-start="539" selection-end="539" vertical-scroll-proportion="-14.25">
+            <state line="63" column="24" selection-start="1800" selection-end="1800" vertical-scroll-proportion="0.0">
               <folding>
-                <marker date="1408513282972" expanded="false" signature="1237:1258" placeholder="..." />
+                <marker date="1408521082429" expanded="false" signature="1237:1258" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EvaluateLrInfoLogout.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Pension/model/pension/EvaluateLrInfoLogout.java">
+      <file leaf-file-name="EvaluateLrInfoGrid.htm" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/views/pension/EvaluateLrInfoGrid.htm">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="17" selection-start="529" selection-end="529" vertical-scroll-proportion="0.0">
+            <state line="4" column="28" selection-start="143" selection-end="143" vertical-scroll-proportion="0.0">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PensionPeopleInfo.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Pension/model/pension/PensionPeopleInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="17" selection-start="766" selection-end="766" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -292,10 +267,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/web/js/extLocation.js" />
-        <option value="$PROJECT_DIR$/src/Pension/common/sys/annotation/OperationLog.java" />
-        <option value="$PROJECT_DIR$/src/Pension/common/sys/audit/AuditBusiness.java" />
-        <option value="$PROJECT_DIR$/src/Pension/model/manager/Grant.java" />
         <option value="$PROJECT_DIR$/src/Pension/serverlet/LRServlet.java" />
         <option value="$PROJECT_DIR$/src/Pension/model/pension/EvaluateLrInfoLogout.java" />
         <option value="$PROJECT_DIR$/src/Pension/model/pension/PensionPeopleInfo.java" />
@@ -304,10 +275,14 @@
         <option value="$PROJECT_DIR$/src/Pension/model/manager/CodeMaintenance.java" />
         <option value="$PROJECT_DIR$/src/Pension/serverlet/ComboboxServlet.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/db.sql" />
-        <option value="$PROJECT_DIR$/web/page/audit.jsp" />
         <option value="$PROJECT_DIR$/src/Pension/model/pension/EvaluateLrInfoChange.java" />
         <option value="$PROJECT_DIR$/src/Pension/model/pension/EvaluateLrInfo.java" />
         <option value="$PROJECT_DIR$/web/index.css" />
+        <option value="$PROJECT_DIR$/web/main.jsp" />
+        <option value="$PROJECT_DIR$/web/page/audit.jsp" />
+        <option value="$PROJECT_DIR$/web/js/views/pension/EvaluateLrInfoGrid.htm" />
+        <option value="$PROJECT_DIR$/web/img/css/easyui_overwrite.css" />
+        <option value="$PROJECT_DIR$/web/img/css/icon.css" />
       </list>
     </option>
   </component>
@@ -419,7 +394,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -439,22 +413,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pension" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pension" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -513,11 +474,11 @@
       <recent name="http://localhost/backbone/" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Administrator\IdeaProjects\Pension\web\img\css" />
       <recent name="D:\Administrator\IdeaProjects\Pension\web\img" />
       <recent name="D:\Administrator\IdeaProjects\Pension\web\js\commonfuncs" />
       <recent name="D:\Administrator\IdeaProjects\Pension\web\js\views\pension" />
       <recent name="D:\Administrator\IdeaProjects\Pension\web\js\commonfuncs\validate" />
-      <recent name="D:\hvit\Pension\web\img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Administrator\IdeaProjects\Pension\web\js\views\pension" />
@@ -1408,7 +1369,15 @@
       <created>1408505333949</created>
       <updated>1408505333949</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="pw&#10;">
+      <created>1408517889778</created>
+      <updated>1408517889778</updated>
+    </task>
+    <task id="LOCAL-00070" summary="get upload">
+      <created>1408523936452</created>
+      <updated>1408523936453</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -1438,10 +1407,9 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32761577" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46655232" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.72555745" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1450,7 +1418,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20754717" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34819898" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1458,8 +1425,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20681818" sideWeight="0.65180105" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.77701545" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30227274" sideWeight="0.6723842" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47512865" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1468,6 +1435,8 @@
       <window_info id="SQL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46655232" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34819898" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1521,7 +1490,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="pw&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="get upload" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1542,6 +1511,7 @@
     <MESSAGE value="first commit&#10;" />
     <MESSAGE value="主页有图片时显示会有闪烁" />
     <MESSAGE value="pw&#10;" />
+    <MESSAGE value="get upload" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1553,95 +1523,40 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Pension/common/sys/annotation/Transaction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="18" selection-start="123" selection-end="123" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pension/common/sys/annotation/OperationLog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="30" selection-start="352" selection-end="364" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pension/common/sys/audit/AuditBusiness.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="38" selection-start="2727" selection-end="2727" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pension/model/manager/Grant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="49" selection-start="148" selection-end="148" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Pension/serverlet/LRServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="54" selection-start="3594" selection-end="3594" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
+        <state line="93" column="54" selection-start="3594" selection-end="3594" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Pension/model/pension/EvaluateLrInfoLogout.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="17" selection-start="529" selection-end="529" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="22" column="17" selection-start="529" selection-end="529" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Pension/model/pension/PensionPeopleInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="17" selection-start="766" selection-end="766" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <state line="26" column="17" selection-start="766" selection-end="766" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/page/manager/CodeMaintenance.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="16" selection-start="4153" selection-end="4153" vertical-scroll-proportion="-2.892857">
-          <folding />
-        </state>
+        <state line="108" column="16" selection-start="4153" selection-end="4153" vertical-scroll-proportion="-2.892857" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Pension/model/manager/CodeMaintenance.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="58" selection-start="1133" selection-end="1133" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="34" column="58" selection-start="1133" selection-end="1133" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/db.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="0" selection-start="1131" selection-end="1131" vertical-scroll-proportion="0.78651685">
-          <folding />
-        </state>
+        <state line="54" column="0" selection-start="1131" selection-end="1131" vertical-scroll-proportion="0.78651685" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Pension/serverlet/ComboboxServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="49" column="68" selection-start="1684" selection-end="1684" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/page/audit.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="24" selection-start="539" selection-end="539" vertical-scroll-proportion="-14.25">
-          <folding>
-            <marker date="1408513282972" expanded="false" signature="1237:1258" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1655,9 +1570,7 @@
     <entry file="file://$PROJECT_DIR$/src/Pension/model/pension/EvaluateLrInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="88" column="0" selection-start="3573" selection-end="3573" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1670,7 +1583,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="317" column="0" selection-start="6095" selection-end="6095" vertical-scroll-proportion="1.0966767">
+        <state line="2" column="37" selection-start="107" selection-end="107" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/img/css/easyui_overwrite.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="39" selection-start="666" selection-end="666" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/main.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="41" selection-start="789" selection-end="789" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/audit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="24" selection-start="1800" selection-end="1800" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1408521082429" expanded="false" signature="1237:1258" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/views/pension/EvaluateLrInfoGrid.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="28" selection-start="143" selection-end="143" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/img/css/icon.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="53" selection-start="271" selection-end="271" vertical-scroll-proportion="0.5539359">
           <folding />
         </state>
       </provider>
