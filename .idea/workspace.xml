@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" name="Default" comment="pw2&#10;">
+    <list default="true" id="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/application_go.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/bg01.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/bg02.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/bg03.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/page_edit.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/t01.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/t02.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/t03.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/views/pension/EditLrBasicInfo.htm" afterPath="$PROJECT_DIR$/web/js/views/pension/EditLrBasicInfo.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pension.iml" afterPath="$PROJECT_DIR$/Pension.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/img/css/easyui_overwrite.css" afterPath="$PROJECT_DIR$/web/img/css/easyui_overwrite.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/img/css/icon.css" afterPath="$PROJECT_DIR$/web/img/css/icon.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/login.jsp" afterPath="$PROJECT_DIR$/web/login.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Pension.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408527769825" ignored="false" />
+    <file path="/Dummy.txt" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408583104350" ignored="false" />
     <file path="/SysLogServlet.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1399617047660" ignored="false" />
     <file path="/syslog.jsp" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1399986688656" ignored="false" />
     <file path="/TestThreadLocal.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1399513142411" ignored="false" />
@@ -41,7 +54,7 @@
     <file path="/CommToolBar.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1400038315125" ignored="false" />
     <file path="/TreeClickEvent.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1400204781294" ignored="false" />
     <file path="/index.css" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408517664267" ignored="false" />
-    <file path="/icon.css" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408527604990" ignored="false" />
+    <file path="/icon.css" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408528308305" ignored="false" />
     <file path="/identityid.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1400049624263" ignored="false" />
     <file path="/init.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1400050524927" ignored="false" />
     <file path="/Init.js" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1400379677437" ignored="false" />
@@ -91,6 +104,9 @@
     <file path="/Grant.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408504969543" ignored="false" />
     <file path="/CodeMaintenance.jsp" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408506153827" ignored="false" />
     <file path="/FindLrBasicInfo.htm" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408526981688" ignored="false" />
+    <file path="/EditLrBasicInfo.htm" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408528296814" ignored="false" />
+    <file path="/easyui_overwrite.css" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408583725640" ignored="false" />
+    <file path="/login.jsp" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408605519356" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,12 +120,8 @@
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
   </component>
-  <component name="DatabaseView">
-    <flatten value="false" />
-    <groupTables value="false" />
-    <sortChildren value="false" />
-  </component>
   <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -146,7 +158,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -156,39 +167,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="icon.css" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/img/css/icon.css">
+      <file leaf-file-name="login.jsp" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="54" selection-start="422" selection-end="422" vertical-scroll-proportion="0.59130436">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PensionPeopleInfo.htm" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/views/pension/PensionPeopleInfo.htm">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="766" column="97" selection-start="37782" selection-end="37782" vertical-scroll-proportion="-4.392857">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FindLrBasicInfo.htm" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/views/pension/FindLrBasicInfo.htm">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="75" selection-start="1314" selection-end="1314" vertical-scroll-proportion="-8.75">
-              <folding>
-                <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/index.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="281" column="0" selection-start="5494" selection-end="5494" vertical-scroll-proportion="0.0">
+            <state line="104" column="39" selection-start="3610" selection-end="3610" vertical-scroll-proportion="0.12954545">
               <folding />
             </state>
           </provider>
@@ -212,9 +194,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/Pension/model/manager/Grant.java" />
-        <option value="$PROJECT_DIR$/src/Pension/serverlet/LRServlet.java" />
-        <option value="$PROJECT_DIR$/src/Pension/model/pension/EvaluateLrInfoLogout.java" />
         <option value="$PROJECT_DIR$/src/Pension/model/pension/PensionPeopleInfo.java" />
         <option value="$PROJECT_DIR$/web/page/manager/CodeMaintenance.jsp" />
         <option value="$PROJECT_DIR$/src/Pension/common/sys/userlog/UserLog.java" />
@@ -227,7 +206,10 @@
         <option value="$PROJECT_DIR$/web/index.css" />
         <option value="$PROJECT_DIR$/web/js/views/pension/FindLrBasicInfo.htm" />
         <option value="$PROJECT_DIR$/web/js/views/pension/PensionPeopleInfo.htm" />
+        <option value="$PROJECT_DIR$/web/js/views/pension/EditLrBasicInfo.htm" />
         <option value="$PROJECT_DIR$/web/img/css/icon.css" />
+        <option value="$PROJECT_DIR$/web/img/css/easyui_overwrite.css" />
+        <option value="$PROJECT_DIR$/web/login.jsp" />
       </list>
     </option>
   </component>
@@ -243,73 +225,6 @@
     <option name="y" value="-8" />
     <option name="width" value="1296" />
     <option name="height" value="776" />
-  </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-          <State>
-            <id>Class structure</id>
-          </State>
-          <State>
-            <id>Code style issuesJavaScript</id>
-          </State>
-          <State>
-            <id>Data flow issues</id>
-          </State>
-          <State>
-            <id>Declaration redundancy</id>
-          </State>
-          <State>
-            <id>Google Web Toolkit issues</id>
-          </State>
-          <State>
-            <id>Inheritance issues</id>
-          </State>
-          <State>
-            <id>J2ME issues</id>
-          </State>
-          <State>
-            <id>JBoss Seam issues</id>
-          </State>
-          <State>
-            <id>JUnit issues</id>
-          </State>
-          <State>
-            <id>Java EE issues</id>
-          </State>
-          <State>
-            <id>JavaScript</id>
-          </State>
-          <State>
-            <id>Javadoc issues</id>
-          </State>
-          <State>
-            <id>Naming conventions</id>
-          </State>
-          <State>
-            <id>Probable bugs</id>
-          </State>
-          <State>
-            <id>TestNG</id>
-          </State>
-          <State>
-            <id>Threading issues</id>
-          </State>
-          <State>
-            <id>XPath</id>
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>JavaDoc</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -624,15 +539,15 @@
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="Modules" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="121" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="146" />
-    <property name="OverrideImplement.combined" value="true" />
     <property name="project.structure.proportion" value="0.15" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="146" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="153" />
+    <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="E:/tools/apache-tomcat-7.0.55/lib/servlet-api.jar!/" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="149" />
@@ -645,25 +560,25 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
-    <property name="Repository.Attach.Sources" value="false" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
-    <property name="LayoutCode.rearrangeEntries&lt;Generic&gt;" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="LayoutCode.rearrangeEntries&lt;Generic&gt;" value="false" />
     <property name="options.lastSelected" value="preferences.pluginManager" />
-    <property name="project.structure.side.proportion" value="0.2" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="LayoutCode.rearrangeEntriesOracle" value="false" />
-    <property name="dynamic.classpath" value="false" />
     <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -671,18 +586,18 @@
       <recent name="Pension.model.pension" />
       <recent name="Pension.jdbc" />
     </key>
+    <key name="OPEN_URL_DIALOG">
+      <recent name="http://ics7891pc/easyui/themes/default/easyui.css" />
+      <recent name="http://localhost/backbone/mybtns.html" />
+      <recent name="http://localhost/ext-4.2.1/myid.html" />
+      <recent name="http://localhost/backbone/" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\work\pension\Pension\web\img" />
       <recent name="D:\work\pension\Pension\web\js\views" />
       <recent name="D:\Administrator\IdeaProjects\Pension\web\img" />
       <recent name="D:\Administrator\IdeaProjects\Pension\web\js\commonfuncs" />
       <recent name="D:\Administrator\IdeaProjects\Pension\web\js\views\pension" />
-    </key>
-    <key name="OPEN_URL_DIALOG">
-      <recent name="http://ics7891pc/easyui/themes/default/easyui.css" />
-      <recent name="http://localhost/backbone/mybtns.html" />
-      <recent name="http://localhost/ext-4.2.1/myid.html" />
-      <recent name="http://localhost/backbone/" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Administrator\IdeaProjects\Pension\web\js\views\pension" />
@@ -1081,6 +996,21 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="JettyConfiguration" factoryName="Local">
       <deployment />
       <server-settings>
@@ -1097,21 +1027,6 @@
       </server-settings>
       <predefined_log_file id="Jetty" enabled="true" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <method />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -1235,13 +1150,13 @@
       </method>
     </configuration>
     <list size="7">
-      <item index="0" class="java.lang.String" itemvalue="Application.CallBack" />
-      <item index="1" class="java.lang.String" itemvalue="Application.ReadDbColumns" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.Testlocal.test" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.UserLog.test" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.TestThreadLocal.test006" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.Function.setTest2" />
-      <item index="6" class="java.lang.String" itemvalue="Tomcat Server.tomcat7" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.Testlocal.test" />
+      <item index="1" class="java.lang.String" itemvalue="Tomcat Server.tomcat7" />
+      <item index="2" class="java.lang.String" itemvalue="Application.CallBack" />
+      <item index="3" class="java.lang.String" itemvalue="Application.ReadDbColumns" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.UserLog.test" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.TestThreadLocal.test006" />
+      <item index="6" class="java.lang.String" itemvalue="JUnit.Function.setTest2" />
     </list>
     <recent_temporary>
       <list size="5">
@@ -1257,33 +1172,7 @@
       <Port>5050</Port>
     </configuration>
   </component>
-  <component name="SQLPlugin.ProjectConfiguration">
-    <queries />
-  </component>
   <component name="ShelveChangesManager" show_recycled="false" />
-  <component name="SliceManager">
-    <option name="analysisUIOptions">
-      <AnalysisUIOptions />
-    </option>
-  </component>
-  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="sslv3">
-    <option name="USER" value="" />
-    <option name="PASSWORD" value="" />
-    <option name="mySSHConnectionTimeout" value="30000" />
-    <option name="mySSHReadTimeout" value="30000" />
-    <option name="LAST_MERGED_REVISION" />
-    <option name="MERGE_DRY_RUN" value="false" />
-    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
-    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
-    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
-    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
-    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
-    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
-    <option name="FORCE_UPDATE" value="false" />
-    <option name="IGNORE_EXTERNALS" value="false" />
-    <configuration useDefault="false" />
-    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" name="Default" comment="" />
@@ -1583,31 +1472,12 @@
       <created>1408527705186</created>
       <updated>1408527705186</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="pw2&#10;">
+      <created>1408527848526</created>
+      <updated>1408527848526</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37725000" />
-  </component>
-  <component name="TodoView" selected-index="0">
-    <todo-panel id="selected-file">
-      <are-packages-shown value="false" />
-      <are-modules-shown value="false" />
-      <flatten-packages value="false" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <are-modules-shown value="false" />
-      <flatten-packages value="false" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="default-changelist">
-      <are-packages-shown value="false" />
-      <are-modules-shown value="false" />
-      <flatten-packages value="false" />
-      <is-autoscroll-to-source value="false" />
-    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
@@ -1632,8 +1502,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32847896" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2840909" sideWeight="0.79254454" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20745543" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2840909" sideWeight="0.87034035" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12965964" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1645,14 +1515,6 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46655232" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
-  </component>
-  <component name="Vcs.Log.UiProperties">
-    <option name="RECENTLY_FILTERED_USER_GROUPS">
-      <collection />
-    </option>
-    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-      <collection />
-    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -1729,82 +1591,12 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/db.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="0" selection-start="1131" selection-end="1131" vertical-scroll-proportion="0.78651685" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pension/serverlet/ComboboxServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="68" selection-start="1684" selection-end="1684" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/page/audit.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="24" selection-start="539" selection-end="539" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pension/model/pension/EvaluateLrInfoChange.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="1041" selection-end="1041" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pension/model/pension/EvaluateLrInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="0" selection-start="3573" selection-end="3573" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pension/common/sys/userlog/UserLog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="286" column="46" selection-start="10673" selection-end="10673" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pension/common/ParameterUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="62" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pension/serverlet/Logout.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="31" selection-start="98" selection-end="98" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Pension/listener/SessionListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="98" selection-start="560" selection-end="560" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/views/pension/EditLrBasicInfo.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="85" selection-start="954" selection-end="963" vertical-scroll-proportion="-1.8214285">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/views/pension/EditLrBasicInfo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1824,23 +1616,83 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/views/pension/FindLrBasicInfo.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="75" selection-start="1314" selection-end="1314" vertical-scroll-proportion="-8.75">
-          <folding>
-            <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="31" column="75" selection-start="1314" selection-end="1314" vertical-scroll-proportion="0.61041665">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/views/pension/PensionPeopleInfo.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="766" column="97" selection-start="37782" selection-end="37782" vertical-scroll-proportion="-4.392857">
+        <state line="766" column="97" selection-start="37782" selection-end="37782" vertical-scroll-proportion="0.03640257">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pension/common/ParameterUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="44" selection-start="185" selection-end="185" vertical-scroll-proportion="0.033464566">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/img/css/icon.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="54" selection-start="422" selection-end="422" vertical-scroll-proportion="0.59130436">
+        <state line="26" column="1" selection-start="655" selection-end="655" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/img/css/easyui_overwrite.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="49" selection-start="758" selection-end="758" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pension/serverlet/LRServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="92" column="0" selection-start="3490" selection-end="3490" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/views/pension/EditLrBasicInfo.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="73" selection-start="636" selection-end="648" vertical-scroll-proportion="-3.0357144">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/views/pension/EditLrBasicInfo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="176" column="60" selection-start="6397" selection-end="6397" vertical-scroll-proportion="-90.03704">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/img/loginbtn.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/img/loginbg.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/img/loading.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/img/mainbg.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="104" column="39" selection-start="3610" selection-end="3610" vertical-scroll-proportion="0.12954545">
           <folding />
         </state>
       </provider>
