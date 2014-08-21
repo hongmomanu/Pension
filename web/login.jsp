@@ -14,8 +14,13 @@
     <script src="js/md5.js" type="text/javascript"></script>
     <script src="js/enc-base64-min.js" type="text/javascript"></script>
     <style type="text/css">
+        html,body{
+            margin: 0;
+        padding: 0;
+            height: 100%;
+        }
             /*html {background-color:#06294e;}*/
-        body {background-image:url(img/loginbg.jpg); background-position:50% 50%; background-repeat:no-repeat;}
+        body { background-position:50% 50%; background-repeat:no-repeat;}            /*background-image:url(img/bg01.jpg);*/
         form {padding-top:300px; text-align:center}
 
         table, tr, td, th, input{ border:none;}
@@ -50,6 +55,18 @@
         #browserlinkdiv a{
 
         }
+        .inputarea{
+            position: absolute;
+            bottom: 50px;
+            left: 250px;
+            background: url(img/bg03.jpg);
+            width: 589px;
+            height: 440px;
+        }
+        table{
+            margin: 200 auto;
+
+        }
     </style>
 
     <%--<link rel="stylesheet" type="text/css" href="css/login.css" />--%>
@@ -72,6 +89,7 @@
     </h1>
 
 </header>
+<div style="background-image: url(img/bg01.jpg);height: 80%;">
 <section class="body">
     <%--<form method="post" action="login">
         <label>用户名</label>
@@ -82,7 +100,8 @@
 
     </form>--%>
     <form id="myform" method='post' action="login" >
-        <table align='center' class='table-4'>
+        <div class="inputarea">
+        <table class='table-4'>
             <!--<caption id='welcome'>欢迎使用舟山市民政救助系统</caption>-->
             <tr>
                 <td class='rowhead'>用户名：</td>
@@ -109,7 +128,7 @@
             </tr>
 
         </table>
-
+        </div>
         <div id='poweredby'>
             技术支持：浙江省海予信息技术有限公司
         </div>
@@ -123,8 +142,9 @@
         %>
 
 </section>
+</div>
 
-<div id="center" style=" margin:50px auto; width:350px;">
+<div id="center" style=" height: 20%; background-image: url(img/bg02.jpg)" >
 </div>
 </body>
 <!--[if lte IE 8]>

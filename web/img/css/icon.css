@@ -22,3 +22,6 @@
 .icon-edit{
     background:url("../../img/table_edit.png")   no-repeat;
 }
+.icon-editsave{
+    background: url("../../img/page_edit.png") no-repeat;
+}

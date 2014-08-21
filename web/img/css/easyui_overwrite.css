@@ -39,3 +39,7 @@ span.error,a.error{
 datagrid-header-row datagrid-cell-group {
     line-height: 30px;
  }
+
+.tree-file {
+    background: url('../../img/application_go.png') no-repeat 0 0;
+}
