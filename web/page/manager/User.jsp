@@ -44,7 +44,7 @@
     </table>
     <div id="tb" style="padding:5px;height:auto">
         <div style="margin-bottom:5px">
-            <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add"  plain="true"
+            <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" <%-- plain="true"--%>
                onclick="$('#w').window('open')">add</a>
 
             <input class="easyui-datebox" style="width:80px">

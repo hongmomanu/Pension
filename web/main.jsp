@@ -17,7 +17,8 @@
             'themes/default/easyui.css"><\/>');
     document.write('<link rel="stylesheet" type="text/css"  href="'+
             'img/css/easyui_overwrite.css"><\/>');
-
+    document.write('<link rel="stylesheet" type="text/css"  href="'+
+            'img/css/icon.css"><\/>');
     var cj=parent.cj;
 </script>
 <%--<script type="text/javascript" src="js/cj.js"></script>--%>

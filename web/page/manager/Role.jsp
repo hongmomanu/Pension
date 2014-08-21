@@ -6,7 +6,7 @@
     <script type="text/javascript"  src="js/commonfuncs/ext/popwin.js"></script>
     <style>
         .icon-add{
-            background:url('img/edit_add.png') no-repeat;
+            background:url('../../img/application_form_add.png') no-repeat;
         }.icon-save{
              background:url('img/head/3.png') no-repeat;
         }.icon-remove{
@@ -94,11 +94,11 @@
 </table>
 <div id="tb" style="padding:5px;height:auto">
     <div style="margin-bottom:5px">
-        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add"  plain="true"
-           onclick="$('#w').window('open')">add</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add"<%--  plain="true"--%>
+           onclick="$('#w').window('open')">增加</a>
 
         <input class="easyui-datebox" style="width:80px">
-        <a href="#" class="easyui-linkbutton" iconCls="icon-search">Search</a>
+        <a href="#" class="easyui-linkbutton" iconCls="icon-search">查询</a>
     </div>
 </div>
 
