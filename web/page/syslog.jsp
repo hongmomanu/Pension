@@ -44,13 +44,14 @@
         //if(++i%2==0)return "background-color:#EEE";
     }
     var bstimeformatter=function(v,r,i){
-        return v.split('.')[0].substr(5)
+        //return v.split('.')[0].substr(5)
+        return v.split('.')[0]
     }
     var chexiaoformat=function(v,r,i){
         if(r.rbflag=='1'){
            return '已回退';
         }else{
-            return '<a href="#"  onclick="dbrol(\''+ r.functionid+','+ r.opseno+','+ r.loginname+'\')"'+'>回退</a>';
+            return '<a href="#" class="easyui-linkbutton" iconCls="icon-edit" onclick="dbrol(\''+ r.functionid+','+ r.opseno+','+ r.loginname+'\')"'+'>回退</a>';
         }
     }
 </script>
@@ -63,11 +64,11 @@
            border:false,rowStyler:styleFn,fitColumns: true">
     <thead>
     <tr>
-        <th data-options="field:'opseno',width:70">操作日志流水号</th>
+        <th data-options="field:'opseno',width:30">操作序号</th>
         <th data-options="field:'tprkey',width:50,hidden:true">业务序号</th>
         <th data-options="field:'digest',width:350,align:'left',formatter:digestformatter"><a>摘要</a></th>
         <th data-options="field:'username',width:60,align:'left'">办理人</th>
-        <th data-options="field:'bsnyue',width:60,align:'center'">业务期</th>
+        <%--<th data-options="field:'bsnyue',width:60,align:'center'">业务期</th>--%>
         <th data-options="field:'bstime',width:100,align:'center',formatter:bstimeformatter">时间</th>
         <th data-options="field:'ro',width:80,align:'center',formatter:chexiaoformat">回退</th>
     </tr>
@@ -93,7 +94,10 @@
     function loadLogData(){
 
         $('#logGrid').datagrid({
-            url:'log.do?method='+method+'&eventName='+(showAuditIdFlag?"queryAuditLog":"queryLog")
+            url:'log.do?method='+method+'&eventName='+(showAuditIdFlag?"queryAuditLog":"queryLog"),
+            onLoadSuccess:function(data){
+
+            }
         })
         if(showAuditIdFlag){
             $('#logGrid').datagrid('showColumn','tprkey');

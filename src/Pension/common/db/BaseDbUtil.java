@@ -124,6 +124,7 @@ public class BaseDbUtil {
             result= pstmt.executeUpdate();
         } catch (SQLException ex) {
             log.debug(ex.getMessage());
+            ex.printStackTrace();
 
         } finally {
             try {
