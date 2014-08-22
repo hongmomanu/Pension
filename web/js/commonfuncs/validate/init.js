@@ -1,6 +1,7 @@
 /**
  * Time: 下午2:46
  * 初始化所有自定义校验
+ *
  */
 define(function(){
     var validateDesc={

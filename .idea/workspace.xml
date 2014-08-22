@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/bg03.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/Nice.html" />
-      <change type="DELETED" beforePath="D:\Administrator\IdeaProjects\Pension\web\img\bg03.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pension/common/db/BaseDbUtil.java" afterPath="$PROJECT_DIR$/src/Pension/common/db/BaseDbUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pension/common/db/ConnManager.java" afterPath="$PROJECT_DIR$/src/Pension/common/db/ConnManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/login.jsp" afterPath="$PROJECT_DIR$/web/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/page/syslog.jsp" afterPath="$PROJECT_DIR$/web/page/syslog.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/commonfuncs/validate/Exists.js" afterPath="$PROJECT_DIR$/web/js/commonfuncs/validate/Exists.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pension.iml" afterPath="$PROJECT_DIR$/Pension.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/commonfuncs/validate/init.js" afterPath="$PROJECT_DIR$/web/js/commonfuncs/validate/init.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Pension.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408606081859" ignored="false" />
+    <file path="/Dummy.txt" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1408666627787" ignored="false" />
     <file path="/SysLogServlet.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1399617047660" ignored="false" />
     <file path="/syslog.jsp" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1399986688656" ignored="false" />
     <file path="/TestThreadLocal.java" changelist="1348c6cc-9b2b-4b4c-9568-bbf59c9998a1" time="1399513142411" ignored="false" />
@@ -115,7 +111,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -152,6 +147,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -161,13 +157,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="syslog.jsp" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="syslog.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/page/syslog.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="98" column="16" selection-start="3190" selection-end="3190" vertical-scroll-proportion="0.76876265">
-              <folding>
-                <marker date="1408615302618" expanded="false" signature="1013:1034" placeholder="..." />
-              </folding>
+            <state line="85" column="54" selection-start="2770" selection-end="2770" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SysLogServlet.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Pension/serverlet/SysLogServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="20" selection-start="368" selection-end="368" vertical-scroll-proportion="0.03632887">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -184,7 +187,7 @@
       <file leaf-file-name="FindLrBasicInfo.htm" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/js/views/pension/FindLrBasicInfo.htm">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="76" selection-start="1270" selection-end="1315" vertical-scroll-proportion="-10.607142">
+            <state line="31" column="76" selection-start="1402" selection-end="1447" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -193,7 +196,7 @@
       <file leaf-file-name="AuditServlet.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Pension/serverlet/AuditServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="39" selection-start="3208" selection-end="3208" vertical-scroll-proportion="-7.68">
+            <state line="79" column="39" selection-start="3208" selection-end="3208" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -202,7 +205,7 @@
       <file leaf-file-name="AuditBusiness.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Pension/common/sys/audit/AuditBusiness.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="0" selection-start="3014" selection-end="3014" vertical-scroll-proportion="-4.48">
+            <state line="78" column="0" selection-start="3014" selection-end="3014" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -239,15 +242,6 @@
         <entry file="file://$PROJECT_DIR$/src/Pension/common/db/BaseDbUtil.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="125" column="18" selection-start="3995" selection-end="3995" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LRServlet.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Pension/serverlet/LRServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="14" selection-start="1690" selection-end="1716" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -331,7 +325,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -352,23 +345,24 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="Modules" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="121" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="OverrideImplement.combined" value="true" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="146" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="153" />
-    <property name="recentsLimit" value="5" />
-    <property name="MemberChooser.sorted" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="153" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="D:/apache-tomcat-7.0.50/lib/servlet-api.jar!/" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="149" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="820" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="861" />
@@ -379,24 +373,24 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
     <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="LayoutCode.rearrangeEntries&lt;Generic&gt;" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="options.lastSelected" value="preferences.pluginManager" />
-    <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="LayoutCode.rearrangeEntriesOracle" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -794,21 +788,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="JettyConfiguration" factoryName="Local">
       <deployment />
       <server-settings>
@@ -825,6 +804,21 @@
       </server-settings>
       <predefined_log_file id="Jetty" enabled="true" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -1280,7 +1274,11 @@
       <created>1408606088014</created>
       <updated>1408606088014</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="082116">
+      <created>1408615331372</created>
+      <updated>1408615331372</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1290,7 +1288,6 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32761577" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46655232" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7941681" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1299,7 +1296,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20754717" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34819898" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1313,10 +1309,12 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="SQL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="SQL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46655232" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34819898" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1362,7 +1360,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="0821" />
+    <option name="LAST_COMMIT_MESSAGE" value="082116" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1385,6 +1383,7 @@
     <MESSAGE value="pw&#10;" />
     <MESSAGE value="get upload" />
     <MESSAGE value="0821" />
+    <MESSAGE value="082116" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1396,60 +1395,41 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/Nice.html">
+    <entry file="file://$PROJECT_DIR$/src/Pension/common/db/BaseDbUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="15" selection-start="462" selection-end="774" vertical-scroll-proportion="-11.535714">
+        <state line="125" column="18" selection-start="3995" selection-end="3995" vertical-scroll-proportion="0.0">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/Nice.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="15" selection-start="462" selection-end="774" vertical-scroll-proportion="-11.535714" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="0" selection-start="1957" selection-end="1957" vertical-scroll-proportion="-1.9056604">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/commonfuncs/validate/Init.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="3" selection-start="36" selection-end="36" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/commonfuncs/validate/exists.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="11" selection-start="225" selection-end="225" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="57" column="0" selection-start="1957" selection-end="1957" vertical-scroll-proportion="-1.9056604" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/views/pension/EvaluateLrInfoGrid.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="51" selection-start="3361" selection-end="3361" vertical-scroll-proportion="-52.25">
-          <folding />
-        </state>
+        <state line="77" column="51" selection-start="3361" selection-end="3361" vertical-scroll-proportion="-52.25" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/page/audit.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="24" selection-start="1800" selection-end="1800" vertical-scroll-proportion="42.32143">
-          <folding>
-            <marker date="1408521082429" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
+        <state line="63" column="24" selection-start="1800" selection-end="1800" vertical-scroll-proportion="42.32143" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Pension/serverlet/LRServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="14" selection-start="1690" selection-end="1716" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="50" column="14" selection-start="1690" selection-end="1716" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Pension/serverlet/AuditServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="39" selection-start="3208" selection-end="3208" vertical-scroll-proportion="-7.68">
+        <state line="79" column="39" selection-start="3208" selection-end="3208" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1477,7 +1457,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Pension/common/sys/audit/AuditBusiness.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="0" selection-start="3014" selection-end="3014" vertical-scroll-proportion="-4.48">
+        <state line="78" column="0" selection-start="3014" selection-end="3014" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1491,7 +1471,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/views/pension/FindLrBasicInfo.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="76" selection-start="1270" selection-end="1315" vertical-scroll-proportion="-10.607142">
+        <state line="31" column="76" selection-start="1402" selection-end="1447" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1505,10 +1485,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/page/syslog.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="16" selection-start="3190" selection-end="3190" vertical-scroll-proportion="0.76876265">
-          <folding>
-            <marker date="1408615302618" expanded="false" signature="1013:1034" placeholder="..." />
-          </folding>
+        <state line="85" column="54" selection-start="2770" selection-end="2770" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pension/serverlet/SysLogServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="20" selection-start="368" selection-end="368" vertical-scroll-proportion="0.03632887">
+          <folding />
         </state>
       </provider>
     </entry>

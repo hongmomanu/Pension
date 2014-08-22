@@ -2,8 +2,10 @@ define(function(){
     /*
     判断数据已经存在
     param 0:url,获得数据
+
     */
     $.extend($.fn.validatebox.defaults.rules, {
+
         exists: {
             validator: function(value, param){
                 var dataOjb={};
