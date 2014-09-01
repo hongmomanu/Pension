@@ -57,14 +57,15 @@ define(function(){
     }
     var initIdentityidandOtherComboxGrid=function(local,option){
         window.setTimeout(function(){
-
-            local.find(':input[opt=identityid]').combogrid({
+            var $identityid=local.find(':input[opt=identityid]');
+            $identityid.combogrid({
                 panelWidth:350,
                 panelHeight:400,
-                url: 'ajax/getLrBasicInfo.jsp',
+                url: 'ajax/getLrBasicInfo.jsp?abc=1234',
                 idField:'owerid',
                 textField:'owerid',
-                validType:['identityid','minLength[17]','exists["lr.do?model=pension.EvaluateLrInfo&eventName=existsPGPerson"]'],
+                validType2:['identityid','minLength[17]','exists["lr.do?model=pension.EvaluateLrInfo&eventName=existsPGPerson"]'],
+                validType23:['identityid'],
                 mode:'remote',
                 fit:true,
                 pagination:true,
@@ -73,10 +74,8 @@ define(function(){
                 border:false,
                 fitColumns:true,
                 onBeforeLoad: function(param){
-                    var options =local.find(':input[opt=identityid]').combogrid('options');
-                    if(param.q!=null){
-                        param.query=param.q;
-                    }
+                    param.personid=$identityid.combo('getValue');
+                    param.abc2=456;
                 },
                 onClickRow:function(index,row){
                     $.ajax({

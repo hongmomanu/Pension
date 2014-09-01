@@ -146,20 +146,26 @@ jQuery.fn.cssRadio = function (toggle) {
     var me = ($(this))
     var selectRadio = ":input[type=radio] + label";
     $(selectRadio).each(function () {
-        if ($(this).prev()[0].checked)
+        if ($(this).prev()[0].checked){
             $(this).addClass("checked"); //初始化,如果已经checked了则添加新打勾样式
+            $(this).prev()[0].checked = true;
+            $($(this).prev()[0]).attr('checked','checked');
+        }
+
     }).click(function () {               //为第个元素注册点击事件
             var s = $($(this).prev()[0]).attr('name')
             s = ":input[name=" + s + "]+label"
             var isChecked=$(this).prev()[0].checked;
             me.find(s).each(function (i) {
                 $(this).prev()[0].checked = false;
+                $($(this).prev()[0]).removeAttr('checked');
                 $(this).removeClass("checked");
             });
             if(isChecked&&toggle){
                 //如果单选已经为选中状态并且参数为true,则什么都不做
             }else{
                 $(this).prev()[0].checked = true;
+                $($(this).prev()[0]).attr('checked','checked');
                 $(this).addClass("checked");
             }
 

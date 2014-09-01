@@ -282,7 +282,6 @@ define(function()
             require(['commonfuncs/Upload'],function(up){
                 up.show(
                     function(data){
-                        alert(99) ;
                         var a = eval('('+data+')');
                         local.find('[opt=personimg]').attr('src', a.filepath) ;
                         local.find('[name=pensionimgpath]').val(a.filepath) ;

@@ -21,16 +21,20 @@ define(function(){
             tprkey:row.pg_id
         })
     }
-    var logout=function(option,row){
-        cj.showContent({
-            url:'lr.do?model=pension.EvaluateLrInfo&eventName=queryById',
-            title:'注销',
-            htmfile:'text!views/pension/EvaluateLrInfoLogout.htm',
-            jsfile:'views/pension/EvaluateLrInfoLogout',
-            location:'pension.EvaluateLrInfoLogout',
-            functionid:'P6IyVH34P1sgn7VzU4q8',
-            tprkey:row.pg_id
-        })
+    var logout=function(option,row,local){
+        cj.question(
+            "您准备要注销资金发放信息",
+            function(){
+                $.ajax({
+                    url:lr.url(option,'delete'),
+                    type:'post',
+                    data:{grantid:row.grantid},
+                    complete:function(res){
+                        local.find('.easyui-datagrid-noauto').datagrid('reload');
+                    }
+                })
+            }
+        )
     }
     var a={
         render:function(local,option){
@@ -50,7 +54,7 @@ define(function(){
                                 //存在未审核的数据时，不能变更和注销
                                 //是注销通过的数据，不能变更和注销
                                 if(j!=0){  //j==0时为查看
-                                    $(btns_arr[j][i]).hide();
+                                    //$(btns_arr[j][i]).hide();
                                 }
                             }
                             (function(index){
@@ -60,8 +64,8 @@ define(function(){
                                         view(option,record)
                                     }else if($(this).attr("action")=='edit'){
                                         edit(option,record)
-                                    }else{
-                                        logout(option,record)
+                                    }else if($(this).attr("action")=='logout'){
+                                        logout(option,record,local)
                                     }
                                 });
                             })(i);

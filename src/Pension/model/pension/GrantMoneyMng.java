@@ -38,12 +38,16 @@ public class GrantMoneyMng extends Model {
     public int query() throws AppException {
         Integer page=Integer.parseInt(getRequest().getParameter(IParam.PAGE));
         Integer rows=Integer.parseInt(getRequest().getParameter(IParam.ROWS));
-        String sql="select o.name,o.identityid,o.birthd,o.gender,o.age,o.nation,o.address,o.type,o.registration,g.money,g.bsnyue" +
+        String sql="select g.grantid,o.name,o.identityid,o.birthd,o.gender,o.age,o.nation,o.address,o.type,o.registration,g.money,g.bsnyue" +
                 ",n.* from t_needassessment n,t_oldpeople o,t_grantmoney g where o.lr_id=n.lr_id and g.pg_id=n.pg_id order by n.pg_id desc";
         this.query(sql, page, rows);
         return RtnType.NORMALSUCCESS;
     }
-
+    public int delete(){
+        CommonDbUtil dbUtil=new CommonDbUtil();
+        dbUtil.execute("delete from t_grantmoney where grantid="+getRequest().getParameter("grantid"));
+        return RtnType.NORMALSUCCESS;
+    }
     public int save(){
         String grantType=getRequest().getParameter("granttype");
         String grantData=getRequest().getParameter("grantdata");

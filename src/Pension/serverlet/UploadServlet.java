@@ -23,7 +23,7 @@ public class UploadServlet extends HttpServlet{
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        /*DiskFileItemFactory factory = new DiskFileItemFactory();
+        DiskFileItemFactory factory = new DiskFileItemFactory();
         ServletFileUpload upload = new ServletFileUpload(factory);
         List<FileItem> fileitems = null;
         Map<String,Object> result=null;
@@ -42,6 +42,6 @@ public class UploadServlet extends HttpServlet{
         }
         PrintWriter out=resp.getWriter();
         out.print(JSONObject.fromObject(result).toString());
-        out.close();*/
+        out.close();
     }
 }

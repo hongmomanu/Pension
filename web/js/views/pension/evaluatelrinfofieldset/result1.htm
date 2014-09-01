@@ -4,12 +4,12 @@
     <table class="formtable" style="width:100%">
         <tr>
             <td style="width: 90px;">评估参数</td>
-            <td>判断等级</td>
+            <td colspan="2">判断等级</td>
             <td style="width: 70px;">评估分值</td>
         </tr>
         <tr>
             <td>1.生活处理能力<br/>(0-50分)</td>
-            <td>
+            <td colspan="2">
                 <input name="sum_sh_jiel" type="radio" value="0" /><label>正常</label>
                 <input name="sum_sh_jiel" type="radio" value="1" /><label>轻度</label>
                 <input name="sum_sh_jiel" type="radio" value="2" /><label>中度依赖</label>
@@ -19,7 +19,7 @@
         </tr>
         <tr>
             <td>2.经济条件<br/>(0-25分)</td>
-            <td>
+            <td colspan="2">
                 <input name="sum_jj_shour" type="radio" value="10" /><label>低保</label>
                 <input name="sum_jj_shour" type="radio" value="15" /><label>无社保</label>
                 <input name="sum_jj_shour" type="radio" value="20" /><label>低退休工资</label>
@@ -29,7 +29,7 @@
         </tr>
         <tr>
             <td>3.居住环境<br/>(0-25分)</td>
-            <td>
+            <td colspan="2">
                 <input name="sum_jz_fenl" type="radio" value="15" /><label>独居,孤寡</label>
                 <input name="sum_jz_fenl" type="radio" value="20" /><label>空巢</label>
                 <input name="sum_jz_fenl" type="radio" value="25" /><label>与子女,亲友共住</label>
@@ -38,7 +38,7 @@
         </tr>
         <tr>
             <td>4.年龄<br/>(0-10分)</td>
-            <td>
+            <td colspan="2">
                 <input name="sum_nl_fenl" type="radio" value="0" /><label>60-79</label>
                 <input name="sum_nl_fenl" type="radio" value="5" /><label>80-90</label>
                 <input name="sum_nl_fenl" type="radio" value="10" /><label>90以上</label>
@@ -47,7 +47,7 @@
         </tr>
         <tr>
             <td>5.特殊贡献<br/>(0-10分)</td>
-            <td>
+            <td colspan="2">
                 <input name="sum_gx_laom" type="checkbox" value="10" /><label>市级以上劳模</label>
                 <input name="sum_gx_youf" type="checkbox" value="10" /><label>重点优抚对象</label>
                 <input name="sum_gx_chunjg" type="checkbox" value="10" /><label>纯居干</label>
@@ -57,43 +57,47 @@
         </tr>
         <tr>
             <td>6.残障情况</td>
-            <td>
+            <td colspan="2">
                 <textarea style="width: 99%;height: 50px;" opt="canzhangqingkuang" name="canzhangqingkuang"></textarea>
             </td>
             <td ><input size="1" class="pingfen"  name="cz_pingguf"></td>
         </tr>
         <tr>
             <td>7.住房情况</td>
-            <td>
+            <td colspan="2">
                 <textarea style="width: 99%;height: 50px;" opt="zhufangqingkuang" name="zhufangqingkuang"></textarea>
             </td>
             <td ><input size="1" class="pingfen"  name="zf_pingguf"></td>
         </tr>
         <tr>
             <td>8.重大疾病</td>
-            <td>
+            <td colspan="2">
                 <textarea style="width: 99%;height: 50px;" opt="zhongdajibing" name="zhongdajibing"></textarea>
             </td>
             <td ><input size="1" class="pingfen"  name="jb_pingguf"></td>
         </tr>
         <tr>
             <td>评估总分</td>
-            <td style="text-align: center;">
+            <td style="text-align: center;" colspan="2">
                 <label><input name="pinggusum" size="2" class="pingfen">分</label>
             </td>
             <td><a opt="recalculate">重新计算</a></td>
         </tr>
         <tr>
             <td>建议服务标准</td>
-            <td colspan="2" style="text-align: center;">
+            <td colspan="3" style="text-align: center;">
                 <label><input name="standard" size="2" class="pingfen">小时</label>
             </td>
         </tr>
         <tr>
             <td>建议服务形式</td>
-            <td colspan="2" style="text-align: center;">
+            <td style="text-align: center;">
                 <input name="fuwuxingshi" type="radio" value="1" /><label>居家养老</label>
                 <input name="fuwuxingshi" type="radio" value="2" /><label>机构养老</label>
+            </td>
+            <td>政府补贴金额</td>
+            <td style="text-align: center;">
+                <label><input name="amount" size="2" class="pingfen"></label>
             </td>
         </tr>
 

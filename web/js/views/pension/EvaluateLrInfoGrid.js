@@ -49,7 +49,7 @@ define(function(){
                                 //存在未审核的数据时，不能变更和注销
                                 //是注销通过的数据，不能变更和注销
                                 if(j!=0){  //j==0时为查看
-                                    $(btns_arr[j][i]).hide();
+                                    //$(btns_arr[j][i]).hide();
                                 }
                             }
                             (function(index){

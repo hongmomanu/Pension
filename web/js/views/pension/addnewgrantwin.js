@@ -21,9 +21,8 @@ define(function () {
             if(event.which=='13'){
                 var rows=persongrid.datagrid('getData').rows;
                 for(var i in rows){
-                    rows[i].money=$(this).val();
+                    rows[i].amount=$(this).val();
                 }
-                console.log(rows)
                 persongrid.datagrid('loadData',rows)
             }
         })
@@ -65,13 +64,15 @@ define(function () {
         });
     }
     var grantmoney=function(granttype){
-        var rows=$('#addnewgrantwin .grantmoneyperson0 [name=grid]').datagrid('getChecked');
+        var $datagrid=$('#addnewgrantwin .grantmoneyperson0 [name=grid]');
+        var rows=$datagrid.datagrid('getChecked');
         var grantdata=[];
         for( var i in rows){
 
+           editor=$datagrid.datagrid('getEditors',i);
            grantdata.push({
                pg_id:rows[i].pg_id,
-               money:rows[i].money||0
+               money:rows[i].amount||0
            })
         }
         var ajaxdata={

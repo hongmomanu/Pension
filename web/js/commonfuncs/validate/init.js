@@ -9,6 +9,7 @@ define(function(){
             exists:'是否已经存在',
         minLength:'最小长度',
         method_datagrid_editCell:'datagrid 单元格编辑扩展方法'
+
     }
     var validates=(function(a){
        var arr=[];

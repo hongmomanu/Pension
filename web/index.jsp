@@ -23,7 +23,6 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" >
     <title>杭州市民政养老救助管理系统</title>
-    <script type="text/javascript" src="http://112.124.50.195:8080/pensionweb/js/jquery-1.8.0.min.js"></script>
     <script type="text/javascript" src="js/extLocation.js"></script>
 
     <script type="text/javascript">
@@ -41,7 +40,8 @@
 
     <script>
         /**加载easyui**/
-
+        document.write('<script type="text/javascript"  src="'+extEasyui+
+                'jquery-1.8.0.min.js"><\/script>');
         document.write('<script type="text/javascript"  src="'+extEasyui+
                 'jquery.easyui.min.js"><\/script>');
         document.write('<script type="text/javascript"  src="'+extEasyui+
@@ -77,10 +77,10 @@
 </div>
 <div id="mainPanle" region="center" border="true" border="false">
     <div id="tabs" class="easyui-tabs"   fit="true" border="false" >
-        <div title="主页" class="indexbackground_2">
+        <div title="主页" class="indexbackground">
             <%--主页有图片时显示会有闪烁--%>
             <div class="cs-home-remark">
-                <h3 style="font-family: 'courier new'">欢迎使用民政养老救助系统</h3>
+                <h3>欢迎使用养老服务管理系统</h3>
             </div>
         </div>
     </div>

@@ -185,6 +185,9 @@ a:active {
 {
     background:#e6f4fc url(img/mainbg.jpg) bottom center no-repeat;
 }
+.indexbackground h3{
+    color:darkslategrey;
+}
 
 .ui-skin-nav .li-skinitem,#headnavul .li-skinitem {
     float: left;
